@@ -1,0 +1,13 @@
+{
+  "navigationBarTitleText": "",
+  "enablePullDownRefresh": false,
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "u-navbar": "../../../node-modules/uview-plus/components/u-navbar/u-navbar",
+    "u--input": "../../../node-modules/uview-plus/components/u--input/u--input",
+    "u-form-item": "../../../node-modules/uview-plus/components/u-form-item/u-form-item",
+    "u--form": "../../../node-modules/uview-plus/components/u--form/u--form",
+    "u-button": "../../../node-modules/uview-plus/components/u-button/u-button",
+    "u-modal": "../../../node-modules/uview-plus/components/u-modal/u-modal"
+  }
+}

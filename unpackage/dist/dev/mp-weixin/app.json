@@ -1,0 +1,54 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/trade/trade",
+    "pages/assets/assets",
+    "pages/my/my",
+    "pages/home/apiAuth/apiAuth",
+    "pages/home/apiAuthSure/apiAuthSure",
+    "pages/home/billingCenter/billingCenter",
+    "pages/home/toBePaid/toBePaid",
+    "pages/home/addUSDT/addUSDT",
+    "pages/home/paySuccess/paySuccess"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "智能交易",
+    "navigationBarBackgroundColor": "#FFF",
+    "backgroundColor": "#FFF"
+  },
+  "tabBar": {
+    "color": "#999",
+    "selectedColor": "#333",
+    "borderStyle": "black",
+    "backgroundColor": "#FFF",
+    "list": [
+      {
+        "iconPath": "static/tabbars/home-0.png",
+        "selectedIconPath": "static/tabbars/home.png",
+        "pagePath": "pages/home/home",
+        "text": "首頁"
+      },
+      {
+        "iconPath": "static/tabbars/tra-0.png",
+        "selectedIconPath": "static/tabbars/tra.png",
+        "pagePath": "pages/trade/trade",
+        "text": "交易",
+        "navigationBarBackgroundColor": "red"
+      },
+      {
+        "iconPath": "static/tabbars/assets-0.png",
+        "selectedIconPath": "static/tabbars/assets.png",
+        "pagePath": "pages/assets/assets",
+        "text": "資產"
+      },
+      {
+        "iconPath": "static/tabbars/my-0.png",
+        "selectedIconPath": "static/tabbars/my.png",
+        "pagePath": "pages/my/my",
+        "text": "我的"
+      }
+    ]
+  },
+  "usingComponents": {}
+}

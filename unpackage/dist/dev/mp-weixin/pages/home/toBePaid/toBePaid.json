@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "待支付账单",
+  "enablePullDownRefresh": false,
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "u--image": "../../../node-modules/uview-plus/components/u--image/u--image",
+    "u-button": "../../../node-modules/uview-plus/components/u-button/u-button",
+    "u-modal": "../../../node-modules/uview-plus/components/u-modal/u-modal"
+  }
+}

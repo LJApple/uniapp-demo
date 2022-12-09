@@ -1,0 +1,1 @@
+<view><u-action-sheet wx:if="{{b}}" u-i="0ecc698c-0" bind:__l="__l" bindupdateModelValue="{{a}}" u-p="{{b}}"></u-action-sheet></view>

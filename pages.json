@@ -1,0 +1,225 @@
+{
+	"easycom": {
+		"custom": {
+			"^u-(.*)": "uview-plus/components/u-$1/u-$1.vue"
+		}
+	},
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/home/home",
+			"style": {
+				"navigationStyle": "custom", // 隐藏系统导航栏
+				// "navigationBarTitleText": "home"
+				"navigationBarTextStyle": "white"
+			}
+		}, {
+			"path": "pages/trade/trade",
+			"style": {
+				"navigationBarTitleText": "trade",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom", // 隐藏系统导航栏
+				// "scrollIndicator": "none", // 禁止滚动条
+				"app-plus": {
+					"bounce": "none" // 关闭反弹效果
+					// "scrollIndicator": "none" // 禁止滚动条
+				}
+				
+			}
+
+		}, {
+			"path": "pages/assets/assets",
+			"style": {
+				"navigationBarTitleText": "assets",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/my/my",
+			"style": {
+				"navigationBarTitleText": "my",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/home/apiAuth/apiAuth",
+			"style": {
+				"navigationBarTitleText": "API授权",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom", // 隐藏系统导航栏
+				// 设置页面背景色
+				"app-plus": {
+					"background": "red"
+				}
+			}
+
+		}
+	    ,{
+            "path" : "pages/home/apiAuthSure/apiAuthSure",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false,
+				"navigationStyle": "custom" // 隐藏系统导航栏
+            }
+            
+        }
+        ,{
+            "path" : "pages/home/billingCenter/billingCenter",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false,
+				"navigationStyle": "custom" // 隐藏系统导航栏
+            }
+            
+        }
+        ,{
+            "path" : "pages/home/toBePaid/toBePaid",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "待支付账单",
+                "enablePullDownRefresh": false,
+				"navigationStyle": "custom" // 隐藏系统导航栏
+            }
+            
+        }
+        ,{
+            "path" : "pages/home/addUSDT/addUSDT",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "添加USDT",
+                "enablePullDownRefresh": false,
+				"navigationStyle": "custom" // 隐藏系统导航栏
+            }
+            
+        }
+        ,{
+            "path" : "pages/home/paySuccess/paySuccess",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "支付成功",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/trade/search/search",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "搜索",
+                "enablePullDownRefresh": false
+				// "navigationStyle": "custom" // 隐藏系统导航栏
+            }
+            
+        }
+        ,{
+            "path" : "pages/trade/setStrategy/setStrategy",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "设置策略",
+                "enablePullDownRefresh": false,
+				"navigationStyle": "custom" // 隐藏系统导航栏
+            }
+            
+        }
+        ,{
+            "path" : "pages/trade/position/position",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "持仓",
+                "enablePullDownRefresh": false,
+				"navigationStyle": "custom" // 隐藏系统导航栏
+            }
+            
+        }
+        ,{
+            "path" : "pages/trade/strategEexplain/strategEexplain",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "策略说明",
+                "enablePullDownRefresh": false,
+				"navigationStyle": "custom" // 隐藏系统导航栏
+            }
+            
+        }
+        ,{
+            "path" : "pages/trade/customStrategy/customStrategy",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "自定义策略",
+                "enablePullDownRefresh": false,
+				"navigationStyle": "custom" // 隐藏系统导航栏
+            }
+            
+        }
+        ,{
+            "path" : "pages/trade/positionRecord/positionRecord",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "操作记录",
+                "enablePullDownRefresh": false,
+				"navigationStyle": "custom" // 隐藏系统导航栏
+            }
+            
+        }
+        ,{
+            "path" : "pages/trade/positionContract/positionContract",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "持仓-合约",
+                "enablePullDownRefresh": false,
+				"navigationStyle": "custom" // 隐藏系统导航栏
+            }
+            
+        }
+        ,{
+            "path" : "pages/trade/positionReContract/positionReContract",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "操作记录-合约",
+                "enablePullDownRefresh": false,
+				"navigationStyle": "custom" // 隐藏系统导航栏
+            }
+            
+        }
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "智能交易",
+		"navigationBarBackgroundColor": "#FFF",
+		"backgroundColor": "red"
+	},
+	"tabBar": {
+		"color": "#999",
+		"selectedColor": "#333",
+		"borderStyle": "black",
+		"backgroundColor": "#FFF",
+		"list": [{
+				"iconPath": "static/tabbars/home-0.png",
+				"selectedIconPath": "static/tabbars/home.png",
+				"pagePath": "pages/home/home",
+				"text": "首頁"
+			},
+			{
+				"iconPath": "static/tabbars/tra-0.png",
+				"selectedIconPath": "static/tabbars/tra.png",
+				"pagePath": "pages/trade/trade",
+				"text": "交易",
+				"navigationBarBackgroundColor": "red"
+			},
+			{
+				"iconPath": "static/tabbars/assets-0.png",
+				"selectedIconPath": "static/tabbars/assets.png",
+				"pagePath": "pages/assets/assets",
+				"text": "資產"
+			},
+			{
+				"iconPath": "static/tabbars/my-0.png",
+				"selectedIconPath": "static/tabbars/my.png",
+				"pagePath": "pages/my/my",
+				"text": "我的"
+			}
+		]
+	}
+
+}

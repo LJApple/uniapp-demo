@@ -1,0 +1,6 @@
+{
+  "defaultTitle": "home",
+  "usingComponents": {
+    "mb-image": "../../components/mb-image/mb-image"
+  }
+}

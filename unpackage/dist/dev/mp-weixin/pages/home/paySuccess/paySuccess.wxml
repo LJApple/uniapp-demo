@@ -1,0 +1,1 @@
+<view class="pay-success"><view class="ps-null"><u-image wx:if="{{a}}" u-i="95653fdc-0" bind:__l="__l" u-p="{{a}}"></u-image><view class="bccn-text">支付成功</view><u-button wx:if="{{c}}" class="ps-sbmit" bindclick="{{b}}" u-i="95653fdc-1" bind:__l="__l" u-p="{{c}}"></u-button></view></view>

@@ -1,0 +1,46 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/trade/trade",
+    "pages/assets/assets",
+    "pages/my/my"
+  ],
+  "window": {
+    "defaultTitle": "uni-app",
+    "titleBarColor": "#FFF",
+    "backgroundColor": "#FFF"
+  },
+  "tabBar": {
+    "textColor": "#999",
+    "selectedColor": "#333",
+    "backgroundColor": "#FFF",
+    "items": [
+      {
+        "pagePath": "pages/home/home",
+        "name": "首頁",
+        "icon": "static/tabbars/home-0.png",
+        "activeIcon": "static/tabbars/home.png"
+      },
+      {
+        "pagePath": "pages/trade/trade",
+        "name": "交易",
+        "icon": "static/tabbars/tra-0.png",
+        "activeIcon": "static/tabbars/tra.png"
+      },
+      {
+        "pagePath": "pages/assets/assets",
+        "name": "資產",
+        "icon": "static/tabbars/assets-0.png",
+        "activeIcon": "static/tabbars/assets.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "name": "我的",
+        "icon": "static/tabbars/my-0.png",
+        "activeIcon": "static/tabbars/my.png"
+      }
+    ]
+  },
+  "subPackageBuildType": "shared",
+  "usingComponents": {}
+}

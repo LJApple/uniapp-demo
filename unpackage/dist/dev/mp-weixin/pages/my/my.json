@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "my",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "u-action-sheet": "../../node-modules/uview-plus/components/u-action-sheet/u-action-sheet"
+  }
+}
