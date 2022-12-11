@@ -33,7 +33,7 @@
 						<u-radio style="margin-left: 20rpx;" iconColor="#222222" label="激进型策略" name="2"></u-radio>
 					</u-radio-group>
 				</view>
-				<template v-if="type === '2'">
+				<template v-if="type === 2">
 					<view class="scts-title mt">设置永续合约倍率</view>
 					<view class="stcs-str">
 						<u-radio-group @change="changeDefalut" v-model="proportion.magnification" activeColor="#FCA504">
@@ -116,13 +116,13 @@
 				// 是否是编辑
 				edit: false,
 				// 类型-1现货交易 2合约交易
-				type: '1'
+				type: 1
 			}
 		},
 		onLoad(e) {
 			const { edit, type } = e
 			this.edit = edit
-			if (type) this.type = type
+			if (type) this.type = Number(type)
 			// 调用编辑数据
 			this.editData()
 		},
@@ -151,7 +151,7 @@
 				uni.navigateTo({ url: '/pages/trade/strategEexplain/strategEexplain' })
 			},
 			navigatorToCustom() {
-				uni.navigateTo({ url: `/pages/trade/customStrategy/customStrategy?type=2` })
+				uni.navigateTo({ url: `/pages/trade/customStrategy/customStrategy?type=${this.type}` })
 			},
 			// 改变策略
 			changeDefalut() {

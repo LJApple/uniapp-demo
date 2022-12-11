@@ -1149,7 +1149,7 @@ uni-view[data-v-42e5b97e], uni-scroll-view[data-v-42e5b97e], uni-swiper-item[dat
   padding-left: 0.3125rem;
 }
 .position .p-scroll {
-  padding: 0 0.96875rem 0 0.96875rem;
+  padding: 0 0.96875rem;
   box-sizing: border-box;
   height: calc(100vh - 13.96875rem);
 }

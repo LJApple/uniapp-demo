@@ -293,7 +293,7 @@
 
 		.p-scroll {
 			// background-color: red;
-			padding: 0 31rpx 0rpx 31rpx;
+			padding: 0 31rpx;
 			box-sizing: border-box;
 			height: calc(100vh - 447rpx);
 			// #ifdef H5

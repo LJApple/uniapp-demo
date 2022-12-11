@@ -28,14 +28,12 @@
 			</view>
 		</view>
 		<!-- 保存图片 -->
-		<u-button class="au-save" @click="savePic" color="#000">
-			保存圖片
-		</u-button>
+		<u-button class="au-save" @click="savePic" color="#000">保存圖片</u-button>
 		<!-- 添加成功 -->
-		<u-modal class="noline" :closeOnClickOverlay="true" @close="showActiveModal = false" confirmText="去支付" @confirm="navigateBack"
+		<u-modal class="noline" :closeOnClickOverlay="true" @close="showAddSucess = false" confirmText="去支付" @confirm="navigateBack"
 			title="" confirmColor='#FFB119' cancelColor="#333333" :show="showAddSucess">
 			<view class="slot-content">
-				<view class="no-close" @click="showActiveModal = false">
+				<view class="no-close" @click="showAddSucess = false">
 					<u--image width="39rpx" height="39rpx" src="/static/home/close.png"></u--image>
 				</view>
 				<view class="n-center" style="padding: 40rpx 0;">
@@ -60,7 +58,8 @@
 				qrcodeWidth: 275,
 				value: 'asfasde2eqwfefsdvasfasde2eqwfefsdvasfasde2eqwfefsdv',
 				// 添加成功
-				showAddSucess: false
+				showAddSucess: false,
+				showActiveModal: false
 			}
 		},
 		onReady() {
@@ -69,7 +68,7 @@
 			// 设置二维码内容
 			qr.data = this.value;
 			// 设置二维码大小，必须与canvas设置的宽高一致
-			// qr.size = this.qrcodeWidth + 'rpx';
+			qr.size = uni.upx2px(this.qrcodeWidth);
 			// 调用制作二维码方法
 			qr.make();
 			// 获取canvas上下文
@@ -214,20 +213,6 @@
 					padding-left: 42rpx;
 					box-sizing: border-box;
 				}
-			}
-		}
-		// 添加成功
-		.n-center {
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: center;
-			.tbc-content {
-				width: 100%;
-				text-align: center;
-				margin-top: 28rpx;
-				font-size: 34.62rpx;
-				font-weight: 400;
-				color: rgba(0, 0, 0, 1);
 			}
 		}
 	}

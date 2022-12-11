@@ -1668,6 +1668,9 @@ to {
 .color000 {
   color: #000000 !important;
 }
+body {
+  overflow: hidden;
+}
 .u-modal {
   border-radius: 12px !important;
 }
@@ -1683,6 +1686,21 @@ to {
 }
 .noline .u-line {
   display: none !important;
+}
+.noline .tbc-title {
+  font-size: 0.96156rem;
+  font-weight: 400;
+  color: #666666;
+}
+.noline .tbc-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 0.78125rem;
+}
+.noline .tbc-content .tbcc-key {
+  font-size: 0.96156rem;
+  color: black;
 }
 .no-close {
   position: absolute;

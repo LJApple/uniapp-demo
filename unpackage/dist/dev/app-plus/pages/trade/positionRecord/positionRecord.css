@@ -578,18 +578,23 @@ uni-view[data-v-5ebae466], uni-scroll-view[data-v-5ebae466], uni-swiper-item[dat
   padding-left: 0.3125rem;
 }
 .position-record .p-scroll {
-  padding: 0 0.96875rem 0 0.96875rem;
+  padding: 0.9375rem 0.96875rem 0 0.96875rem;
   box-sizing: border-box;
   height: calc(100vh - 5.75rem);
 }
 .position-record .p-scroll .pd-border {
   border: 0.03125rem solid #000;
 }
+.position-record .p-scroll .psd-time {
+  font-size: 0.72125rem;
+  padding-bottom: 0.84375rem;
+  text-align: center;
+}
 .position-record .p-scroll .ps-data {
   padding: 0.96875rem;
   border-radius: 0.48063rem;
   background-color: #fff;
-  margin-top: 0.9375rem;
+  margin-bottom: 0.9375rem;
   box-sizing: border-box;
 }
 .position-record .p-scroll .ps-data .psd-sus {
@@ -610,6 +615,20 @@ uni-view[data-v-5ebae466], uni-scroll-view[data-v-5ebae466], uni-swiper-item[dat
   font-size: 0.96156rem;
   font-weight: 600;
   line-height: 1;
+  color: black;
+  position: relative;
+}
+.position-record .p-scroll .ps-data .psd-sus .psds-li .psdsl-bottom .psdslb-btn {
+  position: absolute;
+  padding: 0.1875rem 0.3125rem;
+  background: #cccccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.1875rem;
+  font-size: 0.72125rem;
+  right: -0.3125rem;
+  bottom: 0.125rem;
   color: black;
 }
 .position-record .p-scroll .ps-data .psd-bottom {

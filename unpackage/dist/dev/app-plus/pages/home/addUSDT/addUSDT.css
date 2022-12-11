@@ -1044,16 +1044,3 @@ body {
   padding-left: 1.3125rem;
   box-sizing: border-box;
 }
-.add-usdt .n-center {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-.add-usdt .n-center .tbc-content {
-  width: 100%;
-  text-align: center;
-  margin-top: 0.875rem;
-  font-size: 1.08188rem;
-  font-weight: 400;
-  color: black;
-}

@@ -1,6 +1,6 @@
 <!-- 授权确认页面 -->
 <template>
-	<view class="api-auth-sure">
+	<view class="api-auth-sure page">
 		<!-- 导航 -->
 		<u-navbar leftIcon='/static/home/arrow-left-black.png' :fixed="false" :title="coinName" height="92rpx" :autoBack="true">
 			<!-- <template #right>
@@ -25,7 +25,7 @@
 					</u-form-item>
 				</u--form>
 			</view>
-			<u-button @click="submit" class="aas-submit" color="linear-gradient(270deg, #FCA504 0%, #FDC50E 100%)">
+			<u-button @click="submit" class="aas-submit color000" color="linear-gradient(270deg, #FCA504 0%, #FDC50E 100%)">
 				{{tempType === 'edit' ? '修改' : '導入'}}
 			</u-button>
 		</view>

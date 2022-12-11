@@ -158,9 +158,14 @@
 			},
 			// 激活-好的
 			confirmActive() {
-				uni.reLaunch({
-					url: '/pages/assets/assets'
-				});
+				try {
+				    // uni.setStorageSync('toAssets', this.secretKey);
+					uni.reLaunch({
+						url: '/pages/assets/assets'
+					});
+				} catch (e) {
+				    // error
+				}
 			},
 			// 确认支付-成功
 			submit() {
@@ -320,25 +325,6 @@
 						color: #FFB119;
 					}
 				}
-			}
-		}
-
-		// 激活弹窗
-		.tbc-title {
-			font-size: 30.77rpx;
-			font-weight: 400;
-			color: rgba(102, 102, 102, 1);
-		}
-
-		.tbc-content {
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-			padding-top: 15rpx;
-
-			.tbcc-key {
-				font-size: 30.77rpx;
-				color: rgba(0, 0, 0, 1);
 			}
 		}
 	}

@@ -1090,18 +1090,3 @@ body {
 .to-be-paid .tbp-content .tbpc-pay .tbpcp-top .tbpcpt-right {
   color: #FFB119;
 }
-.to-be-paid .tbc-title {
-  font-size: 0.96156rem;
-  font-weight: 400;
-  color: #666666;
-}
-.to-be-paid .tbc-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: 0.46875rem;
-}
-.to-be-paid .tbc-content .tbcc-key {
-  font-size: 0.96156rem;
-  color: black;
-}
