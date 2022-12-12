@@ -13,6 +13,9 @@
 body {
 	overflow: hidden;
 }
+.border-radius-default {
+	border-radius: 15.38rpx !important;
+}
 // 重写modal样式
 .u-modal {
 	border-radius: 12px !important;

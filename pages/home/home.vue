@@ -133,6 +133,12 @@
 			// 账单中心
 			navigateToCenter() {
 				navigate('/pages/home/billingCenter/billingCenter')
+			},
+			// 退出
+			cancel() {
+				uni.reLaunch({
+					url: `/pages/login/login`
+				})
 			}
 		}
 	}

@@ -4,7 +4,18 @@
 			"^u-(.*)": "uview-plus/components/u-$1/u-$1.vue"
 		}
 	},
-	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+	"pages": [{
+			"path": "pages/login/login",
+			"style": {
+				"navigationStyle": "custom", // 隐藏系统导航栏
+				// "navigationBarTitleText": "home"
+				"navigationBarTextStyle": "white",
+				"app-plus": {
+					"bounce": "none", // 关闭反弹效果
+					"scrollIndicator": "none" // 禁止滚动条
+				}
+			}
+		},
 		{
 			"path": "pages/home/home",
 			"style": {
@@ -27,7 +38,7 @@
 					"bounce": "none", // 关闭反弹效果
 					"scrollIndicator": "none" // 禁止滚动条
 				}
-				
+
 			}
 
 		}, {
@@ -63,154 +74,125 @@
 				}
 			}
 
-		}
-	    ,{
-            "path" : "pages/home/apiAuthSure/apiAuthSure",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false,
+		}, {
+			"path": "pages/home/apiAuthSure/apiAuthSure",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
 				"navigationStyle": "custom" // 隐藏系统导航栏
-            }
-            
-        }
-        ,{
-            "path" : "pages/home/billingCenter/billingCenter",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false,
+			}
+
+		}, {
+			"path": "pages/home/billingCenter/billingCenter",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
 				"navigationStyle": "custom" // 隐藏系统导航栏
-            }
-            
-        }
-        ,{
-            "path" : "pages/home/toBePaid/toBePaid",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "待支付账单",
-                "enablePullDownRefresh": false,
+			}
+
+		}, {
+			"path": "pages/home/toBePaid/toBePaid",
+			"style": {
+				"navigationBarTitleText": "待支付账单",
+				"enablePullDownRefresh": false,
 				"navigationStyle": "custom" // 隐藏系统导航栏
-            }
-            
-        }
-        ,{
-            "path" : "pages/home/addUSDT/addUSDT",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "添加USDT",
-                "enablePullDownRefresh": false,
+			}
+
+		}, {
+			"path": "pages/home/addUSDT/addUSDT",
+			"style": {
+				"navigationBarTitleText": "添加USDT",
+				"enablePullDownRefresh": false,
 				"navigationStyle": "custom" // 隐藏系统导航栏
-            }
-            
-        }
-        ,{
-            "path" : "pages/home/paySuccess/paySuccess",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "支付成功",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/trade/search/search",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "搜索",
-                "enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/home/paySuccess/paySuccess",
+			"style": {
+				"navigationBarTitleText": "支付成功",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/trade/search/search",
+			"style": {
+				"navigationBarTitleText": "搜索",
+				"enablePullDownRefresh": false
 				// "navigationStyle": "custom" // 隐藏系统导航栏
-            }
-            
-        }
-        ,{
-            "path" : "pages/trade/setStrategy/setStrategy",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "设置策略",
-                "enablePullDownRefresh": false,
+			}
+
+		}, {
+			"path": "pages/trade/setStrategy/setStrategy",
+			"style": {
+				"navigationBarTitleText": "设置策略",
+				"enablePullDownRefresh": false,
 				"navigationStyle": "custom" // 隐藏系统导航栏
-            }
-            
-        }
-        ,{
-            "path" : "pages/trade/position/position",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "持仓",
-                "enablePullDownRefresh": false,
+			}
+
+		}, {
+			"path": "pages/trade/position/position",
+			"style": {
+				"navigationBarTitleText": "持仓",
+				"enablePullDownRefresh": false,
 				"navigationStyle": "custom" // 隐藏系统导航栏
-            }
-            
-        }
-        ,{
-            "path" : "pages/trade/strategEexplain/strategEexplain",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "策略说明",
-                "enablePullDownRefresh": false,
+			}
+
+		}, {
+			"path": "pages/trade/strategEexplain/strategEexplain",
+			"style": {
+				"navigationBarTitleText": "策略说明",
+				"enablePullDownRefresh": false,
 				"navigationStyle": "custom" // 隐藏系统导航栏
-            }
-            
-        }
-        ,{
-            "path" : "pages/trade/customStrategy/customStrategy",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "自定义策略",
-                "enablePullDownRefresh": false,
+			}
+
+		}, {
+			"path": "pages/trade/customStrategy/customStrategy",
+			"style": {
+				"navigationBarTitleText": "自定义策略",
+				"enablePullDownRefresh": false,
 				"navigationStyle": "custom" // 隐藏系统导航栏
-            }
-            
-        }
-        ,{
-            "path" : "pages/trade/positionRecord/positionRecord",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "操作记录",
-                "enablePullDownRefresh": false,
+			}
+
+		}, {
+			"path": "pages/trade/positionRecord/positionRecord",
+			"style": {
+				"navigationBarTitleText": "操作记录",
+				"enablePullDownRefresh": false,
 				"navigationStyle": "custom" // 隐藏系统导航栏
-            }
-            
-        }
-        ,{
-            "path" : "pages/trade/positionContract/positionContract",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "持仓-合约",
-                "enablePullDownRefresh": false,
+			}
+
+		}, {
+			"path": "pages/trade/positionContract/positionContract",
+			"style": {
+				"navigationBarTitleText": "持仓-合约",
+				"enablePullDownRefresh": false,
 				"navigationStyle": "custom" // 隐藏系统导航栏
-            }
-            
-        }
-        ,{
-            "path" : "pages/trade/positionReContract/positionReContract",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "操作记录-合约",
-                "enablePullDownRefresh": false,
+			}
+
+		}, {
+			"path": "pages/trade/positionReContract/positionReContract",
+			"style": {
+				"navigationBarTitleText": "操作记录-合约",
+				"enablePullDownRefresh": false,
 				"navigationStyle": "custom" // 隐藏系统导航栏
-            }
-            
-        }
-        ,{
-            "path" : "pages/assets/transactionDetails/transactionDetails",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "资产-交易明细",
-                "navigationStyle": "custom", // 隐藏系统导航栏
-                // "navigationBarTitleText": "home"
-                "navigationBarTextStyle": "white",
-                "app-plus": {
-                	"bounce": "none", // 关闭反弹效果
-                	"scrollIndicator": "none" // 禁止滚动条
-                }
-				
-            }
-            
-        }
-        ,{
-            "path" : "pages/assets/withdrawal/withdrawal",
+			}
+
+		}, {
+			"path": "pages/assets/transactionDetails/transactionDetails",
+			"style": {
+				"navigationBarTitleText": "资产-交易明细",
+				"navigationStyle": "custom", // 隐藏系统导航栏
+				// "navigationBarTitleText": "home"
+				"navigationBarTextStyle": "white",
+				"app-plus": {
+					"bounce": "none", // 关闭反弹效果
+					"scrollIndicator": "none" // 禁止滚动条
+				}
+
+			}
+
+		}, {
+			"path": "pages/assets/withdrawal/withdrawal",
 			"style": {
 				"navigationBarTitleText": "提现保证金",
 				"navigationStyle": "custom", // 隐藏系统导航栏
@@ -221,29 +203,11 @@
 					"scrollIndicator": "none" // 禁止滚动条
 				}
 			}
-            
-        }
-        ,{
-            "path" : "pages/my/mybillingCenter/mybillingCenter",
-            "style" :                                                                                    
-            {
+
+		}, {
+			"path": "pages/my/mybillingCenter/mybillingCenter",
+			"style": {
 				"navigationBarTitleText": "我的-账单中心",
-               "navigationStyle": "custom", // 隐藏系统导航栏
-               // "navigationBarTitleText": "home"
-               "navigationBarTextStyle": "white",
-               "app-plus": {
-               	"bounce": "none", // 关闭反弹效果
-               	"scrollIndicator": "none" // 禁止滚动条
-               }
-            }
-            
-        }
-        ,{
-            "path" : "pages/my/mySubscribe/mySubscribe",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "我的订阅",
-                "enablePullDownRefresh": false,
 				"navigationStyle": "custom", // 隐藏系统导航栏
 				// "navigationBarTitleText": "home"
 				"navigationBarTextStyle": "white",
@@ -251,138 +215,201 @@
 					"bounce": "none", // 关闭反弹效果
 					"scrollIndicator": "none" // 禁止滚动条
 				}
-            }
-            
-        }
-        ,{
-            "path" : "pages/my/muOpertaionRecord/muOpertaionRecord",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "我的-操作记录",
-                "enablePullDownRefresh": false,
-                "navigationStyle": "custom", // 隐藏系统导航栏
-                // "navigationBarTitleText": "home"
-                "navigationBarTextStyle": "white",
-                "app-plus": {
-                	"bounce": "none", // 关闭反弹效果
-                	"scrollIndicator": "none" // 禁止滚动条
-                }
-            }
-            
-        }
-        ,{
-            "path" : "pages/my/userFadeback/userFadeback",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "我的-用户反馈",
-                "enablePullDownRefresh": false,
-                "navigationStyle": "custom", // 隐藏系统导航栏
-                // "navigationBarTitleText": "home"
-                "navigationBarTextStyle": "white",
-                "app-plus": {
-                	"bounce": "none", // 关闭反弹效果
-                	"scrollIndicator": "none" // 禁止滚动条
-                }
-            }
-            
-        }
-        ,{
-            "path" : "pages/my/messageCenter/messageCenter",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "我的-消息中心",
-                "enablePullDownRefresh": false,
-                "navigationStyle": "custom", // 隐藏系统导航栏
-                // "navigationBarTitleText": "home"
-                "navigationBarTextStyle": "white",
-                "app-plus": {
-                	"bounce": "none", // 关闭反弹效果
-                	"scrollIndicator": "none" // 禁止滚动条
-                }
-            }
-            
-        }
-        ,{
-            "path" : "pages/my/aboutUs/aboutUs",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "我的-关于我们",
-                "enablePullDownRefresh": false,
-                "navigationStyle": "custom", // 隐藏系统导航栏
-                // "navigationBarTitleText": "home"
-                "navigationBarTextStyle": "white",
-                "app-plus": {
-                	"bounce": "none", // 关闭反弹效果
-                	"scrollIndicator": "none" // 禁止滚动条
-                }
-            }
-            
-        }
-        ,{
-            "path" : "pages/my/setting/setting",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "我的-设置",
-                "enablePullDownRefresh": false,
-                "navigationStyle": "custom", // 隐藏系统导航栏
-                // "navigationBarTitleText": "home"
-                "navigationBarTextStyle": "white",
-                "app-plus": {
-                	"bounce": "none", // 关闭反弹效果
-                	"scrollIndicator": "none" // 禁止滚动条
-                }
-            }
-            
-        }
-        ,{
-            "path" : "pages/my/editUser/editUser",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "我的-编辑资料",
-                "enablePullDownRefresh": false,
-                "navigationStyle": "custom", // 隐藏系统导航栏
-                // "navigationBarTitleText": "home"
-                "navigationBarTextStyle": "white",
-                "app-plus": {
-                	"bounce": "none", // 关闭反弹效果
-                	"scrollIndicator": "none" // 禁止滚动条
-                }
-            }
-            
-        }
-        ,{
-            "path" : "pages/my/inviteFriends/inviteFriends",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "我的-邀请好友",
-                "enablePullDownRefresh": false,
-                "navigationStyle": "custom", // 隐藏系统导航栏
-                // "navigationBarTitleText": "home"
-                "navigationBarTextStyle": "white",
-                "app-plus": {
-                	"bounce": "none", // 关闭反弹效果
-                	"scrollIndicator": "none" // 禁止滚动条
-                }
-            }
-            
-        }
-        ,{
-            "path" : "pages/my/systemBulletin/systemBulletin",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "系统公告", 
+			}
+
+		}, {
+			"path": "pages/my/mySubscribe/mySubscribe",
+			"style": {
+				"navigationBarTitleText": "我的订阅",
 				"enablePullDownRefresh": false,
-                "navigationStyle": "custom", // 隐藏系统导航栏
-                // "navigationBarTitleText": "home"
-                "navigationBarTextStyle": "white",
-                "app-plus": {
-                	"bounce": "none", // 关闭反弹效果
-                	"scrollIndicator": "none" // 禁止滚动条
-                }
-            }
-            
-        }
-    ],
+				"navigationStyle": "custom", // 隐藏系统导航栏
+				// "navigationBarTitleText": "home"
+				"navigationBarTextStyle": "white",
+				"app-plus": {
+					"bounce": "none", // 关闭反弹效果
+					"scrollIndicator": "none" // 禁止滚动条
+				}
+			}
+
+		}, {
+			"path": "pages/my/muOpertaionRecord/muOpertaionRecord",
+			"style": {
+				"navigationBarTitleText": "我的-操作记录",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom", // 隐藏系统导航栏
+				// "navigationBarTitleText": "home"
+				"navigationBarTextStyle": "white",
+				"app-plus": {
+					"bounce": "none", // 关闭反弹效果
+					"scrollIndicator": "none" // 禁止滚动条
+				}
+			}
+
+		}, {
+			"path": "pages/my/userFadeback/userFadeback",
+			"style": {
+				"navigationBarTitleText": "我的-用户反馈",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom", // 隐藏系统导航栏
+				// "navigationBarTitleText": "home"
+				"navigationBarTextStyle": "white",
+				"app-plus": {
+					"bounce": "none", // 关闭反弹效果
+					"scrollIndicator": "none" // 禁止滚动条
+				}
+			}
+
+		}, {
+			"path": "pages/my/messageCenter/messageCenter",
+			"style": {
+				"navigationBarTitleText": "我的-消息中心",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom", // 隐藏系统导航栏
+				// "navigationBarTitleText": "home"
+				"navigationBarTextStyle": "white",
+				"app-plus": {
+					"bounce": "none", // 关闭反弹效果
+					"scrollIndicator": "none" // 禁止滚动条
+				}
+			}
+
+		}, {
+			"path": "pages/my/aboutUs/aboutUs",
+			"style": {
+				"navigationBarTitleText": "我的-关于我们",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom", // 隐藏系统导航栏
+				// "navigationBarTitleText": "home"
+				"navigationBarTextStyle": "white",
+				"app-plus": {
+					"bounce": "none", // 关闭反弹效果
+					"scrollIndicator": "none" // 禁止滚动条
+				}
+			}
+
+		}, {
+			"path": "pages/my/setting/setting",
+			"style": {
+				"navigationBarTitleText": "我的-设置",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom", // 隐藏系统导航栏
+				// "navigationBarTitleText": "home"
+				"navigationBarTextStyle": "white",
+				"app-plus": {
+					"bounce": "none", // 关闭反弹效果
+					"scrollIndicator": "none" // 禁止滚动条
+				}
+			}
+
+		}, {
+			"path": "pages/my/editUser/editUser",
+			"style": {
+				"navigationBarTitleText": "我的-编辑资料",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom", // 隐藏系统导航栏
+				// "navigationBarTitleText": "home"
+				"navigationBarTextStyle": "white",
+				"app-plus": {
+					"bounce": "none", // 关闭反弹效果
+					"scrollIndicator": "none" // 禁止滚动条
+				}
+			}
+
+		}, {
+			"path": "pages/my/inviteFriends/inviteFriends",
+			"style": {
+				"navigationBarTitleText": "我的-邀请好友",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom", // 隐藏系统导航栏
+				// "navigationBarTitleText": "home"
+				"navigationBarTextStyle": "white",
+				"app-plus": {
+					"bounce": "none", // 关闭反弹效果
+					"scrollIndicator": "none" // 禁止滚动条
+				}
+			}
+
+		}, {
+			"path": "pages/my/systemBulletin/systemBulletin",
+			"style": {
+				"navigationBarTitleText": "系统公告",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom", // 隐藏系统导航栏
+				// "navigationBarTitleText": "home"
+				"navigationBarTextStyle": "white",
+				"app-plus": {
+					"bounce": "none", // 关闭反弹效果
+					"scrollIndicator": "none" // 禁止滚动条
+				}
+			}
+
+		}, {
+			"path": "pages/login/password/password",
+			"style": {
+				"navigationBarTitleText": "登录密码",
+				"navigationStyle": "custom", // 隐藏系统导航栏
+				// "navigationBarTitleText": "home"
+				"navigationBarTextStyle": "white",
+				"app-plus": {
+					"bounce": "none", // 关闭反弹效果
+					"scrollIndicator": "none" // 禁止滚动条
+				}
+			}
+
+		}, {
+			"path": "pages/login/register/register",
+			"style": {
+				"navigationBarTitleText": "注册",
+				"navigationStyle": "custom", // 隐藏系统导航栏
+				// "navigationBarTitleText": "home"
+				"navigationBarTextStyle": "white",
+				"app-plus": {
+					"bounce": "none", // 关闭反弹效果
+					"scrollIndicator": "none" // 禁止滚动条
+				}
+			}
+
+		}, {
+			"path": "pages/login/invitationCode/invitationCode",
+			"style": {
+				"navigationBarTitleText": "注册邀请码",
+				"navigationStyle": "custom", // 隐藏系统导航栏
+				// "navigationBarTitleText": "home"
+				"navigationBarTextStyle": "white",
+				"app-plus": {
+					"bounce": "none", // 关闭反弹效果
+					"scrollIndicator": "none" // 禁止滚动条
+				}
+			}
+
+		}, {
+			"path": "pages/login/registerPwd/registerPwd",
+			"style": {
+				"navigationBarTitleText": "注册输入密码",
+				"navigationStyle": "custom", // 隐藏系统导航栏
+				// "navigationBarTitleText": "home"
+				"navigationBarTextStyle": "white",
+				"app-plus": {
+					"bounce": "none", // 关闭反弹效果
+					"scrollIndicator": "none" // 禁止滚动条
+				}
+			}
+
+		}, {
+			"path": "pages/login/forgetPwd/forgetPwd",
+			"style": {
+				"navigationBarTitleText": "忘记密码",
+				"navigationStyle": "custom", // 隐藏系统导航栏
+				// "navigationBarTitleText": "home"
+				"navigationBarTextStyle": "white",
+				"app-plus": {
+					"bounce": "none", // 关闭反弹效果
+					"scrollIndicator": "none" // 禁止滚动条
+				}
+			}
+
+		}
+	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "智能交易",

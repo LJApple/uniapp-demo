@@ -2,7 +2,7 @@
 <template>
 	<view class="api-auth page">
 		<!-- 导航 -->
-		<u-navbar :fixed="false" title="API授权" rightIcon="/static/home/remark.png" height="92rpx" :autoBack="true">
+		<u-navbar :fixed="false" title="API授权" leftIcon='/static/home/arrow-left-black.png' height="92rpx" :autoBack="true">
 			<template #right>
 				<u-image width="54rpx" height="54rpx" src="/static/home/remark.png"></u-image>
 			</template>
