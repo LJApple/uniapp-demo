@@ -35,8 +35,10 @@
 				.lcif-input {
 					border-radius: 226.92rpx;
 					font-size: 30.77rpx;
-					padding-left: 30rpx !important;
+					height: 87rpx;
+					padding-left: 40rpx !important;
 					padding-right: 200rpx !important;
+					box-sizing: border-box;
 				}
 				.lcif-forget {
 					position: absolute;

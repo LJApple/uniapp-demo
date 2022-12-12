@@ -18,6 +18,8 @@
 			<image class="ifc-left-circular" src="/static/userImg//share-left-circular.png"></image>
 			<!-- 右边小图 -->
 			<image class="ifc-right-circular" src="/static/userImg/share-right-circular.png"></image>
+			<!-- 星球右边 -->
+			<image class="ifc-right-star" src="/static/userImg//share-star.png"></image>
 			<!-- 中间内容 -->
 			<view class="ifc-center">
 				<view class="ifcc-title">专属邀请码</view>
@@ -90,7 +92,6 @@
 			},
 			// 保存图片
 			savePic() {
-				uni.$u.toast('长按')
 				const pages = getCurrentPages();
 				const page = pages[pages.length - 1];
 				const ws = page.$getAppWebview();
@@ -180,16 +181,16 @@
 			}
 
 			.ifc-cat {
-				width: 626.92rpx;
-				height: 377.19rpx;
-				margin-top: -50rpx;
+				width: 627rpx;
+				height: 272rpx;
+				// margin-top: -50rpx;
 			}
 
 			.ifc-left-circular {
 				position: absolute;
-				width: 178rpx;
-				height: 178rpx;
-				left: -73rpx;
+				width: 158rpx;
+				height: 162rpx;
+				left: 0rpx;
 				top: 145rpx;
 				opacity: 0.8;
 			}
@@ -200,6 +201,13 @@
 				height: 130rpx;
 				right: -78rpx;
 				top: 0;
+			}
+			.ifc-right-star {	
+				position: absolute;
+				width: 206rpx;
+				height: 146rpx;
+				right: -10rpx;
+				top: 160rpx;
 			}
 			.ifc-center {
 				width: 634.62rpx;

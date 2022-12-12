@@ -119,6 +119,7 @@
 			...mapState(['init'])
 		},
 		onLoad() {
+			// this.show = true
 			console.log(this.$http.post);
 		},
 		methods: {
