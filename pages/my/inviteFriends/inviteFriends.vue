@@ -121,6 +121,7 @@
 	/* #ifndef APP-NVUE */
 	page {
 		background-color: #F4C543;
+		overflow: hidden;
 	}
 
 	/* #endif */
@@ -131,6 +132,7 @@
 		overflow-x: auto;
 		padding-top: 88rpx;
 		box-sizing: border-box;
+		overflow: hidden;
 		.ifc-press {
 			position: fixed;
 			text-align: center;

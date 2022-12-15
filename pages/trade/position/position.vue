@@ -64,7 +64,7 @@
 		<view class="p-bottom">
 			<view class="pb-top">请先选择对应的交易对进行以下操作（只能选一个）</view>
 			<view class="ob-bottom">
-				<view @click="clearAll" class="obb-li isActive">一鍵清倉</view>
+				<view @click="clearAll" class="obb-li isActive">{{!isSlectList ? '一鍵清倉' : '清倉'}}</view>
 				<view @click="stopStr" class="obb-li" :class="isSlectList ? 'isActive' : ''">停止策略</view>
 				<view @click="editStr" class="obb-li" :class="isSlectList ? 'isActive' : ''">修改策略</view>
 			</view>

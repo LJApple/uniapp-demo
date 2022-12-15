@@ -15,13 +15,12 @@
             "delay" : 0
         },
         "modules" : {
-            "OAuth" : {},
-            "Payment" : {},
-            "Push" : {},
             "Share" : {},
             "Speech" : {},
             "VideoPlayer" : {},
-            "Maps" : {}
+            "Maps" : {},
+            "Camera" : {},
+            "Barcode" : {}
         },
         /* 应用发布信息 */
         "distribute" : {
@@ -79,13 +78,11 @@
                 "speech" : {
                     "ifly" : {}
                 },
-                "oauth" : {
-                    "univerify" : {},
-                    "apple" : {}
-                },
+                "oauth" : {},
                 "share" : {},
                 "maps" : {},
-                "ad" : {}
+                "ad" : {},
+                "payment" : {}
             },
             "orientation" : [ "portrait-primary" ],
             "icons" : {

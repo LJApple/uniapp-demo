@@ -37,7 +37,7 @@
 			return {
 				form: {
 					email: '',
-					arrgee: ''
+					arrgee: []
 				},
 				
 				rules: {
@@ -53,8 +53,7 @@
 		methods: {
 			// 下一步
 			nextStep() {
-				console.log(this.form.arrgee)
-				if (!this.form.arrgee) {
+				if (this.form.arrgee[0] !== '1') {
 					uni.$u.toast('请勾选统一用户协议！')
 					return
 				}

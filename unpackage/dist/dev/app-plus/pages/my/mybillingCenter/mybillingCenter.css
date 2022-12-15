@@ -23,7 +23,7 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.u-status-bar[data-v-782db321] {
+.u-status-bar[data-v-c0b45a48] {
   width: 100%;
 }
 /**
@@ -51,7 +51,7 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-uni-view[data-v-6dbbd241], uni-scroll-view[data-v-6dbbd241], uni-swiper-item[data-v-6dbbd241] {
+uni-view[data-v-1c933a9a], uni-scroll-view[data-v-1c933a9a], uni-swiper-item[data-v-1c933a9a] {
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
@@ -64,27 +64,27 @@ uni-view[data-v-6dbbd241], uni-scroll-view[data-v-6dbbd241], uni-swiper-item[dat
   font-family: "uicon-iconfont";
   src: url("https://at.alicdn.com/t/font_2225171_8kdcwk4po24.ttf") format("truetype");
 }
-.u-icon[data-v-6dbbd241] {
+.u-icon[data-v-1c933a9a] {
   display: flex;
   align-items: center;
 }
-.u-icon--left[data-v-6dbbd241] {
+.u-icon--left[data-v-1c933a9a] {
   flex-direction: row-reverse;
   align-items: center;
 }
-.u-icon--right[data-v-6dbbd241] {
+.u-icon--right[data-v-1c933a9a] {
   flex-direction: row;
   align-items: center;
 }
-.u-icon--top[data-v-6dbbd241] {
+.u-icon--top[data-v-1c933a9a] {
   flex-direction: column-reverse;
   justify-content: center;
 }
-.u-icon--bottom[data-v-6dbbd241] {
+.u-icon--bottom[data-v-1c933a9a] {
   flex-direction: column;
   justify-content: center;
 }
-.u-icon__icon[data-v-6dbbd241] {
+.u-icon__icon[data-v-1c933a9a] {
   font-family: uicon-iconfont;
   position: relative;
 
@@ -93,26 +93,26 @@ uni-view[data-v-6dbbd241], uni-scroll-view[data-v-6dbbd241], uni-swiper-item[dat
   flex-direction: row;
   align-items: center;
 }
-.u-icon__icon--primary[data-v-6dbbd241] {
+.u-icon__icon--primary[data-v-1c933a9a] {
   color: #3c9cff;
 }
-.u-icon__icon--success[data-v-6dbbd241] {
+.u-icon__icon--success[data-v-1c933a9a] {
   color: #5ac725;
 }
-.u-icon__icon--error[data-v-6dbbd241] {
+.u-icon__icon--error[data-v-1c933a9a] {
   color: #f56c6c;
 }
-.u-icon__icon--warning[data-v-6dbbd241] {
+.u-icon__icon--warning[data-v-1c933a9a] {
   color: #f9ae3d;
 }
-.u-icon__icon--info[data-v-6dbbd241] {
+.u-icon__icon--info[data-v-1c933a9a] {
   color: #909399;
 }
-.u-icon__img[data-v-6dbbd241] {
+.u-icon__img[data-v-1c933a9a] {
   height: auto;
   will-change: transform;
 }
-.u-icon__label[data-v-6dbbd241] {
+.u-icon__label[data-v-1c933a9a] {
   line-height: 1;
 }
 /**
@@ -140,7 +140,7 @@ uni-view[data-v-6dbbd241], uni-scroll-view[data-v-6dbbd241], uni-swiper-item[dat
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-uni-view[data-v-0e9610be], uni-scroll-view[data-v-0e9610be], uni-swiper-item[data-v-0e9610be] {
+uni-view[data-v-9d9e7ee2], uni-scroll-view[data-v-9d9e7ee2], uni-swiper-item[data-v-9d9e7ee2] {
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
@@ -149,14 +149,14 @@ uni-view[data-v-0e9610be], uni-scroll-view[data-v-0e9610be], uni-swiper-item[dat
   align-items: stretch;
   align-content: flex-start;
 }
-.u-navbar--fixed[data-v-0e9610be] {
+.u-navbar--fixed[data-v-9d9e7ee2] {
   position: fixed;
   left: 0;
   right: 0;
   top: 0;
   z-index: 11;
 }
-.u-navbar__content[data-v-0e9610be] {
+.u-navbar__content[data-v-9d9e7ee2] {
 
   display: flex;
 
@@ -167,7 +167,7 @@ uni-view[data-v-0e9610be], uni-scroll-view[data-v-0e9610be], uni-swiper-item[dat
   position: relative;
   justify-content: center;
 }
-.u-navbar__content__left[data-v-0e9610be], .u-navbar__content__right[data-v-0e9610be] {
+.u-navbar__content__left[data-v-9d9e7ee2], .u-navbar__content__right[data-v-9d9e7ee2] {
   padding: 0 13px;
   position: absolute;
   top: 0;
@@ -178,25 +178,25 @@ uni-view[data-v-0e9610be], uni-scroll-view[data-v-0e9610be], uni-swiper-item[dat
   flex-direction: row;
   align-items: center;
 }
-.u-navbar__content__left[data-v-0e9610be] {
+.u-navbar__content__left[data-v-9d9e7ee2] {
   left: 0;
 }
-.u-navbar__content__left--hover[data-v-0e9610be] {
+.u-navbar__content__left--hover[data-v-9d9e7ee2] {
   opacity: 0.7;
 }
-.u-navbar__content__left__text[data-v-0e9610be] {
+.u-navbar__content__left__text[data-v-9d9e7ee2] {
   font-size: 15px;
   margin-left: 3px;
 }
-.u-navbar__content__title[data-v-0e9610be] {
+.u-navbar__content__title[data-v-9d9e7ee2] {
   text-align: center;
   font-size: 16px;
   color: #303133;
 }
-.u-navbar__content__right[data-v-0e9610be] {
+.u-navbar__content__right[data-v-9d9e7ee2] {
   right: 0;
 }
-.u-navbar__content__right__text[data-v-0e9610be] {
+.u-navbar__content__right__text[data-v-9d9e7ee2] {
   font-size: 15px;
   margin-left: 3px;
 }
@@ -225,7 +225,7 @@ uni-view[data-v-0e9610be], uni-scroll-view[data-v-0e9610be], uni-swiper-item[dat
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-uni-view[data-v-5ebae466], uni-scroll-view[data-v-5ebae466], uni-swiper-item[data-v-5ebae466] {
+uni-view[data-v-bd84101d], uni-scroll-view[data-v-bd84101d], uni-swiper-item[data-v-bd84101d] {
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
@@ -234,7 +234,7 @@ uni-view[data-v-5ebae466], uni-scroll-view[data-v-5ebae466], uni-swiper-item[dat
   align-items: stretch;
   align-content: flex-start;
 }
-.u-empty[data-v-5ebae466] {
+.u-empty[data-v-bd84101d] {
 
   display: flex;
 
@@ -243,7 +243,7 @@ uni-view[data-v-5ebae466], uni-scroll-view[data-v-5ebae466], uni-swiper-item[dat
   justify-content: center;
   align-items: center;
 }
-.u-empty__text[data-v-5ebae466] {
+.u-empty__text[data-v-bd84101d] {
 
   display: flex;
 
@@ -252,7 +252,7 @@ uni-view[data-v-5ebae466], uni-scroll-view[data-v-5ebae466], uni-swiper-item[dat
   align-items: center;
   margin-top: 0.625rem;
 }
-.u-slot-wrap[data-v-5ebae466] {
+.u-slot-wrap[data-v-bd84101d] {
 
   display: flex;
 

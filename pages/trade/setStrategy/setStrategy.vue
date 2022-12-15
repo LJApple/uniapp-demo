@@ -195,6 +195,7 @@
 	.st-content {
 		padding: 0 31rpx;
 		position: relative;
+		box-sizing: border-box;
 		.stc-sus {
 			position: absolute;
 			width: calc(100vw - 62rpx);
@@ -271,7 +272,9 @@
 			color: rgba(102, 102, 102, 1);
 		}
 		.stc-btn {
-			margin-top: 156rpx;
+			position: fixed;
+			bottom: 30rpx;
+			width: calc(100vw - 62rpx);
 		}
 	}
 }

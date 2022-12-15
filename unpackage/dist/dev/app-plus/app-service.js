@@ -1,28 +1,12 @@
-var __defProp = Object.defineProperty;
-var __defProps = Object.defineProperties;
-var __getOwnPropDescs = Object.getOwnPropertyDescriptors;
-var __getOwnPropSymbols = Object.getOwnPropertySymbols;
-var __hasOwnProp = Object.prototype.hasOwnProperty;
-var __propIsEnum = Object.prototype.propertyIsEnumerable;
-var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
-var __spreadValues = (a, b) => {
-  for (var prop in b || (b = {}))
-    if (__hasOwnProp.call(b, prop))
-      __defNormalProp(a, prop, b[prop]);
-  if (__getOwnPropSymbols)
-    for (var prop of __getOwnPropSymbols(b)) {
-      if (__propIsEnum.call(b, prop))
-        __defNormalProp(a, prop, b[prop]);
-    }
-  return a;
-};
-var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
 if (typeof Promise !== "undefined" && !Promise.prototype.finally) {
   Promise.prototype.finally = function(callback) {
     const promise = this.constructor;
-    return this.then((value) => promise.resolve(callback()).then(() => value), (reason) => promise.resolve(callback()).then(() => {
-      throw reason;
-    }));
+    return this.then(
+      (value) => promise.resolve(callback()).then(() => value),
+      (reason) => promise.resolve(callback()).then(() => {
+        throw reason;
+      })
+    );
   };
 }
 ;
@@ -64,7 +48,7 @@ if (uni.restoreGlobal) {
 
 `, "color: #ffffff; background: #3c9cff; padding:5px 0;", "color: #3c9cff;background: #ffffff; padding:5px 0;");
   }
-  var config = {
+  const config = {
     v: version,
     version,
     type: [
@@ -87,7 +71,7 @@ if (uni.restoreGlobal) {
     },
     unit: "px"
   };
-  var actionSheet = {
+  const actionSheet = {
     actionSheet: {
       show: false,
       title: "",
@@ -102,7 +86,7 @@ if (uni.restoreGlobal) {
       round: 0
     }
   };
-  var album = {
+  const album = {
     album: {
       urls: () => [],
       keyName: "",
@@ -117,7 +101,7 @@ if (uni.restoreGlobal) {
       showMore: true
     }
   };
-  var alert = {
+  const alert = {
     alert: {
       title: "",
       type: "warning",
@@ -129,7 +113,7 @@ if (uni.restoreGlobal) {
       fontSize: 14
     }
   };
-  var avatar = {
+  const avatar = {
     avatar: {
       src: "",
       shape: "circle",
@@ -147,7 +131,7 @@ if (uni.restoreGlobal) {
       name: ""
     }
   };
-  var avatarGroup = {
+  const avatarGroup = {
     avatarGroup: {
       urls: () => [],
       maxCount: 5,
@@ -160,7 +144,7 @@ if (uni.restoreGlobal) {
       extraValue: 0
     }
   };
-  var backtop = {
+  const backtop = {
     backtop: {
       mode: "circle",
       icon: "arrow-upward",
@@ -177,7 +161,7 @@ if (uni.restoreGlobal) {
       })
     }
   };
-  var badge = {
+  const badge = {
     badge: {
       isDot: false,
       value: "",
@@ -194,7 +178,7 @@ if (uni.restoreGlobal) {
       absolute: false
     }
   };
-  var button = {
+  const button = {
     button: {
       hairline: false,
       type: "info",
@@ -226,7 +210,7 @@ if (uni.restoreGlobal) {
       color: ""
     }
   };
-  var calendar = {
+  const calendar = {
     calendar: {
       title: "\u65E5\u671F\u9009\u62E9",
       showTitle: true,
@@ -258,12 +242,12 @@ if (uni.restoreGlobal) {
       monthNum: 3
     }
   };
-  var carKeyboard = {
+  const carKeyboard = {
     carKeyboard: {
       random: false
     }
   };
-  var cell = {
+  const cell = {
     cell: {
       customClass: "",
       title: "",
@@ -288,14 +272,14 @@ if (uni.restoreGlobal) {
       name: ""
     }
   };
-  var cellGroup = {
+  const cellGroup = {
     cellGroup: {
       title: "",
       border: true,
       customStyle: {}
     }
   };
-  var checkbox = {
+  const checkbox = {
     checkbox: {
       name: "",
       shape: "",
@@ -312,7 +296,7 @@ if (uni.restoreGlobal) {
       labelDisabled: ""
     }
   };
-  var checkboxGroup = {
+  const checkboxGroup = {
     checkboxGroup: {
       name: "",
       value: () => [],
@@ -331,12 +315,12 @@ if (uni.restoreGlobal) {
       borderBottom: false
     }
   };
-  var circleProgress = {
+  const circleProgress = {
     circleProgress: {
       percentage: 30
     }
   };
-  var code$1 = {
+  const code$1 = {
     code: {
       seconds: 60,
       startText: "\u83B7\u53D6\u9A8C\u8BC1\u7801",
@@ -346,7 +330,7 @@ if (uni.restoreGlobal) {
       uniqueKey: ""
     }
   };
-  var codeInput = {
+  const codeInput = {
     codeInput: {
       adjustPosition: true,
       maxlength: 6,
@@ -365,7 +349,7 @@ if (uni.restoreGlobal) {
       disabledDot: true
     }
   };
-  var col = {
+  const col = {
     col: {
       span: 12,
       offset: 0,
@@ -374,14 +358,14 @@ if (uni.restoreGlobal) {
       textAlign: "left"
     }
   };
-  var collapse = {
+  const collapse = {
     collapse: {
       value: null,
       accordion: false,
       border: true
     }
   };
-  var collapseItem = {
+  const collapseItem = {
     collapseItem: {
       title: "",
       value: "",
@@ -396,7 +380,7 @@ if (uni.restoreGlobal) {
       duration: 300
     }
   };
-  var columnNotice = {
+  const columnNotice = {
     columnNotice: {
       text: "",
       icon: "volume",
@@ -410,7 +394,7 @@ if (uni.restoreGlobal) {
       disableTouch: true
     }
   };
-  var countDown = {
+  const countDown = {
     countDown: {
       time: 0,
       format: "HH:mm:ss",
@@ -418,7 +402,7 @@ if (uni.restoreGlobal) {
       millisecond: false
     }
   };
-  var countTo = {
+  const countTo = {
     countTo: {
       startVal: 0,
       endVal: 0,
@@ -433,7 +417,7 @@ if (uni.restoreGlobal) {
       separator: ""
     }
   };
-  var datetimePicker = {
+  const datetimePicker = {
     datetimePicker: {
       show: false,
       showToolbar: true,
@@ -459,7 +443,7 @@ if (uni.restoreGlobal) {
       defaultIndex: () => []
     }
   };
-  var divider = {
+  const divider = {
     divider: {
       dashed: false,
       hairline: true,
@@ -471,7 +455,7 @@ if (uni.restoreGlobal) {
       lineColor: "#dcdfe6"
     }
   };
-  var empty$1 = {
+  const empty$1 = {
     empty: {
       icon: "",
       text: "",
@@ -486,7 +470,7 @@ if (uni.restoreGlobal) {
       marginTop: 0
     }
   };
-  var form = {
+  const form = {
     form: {
       model: () => ({}),
       rules: () => ({}),
@@ -498,7 +482,7 @@ if (uni.restoreGlobal) {
       labelStyle: () => ({})
     }
   };
-  var formItem = {
+  const formItem = {
     formItem: {
       label: "",
       prop: "",
@@ -510,7 +494,7 @@ if (uni.restoreGlobal) {
       leftIconStyle: ""
     }
   };
-  var gap = {
+  const gap = {
     gap: {
       bgColor: "transparent",
       height: 20,
@@ -519,14 +503,14 @@ if (uni.restoreGlobal) {
       customStyle: {}
     }
   };
-  var grid = {
+  const grid = {
     grid: {
       col: 3,
       border: false,
       align: "left"
     }
   };
-  var gridItem = {
+  const gridItem = {
     gridItem: {
       name: null,
       bgColor: "transparent"
@@ -535,7 +519,7 @@ if (uni.restoreGlobal) {
   const {
     color: color$3
   } = config;
-  var icon = {
+  const icon = {
     icon: {
       name: "",
       color: color$3["u-content-color"],
@@ -556,7 +540,7 @@ if (uni.restoreGlobal) {
       stop: false
     }
   };
-  var image$1 = {
+  const image$1 = {
     image: {
       src: "",
       mode: "aspectFill",
@@ -576,7 +560,7 @@ if (uni.restoreGlobal) {
       bgColor: "#f3f4f6"
     }
   };
-  var indexAnchor = {
+  const indexAnchor = {
     indexAnchor: {
       text: "",
       color: "#606266",
@@ -585,7 +569,7 @@ if (uni.restoreGlobal) {
       height: 32
     }
   };
-  var indexList = {
+  const indexList = {
     indexList: {
       inactiveColor: "#606266",
       activeColor: "#5677fc",
@@ -594,7 +578,7 @@ if (uni.restoreGlobal) {
       customNavHeight: 0
     }
   };
-  var input = {
+  const input = {
     input: {
       value: "",
       type: "text",
@@ -632,7 +616,7 @@ if (uni.restoreGlobal) {
       formatter: null
     }
   };
-  var keyboard = {
+  const keyboard = {
     keyboard: {
       mode: "number",
       dotDisabled: false,
@@ -652,7 +636,7 @@ if (uni.restoreGlobal) {
       autoChange: false
     }
   };
-  var line = {
+  const line = {
     line: {
       color: "#d6d7d9",
       length: "100%",
@@ -662,7 +646,7 @@ if (uni.restoreGlobal) {
       dashed: false
     }
   };
-  var lineProgress = {
+  const lineProgress = {
     lineProgress: {
       activeColor: "#19be6b",
       inactiveColor: "#ececec",
@@ -674,7 +658,7 @@ if (uni.restoreGlobal) {
   const {
     color: color$2
   } = config;
-  var link = {
+  const link = {
     link: {
       color: color$2["u-primary"],
       fontSize: 15,
@@ -685,7 +669,7 @@ if (uni.restoreGlobal) {
       text: ""
     }
   };
-  var list = {
+  const list = {
     list: {
       showScrollbar: false,
       lowerThreshold: 50,
@@ -703,7 +687,7 @@ if (uni.restoreGlobal) {
       preLoadScreen: 1
     }
   };
-  var listItem = {
+  const listItem = {
     listItem: {
       anchor: ""
     }
@@ -711,7 +695,7 @@ if (uni.restoreGlobal) {
   const {
     color: color$1
   } = config;
-  var loadingIcon = {
+  const loadingIcon = {
     loadingIcon: {
       show: true,
       color: color$1["u-tips-color"],
@@ -726,7 +710,7 @@ if (uni.restoreGlobal) {
       inactiveColor: ""
     }
   };
-  var loadingPage = {
+  const loadingPage = {
     loadingPage: {
       loadingText: "\u6B63\u5728\u52A0\u8F7D",
       image: "",
@@ -739,7 +723,7 @@ if (uni.restoreGlobal) {
       loadingColor: "#C8C8C8"
     }
   };
-  var loadmore = {
+  const loadmore = {
     loadmore: {
       status: "loadmore",
       bgColor: "transparent",
@@ -761,7 +745,7 @@ if (uni.restoreGlobal) {
       dashed: false
     }
   };
-  var modal = {
+  const modal = {
     modal: {
       show: false,
       title: "",
@@ -794,7 +778,7 @@ if (uni.restoreGlobal) {
     lightColor: "#c0c4cc",
     borderColor: "#e4e7ed"
   };
-  var navbar = {
+  const navbar = {
     navbar: {
       safeAreaInsetTop: true,
       placeholder: false,
@@ -814,14 +798,14 @@ if (uni.restoreGlobal) {
       titleStyle: ""
     }
   };
-  var noNetwork = {
+  const noNetwork = {
     noNetwork: {
       tips: "\u54CE\u5440\uFF0C\u7F51\u7EDC\u4FE1\u53F7\u4E22\u5931",
       zIndex: "",
       image: "data:image/png;base64,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"
     }
   };
-  var noticeBar = {
+  const noticeBar = {
     noticeBar: {
       text: () => [],
       direction: "row",
@@ -838,7 +822,7 @@ if (uni.restoreGlobal) {
       linkType: "navigateTo"
     }
   };
-  var notify = {
+  const notify = {
     notify: {
       top: 0,
       type: "primary",
@@ -850,7 +834,7 @@ if (uni.restoreGlobal) {
       safeAreaInsetTop: false
     }
   };
-  var numberBox = {
+  const numberBox = {
     numberBox: {
       name: "",
       value: 0,
@@ -875,14 +859,14 @@ if (uni.restoreGlobal) {
       iconStyle: ""
     }
   };
-  var numberKeyboard = {
+  const numberKeyboard = {
     numberKeyboard: {
       mode: "number",
       dotDisabled: false,
       random: false
     }
   };
-  var overlay = {
+  const overlay = {
     overlay: {
       show: false,
       zIndex: 10070,
@@ -890,7 +874,7 @@ if (uni.restoreGlobal) {
       opacity: 0.5
     }
   };
-  var parse = {
+  const parse = {
     parse: {
       copyLink: true,
       errorImg: "",
@@ -902,7 +886,7 @@ if (uni.restoreGlobal) {
       showImgMenu: true
     }
   };
-  var picker = {
+  const picker = {
     picker: {
       show: false,
       showToolbar: true,
@@ -921,7 +905,7 @@ if (uni.restoreGlobal) {
       immediateChange: false
     }
   };
-  var popup = {
+  const popup = {
     popup: {
       show: false,
       overlay: true,
@@ -941,7 +925,7 @@ if (uni.restoreGlobal) {
       overlayOpacity: 0.5
     }
   };
-  var radio = {
+  const radio = {
     radio: {
       name: "",
       shape: "",
@@ -958,7 +942,7 @@ if (uni.restoreGlobal) {
       placement: ""
     }
   };
-  var radioGroup = {
+  const radioGroup = {
     radioGroup: {
       value: "",
       disabled: false,
@@ -978,7 +962,7 @@ if (uni.restoreGlobal) {
       iconPlacement: "left"
     }
   };
-  var rate = {
+  const rate = {
     rate: {
       value: 1,
       count: 5,
@@ -994,7 +978,7 @@ if (uni.restoreGlobal) {
       touchable: true
     }
   };
-  var readMore = {
+  const readMore = {
     readMore: {
       showHeight: 400,
       toggle: false,
@@ -1006,14 +990,14 @@ if (uni.restoreGlobal) {
       name: ""
     }
   };
-  var row = {
+  const row = {
     row: {
       gutter: 0,
       justify: "start",
       align: "center"
     }
   };
-  var rowNotice = {
+  const rowNotice = {
     rowNotice: {
       text: "",
       icon: "volume",
@@ -1024,7 +1008,7 @@ if (uni.restoreGlobal) {
       speed: 80
     }
   };
-  var scrollList = {
+  const scrollList = {
     scrollList: {
       indicatorWidth: 50,
       indicatorBarWidth: 20,
@@ -1034,7 +1018,7 @@ if (uni.restoreGlobal) {
       indicatorStyle: ""
     }
   };
-  var search = {
+  const search = {
     search: {
       shape: "round",
       bgColor: "#f2f2f2",
@@ -1061,7 +1045,7 @@ if (uni.restoreGlobal) {
       label: null
     }
   };
-  var section = {
+  const section = {
     section: {
       title: "",
       subTitle: "\u66F4\u591A",
@@ -1075,7 +1059,7 @@ if (uni.restoreGlobal) {
       arrow: true
     }
   };
-  var skeleton = {
+  const skeleton = {
     skeleton: {
       loading: true,
       animate: true,
@@ -1090,7 +1074,7 @@ if (uni.restoreGlobal) {
       avatarShape: "circle"
     }
   };
-  var slider = {
+  const slider = {
     slider: {
       value: 0,
       blockSize: 18,
@@ -1106,12 +1090,12 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  var statusBar = {
+  const statusBar = {
     statusBar: {
       bgColor: "transparent"
     }
   };
-  var steps = {
+  const steps = {
     steps: {
       direction: "row",
       current: 0,
@@ -1122,7 +1106,7 @@ if (uni.restoreGlobal) {
       dot: false
     }
   };
-  var stepsItem = {
+  const stepsItem = {
     stepsItem: {
       title: "",
       desc: "",
@@ -1130,7 +1114,7 @@ if (uni.restoreGlobal) {
       error: false
     }
   };
-  var sticky = {
+  const sticky = {
     sticky: {
       offsetTop: 0,
       customNavHeight: 0,
@@ -1140,7 +1124,7 @@ if (uni.restoreGlobal) {
       index: ""
     }
   };
-  var subsection = {
+  const subsection = {
     subsection: {
       list: [],
       current: 0,
@@ -1153,12 +1137,12 @@ if (uni.restoreGlobal) {
       keyName: "name"
     }
   };
-  var swipeAction = {
+  const swipeAction = {
     swipeAction: {
       autoClose: true
     }
   };
-  var swipeActionItem = {
+  const swipeActionItem = {
     swipeActionItem: {
       show: false,
       name: "",
@@ -1169,7 +1153,7 @@ if (uni.restoreGlobal) {
       duration: 300
     }
   };
-  var swiper = {
+  const swiper = {
     swiper: {
       list: () => [],
       indicator: false,
@@ -1197,7 +1181,7 @@ if (uni.restoreGlobal) {
       showTitle: false
     }
   };
-  var swipterIndicator = {
+  const swipterIndicator = {
     swiperIndicator: {
       length: 0,
       current: 0,
@@ -1206,7 +1190,7 @@ if (uni.restoreGlobal) {
       indicatorMode: "line"
     }
   };
-  var _switch = {
+  const _switch = {
     switch: {
       loading: false,
       disabled: false,
@@ -1220,7 +1204,7 @@ if (uni.restoreGlobal) {
       space: 0
     }
   };
-  var tabbar = {
+  const tabbar = {
     tabbar: {
       value: null,
       safeAreaInsetBottom: true,
@@ -1232,7 +1216,7 @@ if (uni.restoreGlobal) {
       placeholder: true
     }
   };
-  var tabbarItem = {
+  const tabbarItem = {
     tabbarItem: {
       name: null,
       icon: "",
@@ -1242,7 +1226,7 @@ if (uni.restoreGlobal) {
       badgeStyle: "top: 6px;right:2px;"
     }
   };
-  var tabs = {
+  const tabs = {
     tabs: {
       duration: 300,
       list: () => [],
@@ -1264,7 +1248,7 @@ if (uni.restoreGlobal) {
       keyName: "name"
     }
   };
-  var tag = {
+  const tag = {
     tag: {
       type: "primary",
       disabled: false,
@@ -1283,7 +1267,7 @@ if (uni.restoreGlobal) {
       icon: ""
     }
   };
-  var text = {
+  const text = {
     text: {
       type: "",
       show: true,
@@ -1310,7 +1294,7 @@ if (uni.restoreGlobal) {
       wordWrap: "normal"
     }
   };
-  var textarea = {
+  const textarea = {
     textarea: {
       value: "",
       placeholder: "",
@@ -1336,7 +1320,7 @@ if (uni.restoreGlobal) {
       formatter: null
     }
   };
-  var toast$1 = {
+  const toast$1 = {
     toast: {
       zIndex: 10090,
       loading: false,
@@ -1356,7 +1340,7 @@ if (uni.restoreGlobal) {
       back: false
     }
   };
-  var toolbar = {
+  const toolbar = {
     toolbar: {
       show: true,
       cancelText: "\u53D6\u6D88",
@@ -1366,7 +1350,7 @@ if (uni.restoreGlobal) {
       title: ""
     }
   };
-  var tooltip = {
+  const tooltip = {
     tooltip: {
       text: "",
       copyText: "",
@@ -1381,7 +1365,7 @@ if (uni.restoreGlobal) {
       showToast: true
     }
   };
-  var transition$1 = {
+  const transition$1 = {
     transition: {
       show: false,
       mode: "fade",
@@ -1389,7 +1373,7 @@ if (uni.restoreGlobal) {
       timingFunction: "ease-out"
     }
   };
-  var upload = {
+  const upload = {
     upload: {
       accept: "image",
       capture: () => ["album", "camera"],
@@ -1415,17 +1399,146 @@ if (uni.restoreGlobal) {
       previewImage: true
     }
   };
-  var props$s = __spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues({}, actionSheet), album), alert), avatar), avatarGroup), backtop), badge), button), calendar), carKeyboard), cell), cellGroup), checkbox), checkboxGroup), circleProgress), code$1), codeInput), col), collapse), collapseItem), columnNotice), countDown), countTo), datetimePicker), divider), empty$1), form), formItem), gap), grid), gridItem), icon), image$1), indexAnchor), indexList), input), keyboard), line), lineProgress), link), list), listItem), loadingIcon), loadingPage), loadmore), modal), navbar), noNetwork), noticeBar), notify), numberBox), numberKeyboard), overlay), parse), picker), popup), radio), radioGroup), rate), readMore), row), rowNotice), scrollList), search), section), skeleton), slider), statusBar), steps), stepsItem), sticky), subsection), swipeAction), swipeActionItem), swiper), swipterIndicator), _switch), tabbar), tabbarItem), tabs), tag), text), textarea), toast$1), toolbar), tooltip), transition$1), upload);
-  var props$r = {
+  const props$s = {
+    ...actionSheet,
+    ...album,
+    ...alert,
+    ...avatar,
+    ...avatarGroup,
+    ...backtop,
+    ...badge,
+    ...button,
+    ...calendar,
+    ...carKeyboard,
+    ...cell,
+    ...cellGroup,
+    ...checkbox,
+    ...checkboxGroup,
+    ...circleProgress,
+    ...code$1,
+    ...codeInput,
+    ...col,
+    ...collapse,
+    ...collapseItem,
+    ...columnNotice,
+    ...countDown,
+    ...countTo,
+    ...datetimePicker,
+    ...divider,
+    ...empty$1,
+    ...form,
+    ...formItem,
+    ...gap,
+    ...grid,
+    ...gridItem,
+    ...icon,
+    ...image$1,
+    ...indexAnchor,
+    ...indexList,
+    ...input,
+    ...keyboard,
+    ...line,
+    ...lineProgress,
+    ...link,
+    ...list,
+    ...listItem,
+    ...loadingIcon,
+    ...loadingPage,
+    ...loadmore,
+    ...modal,
+    ...navbar,
+    ...noNetwork,
+    ...noticeBar,
+    ...notify,
+    ...numberBox,
+    ...numberKeyboard,
+    ...overlay,
+    ...parse,
+    ...picker,
+    ...popup,
+    ...radio,
+    ...radioGroup,
+    ...rate,
+    ...readMore,
+    ...row,
+    ...rowNotice,
+    ...scrollList,
+    ...search,
+    ...section,
+    ...skeleton,
+    ...slider,
+    ...statusBar,
+    ...steps,
+    ...stepsItem,
+    ...sticky,
+    ...subsection,
+    ...swipeAction,
+    ...swipeActionItem,
+    ...swiper,
+    ...swipterIndicator,
+    ..._switch,
+    ...tabbar,
+    ...tabbarItem,
+    ...tabs,
+    ...tag,
+    ...text,
+    ...textarea,
+    ...toast$1,
+    ...toolbar,
+    ...tooltip,
+    ...transition$1,
+    ...upload
+  };
+  const props$r = {
     props: {
-      bgColor: {
+      show: {
+        type: Boolean,
+        default: props$s.loadingIcon.show
+      },
+      color: {
         type: String,
-        default: props$s.statusBar.bgColor
+        default: props$s.loadingIcon.color
+      },
+      textColor: {
+        type: String,
+        default: props$s.loadingIcon.textColor
+      },
+      vertical: {
+        type: Boolean,
+        default: props$s.loadingIcon.vertical
+      },
+      mode: {
+        type: String,
+        default: props$s.loadingIcon.mode
+      },
+      size: {
+        type: [String, Number],
+        default: props$s.loadingIcon.size
+      },
+      textSize: {
+        type: [String, Number],
+        default: props$s.loadingIcon.textSize
+      },
+      text: {
+        type: [String, Number],
+        default: props$s.loadingIcon.text
+      },
+      timingFunction: {
+        type: String,
+        default: props$s.loadingIcon.timingFunction
+      },
+      duration: {
+        type: [String, Number],
+        default: props$s.loadingIcon.duration
+      },
+      inactiveColor: {
+        type: String,
+        default: props$s.loadingIcon.inactiveColor
       }
     }
   };
-  var mpMixin = {};
-  var mixin = {
+  const mpMixin = {};
+  const mixin = {
     props: {
       customStyle: {
         type: [Object, String],
@@ -1534,38 +1647,452 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  var _export_sfc = (sfc, props2) => {
+  const _export_sfc = (sfc, props2) => {
     const target = sfc.__vccOpts || sfc;
     for (const [key, val] of props2) {
       target[key] = val;
     }
     return target;
   };
-  const _sfc_main$14 = {
-    name: "u-status-bar",
+  const _sfc_main$13 = {
+    name: "u-loading-icon",
     mixins: [mpMixin, mixin, props$r],
     data() {
-      return {};
+      return {
+        array12: Array.from({
+          length: 12
+        }),
+        aniAngel: 360,
+        webviewHide: false,
+        loading: false
+      };
     },
     computed: {
-      style() {
-        const style = {};
-        style.height = uni.$u.addUnit(uni.$u.sys().statusBarHeight, "px");
-        style.backgroundColor = this.bgColor;
-        return uni.$u.deepMerge(style, uni.$u.addStyle(this.customStyle));
+      otherBorderColor() {
+        const lightColor = uni.$u.colorGradient(this.color, "#ffffff", 100)[80];
+        if (this.mode === "circle") {
+          return this.inactiveColor ? this.inactiveColor : lightColor;
+        } else {
+          return "transparent";
+        }
+      }
+    },
+    watch: {
+      show(n) {
+      }
+    },
+    mounted() {
+      this.init();
+    },
+    methods: {
+      init() {
+        setTimeout(() => {
+          this.show && this.addEventListenerToWebview();
+        }, 20);
+      },
+      addEventListenerToWebview() {
+        const pages2 = getCurrentPages();
+        const page2 = pages2[pages2.length - 1];
+        const currentWebview = page2.$getAppWebview();
+        currentWebview.addEventListener("hide", () => {
+          this.webviewHide = true;
+        });
+        currentWebview.addEventListener("show", () => {
+          this.webviewHide = false;
+        });
       }
     }
   };
-  function _sfc_render$13(_ctx, _cache, $props, $setup, $data, $options) {
-    return vue.openBlock(), vue.createElementBlock("view", {
-      style: vue.normalizeStyle([$options.style]),
-      class: "u-status-bar"
+  function _sfc_render$12(_ctx, _cache, $props, $setup, $data, $options) {
+    return _ctx.show ? (vue.openBlock(), vue.createElementBlock("view", {
+      key: 0,
+      class: vue.normalizeClass(["u-loading-icon", [_ctx.vertical && "u-loading-icon--vertical"]]),
+      style: vue.normalizeStyle([_ctx.$u.addStyle(_ctx.customStyle)])
     }, [
-      vue.renderSlot(_ctx.$slots, "default", {}, void 0, true)
+      !$data.webviewHide ? (vue.openBlock(), vue.createElementBlock("view", {
+        key: 0,
+        class: vue.normalizeClass(["u-loading-icon__spinner", [`u-loading-icon__spinner--${_ctx.mode}`]]),
+        ref: "ani",
+        style: vue.normalizeStyle({
+          color: _ctx.color,
+          width: _ctx.$u.addUnit(_ctx.size),
+          height: _ctx.$u.addUnit(_ctx.size),
+          borderTopColor: _ctx.color,
+          borderBottomColor: $options.otherBorderColor,
+          borderLeftColor: $options.otherBorderColor,
+          borderRightColor: $options.otherBorderColor,
+          "animation-duration": `${_ctx.duration}ms`,
+          "animation-timing-function": _ctx.mode === "semicircle" || _ctx.mode === "circle" ? _ctx.timingFunction : ""
+        })
+      }, [
+        _ctx.mode === "spinner" ? (vue.openBlock(true), vue.createElementBlock(vue.Fragment, { key: 0 }, vue.renderList($data.array12, (item2, index2) => {
+          return vue.openBlock(), vue.createElementBlock("view", {
+            key: index2,
+            class: "u-loading-icon__dot"
+          });
+        }), 128)) : vue.createCommentVNode("v-if", true)
+      ], 6)) : vue.createCommentVNode("v-if", true),
+      _ctx.text ? (vue.openBlock(), vue.createElementBlock("text", {
+        key: 1,
+        class: "u-loading-icon__text",
+        style: vue.normalizeStyle({
+          fontSize: _ctx.$u.addUnit(_ctx.textSize),
+          color: _ctx.textColor
+        })
+      }, vue.toDisplayString(_ctx.text), 5)) : vue.createCommentVNode("v-if", true)
+    ], 6)) : vue.createCommentVNode("v-if", true);
+  }
+  const __easycom_1$5 = /* @__PURE__ */ _export_sfc(_sfc_main$13, [["render", _sfc_render$12], ["__scopeId", "data-v-00752c6d"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-loading-icon/u-loading-icon.vue"]]);
+  const props$q = {
+    props: {
+      length: {
+        type: [String, Number],
+        default: props$s.swiperIndicator.length
+      },
+      current: {
+        type: [String, Number],
+        default: props$s.swiperIndicator.current
+      },
+      indicatorActiveColor: {
+        type: String,
+        default: props$s.swiperIndicator.indicatorActiveColor
+      },
+      indicatorInactiveColor: {
+        type: String,
+        default: props$s.swiperIndicator.indicatorInactiveColor
+      },
+      indicatorMode: {
+        type: String,
+        default: props$s.swiperIndicator.indicatorMode
+      }
+    }
+  };
+  const _sfc_main$12 = {
+    name: "u-swiper-indicator",
+    mixins: [mpMixin, mixin, props$q],
+    data() {
+      return {
+        lineWidth: 22
+      };
+    },
+    computed: {
+      lineStyle() {
+        let style = {};
+        style.width = uni.$u.addUnit(this.lineWidth);
+        style.transform = `translateX(${uni.$u.addUnit(this.current * this.lineWidth)})`;
+        style.backgroundColor = this.indicatorActiveColor;
+        return style;
+      },
+      dotStyle() {
+        return (index2) => {
+          let style = {};
+          style.backgroundColor = index2 === this.current ? this.indicatorActiveColor : this.indicatorInactiveColor;
+          return style;
+        };
+      }
+    }
+  };
+  function _sfc_render$11(_ctx, _cache, $props, $setup, $data, $options) {
+    return vue.openBlock(), vue.createElementBlock("view", { class: "u-swiper-indicator" }, [
+      _ctx.indicatorMode === "line" ? (vue.openBlock(), vue.createElementBlock("view", {
+        key: 0,
+        class: vue.normalizeClass(["u-swiper-indicator__wrapper", [`u-swiper-indicator__wrapper--${_ctx.indicatorMode}`]]),
+        style: vue.normalizeStyle({
+          width: _ctx.$u.addUnit($data.lineWidth * _ctx.length),
+          backgroundColor: _ctx.indicatorInactiveColor
+        })
+      }, [
+        vue.createElementVNode("view", {
+          class: "u-swiper-indicator__wrapper--line__bar",
+          style: vue.normalizeStyle([$options.lineStyle])
+        }, null, 4)
+      ], 6)) : vue.createCommentVNode("v-if", true),
+      _ctx.indicatorMode === "dot" ? (vue.openBlock(), vue.createElementBlock("view", {
+        key: 1,
+        class: "u-swiper-indicator__wrapper"
+      }, [
+        (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(_ctx.length, (item2, index2) => {
+          return vue.openBlock(), vue.createElementBlock("view", {
+            class: vue.normalizeClass(["u-swiper-indicator__wrapper__dot", [index2 === _ctx.current && "u-swiper-indicator__wrapper__dot--active"]]),
+            key: index2,
+            style: vue.normalizeStyle([$options.dotStyle(index2)])
+          }, null, 6);
+        }), 128))
+      ])) : vue.createCommentVNode("v-if", true)
+    ]);
+  }
+  const __easycom_1$4 = /* @__PURE__ */ _export_sfc(_sfc_main$12, [["render", _sfc_render$11], ["__scopeId", "data-v-23112adb"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-swiper-indicator/u-swiper-indicator.vue"]]);
+  const props$p = {
+    props: {
+      list: {
+        type: Array,
+        default: props$s.swiper.list
+      },
+      indicator: {
+        type: Boolean,
+        default: props$s.swiper.indicator
+      },
+      indicatorActiveColor: {
+        type: String,
+        default: props$s.swiper.indicatorActiveColor
+      },
+      indicatorInactiveColor: {
+        type: String,
+        default: props$s.swiper.indicatorInactiveColor
+      },
+      indicatorStyle: {
+        type: [String, Object],
+        default: props$s.swiper.indicatorStyle
+      },
+      indicatorMode: {
+        type: String,
+        default: props$s.swiper.indicatorMode
+      },
+      autoplay: {
+        type: Boolean,
+        default: props$s.swiper.autoplay
+      },
+      current: {
+        type: [String, Number],
+        default: props$s.swiper.current
+      },
+      currentItemId: {
+        type: String,
+        default: props$s.swiper.currentItemId
+      },
+      interval: {
+        type: [String, Number],
+        default: props$s.swiper.interval
+      },
+      duration: {
+        type: [String, Number],
+        default: props$s.swiper.duration
+      },
+      circular: {
+        type: Boolean,
+        default: props$s.swiper.circular
+      },
+      previousMargin: {
+        type: [String, Number],
+        default: props$s.swiper.previousMargin
+      },
+      nextMargin: {
+        type: [String, Number],
+        default: props$s.swiper.nextMargin
+      },
+      acceleration: {
+        type: Boolean,
+        default: props$s.swiper.acceleration
+      },
+      displayMultipleItems: {
+        type: Number,
+        default: props$s.swiper.displayMultipleItems
+      },
+      easingFunction: {
+        type: String,
+        default: props$s.swiper.easingFunction
+      },
+      keyName: {
+        type: String,
+        default: props$s.swiper.keyName
+      },
+      imgMode: {
+        type: String,
+        default: props$s.swiper.imgMode
+      },
+      height: {
+        type: [String, Number],
+        default: props$s.swiper.height
+      },
+      bgColor: {
+        type: String,
+        default: props$s.swiper.bgColor
+      },
+      radius: {
+        type: [String, Number],
+        default: props$s.swiper.radius
+      },
+      loading: {
+        type: Boolean,
+        default: props$s.swiper.loading
+      },
+      showTitle: {
+        type: Boolean,
+        default: props$s.swiper.showTitle
+      }
+    }
+  };
+  const _sfc_main$11 = {
+    name: "u-swiper",
+    mixins: [mpMixin, mixin, props$p],
+    data() {
+      return {
+        currentIndex: 0
+      };
+    },
+    watch: {
+      current(val, preVal) {
+        if (val === preVal)
+          return;
+        this.currentIndex = val;
+      }
+    },
+    computed: {
+      itemStyle() {
+        return (index2) => {
+          const style = {};
+          if (this.nextMargin && this.previousMargin) {
+            style.borderRadius = uni.$u.addUnit(this.radius);
+            if (index2 !== this.currentIndex)
+              style.transform = "scale(0.92)";
+          }
+          return style;
+        };
+      }
+    },
+    methods: {
+      getItemType(item2) {
+        if (typeof item2 === "string")
+          return uni.$u.test.video(this.getSource(item2)) ? "video" : "image";
+        if (typeof item2 === "object" && this.keyName) {
+          if (!item2.type)
+            return uni.$u.test.video(this.getSource(item2)) ? "video" : "image";
+          if (item2.type === "image")
+            return "image";
+          if (item2.type === "video")
+            return "video";
+          return "image";
+        }
+      },
+      getSource(item2) {
+        if (typeof item2 === "string")
+          return item2;
+        if (typeof item2 === "object" && this.keyName)
+          return item2[this.keyName];
+        else
+          uni.$u.error("\u8BF7\u6309\u683C\u5F0F\u4F20\u9012\u5217\u8868\u53C2\u6570");
+        return "";
+      },
+      change(e) {
+        const {
+          current
+        } = e.detail;
+        this.pauseVideo(this.currentIndex);
+        this.currentIndex = current;
+        this.$emit("change", e.detail);
+      },
+      pauseVideo(index2) {
+        const lastItem = this.getSource(this.list[index2]);
+        if (uni.$u.test.video(lastItem)) {
+          const video2 = uni.createVideoContext(`video-${index2}`, this);
+          video2.pause();
+        }
+      },
+      getPoster(item2) {
+        return typeof item2 === "object" && item2.poster ? item2.poster : "";
+      },
+      clickHandler(index2) {
+        this.$emit("click", index2);
+      }
+    }
+  };
+  function _sfc_render$10(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_u_loading_icon = resolveEasycom(vue.resolveDynamicComponent("u-loading-icon"), __easycom_1$5);
+    const _component_u_swiper_indicator = resolveEasycom(vue.resolveDynamicComponent("u-swiper-indicator"), __easycom_1$4);
+    return vue.openBlock(), vue.createElementBlock("view", {
+      class: "u-swiper",
+      style: vue.normalizeStyle({
+        backgroundColor: _ctx.bgColor,
+        height: _ctx.$u.addUnit(_ctx.height),
+        borderRadius: _ctx.$u.addUnit(_ctx.radius)
+      })
+    }, [
+      _ctx.loading ? (vue.openBlock(), vue.createElementBlock("view", {
+        key: 0,
+        class: "u-swiper__loading"
+      }, [
+        vue.createVNode(_component_u_loading_icon, { mode: "circle" })
+      ])) : (vue.openBlock(), vue.createElementBlock("swiper", {
+        key: 1,
+        class: "u-swiper__wrapper",
+        style: vue.normalizeStyle({
+          height: _ctx.$u.addUnit(_ctx.height)
+        }),
+        onChange: _cache[0] || (_cache[0] = (...args) => $options.change && $options.change(...args)),
+        circular: _ctx.circular,
+        interval: _ctx.interval,
+        duration: _ctx.duration,
+        autoplay: _ctx.autoplay,
+        current: _ctx.current,
+        currentItemId: _ctx.currentItemId,
+        previousMargin: _ctx.$u.addUnit(_ctx.previousMargin),
+        nextMargin: _ctx.$u.addUnit(_ctx.nextMargin),
+        acceleration: _ctx.acceleration,
+        displayMultipleItems: _ctx.displayMultipleItems,
+        easingFunction: _ctx.easingFunction
+      }, [
+        (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(_ctx.list, (item2, index2) => {
+          return vue.openBlock(), vue.createElementBlock("swiper-item", {
+            class: "u-swiper__wrapper__item",
+            key: index2
+          }, [
+            vue.createElementVNode("view", {
+              class: "u-swiper__wrapper__item__wrapper",
+              style: vue.normalizeStyle([$options.itemStyle(index2)])
+            }, [
+              vue.createCommentVNode(" \u5728nvue\u4E2D\uFF0Cimage\u56FE\u7247\u7684\u5BBD\u5EA6\u9ED8\u8BA4\u4E3A\u5C4F\u5E55\u5BBD\u5EA6\uFF0C\u9700\u8981\u901A\u8FC7flex:1\u6491\u5F00\uFF0C\u53E6\u5916\u5FC5\u987B\u8BBE\u7F6E\u9AD8\u5EA6\u624D\u80FD\u663E\u793A\u56FE\u7247 "),
+              $options.getItemType(item2) === "image" ? (vue.openBlock(), vue.createElementBlock("image", {
+                key: 0,
+                class: "u-swiper__wrapper__item__wrapper__image",
+                src: $options.getSource(item2),
+                mode: _ctx.imgMode,
+                onClick: ($event) => $options.clickHandler(index2),
+                style: vue.normalizeStyle({
+                  height: _ctx.$u.addUnit(_ctx.height),
+                  borderRadius: _ctx.$u.addUnit(_ctx.radius)
+                })
+              }, null, 12, ["src", "mode", "onClick"])) : vue.createCommentVNode("v-if", true),
+              $options.getItemType(item2) === "video" ? (vue.openBlock(), vue.createElementBlock("video", {
+                key: 1,
+                class: "u-swiper__wrapper__item__wrapper__video",
+                id: `video-${index2}`,
+                "enable-progress-gesture": false,
+                src: $options.getSource(item2),
+                poster: $options.getPoster(item2),
+                title: _ctx.showTitle && _ctx.$u.test.object(item2) && item2.title ? item2.title : "",
+                style: vue.normalizeStyle({
+                  height: _ctx.$u.addUnit(_ctx.height)
+                }),
+                controls: "",
+                onClick: ($event) => $options.clickHandler(index2)
+              }, null, 12, ["id", "src", "poster", "title", "onClick"])) : vue.createCommentVNode("v-if", true),
+              _ctx.showTitle && _ctx.$u.test.object(item2) && item2.title && _ctx.$u.test.image($options.getSource(item2)) ? (vue.openBlock(), vue.createElementBlock("text", {
+                key: 2,
+                class: "u-swiper__wrapper__item__wrapper__title u-line-1"
+              }, vue.toDisplayString(item2.title), 1)) : vue.createCommentVNode("v-if", true)
+            ], 4)
+          ]);
+        }), 128))
+      ], 44, ["circular", "interval", "duration", "autoplay", "current", "currentItemId", "previousMargin", "nextMargin", "acceleration", "displayMultipleItems", "easingFunction"])),
+      vue.createElementVNode("view", {
+        class: "u-swiper__indicator",
+        style: vue.normalizeStyle([_ctx.$u.addStyle(_ctx.indicatorStyle)])
+      }, [
+        vue.renderSlot(_ctx.$slots, "indicator", {}, () => [
+          !_ctx.loading && _ctx.indicator && !_ctx.showTitle ? (vue.openBlock(), vue.createBlock(_component_u_swiper_indicator, {
+            key: 0,
+            indicatorActiveColor: _ctx.indicatorActiveColor,
+            indicatorInactiveColor: _ctx.indicatorInactiveColor,
+            length: _ctx.list.length,
+            current: $data.currentIndex,
+            indicatorMode: _ctx.indicatorMode
+          }, null, 8, ["indicatorActiveColor", "indicatorInactiveColor", "length", "current", "indicatorMode"])) : vue.createCommentVNode("v-if", true)
+        ], true)
+      ], 4)
     ], 4);
   }
-  var __easycom_1$5 = /* @__PURE__ */ _export_sfc(_sfc_main$14, [["render", _sfc_render$13], ["__scopeId", "data-v-782db321"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-status-bar/u-status-bar.vue"]]);
-  var icons = {
+  const __easycom_0$7 = /* @__PURE__ */ _export_sfc(_sfc_main$11, [["render", _sfc_render$10], ["__scopeId", "data-v-eda42115"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-swiper/u-swiper.vue"]]);
+  const icons = {
     "uicon-level": "\uE693",
     "uicon-column-line": "\uE68E",
     "uicon-checkbox-mark": "\uE807",
@@ -1779,7 +2306,7 @@ if (uni.restoreGlobal) {
     "uicon-zh": "\uE70A",
     "uicon-en": "\uE692"
   };
-  var props$q = {
+  const props$o = {
     props: {
       name: {
         type: String,
@@ -1851,13 +2378,13 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  const _sfc_main$13 = {
+  const _sfc_main$10 = {
     name: "u-icon",
     data() {
       return {};
     },
     emits: ["click"],
-    mixins: [mpMixin, mixin, props$q],
+    mixins: [mpMixin, mixin, props$o],
     computed: {
       uClasses() {
         let classes = [];
@@ -1898,7 +2425,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$12(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$$(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("view", {
       class: vue.normalizeClass(["u-icon", ["u-icon--" + _ctx.labelPos]]),
       onClick: _cache[0] || (_cache[0] = (...args) => $options.clickHandler && $options.clickHandler(...args))
@@ -1930,171 +2457,2273 @@ if (uni.restoreGlobal) {
       }, vue.toDisplayString(_ctx.label), 5)) : vue.createCommentVNode("v-if", true)
     ], 2);
   }
-  var __easycom_0$7 = /* @__PURE__ */ _export_sfc(_sfc_main$13, [["render", _sfc_render$12], ["__scopeId", "data-v-6dbbd241"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-icon/u-icon.vue"]]);
-  var props$p = {
+  const __easycom_0$6 = /* @__PURE__ */ _export_sfc(_sfc_main$10, [["render", _sfc_render$$], ["__scopeId", "data-v-1c933a9a"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-icon/u-icon.vue"]]);
+  const props$n = {
     props: {
-      safeAreaInsetTop: {
+      show: {
         type: Boolean,
-        default: props$s.navbar.safeAreaInsetTop
+        default: props$s.transition.show
       },
-      placeholder: {
-        type: Boolean,
-        default: props$s.navbar.placeholder
-      },
-      fixed: {
-        type: Boolean,
-        default: props$s.navbar.fixed
-      },
-      border: {
-        type: Boolean,
-        default: props$s.navbar.border
-      },
-      leftIcon: {
+      mode: {
         type: String,
-        default: props$s.navbar.leftIcon
+        default: props$s.transition.mode
       },
-      leftText: {
-        type: String,
-        default: props$s.navbar.leftText
-      },
-      rightText: {
-        type: String,
-        default: props$s.navbar.rightText
-      },
-      rightIcon: {
-        type: String,
-        default: props$s.navbar.rightIcon
-      },
-      title: {
+      duration: {
         type: [String, Number],
-        default: props$s.navbar.title
+        default: props$s.transition.duration
       },
-      bgColor: {
+      timingFunction: {
         type: String,
-        default: props$s.navbar.bgColor
+        default: props$s.transition.timingFunction
+      }
+    }
+  };
+  const getClassNames = (name) => ({
+    enter: `u-${name}-enter u-${name}-enter-active`,
+    "enter-to": `u-${name}-enter-to u-${name}-enter-active`,
+    leave: `u-${name}-leave u-${name}-leave-active`,
+    "leave-to": `u-${name}-leave-to u-${name}-leave-active`
+  });
+  const transition = {
+    methods: {
+      clickHandler() {
+        this.$emit("click");
       },
-      titleWidth: {
+      vueEnter() {
+        const classNames = getClassNames(this.mode);
+        this.status = "enter";
+        this.$emit("beforeEnter");
+        this.inited = true;
+        this.display = true;
+        this.classes = classNames.enter;
+        this.$nextTick(async () => {
+          this.$emit("enter");
+          this.transitionEnded = false;
+          this.$emit("afterEnter");
+          this.classes = classNames["enter-to"];
+        });
+      },
+      vueLeave() {
+        if (!this.display)
+          return;
+        const classNames = getClassNames(this.mode);
+        this.status = "leave";
+        this.$emit("beforeLeave");
+        this.classes = classNames.leave;
+        this.$nextTick(() => {
+          this.transitionEnded = false;
+          this.$emit("leave");
+          setTimeout(this.onTransitionEnd, this.duration);
+          this.classes = classNames["leave-to"];
+        });
+      },
+      onTransitionEnd() {
+        if (this.transitionEnded)
+          return;
+        this.transitionEnded = true;
+        this.$emit(this.status === "leave" ? "afterLeave" : "afterEnter");
+        if (!this.show && this.display) {
+          this.display = false;
+          this.inited = false;
+        }
+      }
+    }
+  };
+  const _sfc_main$$ = {
+    name: "u-transition",
+    data() {
+      return {
+        inited: false,
+        viewStyle: {},
+        status: "",
+        transitionEnded: false,
+        display: false,
+        classes: ""
+      };
+    },
+    computed: {
+      mergeStyle() {
+        const { viewStyle, customStyle } = this;
+        return {
+          transitionDuration: `${this.duration}ms`,
+          transitionTimingFunction: this.timingFunction,
+          ...uni.$u.addStyle(customStyle),
+          ...viewStyle
+        };
+      }
+    },
+    mixins: [mpMixin, mixin, transition, props$n],
+    watch: {
+      show: {
+        handler(newVal) {
+          newVal ? this.vueEnter() : this.vueLeave();
+        },
+        immediate: true
+      }
+    }
+  };
+  function _sfc_render$_(_ctx, _cache, $props, $setup, $data, $options) {
+    return $data.inited ? (vue.openBlock(), vue.createElementBlock("view", {
+      key: 0,
+      class: vue.normalizeClass(["u-transition", $data.classes]),
+      ref: "u-transition",
+      onClick: _cache[0] || (_cache[0] = (...args) => _ctx.clickHandler && _ctx.clickHandler(...args)),
+      style: vue.normalizeStyle([$options.mergeStyle]),
+      onTouchmove: _cache[1] || (_cache[1] = (...args) => _ctx.noop && _ctx.noop(...args))
+    }, [
+      vue.renderSlot(_ctx.$slots, "default", {}, void 0, true)
+    ], 38)) : vue.createCommentVNode("v-if", true);
+  }
+  const __easycom_4$1 = /* @__PURE__ */ _export_sfc(_sfc_main$$, [["render", _sfc_render$_], ["__scopeId", "data-v-0573594d"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-transition/u-transition.vue"]]);
+  const props$m = {
+    props: {
+      src: {
+        type: String,
+        default: props$s.image.src
+      },
+      mode: {
+        type: String,
+        default: props$s.image.mode
+      },
+      width: {
         type: [String, Number],
-        default: props$s.navbar.titleWidth
+        default: props$s.image.width
       },
       height: {
         type: [String, Number],
-        default: props$s.navbar.height
+        default: props$s.image.height
       },
-      leftIconSize: {
-        type: [String, Number],
-        default: props$s.navbar.leftIconSize
-      },
-      leftIconColor: {
+      shape: {
         type: String,
-        default: props$s.navbar.leftIconColor
+        default: props$s.image.shape
       },
-      autoBack: {
+      radius: {
+        type: [String, Number],
+        default: props$s.image.radius
+      },
+      lazyLoad: {
         type: Boolean,
-        default: props$s.navbar.autoBack
+        default: props$s.image.lazyLoad
       },
-      titleStyle: {
-        type: [String, Object],
-        default: props$s.navbar.titleStyle
+      showMenuByLongpress: {
+        type: Boolean,
+        default: props$s.image.showMenuByLongpress
+      },
+      loadingIcon: {
+        type: String,
+        default: props$s.image.loadingIcon
+      },
+      errorIcon: {
+        type: String,
+        default: props$s.image.errorIcon
+      },
+      showLoading: {
+        type: Boolean,
+        default: props$s.image.showLoading
+      },
+      showError: {
+        type: Boolean,
+        default: props$s.image.showError
+      },
+      fade: {
+        type: Boolean,
+        default: props$s.image.fade
+      },
+      webp: {
+        type: Boolean,
+        default: props$s.image.webp
+      },
+      duration: {
+        type: [String, Number],
+        default: props$s.image.duration
+      },
+      bgColor: {
+        type: String,
+        default: props$s.image.bgColor
       }
     }
   };
-  const _sfc_main$12 = {
-    name: "u-navbar",
-    mixins: [mpMixin, mixin, props$p],
+  const _sfc_main$_ = {
+    name: "u-image",
+    mixins: [mpMixin, mixin, props$m],
+    data() {
+      return {
+        isError: false,
+        loading: true,
+        opacity: 1,
+        durationTime: this.duration,
+        backgroundStyle: {},
+        show: false
+      };
+    },
+    watch: {
+      src: {
+        immediate: true,
+        handler(n) {
+          if (!n) {
+            this.isError = true;
+          } else {
+            this.isError = false;
+            this.loading = true;
+          }
+        }
+      }
+    },
+    computed: {
+      wrapStyle() {
+        let style = {};
+        style.width = this.$u.addUnit(this.width);
+        style.height = this.$u.addUnit(this.height);
+        style.borderRadius = this.shape == "circle" ? "10000px" : uni.$u.addUnit(this.radius);
+        style.overflow = this.radius > 0 ? "hidden" : "visible";
+        return uni.$u.deepMerge(style, uni.$u.addStyle(this.customStyle));
+      }
+    },
+    mounted() {
+      this.show = true;
+    },
+    emits: ["click", "error", "load"],
+    methods: {
+      onClick() {
+        this.$emit("click");
+      },
+      onErrorHandler(err) {
+        this.loading = false;
+        this.isError = true;
+        this.$emit("error", err);
+      },
+      onLoadHandler(event2) {
+        this.loading = false;
+        this.isError = false;
+        this.$emit("load", event2);
+        this.removeBgColor();
+      },
+      removeBgColor() {
+        this.backgroundStyle = {
+          backgroundColor: "transparent"
+        };
+      }
+    }
+  };
+  function _sfc_render$Z(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$6);
+    const _component_u_transition = resolveEasycom(vue.resolveDynamicComponent("u-transition"), __easycom_4$1);
+    return vue.openBlock(), vue.createBlock(_component_u_transition, {
+      mode: "fade",
+      show: $data.show,
+      duration: _ctx.fade ? 1e3 : 0
+    }, {
+      default: vue.withCtx(() => [
+        vue.createElementVNode("view", {
+          class: "u-image",
+          onClick: _cache[2] || (_cache[2] = (...args) => $options.onClick && $options.onClick(...args)),
+          style: vue.normalizeStyle([$options.wrapStyle, $data.backgroundStyle])
+        }, [
+          !$data.isError ? (vue.openBlock(), vue.createElementBlock("image", {
+            key: 0,
+            src: _ctx.src,
+            mode: _ctx.mode,
+            onError: _cache[0] || (_cache[0] = (...args) => $options.onErrorHandler && $options.onErrorHandler(...args)),
+            onLoad: _cache[1] || (_cache[1] = (...args) => $options.onLoadHandler && $options.onLoadHandler(...args)),
+            "show-menu-by-longpress": _ctx.showMenuByLongpress,
+            "lazy-load": _ctx.lazyLoad,
+            class: "u-image__image",
+            style: vue.normalizeStyle({
+              borderRadius: _ctx.shape == "circle" ? "10000px" : _ctx.$u.addUnit(_ctx.radius),
+              width: _ctx.$u.addUnit(_ctx.width),
+              height: _ctx.$u.addUnit(_ctx.height)
+            })
+          }, null, 44, ["src", "mode", "show-menu-by-longpress", "lazy-load"])) : vue.createCommentVNode("v-if", true),
+          _ctx.showLoading && $data.loading ? (vue.openBlock(), vue.createElementBlock("view", {
+            key: 1,
+            class: "u-image__loading",
+            style: vue.normalizeStyle({
+              borderRadius: _ctx.shape == "circle" ? "50%" : _ctx.$u.addUnit(_ctx.radius),
+              backgroundColor: this.bgColor,
+              width: _ctx.$u.addUnit(_ctx.width),
+              height: _ctx.$u.addUnit(_ctx.height)
+            })
+          }, [
+            vue.renderSlot(_ctx.$slots, "loading", {}, () => [
+              vue.createVNode(_component_u_icon, {
+                name: _ctx.loadingIcon,
+                width: _ctx.width,
+                height: _ctx.height
+              }, null, 8, ["name", "width", "height"])
+            ], true)
+          ], 4)) : vue.createCommentVNode("v-if", true),
+          _ctx.showError && $data.isError && !$data.loading ? (vue.openBlock(), vue.createElementBlock("view", {
+            key: 2,
+            class: "u-image__error",
+            style: vue.normalizeStyle({
+              borderRadius: _ctx.shape == "circle" ? "50%" : _ctx.$u.addUnit(_ctx.radius),
+              width: _ctx.$u.addUnit(_ctx.width),
+              height: _ctx.$u.addUnit(_ctx.height)
+            })
+          }, [
+            vue.renderSlot(_ctx.$slots, "error", {}, () => [
+              vue.createVNode(_component_u_icon, {
+                name: _ctx.errorIcon,
+                width: _ctx.width,
+                height: _ctx.height
+              }, null, 8, ["name", "width", "height"])
+            ], true)
+          ], 4)) : vue.createCommentVNode("v-if", true)
+        ], 4)
+      ]),
+      _: 3
+    }, 8, ["show", "duration"]);
+  }
+  const __easycom_0$5 = /* @__PURE__ */ _export_sfc(_sfc_main$_, [["render", _sfc_render$Z], ["__scopeId", "data-v-9d58ba7c"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-image/u-image.vue"]]);
+  const _sfc_main$Z = {
+    name: "u--image",
+    mixins: [mpMixin, props$m, mixin],
+    components: {
+      uvImage: __easycom_0$5
+    },
+    emits: ["click", "error", "load"]
+  };
+  function _sfc_render$Y(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_uvImage = vue.resolveComponent("uvImage");
+    return vue.openBlock(), vue.createBlock(_component_uvImage, {
+      src: _ctx.src,
+      mode: _ctx.mode,
+      width: _ctx.width,
+      height: _ctx.height,
+      shape: _ctx.shape,
+      radius: _ctx.radius,
+      lazyLoad: _ctx.lazyLoad,
+      showMenuByLongpress: _ctx.showMenuByLongpress,
+      loadingIcon: _ctx.loadingIcon,
+      errorIcon: _ctx.errorIcon,
+      showLoading: _ctx.showLoading,
+      showError: _ctx.showError,
+      fade: _ctx.fade,
+      webp: _ctx.webp,
+      duration: _ctx.duration,
+      bgColor: _ctx.bgColor,
+      customStyle: _ctx.customStyle,
+      onClick: _cache[0] || (_cache[0] = ($event) => _ctx.$emit("click")),
+      onError: _cache[1] || (_cache[1] = ($event) => _ctx.$emit("error")),
+      onLoad: _cache[2] || (_cache[2] = ($event) => _ctx.$emit("load"))
+    }, {
+      loading: vue.withCtx(() => [
+        vue.renderSlot(_ctx.$slots, "loading")
+      ]),
+      error: vue.withCtx(() => [
+        vue.renderSlot(_ctx.$slots, "error")
+      ]),
+      _: 3
+    }, 8, ["src", "mode", "width", "height", "shape", "radius", "lazyLoad", "showMenuByLongpress", "loadingIcon", "errorIcon", "showLoading", "showError", "fade", "webp", "duration", "bgColor", "customStyle"]);
+  }
+  const __easycom_0$4 = /* @__PURE__ */ _export_sfc(_sfc_main$Z, [["render", _sfc_render$Y], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u--image/u--image.vue"]]);
+  const props$l = {
+    props: {
+      color: {
+        type: String,
+        default: props$s.line.color
+      },
+      length: {
+        type: [String, Number],
+        default: props$s.line.length
+      },
+      direction: {
+        type: String,
+        default: props$s.line.direction
+      },
+      hairline: {
+        type: Boolean,
+        default: props$s.line.hairline
+      },
+      margin: {
+        type: [String, Number],
+        default: props$s.line.margin
+      },
+      dashed: {
+        type: Boolean,
+        default: props$s.line.dashed
+      }
+    }
+  };
+  const _sfc_main$Y = {
+    name: "u-line",
+    mixins: [mpMixin, mixin, props$l],
+    computed: {
+      lineStyle() {
+        const style = {};
+        style.margin = this.margin;
+        if (this.direction === "row") {
+          style.borderBottomWidth = "1px";
+          style.borderBottomStyle = this.dashed ? "dashed" : "solid";
+          style.width = uni.$u.addUnit(this.length);
+          if (this.hairline)
+            style.transform = "scaleY(0.5)";
+        } else {
+          style.borderLeftWidth = "1px";
+          style.borderLeftStyle = this.dashed ? "dashed" : "solid";
+          style.height = uni.$u.addUnit(this.length);
+          if (this.hairline)
+            style.transform = "scaleX(0.5)";
+        }
+        style.borderColor = this.color;
+        return uni.$u.deepMerge(style, uni.$u.addStyle(this.customStyle));
+      }
+    }
+  };
+  function _sfc_render$X(_ctx, _cache, $props, $setup, $data, $options) {
+    return vue.openBlock(), vue.createElementBlock("view", {
+      class: "u-line",
+      style: vue.normalizeStyle([$options.lineStyle])
+    }, null, 4);
+  }
+  const __easycom_1$3 = /* @__PURE__ */ _export_sfc(_sfc_main$Y, [["render", _sfc_render$X], ["__scopeId", "data-v-bbd9963c"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-line/u-line.vue"]]);
+  const props$k = {
+    props: {
+      show: {
+        type: Boolean,
+        default: props$s.overlay.show
+      },
+      zIndex: {
+        type: [String, Number],
+        default: props$s.overlay.zIndex
+      },
+      duration: {
+        type: [String, Number],
+        default: props$s.overlay.duration
+      },
+      opacity: {
+        type: [String, Number],
+        default: props$s.overlay.opacity
+      }
+    }
+  };
+  const _sfc_main$X = {
+    name: "u-overlay",
+    mixins: [mpMixin, mixin, props$k],
+    computed: {
+      overlayStyle() {
+        const style = {
+          position: "fixed",
+          top: 0,
+          left: 0,
+          right: 0,
+          zIndex: this.zIndex,
+          bottom: 0,
+          "background-color": `rgba(0, 0, 0, ${this.opacity})`
+        };
+        return uni.$u.deepMerge(style, uni.$u.addStyle(this.customStyle));
+      }
+    },
+    methods: {
+      clickHandler() {
+        this.$emit("click");
+      }
+    }
+  };
+  function _sfc_render$W(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_u_transition = resolveEasycom(vue.resolveDynamicComponent("u-transition"), __easycom_4$1);
+    return vue.openBlock(), vue.createBlock(_component_u_transition, {
+      show: _ctx.show,
+      "custom-class": "u-overlay",
+      duration: _ctx.duration,
+      "custom-style": $options.overlayStyle,
+      onClick: $options.clickHandler
+    }, {
+      default: vue.withCtx(() => [
+        vue.renderSlot(_ctx.$slots, "default", {}, void 0, true)
+      ]),
+      _: 3
+    }, 8, ["show", "duration", "custom-style", "onClick"]);
+  }
+  const __easycom_0$3 = /* @__PURE__ */ _export_sfc(_sfc_main$X, [["render", _sfc_render$W], ["__scopeId", "data-v-35f7c3e5"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-overlay/u-overlay.vue"]]);
+  const props$j = {
+    props: {
+      bgColor: {
+        type: String,
+        default: props$s.statusBar.bgColor
+      }
+    }
+  };
+  const _sfc_main$W = {
+    name: "u-status-bar",
+    mixins: [mpMixin, mixin, props$j],
     data() {
       return {};
     },
-    methods: {
-      leftClick() {
-        this.$emit("leftClick");
-        if (this.autoBack) {
-          uni.navigateBack();
-        }
-      },
-      rightClick() {
-        this.$emit("rightClick");
+    computed: {
+      style() {
+        const style = {};
+        style.height = uni.$u.addUnit(uni.$u.sys().statusBarHeight, "px");
+        style.backgroundColor = this.bgColor;
+        return uni.$u.deepMerge(style, uni.$u.addStyle(this.customStyle));
       }
     }
   };
-  function _sfc_render$11(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_status_bar = resolveEasycom(vue.resolveDynamicComponent("u-status-bar"), __easycom_1$5);
-    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$7);
-    return vue.openBlock(), vue.createElementBlock("view", { class: "u-navbar" }, [
-      _ctx.fixed && _ctx.placeholder ? (vue.openBlock(), vue.createElementBlock("view", {
+  function _sfc_render$V(_ctx, _cache, $props, $setup, $data, $options) {
+    return vue.openBlock(), vue.createElementBlock("view", {
+      style: vue.normalizeStyle([$options.style]),
+      class: "u-status-bar"
+    }, [
+      vue.renderSlot(_ctx.$slots, "default", {}, void 0, true)
+    ], 4);
+  }
+  const __easycom_0$2 = /* @__PURE__ */ _export_sfc(_sfc_main$W, [["render", _sfc_render$V], ["__scopeId", "data-v-c0b45a48"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-status-bar/u-status-bar.vue"]]);
+  const props$i = {
+    props: {}
+  };
+  const _sfc_main$V = {
+    name: "u-safe-bottom",
+    mixins: [mpMixin, mixin, props$i],
+    data() {
+      return {
+        safeAreaBottomHeight: 0,
+        isNvue: false
+      };
+    },
+    computed: {
+      style() {
+        const style = {};
+        return uni.$u.deepMerge(style, uni.$u.addStyle(this.customStyle));
+      }
+    },
+    mounted() {
+    }
+  };
+  function _sfc_render$U(_ctx, _cache, $props, $setup, $data, $options) {
+    return vue.openBlock(), vue.createElementBlock("view", {
+      class: vue.normalizeClass(["u-safe-bottom", [!$data.isNvue && "u-safe-area-inset-bottom"]]),
+      style: vue.normalizeStyle([$options.style])
+    }, null, 6);
+  }
+  const __easycom_3$2 = /* @__PURE__ */ _export_sfc(_sfc_main$V, [["render", _sfc_render$U], ["__scopeId", "data-v-3ec581de"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-safe-bottom/u-safe-bottom.vue"]]);
+  const props$h = {
+    props: {
+      show: {
+        type: Boolean,
+        default: props$s.popup.show
+      },
+      overlay: {
+        type: Boolean,
+        default: props$s.popup.overlay
+      },
+      mode: {
+        type: String,
+        default: props$s.popup.mode
+      },
+      duration: {
+        type: [String, Number],
+        default: props$s.popup.duration
+      },
+      closeable: {
+        type: Boolean,
+        default: props$s.popup.closeable
+      },
+      overlayStyle: {
+        type: [Object, String],
+        default: props$s.popup.overlayStyle
+      },
+      closeOnClickOverlay: {
+        type: Boolean,
+        default: props$s.popup.closeOnClickOverlay
+      },
+      zIndex: {
+        type: [String, Number],
+        default: props$s.popup.zIndex
+      },
+      safeAreaInsetBottom: {
+        type: Boolean,
+        default: props$s.popup.safeAreaInsetBottom
+      },
+      safeAreaInsetTop: {
+        type: Boolean,
+        default: props$s.popup.safeAreaInsetTop
+      },
+      closeIconPos: {
+        type: String,
+        default: props$s.popup.closeIconPos
+      },
+      round: {
+        type: [Boolean, String, Number],
+        default: props$s.popup.round
+      },
+      zoom: {
+        type: Boolean,
+        default: props$s.popup.zoom
+      },
+      bgColor: {
+        type: String,
+        default: props$s.popup.bgColor
+      },
+      overlayOpacity: {
+        type: [Number, String],
+        default: props$s.popup.overlayOpacity
+      }
+    }
+  };
+  const _sfc_main$U = {
+    name: "u-popup",
+    mixins: [mpMixin, mixin, props$h],
+    data() {
+      return {
+        overlayDuration: this.duration + 50
+      };
+    },
+    watch: {
+      show(newValue, oldValue) {
+      }
+    },
+    computed: {
+      transitionStyle() {
+        const style = {
+          zIndex: this.zIndex,
+          position: "fixed",
+          display: "flex"
+        };
+        style[this.mode] = 0;
+        if (this.mode === "left") {
+          return uni.$u.deepMerge(style, {
+            bottom: 0,
+            top: 0
+          });
+        } else if (this.mode === "right") {
+          return uni.$u.deepMerge(style, {
+            bottom: 0,
+            top: 0
+          });
+        } else if (this.mode === "top") {
+          return uni.$u.deepMerge(style, {
+            left: 0,
+            right: 0
+          });
+        } else if (this.mode === "bottom") {
+          return uni.$u.deepMerge(style, {
+            left: 0,
+            right: 0
+          });
+        } else if (this.mode === "center") {
+          return uni.$u.deepMerge(style, {
+            alignItems: "center",
+            "justify-content": "center",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0
+          });
+        }
+      },
+      contentStyle() {
+        const style = {};
+        uni.$u.sys();
+        if (this.mode !== "center") {
+          style.flex = 1;
+        }
+        if (this.bgColor) {
+          style.backgroundColor = this.bgColor;
+        }
+        if (this.round) {
+          const value = uni.$u.addUnit(this.round);
+          if (this.mode === "top") {
+            style.borderBottomLeftRadius = value;
+            style.borderBottomRightRadius = value;
+          } else if (this.mode === "bottom") {
+            style.borderTopLeftRadius = value;
+            style.borderTopRightRadius = value;
+          } else if (this.mode === "center") {
+            style.borderRadius = value;
+          }
+        }
+        return uni.$u.deepMerge(style, uni.$u.addStyle(this.customStyle));
+      },
+      position() {
+        if (this.mode === "center") {
+          return this.zoom ? "fade-zoom" : "fade";
+        }
+        if (this.mode === "left") {
+          return "slide-left";
+        }
+        if (this.mode === "right") {
+          return "slide-right";
+        }
+        if (this.mode === "bottom") {
+          return "slide-up";
+        }
+        if (this.mode === "top") {
+          return "slide-down";
+        }
+      }
+    },
+    methods: {
+      overlayClick() {
+        if (this.closeOnClickOverlay) {
+          this.$emit("close");
+        }
+      },
+      close(e) {
+        this.$emit("close");
+      },
+      afterEnter() {
+        this.$emit("open");
+      },
+      clickHandler() {
+        if (this.mode === "center") {
+          this.overlayClick();
+        }
+        this.$emit("click");
+      }
+    }
+  };
+  function _sfc_render$T(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_u_overlay = resolveEasycom(vue.resolveDynamicComponent("u-overlay"), __easycom_0$3);
+    const _component_u_status_bar = resolveEasycom(vue.resolveDynamicComponent("u-status-bar"), __easycom_0$2);
+    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$6);
+    const _component_u_safe_bottom = resolveEasycom(vue.resolveDynamicComponent("u-safe-bottom"), __easycom_3$2);
+    const _component_u_transition = resolveEasycom(vue.resolveDynamicComponent("u-transition"), __easycom_4$1);
+    return vue.openBlock(), vue.createElementBlock("view", { class: "u-popup" }, [
+      _ctx.overlay ? (vue.openBlock(), vue.createBlock(_component_u_overlay, {
         key: 0,
-        class: "u-navbar__placeholder",
-        style: vue.normalizeStyle({
-          height: _ctx.$u.addUnit(_ctx.$u.getPx(_ctx.height) + _ctx.$u.sys().statusBarHeight, "px")
-        })
-      }, null, 4)) : vue.createCommentVNode("v-if", true),
-      vue.createElementVNode("view", {
-        class: vue.normalizeClass([_ctx.fixed && "u-navbar--fixed"])
-      }, [
-        _ctx.safeAreaInsetTop ? (vue.openBlock(), vue.createBlock(_component_u_status_bar, {
-          key: 0,
-          bgColor: _ctx.bgColor
-        }, null, 8, ["bgColor"])) : vue.createCommentVNode("v-if", true),
-        vue.createElementVNode("view", {
-          class: vue.normalizeClass(["u-navbar__content", [_ctx.border && "u-border-bottom"]]),
-          style: vue.normalizeStyle({
-            height: _ctx.$u.addUnit(_ctx.height),
-            backgroundColor: _ctx.bgColor
-          })
-        }, [
+        show: _ctx.show,
+        onClick: $options.overlayClick,
+        duration: $data.overlayDuration,
+        customStyle: _ctx.overlayStyle,
+        opacity: _ctx.overlayOpacity
+      }, null, 8, ["show", "onClick", "duration", "customStyle", "opacity"])) : vue.createCommentVNode("v-if", true),
+      vue.createVNode(_component_u_transition, {
+        show: _ctx.show,
+        customStyle: $options.transitionStyle,
+        mode: $options.position,
+        duration: _ctx.duration,
+        onAfterEnter: $options.afterEnter,
+        onClick: $options.clickHandler
+      }, {
+        default: vue.withCtx(() => [
           vue.createElementVNode("view", {
-            class: "u-navbar__content__left",
-            "hover-class": "u-navbar__content__left--hover",
-            "hover-start-time": "150",
-            onClick: _cache[0] || (_cache[0] = (...args) => $options.leftClick && $options.leftClick(...args))
+            class: "u-popup__content",
+            style: vue.normalizeStyle([$options.contentStyle]),
+            onClick: _cache[1] || (_cache[1] = vue.withModifiers((...args) => _ctx.noop && _ctx.noop(...args), ["stop"]))
           }, [
-            vue.renderSlot(_ctx.$slots, "left", {}, () => [
-              _ctx.leftIcon ? (vue.openBlock(), vue.createBlock(_component_u_icon, {
-                key: 0,
-                name: _ctx.leftIcon,
-                size: _ctx.leftIconSize,
-                color: _ctx.leftIconColor
-              }, null, 8, ["name", "size", "color"])) : vue.createCommentVNode("v-if", true),
-              _ctx.leftText ? (vue.openBlock(), vue.createElementBlock("text", {
-                key: 1,
-                style: vue.normalizeStyle({
-                  color: _ctx.leftIconColor
-                }),
-                class: "u-navbar__content__left__text"
-              }, vue.toDisplayString(_ctx.leftText), 5)) : vue.createCommentVNode("v-if", true)
-            ], true)
-          ]),
-          vue.renderSlot(_ctx.$slots, "center", {}, () => [
-            vue.createElementVNode("text", {
-              class: "u-line-1 u-navbar__content__title",
-              style: vue.normalizeStyle([{
-                width: _ctx.$u.addUnit(_ctx.titleWidth)
-              }, _ctx.$u.addStyle(_ctx.titleStyle)])
-            }, vue.toDisplayString(_ctx.title), 5)
-          ], true),
-          _ctx.$slots.right || _ctx.rightIcon || _ctx.rightText ? (vue.openBlock(), vue.createElementBlock("view", {
-            key: 0,
-            class: "u-navbar__content__right",
-            onClick: _cache[1] || (_cache[1] = (...args) => $options.rightClick && $options.rightClick(...args))
-          }, [
-            vue.renderSlot(_ctx.$slots, "right", {}, () => [
-              _ctx.rightIcon ? (vue.openBlock(), vue.createBlock(_component_u_icon, {
-                key: 0,
-                name: _ctx.rightIcon,
-                size: "20"
-              }, null, 8, ["name"])) : vue.createCommentVNode("v-if", true),
-              _ctx.rightText ? (vue.openBlock(), vue.createElementBlock("text", {
-                key: 1,
-                class: "u-navbar__content__right__text"
-              }, vue.toDisplayString(_ctx.rightText), 1)) : vue.createCommentVNode("v-if", true)
-            ], true)
-          ])) : vue.createCommentVNode("v-if", true)
-        ], 6)
-      ], 2)
+            _ctx.safeAreaInsetTop ? (vue.openBlock(), vue.createBlock(_component_u_status_bar, { key: 0 })) : vue.createCommentVNode("v-if", true),
+            vue.renderSlot(_ctx.$slots, "default", {}, void 0, true),
+            _ctx.closeable ? (vue.openBlock(), vue.createElementBlock("view", {
+              key: 1,
+              onClick: _cache[0] || (_cache[0] = vue.withModifiers((...args) => $options.close && $options.close(...args), ["stop"])),
+              class: vue.normalizeClass(["u-popup__content__close", ["u-popup__content__close--" + _ctx.closeIconPos]]),
+              "hover-class": "u-popup__content__close--hover",
+              "hover-stay-time": "150"
+            }, [
+              vue.createVNode(_component_u_icon, {
+                name: "close",
+                color: "#909399",
+                size: "18",
+                bold: ""
+              })
+            ], 2)) : vue.createCommentVNode("v-if", true),
+            _ctx.safeAreaInsetBottom ? (vue.openBlock(), vue.createBlock(_component_u_safe_bottom, { key: 2 })) : vue.createCommentVNode("v-if", true)
+          ], 4)
+        ]),
+        _: 3
+      }, 8, ["show", "customStyle", "mode", "duration", "onAfterEnter", "onClick"])
     ]);
   }
-  var __easycom_0$6 = /* @__PURE__ */ _export_sfc(_sfc_main$12, [["render", _sfc_render$11], ["__scopeId", "data-v-0e9610be"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-navbar/u-navbar.vue"]]);
-  var props$o = {
+  const __easycom_2$5 = /* @__PURE__ */ _export_sfc(_sfc_main$U, [["render", _sfc_render$T], ["__scopeId", "data-v-74921bef"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-popup/u-popup.vue"]]);
+  const props$g = {
+    props: {
+      show: {
+        type: Boolean,
+        default: props$s.modal.show
+      },
+      title: {
+        type: [String],
+        default: props$s.modal.title
+      },
+      content: {
+        type: String,
+        default: props$s.modal.content
+      },
+      confirmText: {
+        type: String,
+        default: props$s.modal.confirmText
+      },
+      cancelText: {
+        type: String,
+        default: props$s.modal.cancelText
+      },
+      showConfirmButton: {
+        type: Boolean,
+        default: props$s.modal.showConfirmButton
+      },
+      showCancelButton: {
+        type: Boolean,
+        default: props$s.modal.showCancelButton
+      },
+      confirmColor: {
+        type: String,
+        default: props$s.modal.confirmColor
+      },
+      cancelColor: {
+        type: String,
+        default: props$s.modal.cancelColor
+      },
+      buttonReverse: {
+        type: Boolean,
+        default: props$s.modal.buttonReverse
+      },
+      zoom: {
+        type: Boolean,
+        default: props$s.modal.zoom
+      },
+      asyncClose: {
+        type: Boolean,
+        default: props$s.modal.asyncClose
+      },
+      closeOnClickOverlay: {
+        type: Boolean,
+        default: props$s.modal.closeOnClickOverlay
+      },
+      negativeTop: {
+        type: [String, Number],
+        default: props$s.modal.negativeTop
+      },
+      width: {
+        type: [String, Number],
+        default: props$s.modal.width
+      },
+      confirmButtonShape: {
+        type: String,
+        default: props$s.modal.confirmButtonShape
+      }
+    }
+  };
+  const _sfc_main$T = {
+    name: "u-modal",
+    mixins: [mpMixin, mixin, props$g],
+    data() {
+      return {
+        loading: false
+      };
+    },
+    watch: {
+      show(n) {
+        if (n && this.loading)
+          this.loading = false;
+      }
+    },
+    methods: {
+      confirmHandler() {
+        if (this.asyncClose) {
+          this.loading = true;
+        }
+        this.$emit("confirm");
+      },
+      cancelHandler() {
+        this.$emit("cancel");
+      },
+      clickHandler() {
+        if (this.closeOnClickOverlay) {
+          this.$emit("close");
+        }
+      }
+    }
+  };
+  function _sfc_render$S(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_u_line = resolveEasycom(vue.resolveDynamicComponent("u-line"), __easycom_1$3);
+    const _component_u_loading_icon = resolveEasycom(vue.resolveDynamicComponent("u-loading-icon"), __easycom_1$5);
+    const _component_u_popup = resolveEasycom(vue.resolveDynamicComponent("u-popup"), __easycom_2$5);
+    return vue.openBlock(), vue.createBlock(_component_u_popup, {
+      mode: "center",
+      zoom: _ctx.zoom,
+      show: _ctx.show,
+      customStyle: {
+        borderRadius: "6px",
+        overflow: "hidden",
+        marginTop: `-${_ctx.$u.addUnit(_ctx.negativeTop)}`
+      },
+      closeOnClickOverlay: _ctx.closeOnClickOverlay,
+      safeAreaInsetBottom: false,
+      duration: 400,
+      onClick: $options.clickHandler
+    }, {
+      default: vue.withCtx(() => [
+        vue.createElementVNode("view", {
+          class: "u-modal",
+          style: vue.normalizeStyle({
+            width: _ctx.$u.addUnit(_ctx.width)
+          })
+        }, [
+          _ctx.title ? (vue.openBlock(), vue.createElementBlock("text", {
+            key: 0,
+            class: "u-modal__title"
+          }, vue.toDisplayString(_ctx.title), 1)) : vue.createCommentVNode("v-if", true),
+          vue.createElementVNode("view", {
+            class: "u-modal__content",
+            style: vue.normalizeStyle({
+              paddingTop: `${_ctx.title ? 12 : 25}px`
+            })
+          }, [
+            vue.renderSlot(_ctx.$slots, "default", {}, () => [
+              vue.createElementVNode("text", { class: "u-modal__content__text" }, vue.toDisplayString(_ctx.content), 1)
+            ], true)
+          ], 4),
+          _ctx.$slots.confirmButton ? (vue.openBlock(), vue.createElementBlock("view", {
+            key: 1,
+            class: "u-modal__button-group--confirm-button"
+          }, [
+            vue.renderSlot(_ctx.$slots, "confirmButton", {}, void 0, true)
+          ])) : (vue.openBlock(), vue.createElementBlock(vue.Fragment, { key: 2 }, [
+            vue.createVNode(_component_u_line),
+            vue.createElementVNode("view", {
+              class: "u-modal__button-group",
+              style: vue.normalizeStyle({
+                flexDirection: _ctx.buttonReverse ? "row-reverse" : "row"
+              })
+            }, [
+              _ctx.showCancelButton ? (vue.openBlock(), vue.createElementBlock("view", {
+                key: 0,
+                class: vue.normalizeClass(["u-modal__button-group__wrapper u-modal__button-group__wrapper--cancel", [_ctx.showCancelButton && !_ctx.showConfirmButton && "u-modal__button-group__wrapper--only-cancel"]]),
+                "hover-stay-time": 150,
+                "hover-class": "u-modal__button-group__wrapper--hover",
+                onClick: _cache[0] || (_cache[0] = (...args) => $options.cancelHandler && $options.cancelHandler(...args))
+              }, [
+                vue.createElementVNode("text", {
+                  class: "u-modal__button-group__wrapper__text",
+                  style: vue.normalizeStyle({
+                    color: _ctx.cancelColor
+                  })
+                }, vue.toDisplayString(_ctx.cancelText), 5)
+              ], 2)) : vue.createCommentVNode("v-if", true),
+              _ctx.showConfirmButton && _ctx.showCancelButton ? (vue.openBlock(), vue.createBlock(_component_u_line, {
+                key: 1,
+                direction: "column"
+              })) : vue.createCommentVNode("v-if", true),
+              _ctx.showConfirmButton ? (vue.openBlock(), vue.createElementBlock("view", {
+                key: 2,
+                class: vue.normalizeClass(["u-modal__button-group__wrapper u-modal__button-group__wrapper--confirm", [!_ctx.showCancelButton && _ctx.showConfirmButton && "u-modal__button-group__wrapper--only-confirm"]]),
+                "hover-stay-time": 150,
+                "hover-class": "u-modal__button-group__wrapper--hover",
+                onClick: _cache[1] || (_cache[1] = (...args) => $options.confirmHandler && $options.confirmHandler(...args))
+              }, [
+                $data.loading ? (vue.openBlock(), vue.createBlock(_component_u_loading_icon, { key: 0 })) : (vue.openBlock(), vue.createElementBlock("text", {
+                  key: 1,
+                  class: "u-modal__button-group__wrapper__text",
+                  style: vue.normalizeStyle({
+                    color: _ctx.confirmColor
+                  })
+                }, vue.toDisplayString(_ctx.confirmText), 5))
+              ], 2)) : vue.createCommentVNode("v-if", true)
+            ], 4)
+          ], 64))
+        ], 4)
+      ]),
+      _: 3
+    }, 8, ["zoom", "show", "customStyle", "closeOnClickOverlay", "onClick"]);
+  }
+  const __easycom_5$2 = /* @__PURE__ */ _export_sfc(_sfc_main$T, [["render", _sfc_render$S], ["__scopeId", "data-v-12b77a26"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-modal/u-modal.vue"]]);
+  function getDevtoolsGlobalHook() {
+    return getTarget().__VUE_DEVTOOLS_GLOBAL_HOOK__;
+  }
+  function getTarget() {
+    return typeof navigator !== "undefined" && typeof window !== "undefined" ? window : typeof global !== "undefined" ? global : {};
+  }
+  const isProxyAvailable = typeof Proxy === "function";
+  const HOOK_SETUP = "devtools-plugin:setup";
+  const HOOK_PLUGIN_SETTINGS_SET = "plugin:settings:set";
+  class ApiProxy {
+    constructor(plugin, hook) {
+      this.target = null;
+      this.targetQueue = [];
+      this.onQueue = [];
+      this.plugin = plugin;
+      this.hook = hook;
+      const defaultSettings = {};
+      if (plugin.settings) {
+        for (const id in plugin.settings) {
+          const item2 = plugin.settings[id];
+          defaultSettings[id] = item2.defaultValue;
+        }
+      }
+      const localSettingsSaveId = `__vue-devtools-plugin-settings__${plugin.id}`;
+      let currentSettings = { ...defaultSettings };
+      try {
+        const raw = localStorage.getItem(localSettingsSaveId);
+        const data = JSON.parse(raw);
+        Object.assign(currentSettings, data);
+      } catch (e) {
+      }
+      this.fallbacks = {
+        getSettings() {
+          return currentSettings;
+        },
+        setSettings(value) {
+          try {
+            localStorage.setItem(localSettingsSaveId, JSON.stringify(value));
+          } catch (e) {
+          }
+          currentSettings = value;
+        }
+      };
+      hook.on(HOOK_PLUGIN_SETTINGS_SET, (pluginId, value) => {
+        if (pluginId === this.plugin.id) {
+          this.fallbacks.setSettings(value);
+        }
+      });
+      this.proxiedOn = new Proxy({}, {
+        get: (_target, prop) => {
+          if (this.target) {
+            return this.target.on[prop];
+          } else {
+            return (...args) => {
+              this.onQueue.push({
+                method: prop,
+                args
+              });
+            };
+          }
+        }
+      });
+      this.proxiedTarget = new Proxy({}, {
+        get: (_target, prop) => {
+          if (this.target) {
+            return this.target[prop];
+          } else if (prop === "on") {
+            return this.proxiedOn;
+          } else if (Object.keys(this.fallbacks).includes(prop)) {
+            return (...args) => {
+              this.targetQueue.push({
+                method: prop,
+                args,
+                resolve: () => {
+                }
+              });
+              return this.fallbacks[prop](...args);
+            };
+          } else {
+            return (...args) => {
+              return new Promise((resolve) => {
+                this.targetQueue.push({
+                  method: prop,
+                  args,
+                  resolve
+                });
+              });
+            };
+          }
+        }
+      });
+    }
+    async setRealTarget(target) {
+      this.target = target;
+      for (const item2 of this.onQueue) {
+        this.target.on[item2.method](...item2.args);
+      }
+      for (const item2 of this.targetQueue) {
+        item2.resolve(await this.target[item2.method](...item2.args));
+      }
+    }
+  }
+  function setupDevtoolsPlugin(pluginDescriptor, setupFn) {
+    const target = getTarget();
+    const hook = getDevtoolsGlobalHook();
+    const enableProxy = isProxyAvailable && pluginDescriptor.enableEarlyProxy;
+    if (hook && (target.__VUE_DEVTOOLS_PLUGIN_API_AVAILABLE__ || !enableProxy)) {
+      hook.emit(HOOK_SETUP, pluginDescriptor, setupFn);
+    } else {
+      const proxy = enableProxy ? new ApiProxy(pluginDescriptor, hook) : null;
+      const list2 = target.__VUE_DEVTOOLS_PLUGINS__ = target.__VUE_DEVTOOLS_PLUGINS__ || [];
+      list2.push({
+        pluginDescriptor,
+        setupFn,
+        proxy
+      });
+      if (proxy)
+        setupFn(proxy.proxiedTarget);
+    }
+  }
+  /*!
+   * vuex v4.1.0
+   * (c) 2022 Evan You
+   * @license MIT
+   */
+  var storeKey = "store";
+  function forEachValue(obj, fn) {
+    Object.keys(obj).forEach(function(key) {
+      return fn(obj[key], key);
+    });
+  }
+  function isObject$1(obj) {
+    return obj !== null && typeof obj === "object";
+  }
+  function isPromise(val) {
+    return val && typeof val.then === "function";
+  }
+  function assert(condition, msg) {
+    if (!condition) {
+      throw new Error("[vuex] " + msg);
+    }
+  }
+  function partial(fn, arg) {
+    return function() {
+      return fn(arg);
+    };
+  }
+  function genericSubscribe(fn, subs, options) {
+    if (subs.indexOf(fn) < 0) {
+      options && options.prepend ? subs.unshift(fn) : subs.push(fn);
+    }
+    return function() {
+      var i2 = subs.indexOf(fn);
+      if (i2 > -1) {
+        subs.splice(i2, 1);
+      }
+    };
+  }
+  function resetStore(store2, hot) {
+    store2._actions = /* @__PURE__ */ Object.create(null);
+    store2._mutations = /* @__PURE__ */ Object.create(null);
+    store2._wrappedGetters = /* @__PURE__ */ Object.create(null);
+    store2._modulesNamespaceMap = /* @__PURE__ */ Object.create(null);
+    var state = store2.state;
+    installModule(store2, state, [], store2._modules.root, true);
+    resetStoreState(store2, state, hot);
+  }
+  function resetStoreState(store2, state, hot) {
+    var oldState = store2._state;
+    var oldScope = store2._scope;
+    store2.getters = {};
+    store2._makeLocalGettersCache = /* @__PURE__ */ Object.create(null);
+    var wrappedGetters = store2._wrappedGetters;
+    var computedObj = {};
+    var computedCache = {};
+    var scope = vue.effectScope(true);
+    scope.run(function() {
+      forEachValue(wrappedGetters, function(fn, key) {
+        computedObj[key] = partial(fn, store2);
+        computedCache[key] = vue.computed(function() {
+          return computedObj[key]();
+        });
+        Object.defineProperty(store2.getters, key, {
+          get: function() {
+            return computedCache[key].value;
+          },
+          enumerable: true
+        });
+      });
+    });
+    store2._state = vue.reactive({
+      data: state
+    });
+    store2._scope = scope;
+    if (store2.strict) {
+      enableStrictMode(store2);
+    }
+    if (oldState) {
+      if (hot) {
+        store2._withCommit(function() {
+          oldState.data = null;
+        });
+      }
+    }
+    if (oldScope) {
+      oldScope.stop();
+    }
+  }
+  function installModule(store2, rootState, path, module, hot) {
+    var isRoot = !path.length;
+    var namespace = store2._modules.getNamespace(path);
+    if (module.namespaced) {
+      if (store2._modulesNamespaceMap[namespace] && true) {
+        console.error("[vuex] duplicate namespace " + namespace + " for the namespaced module " + path.join("/"));
+      }
+      store2._modulesNamespaceMap[namespace] = module;
+    }
+    if (!isRoot && !hot) {
+      var parentState = getNestedState(rootState, path.slice(0, -1));
+      var moduleName = path[path.length - 1];
+      store2._withCommit(function() {
+        {
+          if (moduleName in parentState) {
+            console.warn(
+              '[vuex] state field "' + moduleName + '" was overridden by a module with the same name at "' + path.join(".") + '"'
+            );
+          }
+        }
+        parentState[moduleName] = module.state;
+      });
+    }
+    var local = module.context = makeLocalContext(store2, namespace, path);
+    module.forEachMutation(function(mutation, key) {
+      var namespacedType = namespace + key;
+      registerMutation(store2, namespacedType, mutation, local);
+    });
+    module.forEachAction(function(action, key) {
+      var type2 = action.root ? key : namespace + key;
+      var handler = action.handler || action;
+      registerAction(store2, type2, handler, local);
+    });
+    module.forEachGetter(function(getter, key) {
+      var namespacedType = namespace + key;
+      registerGetter(store2, namespacedType, getter, local);
+    });
+    module.forEachChild(function(child, key) {
+      installModule(store2, rootState, path.concat(key), child, hot);
+    });
+  }
+  function makeLocalContext(store2, namespace, path) {
+    var noNamespace = namespace === "";
+    var local = {
+      dispatch: noNamespace ? store2.dispatch : function(_type, _payload, _options) {
+        var args = unifyObjectStyle(_type, _payload, _options);
+        var payload = args.payload;
+        var options = args.options;
+        var type2 = args.type;
+        if (!options || !options.root) {
+          type2 = namespace + type2;
+          if (!store2._actions[type2]) {
+            console.error("[vuex] unknown local action type: " + args.type + ", global type: " + type2);
+            return;
+          }
+        }
+        return store2.dispatch(type2, payload);
+      },
+      commit: noNamespace ? store2.commit : function(_type, _payload, _options) {
+        var args = unifyObjectStyle(_type, _payload, _options);
+        var payload = args.payload;
+        var options = args.options;
+        var type2 = args.type;
+        if (!options || !options.root) {
+          type2 = namespace + type2;
+          if (!store2._mutations[type2]) {
+            console.error("[vuex] unknown local mutation type: " + args.type + ", global type: " + type2);
+            return;
+          }
+        }
+        store2.commit(type2, payload, options);
+      }
+    };
+    Object.defineProperties(local, {
+      getters: {
+        get: noNamespace ? function() {
+          return store2.getters;
+        } : function() {
+          return makeLocalGetters(store2, namespace);
+        }
+      },
+      state: {
+        get: function() {
+          return getNestedState(store2.state, path);
+        }
+      }
+    });
+    return local;
+  }
+  function makeLocalGetters(store2, namespace) {
+    if (!store2._makeLocalGettersCache[namespace]) {
+      var gettersProxy = {};
+      var splitPos = namespace.length;
+      Object.keys(store2.getters).forEach(function(type2) {
+        if (type2.slice(0, splitPos) !== namespace) {
+          return;
+        }
+        var localType = type2.slice(splitPos);
+        Object.defineProperty(gettersProxy, localType, {
+          get: function() {
+            return store2.getters[type2];
+          },
+          enumerable: true
+        });
+      });
+      store2._makeLocalGettersCache[namespace] = gettersProxy;
+    }
+    return store2._makeLocalGettersCache[namespace];
+  }
+  function registerMutation(store2, type2, handler, local) {
+    var entry = store2._mutations[type2] || (store2._mutations[type2] = []);
+    entry.push(function wrappedMutationHandler(payload) {
+      handler.call(store2, local.state, payload);
+    });
+  }
+  function registerAction(store2, type2, handler, local) {
+    var entry = store2._actions[type2] || (store2._actions[type2] = []);
+    entry.push(function wrappedActionHandler(payload) {
+      var res = handler.call(store2, {
+        dispatch: local.dispatch,
+        commit: local.commit,
+        getters: local.getters,
+        state: local.state,
+        rootGetters: store2.getters,
+        rootState: store2.state
+      }, payload);
+      if (!isPromise(res)) {
+        res = Promise.resolve(res);
+      }
+      if (store2._devtoolHook) {
+        return res.catch(function(err) {
+          store2._devtoolHook.emit("vuex:error", err);
+          throw err;
+        });
+      } else {
+        return res;
+      }
+    });
+  }
+  function registerGetter(store2, type2, rawGetter, local) {
+    if (store2._wrappedGetters[type2]) {
+      {
+        console.error("[vuex] duplicate getter key: " + type2);
+      }
+      return;
+    }
+    store2._wrappedGetters[type2] = function wrappedGetter(store3) {
+      return rawGetter(
+        local.state,
+        local.getters,
+        store3.state,
+        store3.getters
+      );
+    };
+  }
+  function enableStrictMode(store2) {
+    vue.watch(function() {
+      return store2._state.data;
+    }, function() {
+      {
+        assert(store2._committing, "do not mutate vuex store state outside mutation handlers.");
+      }
+    }, { deep: true, flush: "sync" });
+  }
+  function getNestedState(state, path) {
+    return path.reduce(function(state2, key) {
+      return state2[key];
+    }, state);
+  }
+  function unifyObjectStyle(type2, payload, options) {
+    if (isObject$1(type2) && type2.type) {
+      options = payload;
+      payload = type2;
+      type2 = type2.type;
+    }
+    {
+      assert(typeof type2 === "string", "expects string as the type, but found " + typeof type2 + ".");
+    }
+    return { type: type2, payload, options };
+  }
+  var LABEL_VUEX_BINDINGS = "vuex bindings";
+  var MUTATIONS_LAYER_ID = "vuex:mutations";
+  var ACTIONS_LAYER_ID = "vuex:actions";
+  var INSPECTOR_ID = "vuex";
+  var actionId = 0;
+  function addDevtools(app, store2) {
+    setupDevtoolsPlugin(
+      {
+        id: "org.vuejs.vuex",
+        app,
+        label: "Vuex",
+        homepage: "https://next.vuex.vuejs.org/",
+        logo: "https://vuejs.org/images/icons/favicon-96x96.png",
+        packageName: "vuex",
+        componentStateTypes: [LABEL_VUEX_BINDINGS]
+      },
+      function(api) {
+        api.addTimelineLayer({
+          id: MUTATIONS_LAYER_ID,
+          label: "Vuex Mutations",
+          color: COLOR_LIME_500
+        });
+        api.addTimelineLayer({
+          id: ACTIONS_LAYER_ID,
+          label: "Vuex Actions",
+          color: COLOR_LIME_500
+        });
+        api.addInspector({
+          id: INSPECTOR_ID,
+          label: "Vuex",
+          icon: "storage",
+          treeFilterPlaceholder: "Filter stores..."
+        });
+        api.on.getInspectorTree(function(payload) {
+          if (payload.app === app && payload.inspectorId === INSPECTOR_ID) {
+            if (payload.filter) {
+              var nodes = [];
+              flattenStoreForInspectorTree(nodes, store2._modules.root, payload.filter, "");
+              payload.rootNodes = nodes;
+            } else {
+              payload.rootNodes = [
+                formatStoreForInspectorTree(store2._modules.root, "")
+              ];
+            }
+          }
+        });
+        api.on.getInspectorState(function(payload) {
+          if (payload.app === app && payload.inspectorId === INSPECTOR_ID) {
+            var modulePath = payload.nodeId;
+            makeLocalGetters(store2, modulePath);
+            payload.state = formatStoreForInspectorState(
+              getStoreModule(store2._modules, modulePath),
+              modulePath === "root" ? store2.getters : store2._makeLocalGettersCache,
+              modulePath
+            );
+          }
+        });
+        api.on.editInspectorState(function(payload) {
+          if (payload.app === app && payload.inspectorId === INSPECTOR_ID) {
+            var modulePath = payload.nodeId;
+            var path = payload.path;
+            if (modulePath !== "root") {
+              path = modulePath.split("/").filter(Boolean).concat(path);
+            }
+            store2._withCommit(function() {
+              payload.set(store2._state.data, path, payload.state.value);
+            });
+          }
+        });
+        store2.subscribe(function(mutation, state) {
+          var data = {};
+          if (mutation.payload) {
+            data.payload = mutation.payload;
+          }
+          data.state = state;
+          api.notifyComponentUpdate();
+          api.sendInspectorTree(INSPECTOR_ID);
+          api.sendInspectorState(INSPECTOR_ID);
+          api.addTimelineEvent({
+            layerId: MUTATIONS_LAYER_ID,
+            event: {
+              time: Date.now(),
+              title: mutation.type,
+              data
+            }
+          });
+        });
+        store2.subscribeAction({
+          before: function(action, state) {
+            var data = {};
+            if (action.payload) {
+              data.payload = action.payload;
+            }
+            action._id = actionId++;
+            action._time = Date.now();
+            data.state = state;
+            api.addTimelineEvent({
+              layerId: ACTIONS_LAYER_ID,
+              event: {
+                time: action._time,
+                title: action.type,
+                groupId: action._id,
+                subtitle: "start",
+                data
+              }
+            });
+          },
+          after: function(action, state) {
+            var data = {};
+            var duration = Date.now() - action._time;
+            data.duration = {
+              _custom: {
+                type: "duration",
+                display: duration + "ms",
+                tooltip: "Action duration",
+                value: duration
+              }
+            };
+            if (action.payload) {
+              data.payload = action.payload;
+            }
+            data.state = state;
+            api.addTimelineEvent({
+              layerId: ACTIONS_LAYER_ID,
+              event: {
+                time: Date.now(),
+                title: action.type,
+                groupId: action._id,
+                subtitle: "end",
+                data
+              }
+            });
+          }
+        });
+      }
+    );
+  }
+  var COLOR_LIME_500 = 8702998;
+  var COLOR_DARK = 6710886;
+  var COLOR_WHITE = 16777215;
+  var TAG_NAMESPACED = {
+    label: "namespaced",
+    textColor: COLOR_WHITE,
+    backgroundColor: COLOR_DARK
+  };
+  function extractNameFromPath(path) {
+    return path && path !== "root" ? path.split("/").slice(-2, -1)[0] : "Root";
+  }
+  function formatStoreForInspectorTree(module, path) {
+    return {
+      id: path || "root",
+      label: extractNameFromPath(path),
+      tags: module.namespaced ? [TAG_NAMESPACED] : [],
+      children: Object.keys(module._children).map(
+        function(moduleName) {
+          return formatStoreForInspectorTree(
+            module._children[moduleName],
+            path + moduleName + "/"
+          );
+        }
+      )
+    };
+  }
+  function flattenStoreForInspectorTree(result, module, filter, path) {
+    if (path.includes(filter)) {
+      result.push({
+        id: path || "root",
+        label: path.endsWith("/") ? path.slice(0, path.length - 1) : path || "Root",
+        tags: module.namespaced ? [TAG_NAMESPACED] : []
+      });
+    }
+    Object.keys(module._children).forEach(function(moduleName) {
+      flattenStoreForInspectorTree(result, module._children[moduleName], filter, path + moduleName + "/");
+    });
+  }
+  function formatStoreForInspectorState(module, getters, path) {
+    getters = path === "root" ? getters : getters[path];
+    var gettersKeys = Object.keys(getters);
+    var storeState = {
+      state: Object.keys(module.state).map(function(key) {
+        return {
+          key,
+          editable: true,
+          value: module.state[key]
+        };
+      })
+    };
+    if (gettersKeys.length) {
+      var tree = transformPathsToObjectTree(getters);
+      storeState.getters = Object.keys(tree).map(function(key) {
+        return {
+          key: key.endsWith("/") ? extractNameFromPath(key) : key,
+          editable: false,
+          value: canThrow(function() {
+            return tree[key];
+          })
+        };
+      });
+    }
+    return storeState;
+  }
+  function transformPathsToObjectTree(getters) {
+    var result = {};
+    Object.keys(getters).forEach(function(key) {
+      var path = key.split("/");
+      if (path.length > 1) {
+        var target = result;
+        var leafKey = path.pop();
+        path.forEach(function(p) {
+          if (!target[p]) {
+            target[p] = {
+              _custom: {
+                value: {},
+                display: p,
+                tooltip: "Module",
+                abstract: true
+              }
+            };
+          }
+          target = target[p]._custom.value;
+        });
+        target[leafKey] = canThrow(function() {
+          return getters[key];
+        });
+      } else {
+        result[key] = canThrow(function() {
+          return getters[key];
+        });
+      }
+    });
+    return result;
+  }
+  function getStoreModule(moduleMap, path) {
+    var names = path.split("/").filter(function(n) {
+      return n;
+    });
+    return names.reduce(
+      function(module, moduleName, i2) {
+        var child = module[moduleName];
+        if (!child) {
+          throw new Error('Missing module "' + moduleName + '" for path "' + path + '".');
+        }
+        return i2 === names.length - 1 ? child : child._children;
+      },
+      path === "root" ? moduleMap : moduleMap.root._children
+    );
+  }
+  function canThrow(cb) {
+    try {
+      return cb();
+    } catch (e) {
+      return e;
+    }
+  }
+  var Module = function Module2(rawModule, runtime) {
+    this.runtime = runtime;
+    this._children = /* @__PURE__ */ Object.create(null);
+    this._rawModule = rawModule;
+    var rawState = rawModule.state;
+    this.state = (typeof rawState === "function" ? rawState() : rawState) || {};
+  };
+  var prototypeAccessors$1 = { namespaced: { configurable: true } };
+  prototypeAccessors$1.namespaced.get = function() {
+    return !!this._rawModule.namespaced;
+  };
+  Module.prototype.addChild = function addChild(key, module) {
+    this._children[key] = module;
+  };
+  Module.prototype.removeChild = function removeChild(key) {
+    delete this._children[key];
+  };
+  Module.prototype.getChild = function getChild(key) {
+    return this._children[key];
+  };
+  Module.prototype.hasChild = function hasChild(key) {
+    return key in this._children;
+  };
+  Module.prototype.update = function update2(rawModule) {
+    this._rawModule.namespaced = rawModule.namespaced;
+    if (rawModule.actions) {
+      this._rawModule.actions = rawModule.actions;
+    }
+    if (rawModule.mutations) {
+      this._rawModule.mutations = rawModule.mutations;
+    }
+    if (rawModule.getters) {
+      this._rawModule.getters = rawModule.getters;
+    }
+  };
+  Module.prototype.forEachChild = function forEachChild(fn) {
+    forEachValue(this._children, fn);
+  };
+  Module.prototype.forEachGetter = function forEachGetter(fn) {
+    if (this._rawModule.getters) {
+      forEachValue(this._rawModule.getters, fn);
+    }
+  };
+  Module.prototype.forEachAction = function forEachAction(fn) {
+    if (this._rawModule.actions) {
+      forEachValue(this._rawModule.actions, fn);
+    }
+  };
+  Module.prototype.forEachMutation = function forEachMutation(fn) {
+    if (this._rawModule.mutations) {
+      forEachValue(this._rawModule.mutations, fn);
+    }
+  };
+  Object.defineProperties(Module.prototype, prototypeAccessors$1);
+  var ModuleCollection = function ModuleCollection2(rawRootModule) {
+    this.register([], rawRootModule, false);
+  };
+  ModuleCollection.prototype.get = function get(path) {
+    return path.reduce(function(module, key) {
+      return module.getChild(key);
+    }, this.root);
+  };
+  ModuleCollection.prototype.getNamespace = function getNamespace(path) {
+    var module = this.root;
+    return path.reduce(function(namespace, key) {
+      module = module.getChild(key);
+      return namespace + (module.namespaced ? key + "/" : "");
+    }, "");
+  };
+  ModuleCollection.prototype.update = function update$1(rawRootModule) {
+    update([], this.root, rawRootModule);
+  };
+  ModuleCollection.prototype.register = function register(path, rawModule, runtime) {
+    var this$1$1 = this;
+    if (runtime === void 0)
+      runtime = true;
+    {
+      assertRawModule(path, rawModule);
+    }
+    var newModule = new Module(rawModule, runtime);
+    if (path.length === 0) {
+      this.root = newModule;
+    } else {
+      var parent = this.get(path.slice(0, -1));
+      parent.addChild(path[path.length - 1], newModule);
+    }
+    if (rawModule.modules) {
+      forEachValue(rawModule.modules, function(rawChildModule, key) {
+        this$1$1.register(path.concat(key), rawChildModule, runtime);
+      });
+    }
+  };
+  ModuleCollection.prototype.unregister = function unregister(path) {
+    var parent = this.get(path.slice(0, -1));
+    var key = path[path.length - 1];
+    var child = parent.getChild(key);
+    if (!child) {
+      {
+        console.warn(
+          "[vuex] trying to unregister module '" + key + "', which is not registered"
+        );
+      }
+      return;
+    }
+    if (!child.runtime) {
+      return;
+    }
+    parent.removeChild(key);
+  };
+  ModuleCollection.prototype.isRegistered = function isRegistered(path) {
+    var parent = this.get(path.slice(0, -1));
+    var key = path[path.length - 1];
+    if (parent) {
+      return parent.hasChild(key);
+    }
+    return false;
+  };
+  function update(path, targetModule, newModule) {
+    {
+      assertRawModule(path, newModule);
+    }
+    targetModule.update(newModule);
+    if (newModule.modules) {
+      for (var key in newModule.modules) {
+        if (!targetModule.getChild(key)) {
+          {
+            console.warn(
+              "[vuex] trying to add a new module '" + key + "' on hot reloading, manual reload is needed"
+            );
+          }
+          return;
+        }
+        update(
+          path.concat(key),
+          targetModule.getChild(key),
+          newModule.modules[key]
+        );
+      }
+    }
+  }
+  var functionAssert = {
+    assert: function(value) {
+      return typeof value === "function";
+    },
+    expected: "function"
+  };
+  var objectAssert = {
+    assert: function(value) {
+      return typeof value === "function" || typeof value === "object" && typeof value.handler === "function";
+    },
+    expected: 'function or object with "handler" function'
+  };
+  var assertTypes = {
+    getters: functionAssert,
+    mutations: functionAssert,
+    actions: objectAssert
+  };
+  function assertRawModule(path, rawModule) {
+    Object.keys(assertTypes).forEach(function(key) {
+      if (!rawModule[key]) {
+        return;
+      }
+      var assertOptions = assertTypes[key];
+      forEachValue(rawModule[key], function(value, type2) {
+        assert(
+          assertOptions.assert(value),
+          makeAssertionMessage(path, key, type2, value, assertOptions.expected)
+        );
+      });
+    });
+  }
+  function makeAssertionMessage(path, key, type2, value, expected) {
+    var buf = key + " should be " + expected + ' but "' + key + "." + type2 + '"';
+    if (path.length > 0) {
+      buf += ' in module "' + path.join(".") + '"';
+    }
+    buf += " is " + JSON.stringify(value) + ".";
+    return buf;
+  }
+  function createStore(options) {
+    return new Store(options);
+  }
+  var Store = function Store2(options) {
+    var this$1$1 = this;
+    if (options === void 0)
+      options = {};
+    {
+      assert(typeof Promise !== "undefined", "vuex requires a Promise polyfill in this browser.");
+      assert(this instanceof Store2, "store must be called with the new operator.");
+    }
+    var plugins = options.plugins;
+    if (plugins === void 0)
+      plugins = [];
+    var strict = options.strict;
+    if (strict === void 0)
+      strict = false;
+    var devtools = options.devtools;
+    this._committing = false;
+    this._actions = /* @__PURE__ */ Object.create(null);
+    this._actionSubscribers = [];
+    this._mutations = /* @__PURE__ */ Object.create(null);
+    this._wrappedGetters = /* @__PURE__ */ Object.create(null);
+    this._modules = new ModuleCollection(options);
+    this._modulesNamespaceMap = /* @__PURE__ */ Object.create(null);
+    this._subscribers = [];
+    this._makeLocalGettersCache = /* @__PURE__ */ Object.create(null);
+    this._scope = null;
+    this._devtools = devtools;
+    var store2 = this;
+    var ref = this;
+    var dispatch = ref.dispatch;
+    var commit = ref.commit;
+    this.dispatch = function boundDispatch(type2, payload) {
+      return dispatch.call(store2, type2, payload);
+    };
+    this.commit = function boundCommit(type2, payload, options2) {
+      return commit.call(store2, type2, payload, options2);
+    };
+    this.strict = strict;
+    var state = this._modules.root.state;
+    installModule(this, state, [], this._modules.root);
+    resetStoreState(this, state);
+    plugins.forEach(function(plugin) {
+      return plugin(this$1$1);
+    });
+  };
+  var prototypeAccessors = { state: { configurable: true } };
+  Store.prototype.install = function install2(app, injectKey) {
+    app.provide(injectKey || storeKey, this);
+    app.config.globalProperties.$store = this;
+    var useDevtools = this._devtools !== void 0 ? this._devtools : true;
+    if (useDevtools) {
+      addDevtools(app, this);
+    }
+  };
+  prototypeAccessors.state.get = function() {
+    return this._state.data;
+  };
+  prototypeAccessors.state.set = function(v) {
+    {
+      assert(false, "use store.replaceState() to explicit replace store state.");
+    }
+  };
+  Store.prototype.commit = function commit(_type, _payload, _options) {
+    var this$1$1 = this;
+    var ref = unifyObjectStyle(_type, _payload, _options);
+    var type2 = ref.type;
+    var payload = ref.payload;
+    var options = ref.options;
+    var mutation = { type: type2, payload };
+    var entry = this._mutations[type2];
+    if (!entry) {
+      {
+        console.error("[vuex] unknown mutation type: " + type2);
+      }
+      return;
+    }
+    this._withCommit(function() {
+      entry.forEach(function commitIterator(handler) {
+        handler(payload);
+      });
+    });
+    this._subscribers.slice().forEach(function(sub) {
+      return sub(mutation, this$1$1.state);
+    });
+    if (options && options.silent) {
+      console.warn(
+        "[vuex] mutation type: " + type2 + ". Silent option has been removed. Use the filter functionality in the vue-devtools"
+      );
+    }
+  };
+  Store.prototype.dispatch = function dispatch(_type, _payload) {
+    var this$1$1 = this;
+    var ref = unifyObjectStyle(_type, _payload);
+    var type2 = ref.type;
+    var payload = ref.payload;
+    var action = { type: type2, payload };
+    var entry = this._actions[type2];
+    if (!entry) {
+      {
+        console.error("[vuex] unknown action type: " + type2);
+      }
+      return;
+    }
+    try {
+      this._actionSubscribers.slice().filter(function(sub) {
+        return sub.before;
+      }).forEach(function(sub) {
+        return sub.before(action, this$1$1.state);
+      });
+    } catch (e) {
+      {
+        console.warn("[vuex] error in before action subscribers: ");
+        console.error(e);
+      }
+    }
+    var result = entry.length > 1 ? Promise.all(entry.map(function(handler) {
+      return handler(payload);
+    })) : entry[0](payload);
+    return new Promise(function(resolve, reject) {
+      result.then(function(res) {
+        try {
+          this$1$1._actionSubscribers.filter(function(sub) {
+            return sub.after;
+          }).forEach(function(sub) {
+            return sub.after(action, this$1$1.state);
+          });
+        } catch (e) {
+          {
+            console.warn("[vuex] error in after action subscribers: ");
+            console.error(e);
+          }
+        }
+        resolve(res);
+      }, function(error2) {
+        try {
+          this$1$1._actionSubscribers.filter(function(sub) {
+            return sub.error;
+          }).forEach(function(sub) {
+            return sub.error(action, this$1$1.state, error2);
+          });
+        } catch (e) {
+          {
+            console.warn("[vuex] error in error action subscribers: ");
+            console.error(e);
+          }
+        }
+        reject(error2);
+      });
+    });
+  };
+  Store.prototype.subscribe = function subscribe(fn, options) {
+    return genericSubscribe(fn, this._subscribers, options);
+  };
+  Store.prototype.subscribeAction = function subscribeAction(fn, options) {
+    var subs = typeof fn === "function" ? { before: fn } : fn;
+    return genericSubscribe(subs, this._actionSubscribers, options);
+  };
+  Store.prototype.watch = function watch$1(getter, cb, options) {
+    var this$1$1 = this;
+    {
+      assert(typeof getter === "function", "store.watch only accepts a function.");
+    }
+    return vue.watch(function() {
+      return getter(this$1$1.state, this$1$1.getters);
+    }, cb, Object.assign({}, options));
+  };
+  Store.prototype.replaceState = function replaceState(state) {
+    var this$1$1 = this;
+    this._withCommit(function() {
+      this$1$1._state.data = state;
+    });
+  };
+  Store.prototype.registerModule = function registerModule(path, rawModule, options) {
+    if (options === void 0)
+      options = {};
+    if (typeof path === "string") {
+      path = [path];
+    }
+    {
+      assert(Array.isArray(path), "module path must be a string or an Array.");
+      assert(path.length > 0, "cannot register the root module by using registerModule.");
+    }
+    this._modules.register(path, rawModule);
+    installModule(this, this.state, path, this._modules.get(path), options.preserveState);
+    resetStoreState(this, this.state);
+  };
+  Store.prototype.unregisterModule = function unregisterModule(path) {
+    var this$1$1 = this;
+    if (typeof path === "string") {
+      path = [path];
+    }
+    {
+      assert(Array.isArray(path), "module path must be a string or an Array.");
+    }
+    this._modules.unregister(path);
+    this._withCommit(function() {
+      var parentState = getNestedState(this$1$1.state, path.slice(0, -1));
+      delete parentState[path[path.length - 1]];
+    });
+    resetStore(this);
+  };
+  Store.prototype.hasModule = function hasModule(path) {
+    if (typeof path === "string") {
+      path = [path];
+    }
+    {
+      assert(Array.isArray(path), "module path must be a string or an Array.");
+    }
+    return this._modules.isRegistered(path);
+  };
+  Store.prototype.hotUpdate = function hotUpdate(newOptions) {
+    this._modules.update(newOptions);
+    resetStore(this, true);
+  };
+  Store.prototype._withCommit = function _withCommit(fn) {
+    var committing = this._committing;
+    this._committing = true;
+    fn();
+    this._committing = committing;
+  };
+  Object.defineProperties(Store.prototype, prototypeAccessors);
+  var mapState = normalizeNamespace(function(namespace, states) {
+    var res = {};
+    if (!isValidMap(states)) {
+      console.error("[vuex] mapState: mapper parameter must be either an Array or an Object");
+    }
+    normalizeMap(states).forEach(function(ref) {
+      var key = ref.key;
+      var val = ref.val;
+      res[key] = function mappedState() {
+        var state = this.$store.state;
+        var getters = this.$store.getters;
+        if (namespace) {
+          var module = getModuleByNamespace(this.$store, "mapState", namespace);
+          if (!module) {
+            return;
+          }
+          state = module.context.state;
+          getters = module.context.getters;
+        }
+        return typeof val === "function" ? val.call(this, state, getters) : state[val];
+      };
+      res[key].vuex = true;
+    });
+    return res;
+  });
+  function normalizeMap(map) {
+    if (!isValidMap(map)) {
+      return [];
+    }
+    return Array.isArray(map) ? map.map(function(key) {
+      return { key, val: key };
+    }) : Object.keys(map).map(function(key) {
+      return { key, val: map[key] };
+    });
+  }
+  function isValidMap(map) {
+    return Array.isArray(map) || isObject$1(map);
+  }
+  function normalizeNamespace(fn) {
+    return function(namespace, map) {
+      if (typeof namespace !== "string") {
+        map = namespace;
+        namespace = "";
+      } else if (namespace.charAt(namespace.length - 1) !== "/") {
+        namespace += "/";
+      }
+      return fn(namespace, map);
+    };
+  }
+  function getModuleByNamespace(store2, helper, namespace) {
+    var module = store2._modulesNamespaceMap[namespace];
+    if (!module) {
+      console.error("[vuex] module namespace not found in " + helper + "(): " + namespace);
+    }
+    return module;
+  }
+  const navigate = function(url2) {
+    uni.navigateTo({
+      url: url2
+    });
+  };
+  const copy = function(data) {
+    uni.setClipboardData({
+      data,
+      success: () => {
+        uni.showToast({
+          icon: "none",
+          title: "\u590D\u5236\u6210\u529F"
+        });
+      }
+    });
+  };
+  const _sfc_main$S = {
+    data() {
+      return {
+        bannerList: [{
+          image: "https://cdn.uviewui.com/uview/swiper/swiper2.png",
+          title: "\u6628\u591C\u661F\u8FB0\u6628\u591C\u98CE\uFF0C\u753B\u697C\u897F\u7554\u6842\u5802\u4E1C"
+        }, {
+          image: "https://cdn.uviewui.com/uview/swiper/swiper1.png",
+          title: "\u8EAB\u65E0\u5F69\u51E4\u53CC\u98DE\u7FFC\uFF0C\u5FC3\u6709\u7075\u7280\u4E00\u70B9\u901A"
+        }, {
+          image: "https://cdn.uviewui.com/uview/swiper/swiper3.png",
+          title: "\u8C01\u5FF5\u897F\u98CE\u72EC\u81EA\u51C9\uFF0C\u8427\u8427\u9EC4\u53F6\u95ED\u758F\u7A97\uFF0C\u6C89\u601D\u5F80\u4E8B\u7ACB\u6B8B\u9633"
+        }],
+        messageTip: {
+          USDTCount: 10,
+          time: "11-11"
+        },
+        show: false,
+        netTitleList: ["\u5E63\u7A2E", "\u6301\u5009\u8CC7\u7522USDT", "\u50F9\u683CUSDT"],
+        netContentList: [
+          {
+            type: "BTC",
+            assets: "123456.1234",
+            price: "1234.12"
+          },
+          {
+            type: "ETH",
+            assets: "83456.1234",
+            price: "1234.12"
+          },
+          {
+            type: "HT",
+            assets: "53456.1234",
+            price: "1234.12"
+          },
+          {
+            type: "XRP",
+            assets: "23456.1234",
+            price: "1234.12"
+          },
+          {
+            type: "DOGE",
+            assets: "23456.1234",
+            price: "1234.12"
+          }
+        ]
+      };
+    },
+    computed: {
+      ...mapState(["init"])
+    },
+    onLoad() {
+      formatAppLog("log", "at pages/home/home.vue:123", this.$http.post);
+    },
+    methods: {
+      navigateAuth() {
+        navigate("/pages/home/apiAuth/apiAuth");
+      },
+      confirm() {
+        navigate("/pages/home/toBePaid/toBePaid");
+      },
+      navigateToCenter() {
+        navigate("/pages/home/billingCenter/billingCenter");
+      },
+      cancel() {
+        uni.reLaunch({
+          url: `/pages/login/login`
+        });
+      }
+    }
+  };
+  function _sfc_render$R(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_u_swiper = resolveEasycom(vue.resolveDynamicComponent("u-swiper"), __easycom_0$7);
+    const _component_u__image = resolveEasycom(vue.resolveDynamicComponent("u--image"), __easycom_0$4);
+    const _component_u_image = resolveEasycom(vue.resolveDynamicComponent("u-image"), __easycom_0$5);
+    const _component_u_modal = resolveEasycom(vue.resolveDynamicComponent("u-modal"), __easycom_5$2);
+    return vue.openBlock(), vue.createElementBlock("view", null, [
+      vue.createCommentVNode(' <u-navbar height="48" title="" :bgColor="bgColor"></u-navbar> '),
+      vue.createElementVNode("view", null, [
+        vue.createCommentVNode(" \u6EDA\u52A8 "),
+        vue.createVNode(_component_u_swiper, {
+          height: "485rpx",
+          list: $data.bannerList,
+          keyName: "image",
+          indicatorActiveColor: "#F5A700",
+          indicatorInactiveColor: "#FFFFFF",
+          indicatorStyle: "bottom: 65rpx;",
+          autoplay: true,
+          circular: "",
+          indicator: "",
+          indicatorMode: "dot"
+        }, null, 8, ["list"]),
+        vue.createCommentVNode(" \u5185\u5BB9 "),
+        vue.createElementVNode("view", { class: "content" }, [
+          vue.createCommentVNode(" \u6D88\u606F\u63D0\u9192 "),
+          vue.createElementVNode("view", {
+            class: "c-tip",
+            onClick: _cache[0] || (_cache[0] = (...args) => $options.confirm && $options.confirm(...args))
+          }, [
+            vue.createVNode(_component_u__image, {
+              width: "56rpx",
+              height: "54rpx",
+              src: "/static/home/message.png"
+            }),
+            vue.createElementVNode("view", { class: "color222" }, "\u60A8\u6709\u4E00\u7B46\u91D1\u984D" + vue.toDisplayString($data.messageTip.USDTCount) + " USDT\u7684\u8CEC\u55AE\u5F85\u652F\u4ED8", 1),
+            vue.createElementVNode("view", { class: "color666" }, vue.toDisplayString($data.messageTip.time), 1)
+          ]),
+          vue.createCommentVNode(" api\u6388\u6743\uFF0C\u8D26\u5355\u4E2D\u5FC3 "),
+          vue.createElementVNode("view", { class: "c-ul" }, [
+            vue.createElementVNode("view", {
+              class: "cu-li cu-first",
+              onClick: _cache[1] || (_cache[1] = (...args) => $options.navigateAuth && $options.navigateAuth(...args))
+            }, [
+              vue.createElementVNode("text", { class: "color000" }, "API\u6388\u6B0A"),
+              vue.createVNode(_component_u_image, {
+                width: "160rpx",
+                height: "150rpx",
+                src: "/static/home/api.png"
+              })
+            ]),
+            vue.createElementVNode("view", {
+              class: "cu-li cu-second",
+              onClick: _cache[2] || (_cache[2] = (...args) => $options.navigateToCenter && $options.navigateToCenter(...args))
+            }, [
+              vue.createElementVNode("text", { class: "color000" }, "\u8CEC\u55AE\u4E2D\u5FC3"),
+              vue.createVNode(_component_u_image, {
+                width: "152rpx",
+                height: "157rpx",
+                src: "/static/home/center.png"
+              })
+            ])
+          ]),
+          vue.createCommentVNode(" \u5168\u7F51\u6392\u884C "),
+          vue.createElementVNode("view", { class: "c-net" }, [
+            vue.createElementVNode("view", { class: "cn-title" }, [
+              vue.createElementVNode("view", { class: "cnt-left" }, [
+                vue.createElementVNode("text", { class: "cntl-text" }, "\u5168\u7DB2\u6301\u5009\u6392\u884C"),
+                vue.createElementVNode("view", { class: "cntl-div" })
+              ]),
+              vue.createElementVNode("view", { class: "cnt-more" }, [
+                vue.createElementVNode("text", { class: "cntm-left" }, "\u66F4\u591A"),
+                vue.createVNode(_component_u_image, {
+                  width: "12",
+                  height: "7",
+                  src: "/static/home/left-arrow.png"
+                })
+              ])
+            ])
+          ]),
+          vue.createCommentVNode(" \u5168\u7F51\u6392\u884C\u5217\u8868 "),
+          vue.createElementVNode("view", { class: "c-net-list" }, [
+            vue.createElementVNode("view", { class: "cnl-title" }, [
+              (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList($data.netTitleList, (item2) => {
+                return vue.openBlock(), vue.createElementBlock("text", { class: "cnlt-text" }, vue.toDisplayString(item2), 1);
+              }), 256))
+            ]),
+            vue.createElementVNode("view", { class: "cnl-content" }, [
+              (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList($data.netContentList, (item2) => {
+                return vue.openBlock(), vue.createElementBlock("view", { class: "cnlc-data" }, [
+                  vue.createElementVNode("text", null, vue.toDisplayString(item2.type), 1),
+                  vue.createElementVNode("text", null, vue.toDisplayString(item2.assets), 1),
+                  vue.createElementVNode("text", null, vue.toDisplayString(item2.price), 1)
+                ]);
+              }), 256))
+            ])
+          ])
+        ])
+      ]),
+      vue.createCommentVNode(" \u5F85\u652F\u4ED8\u5F39\u7A97 "),
+      vue.createVNode(_component_u_modal, {
+        onConfirm: $options.confirm,
+        onCancel: $options.cancel,
+        confirmText: "\u53BB\u652F\u4ED8",
+        cancelText: "\u9000\u51FA",
+        showCancelButton: "",
+        confirmColor: "#FFB119",
+        cancelColor: "#333333",
+        show: $data.show,
+        title: _ctx.\u5F85\u652F\u4ED8
+      }, {
+        default: vue.withCtx(() => [
+          vue.createElementVNode("view", { class: "slot-content" }, [
+            vue.createElementVNode("view", { style: { "padding": "106upx 0" } }, "\u60A8\u7684\u8CEC\u55AE\u5DF2\u903E\u671F\uFF0C\u8ACB\u5148\u524D\u5F80\u652F\u4ED8")
+          ])
+        ]),
+        _: 1
+      }, 8, ["onConfirm", "onCancel", "show", "title"])
+    ]);
+  }
+  const PagesHomeHome = /* @__PURE__ */ _export_sfc(_sfc_main$S, [["render", _sfc_render$R], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/home/home.vue"]]);
+  const props$f = {
     props: {
       modelValue: {
         type: [String, Number],
@@ -2238,9 +4867,9 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  const _sfc_main$11 = {
+  const _sfc_main$R = {
     name: "u-input",
-    mixins: [mpMixin, mixin, props$o],
+    mixins: [mpMixin, mixin, props$f],
     data() {
       return {
         innerValue: "",
@@ -2351,8 +4980,8 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$10(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$7);
+  function _sfc_render$Q(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$6);
     return vue.openBlock(), vue.createElementBlock("view", {
       class: vue.normalizeClass(["u-input", $options.inputClass]),
       style: vue.normalizeStyle([$options.wrapperStyle])
@@ -2431,15 +5060,15 @@ if (uni.restoreGlobal) {
       ])
     ], 6);
   }
-  var uvInput = /* @__PURE__ */ _export_sfc(_sfc_main$11, [["render", _sfc_render$10], ["__scopeId", "data-v-2ee84e72"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-input/u-input.vue"]]);
-  const _sfc_main$10 = {
+  const uvInput = /* @__PURE__ */ _export_sfc(_sfc_main$R, [["render", _sfc_render$Q], ["__scopeId", "data-v-5904192e"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-input/u-input.vue"]]);
+  const _sfc_main$Q = {
     name: "u--input",
-    mixins: [mpMixin, props$o, mixin],
+    mixins: [mpMixin, props$f, mixin],
     components: {
       uvInput
     }
   };
-  function _sfc_render$$(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$P(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_uvInput = vue.resolveComponent("uvInput");
     return vue.openBlock(), vue.createBlock(_component_uvInput, {
       modelValue: _ctx.modelValue,
@@ -2487,68 +5116,828 @@ if (uni.restoreGlobal) {
       _: 3
     }, 8, ["modelValue", "type", "fixed", "disabled", "disabledColor", "clearable", "password", "maxlength", "placeholder", "placeholderClass", "placeholderStyle", "showWordLimit", "confirmType", "confirmHold", "holdKeyboard", "focus", "autoBlur", "disableDefaultPadding", "cursor", "cursorSpacing", "selectionStart", "selectionEnd", "adjustPosition", "inputAlign", "fontSize", "color", "prefixIcon", "suffixIcon", "suffixIconStyle", "prefixIconStyle", "border", "readonly", "shape", "customStyle", "formatter", "ignoreCompositionEvent"]);
   }
-  var __easycom_1$4 = /* @__PURE__ */ _export_sfc(_sfc_main$10, [["render", _sfc_render$$], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u--input/u--input.vue"]]);
-  var props$n = {
+  const __easycom_1$2 = /* @__PURE__ */ _export_sfc(_sfc_main$Q, [["render", _sfc_render$P], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u--input/u--input.vue"]]);
+  const props$e = {
     props: {
+      isDot: {
+        type: Boolean,
+        default: props$s.badge.isDot
+      },
+      value: {
+        type: [Number, String],
+        default: props$s.badge.value
+      },
+      modelValue: {
+        type: [Number, String],
+        default: props$s.badge.modelValue
+      },
+      show: {
+        type: Boolean,
+        default: props$s.badge.show
+      },
+      max: {
+        type: [Number, String],
+        default: props$s.badge.max
+      },
+      type: {
+        type: String,
+        default: props$s.badge.type
+      },
+      showZero: {
+        type: Boolean,
+        default: props$s.badge.showZero
+      },
+      bgColor: {
+        type: [String, null],
+        default: props$s.badge.bgColor
+      },
+      color: {
+        type: [String, null],
+        default: props$s.badge.color
+      },
+      shape: {
+        type: String,
+        default: props$s.badge.shape
+      },
+      numberType: {
+        type: String,
+        default: props$s.badge.numberType
+      },
+      offset: {
+        type: Array,
+        default: props$s.badge.offset
+      },
+      inverted: {
+        type: Boolean,
+        default: props$s.badge.inverted
+      },
+      absolute: {
+        type: Boolean,
+        default: props$s.badge.absolute
+      }
+    }
+  };
+  const _sfc_main$P = {
+    name: "u-badge",
+    mixins: [mpMixin, props$e, mixin],
+    computed: {
+      boxStyle() {
+        let style = {};
+        return style;
+      },
+      badgeStyle() {
+        const style = {};
+        if (this.color) {
+          style.color = this.color;
+        }
+        if (this.bgColor && !this.inverted) {
+          style.backgroundColor = this.bgColor;
+        }
+        if (this.absolute) {
+          style.position = "absolute";
+          if (this.offset.length) {
+            const top = this.offset[0];
+            const right = this.offset[1] || top;
+            style.top = uni.$u.addUnit(top);
+            style.right = uni.$u.addUnit(right);
+          }
+        }
+        return style;
+      },
+      showValue() {
+        switch (this.numberType) {
+          case "overflow":
+            return Number(this.value) > Number(this.max) ? this.max + "+" : this.value;
+          case "ellipsis":
+            return Number(this.value) > Number(this.max) ? "..." : this.value;
+          case "limit":
+            return Number(this.value) > 999 ? Number(this.value) >= 9999 ? Math.floor(this.value / 1e4 * 100) / 100 + "w" : Math.floor(this.value / 1e3 * 100) / 100 + "k" : this.value;
+          default:
+            return Number(this.value);
+        }
+      }
+    }
+  };
+  function _sfc_render$O(_ctx, _cache, $props, $setup, $data, $options) {
+    return _ctx.show && ((Number(_ctx.value) === 0 ? _ctx.showZero : true) || _ctx.isDot) ? (vue.openBlock(), vue.createElementBlock("text", {
+      key: 0,
+      class: vue.normalizeClass([[_ctx.isDot ? "u-badge--dot" : "u-badge--not-dot", _ctx.inverted && "u-badge--inverted", _ctx.shape === "horn" && "u-badge--horn", `u-badge--${_ctx.type}${_ctx.inverted ? "--inverted" : ""}`], "u-badge"]),
+      style: vue.normalizeStyle([_ctx.$u.addStyle(_ctx.customStyle), $options.badgeStyle])
+    }, vue.toDisplayString(_ctx.isDot ? "" : $options.showValue), 7)) : vue.createCommentVNode("v-if", true);
+  }
+  const __easycom_0$1 = /* @__PURE__ */ _export_sfc(_sfc_main$P, [["render", _sfc_render$O], ["__scopeId", "data-v-aa9883b1"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-badge/u-badge.vue"]]);
+  const props$d = {
+    props: {
+      duration: {
+        type: Number,
+        default: props$s.tabs.duration
+      },
+      list: {
+        type: Array,
+        default: props$s.tabs.list
+      },
+      lineColor: {
+        type: String,
+        default: props$s.tabs.lineColor
+      },
+      activeStyle: {
+        type: [String, Object],
+        default: props$s.tabs.activeStyle
+      },
+      inactiveStyle: {
+        type: [String, Object],
+        default: props$s.tabs.inactiveStyle
+      },
+      lineWidth: {
+        type: [String, Number],
+        default: props$s.tabs.lineWidth
+      },
+      lineHeight: {
+        type: [String, Number],
+        default: props$s.tabs.lineHeight
+      },
+      lineBgSize: {
+        type: String,
+        default: props$s.tabs.lineBgSize
+      },
+      itemStyle: {
+        type: [String, Object],
+        default: props$s.tabs.itemStyle
+      },
+      scrollable: {
+        type: Boolean,
+        default: props$s.tabs.scrollable
+      },
+      current: {
+        type: [Number, String],
+        default: props$s.tabs.current
+      },
+      keyName: {
+        type: String,
+        default: props$s.tabs.keyName
+      }
+    }
+  };
+  const _sfc_main$O = {
+    name: "u-tabs",
+    mixins: [mpMixin, mixin, props$d],
+    data() {
+      return {
+        firstTime: true,
+        scrollLeft: 0,
+        scrollViewWidth: 0,
+        lineOffsetLeft: 0,
+        tabsRect: {
+          left: 0
+        },
+        innerCurrent: 0,
+        moving: false
+      };
+    },
+    watch: {
+      current: {
+        immediate: true,
+        handler(newValue, oldValue) {
+          if (newValue !== this.innerCurrent) {
+            this.innerCurrent = newValue;
+            this.$nextTick(() => {
+              this.resize();
+            });
+          }
+        }
+      },
+      list() {
+        this.$nextTick(() => {
+          this.resize();
+        });
+      }
+    },
+    computed: {
+      textStyle() {
+        return (index2) => {
+          const style = {};
+          const customeStyle = index2 === this.innerCurrent ? uni.$u.addStyle(this.activeStyle) : uni.$u.addStyle(
+            this.inactiveStyle
+          );
+          if (this.list[index2].disabled) {
+            style.color = "#c8c9cc";
+          }
+          return uni.$u.deepMerge(customeStyle, style);
+        };
+      },
+      propsBadge() {
+        return uni.$u.props.badge;
+      }
+    },
+    async mounted() {
+      this.init();
+    },
+    emits: ["click", "change"],
+    methods: {
+      setLineLeft() {
+        const tabItem = this.list[this.innerCurrent];
+        if (!tabItem) {
+          return;
+        }
+        let lineOffsetLeft = this.list.slice(0, this.innerCurrent).reduce((total, curr) => total + curr.rect.width, 0);
+        const lineWidth = uni.$u.getPx(this.lineWidth);
+        this.lineOffsetLeft = lineOffsetLeft + (tabItem.rect.width - lineWidth) / 2;
+        if (this.firstTime) {
+          setTimeout(() => {
+            this.firstTime = false;
+          }, 10);
+        }
+      },
+      animation(x, duration = 0) {
+      },
+      clickHandler(item2, index2) {
+        this.$emit("click", {
+          ...item2,
+          index: index2
+        });
+        if (item2.disabled)
+          return;
+        this.innerCurrent = index2;
+        this.resize();
+        this.$emit("change", {
+          ...item2,
+          index: index2
+        });
+      },
+      init() {
+        uni.$u.sleep().then(() => {
+          this.resize();
+        });
+      },
+      setScrollLeft() {
+        const tabRect = this.list[this.innerCurrent];
+        const offsetLeft = this.list.slice(0, this.innerCurrent).reduce((total, curr) => {
+          return total + curr.rect.width;
+        }, 0);
+        const windowWidth = uni.$u.sys().windowWidth;
+        let scrollLeft = offsetLeft - (this.tabsRect.width - tabRect.rect.width) / 2 - (windowWidth - this.tabsRect.right) / 2 + this.tabsRect.left / 2;
+        scrollLeft = Math.min(scrollLeft, this.scrollViewWidth - this.tabsRect.width);
+        this.scrollLeft = Math.max(0, scrollLeft);
+      },
+      resize() {
+        if (this.list.length === 0) {
+          return;
+        }
+        Promise.all([this.getTabsRect(), this.getAllItemRect()]).then(([tabsRect, itemRect = []]) => {
+          this.tabsRect = tabsRect;
+          this.scrollViewWidth = 0;
+          itemRect.map((item2, index2) => {
+            this.scrollViewWidth += item2.width;
+            this.list[index2].rect = item2;
+          });
+          this.setLineLeft();
+          this.setScrollLeft();
+        });
+      },
+      getTabsRect() {
+        return new Promise((resolve) => {
+          this.queryRect("u-tabs__wrapper__scroll-view").then((size) => resolve(size));
+        });
+      },
+      getAllItemRect() {
+        return new Promise((resolve) => {
+          const promiseAllArr = this.list.map((item2, index2) => this.queryRect(
+            `u-tabs__wrapper__nav__item-${index2}`,
+            true
+          ));
+          Promise.all(promiseAllArr).then((sizes) => resolve(sizes));
+        });
+      },
+      queryRect(el, item2) {
+        return new Promise((resolve) => {
+          this.$uGetRect(`.${el}`).then((size) => {
+            resolve(size);
+          });
+        });
+      }
+    }
+  };
+  function _sfc_render$N(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_u_badge = resolveEasycom(vue.resolveDynamicComponent("u-badge"), __easycom_0$1);
+    return vue.openBlock(), vue.createElementBlock("view", { class: "u-tabs" }, [
+      vue.createElementVNode("view", { class: "u-tabs__wrapper" }, [
+        vue.renderSlot(_ctx.$slots, "left", {}, void 0, true),
+        vue.createElementVNode("view", { class: "u-tabs__wrapper__scroll-view-wrapper" }, [
+          vue.createElementVNode("scroll-view", {
+            "scroll-x": _ctx.scrollable,
+            "scroll-left": $data.scrollLeft,
+            "scroll-with-animation": "",
+            class: "u-tabs__wrapper__scroll-view",
+            "show-scrollbar": false,
+            ref: "u-tabs__wrapper__scroll-view"
+          }, [
+            vue.createElementVNode("view", {
+              class: "u-tabs__wrapper__nav",
+              ref: "u-tabs__wrapper__nav"
+            }, [
+              (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(_ctx.list, (item2, index2) => {
+                return vue.openBlock(), vue.createElementBlock("view", {
+                  class: vue.normalizeClass(["u-tabs__wrapper__nav__item", [`u-tabs__wrapper__nav__item-${index2}`, item2.disabled && "u-tabs__wrapper__nav__item--disabled"]]),
+                  key: index2,
+                  onClick: ($event) => $options.clickHandler(item2, index2),
+                  ref_for: true,
+                  ref: `u-tabs__wrapper__nav__item-${index2}`,
+                  style: vue.normalizeStyle([_ctx.$u.addStyle(_ctx.itemStyle), { flex: _ctx.scrollable ? "" : 1 }])
+                }, [
+                  vue.createElementVNode("text", {
+                    class: vue.normalizeClass([[item2.disabled && "u-tabs__wrapper__nav__item__text--disabled"], "u-tabs__wrapper__nav__item__text"]),
+                    style: vue.normalizeStyle([$options.textStyle(index2)])
+                  }, vue.toDisplayString(item2[_ctx.keyName]), 7),
+                  vue.createVNode(_component_u_badge, {
+                    show: !!(item2.badge && (item2.badge.show || item2.badge.isDot || item2.badge.value)),
+                    isDot: item2.badge && item2.badge.isDot || $options.propsBadge.isDot,
+                    value: item2.badge && item2.badge.value || $options.propsBadge.value,
+                    max: item2.badge && item2.badge.max || $options.propsBadge.max,
+                    type: item2.badge && item2.badge.type || $options.propsBadge.type,
+                    showZero: item2.badge && item2.badge.showZero || $options.propsBadge.showZero,
+                    bgColor: item2.badge && item2.badge.bgColor || $options.propsBadge.bgColor,
+                    color: item2.badge && item2.badge.color || $options.propsBadge.color,
+                    shape: item2.badge && item2.badge.shape || $options.propsBadge.shape,
+                    numberType: item2.badge && item2.badge.numberType || $options.propsBadge.numberType,
+                    inverted: item2.badge && item2.badge.inverted || $options.propsBadge.inverted,
+                    customStyle: "margin-left: 4px;"
+                  }, null, 8, ["show", "isDot", "value", "max", "type", "showZero", "bgColor", "color", "shape", "numberType", "inverted"])
+                ], 14, ["onClick"]);
+              }), 128)),
+              vue.createElementVNode("view", {
+                class: "u-tabs__wrapper__nav__line",
+                ref: "u-tabs__wrapper__nav__line",
+                style: vue.normalizeStyle([{
+                  width: _ctx.$u.addUnit(_ctx.lineWidth),
+                  transform: `translate(${$data.lineOffsetLeft}px)`,
+                  transitionDuration: `${$data.firstTime ? 0 : _ctx.duration}ms`,
+                  height: _ctx.$u.addUnit(_ctx.lineHeight),
+                  background: _ctx.lineColor,
+                  backgroundSize: _ctx.lineBgSize
+                }])
+              }, null, 4)
+            ], 512)
+          ], 8, ["scroll-x", "scroll-left"])
+        ]),
+        vue.renderSlot(_ctx.$slots, "right", {}, void 0, true)
+      ])
+    ]);
+  }
+  const __easycom_2$4 = /* @__PURE__ */ _export_sfc(_sfc_main$O, [["render", _sfc_render$N], ["__scopeId", "data-v-0546c3e4"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-tabs/u-tabs.vue"]]);
+  const props$c = {
+    props: {
+      safeAreaInsetTop: {
+        type: Boolean,
+        default: props$s.navbar.safeAreaInsetTop
+      },
+      placeholder: {
+        type: Boolean,
+        default: props$s.navbar.placeholder
+      },
+      fixed: {
+        type: Boolean,
+        default: props$s.navbar.fixed
+      },
+      border: {
+        type: Boolean,
+        default: props$s.navbar.border
+      },
+      leftIcon: {
+        type: String,
+        default: props$s.navbar.leftIcon
+      },
+      leftText: {
+        type: String,
+        default: props$s.navbar.leftText
+      },
+      rightText: {
+        type: String,
+        default: props$s.navbar.rightText
+      },
+      rightIcon: {
+        type: String,
+        default: props$s.navbar.rightIcon
+      },
+      title: {
+        type: [String, Number],
+        default: props$s.navbar.title
+      },
+      bgColor: {
+        type: String,
+        default: props$s.navbar.bgColor
+      },
+      titleWidth: {
+        type: [String, Number],
+        default: props$s.navbar.titleWidth
+      },
+      height: {
+        type: [String, Number],
+        default: props$s.navbar.height
+      },
+      leftIconSize: {
+        type: [String, Number],
+        default: props$s.navbar.leftIconSize
+      },
+      leftIconColor: {
+        type: String,
+        default: props$s.navbar.leftIconColor
+      },
+      autoBack: {
+        type: Boolean,
+        default: props$s.navbar.autoBack
+      },
+      titleStyle: {
+        type: [String, Object],
+        default: props$s.navbar.titleStyle
+      }
+    }
+  };
+  const _sfc_main$N = {
+    name: "u-navbar",
+    mixins: [mpMixin, mixin, props$c],
+    data() {
+      return {};
+    },
+    methods: {
+      leftClick() {
+        this.$emit("leftClick");
+        if (this.autoBack) {
+          uni.navigateBack();
+        }
+      },
+      rightClick() {
+        this.$emit("rightClick");
+      }
+    }
+  };
+  function _sfc_render$M(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_u_status_bar = resolveEasycom(vue.resolveDynamicComponent("u-status-bar"), __easycom_0$2);
+    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$6);
+    return vue.openBlock(), vue.createElementBlock("view", { class: "u-navbar" }, [
+      _ctx.fixed && _ctx.placeholder ? (vue.openBlock(), vue.createElementBlock("view", {
+        key: 0,
+        class: "u-navbar__placeholder",
+        style: vue.normalizeStyle({
+          height: _ctx.$u.addUnit(_ctx.$u.getPx(_ctx.height) + _ctx.$u.sys().statusBarHeight, "px")
+        })
+      }, null, 4)) : vue.createCommentVNode("v-if", true),
+      vue.createElementVNode("view", {
+        class: vue.normalizeClass([_ctx.fixed && "u-navbar--fixed"])
+      }, [
+        _ctx.safeAreaInsetTop ? (vue.openBlock(), vue.createBlock(_component_u_status_bar, {
+          key: 0,
+          bgColor: _ctx.bgColor
+        }, null, 8, ["bgColor"])) : vue.createCommentVNode("v-if", true),
+        vue.createElementVNode("view", {
+          class: vue.normalizeClass(["u-navbar__content", [_ctx.border && "u-border-bottom"]]),
+          style: vue.normalizeStyle({
+            height: _ctx.$u.addUnit(_ctx.height),
+            backgroundColor: _ctx.bgColor
+          })
+        }, [
+          vue.createElementVNode("view", {
+            class: "u-navbar__content__left",
+            "hover-class": "u-navbar__content__left--hover",
+            "hover-start-time": "150",
+            onClick: _cache[0] || (_cache[0] = (...args) => $options.leftClick && $options.leftClick(...args))
+          }, [
+            vue.renderSlot(_ctx.$slots, "left", {}, () => [
+              _ctx.leftIcon ? (vue.openBlock(), vue.createBlock(_component_u_icon, {
+                key: 0,
+                name: _ctx.leftIcon,
+                size: _ctx.leftIconSize,
+                color: _ctx.leftIconColor
+              }, null, 8, ["name", "size", "color"])) : vue.createCommentVNode("v-if", true),
+              _ctx.leftText ? (vue.openBlock(), vue.createElementBlock("text", {
+                key: 1,
+                style: vue.normalizeStyle({
+                  color: _ctx.leftIconColor
+                }),
+                class: "u-navbar__content__left__text"
+              }, vue.toDisplayString(_ctx.leftText), 5)) : vue.createCommentVNode("v-if", true)
+            ], true)
+          ]),
+          vue.renderSlot(_ctx.$slots, "center", {}, () => [
+            vue.createElementVNode("text", {
+              class: "u-line-1 u-navbar__content__title",
+              style: vue.normalizeStyle([{
+                width: _ctx.$u.addUnit(_ctx.titleWidth)
+              }, _ctx.$u.addStyle(_ctx.titleStyle)])
+            }, vue.toDisplayString(_ctx.title), 5)
+          ], true),
+          _ctx.$slots.right || _ctx.rightIcon || _ctx.rightText ? (vue.openBlock(), vue.createElementBlock("view", {
+            key: 0,
+            class: "u-navbar__content__right",
+            onClick: _cache[1] || (_cache[1] = (...args) => $options.rightClick && $options.rightClick(...args))
+          }, [
+            vue.renderSlot(_ctx.$slots, "right", {}, () => [
+              _ctx.rightIcon ? (vue.openBlock(), vue.createBlock(_component_u_icon, {
+                key: 0,
+                name: _ctx.rightIcon,
+                size: "20"
+              }, null, 8, ["name"])) : vue.createCommentVNode("v-if", true),
+              _ctx.rightText ? (vue.openBlock(), vue.createElementBlock("text", {
+                key: 1,
+                class: "u-navbar__content__right__text"
+              }, vue.toDisplayString(_ctx.rightText), 1)) : vue.createCommentVNode("v-if", true)
+            ], true)
+          ])) : vue.createCommentVNode("v-if", true)
+        ], 6)
+      ], 2)
+    ]);
+  }
+  const __easycom_0 = /* @__PURE__ */ _export_sfc(_sfc_main$N, [["render", _sfc_render$M], ["__scopeId", "data-v-9d9e7ee2"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-navbar/u-navbar.vue"]]);
+  const props$b = {
+    props: {
+      status: {
+        type: String,
+        default: props$s.loadmore.status
+      },
+      bgColor: {
+        type: String,
+        default: props$s.loadmore.bgColor
+      },
+      icon: {
+        type: Boolean,
+        default: props$s.loadmore.icon
+      },
+      fontSize: {
+        type: [String, Number],
+        default: props$s.loadmore.fontSize
+      },
+      iconSize: {
+        type: [String, Number],
+        default: props$s.loadmore.iconSize
+      },
       color: {
         type: String,
-        default: props$s.line.color
+        default: props$s.loadmore.color
       },
-      length: {
-        type: [String, Number],
-        default: props$s.line.length
-      },
-      direction: {
+      loadingIcon: {
         type: String,
-        default: props$s.line.direction
+        default: props$s.loadmore.loadingIcon
       },
-      hairline: {
+      loadmoreText: {
+        type: String,
+        default: props$s.loadmore.loadmoreText
+      },
+      loadingText: {
+        type: String,
+        default: props$s.loadmore.loadingText
+      },
+      nomoreText: {
+        type: String,
+        default: props$s.loadmore.nomoreText
+      },
+      isDot: {
         type: Boolean,
-        default: props$s.line.hairline
+        default: props$s.loadmore.isDot
       },
-      margin: {
+      iconColor: {
+        type: String,
+        default: props$s.loadmore.iconColor
+      },
+      marginTop: {
         type: [String, Number],
-        default: props$s.line.margin
+        default: props$s.loadmore.marginTop
+      },
+      marginBottom: {
+        type: [String, Number],
+        default: props$s.loadmore.marginBottom
+      },
+      height: {
+        type: [String, Number],
+        default: props$s.loadmore.height
+      },
+      line: {
+        type: Boolean,
+        default: props$s.loadmore.line
+      },
+      lineColor: {
+        type: String,
+        default: props$s.loadmore.lineColor
       },
       dashed: {
         type: Boolean,
-        default: props$s.line.dashed
+        default: props$s.loadmore.dashed
       }
     }
   };
-  const _sfc_main$$ = {
-    name: "u-line",
-    mixins: [mpMixin, mixin, props$n],
+  const _sfc_main$M = {
+    name: "u-loadmore",
+    mixins: [mpMixin, mixin, props$b],
+    data() {
+      return {
+        dotText: "\u25CF"
+      };
+    },
     computed: {
-      lineStyle() {
-        const style = {};
-        style.margin = this.margin;
-        if (this.direction === "row") {
-          style.borderBottomWidth = "1px";
-          style.borderBottomStyle = this.dashed ? "dashed" : "solid";
-          style.width = uni.$u.addUnit(this.length);
-          if (this.hairline)
-            style.transform = "scaleY(0.5)";
-        } else {
-          style.borderLeftWidth = "1px";
-          style.borderLeftStyle = this.dashed ? "dashed" : "solid";
-          style.height = uni.$u.addUnit(this.length);
-          if (this.hairline)
-            style.transform = "scaleX(0.5)";
-        }
-        style.borderColor = this.color;
-        return uni.$u.deepMerge(style, uni.$u.addStyle(this.customStyle));
+      loadTextStyle() {
+        return {
+          color: this.color,
+          fontSize: uni.$u.addUnit(this.fontSize),
+          lineHeight: uni.$u.addUnit(this.fontSize),
+          backgroundColor: this.bgColor
+        };
+      },
+      showText() {
+        let text2 = "";
+        if (this.status == "loadmore")
+          text2 = this.loadmoreText;
+        else if (this.status == "loading")
+          text2 = this.loadingText;
+        else if (this.status == "nomore" && this.isDot)
+          text2 = this.dotText;
+        else
+          text2 = this.nomoreText;
+        return text2;
+      }
+    },
+    methods: {
+      loadMore() {
+        if (this.status == "loadmore")
+          this.$emit("loadmore");
       }
     }
   };
-  function _sfc_render$_(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$L(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_u_line = resolveEasycom(vue.resolveDynamicComponent("u-line"), __easycom_1$3);
+    const _component_u_loading_icon = resolveEasycom(vue.resolveDynamicComponent("u-loading-icon"), __easycom_1$5);
     return vue.openBlock(), vue.createElementBlock("view", {
-      class: "u-line",
-      style: vue.normalizeStyle([$options.lineStyle])
-    }, null, 4);
+      class: "u-loadmore",
+      style: vue.normalizeStyle([
+        _ctx.$u.addStyle(_ctx.customStyle),
+        {
+          backgroundColor: _ctx.bgColor,
+          marginBottom: _ctx.$u.addUnit(_ctx.marginBottom),
+          marginTop: _ctx.$u.addUnit(_ctx.marginTop),
+          height: _ctx.$u.addUnit(_ctx.height)
+        }
+      ])
+    }, [
+      _ctx.line ? (vue.openBlock(), vue.createBlock(_component_u_line, {
+        key: 0,
+        length: "140rpx",
+        color: _ctx.lineColor,
+        hairline: false,
+        dashed: _ctx.dashed
+      }, null, 8, ["color", "dashed"])) : vue.createCommentVNode("v-if", true),
+      vue.createCommentVNode(" \u52A0\u8F7D\u4E2D\u548C\u6CA1\u6709\u66F4\u591A\u7684\u72B6\u6001\u624D\u663E\u793A\u4E24\u8FB9\u7684\u6A2A\u7EBF "),
+      vue.createElementVNode("view", {
+        class: vue.normalizeClass([_ctx.status == "loadmore" || _ctx.status == "nomore" ? "u-more" : "", "u-loadmore__content"])
+      }, [
+        _ctx.status === "loading" && _ctx.icon ? (vue.openBlock(), vue.createElementBlock("view", {
+          key: 0,
+          class: "u-loadmore__content__icon-wrap"
+        }, [
+          vue.createVNode(_component_u_loading_icon, {
+            color: _ctx.iconColor,
+            size: _ctx.iconSize,
+            mode: _ctx.loadingIcon
+          }, null, 8, ["color", "size", "mode"])
+        ])) : vue.createCommentVNode("v-if", true),
+        vue.createCommentVNode(" \u5982\u679C\u6CA1\u6709\u66F4\u591A\u7684\u72B6\u6001\u4E0B\uFF0C\u663E\u793A\u5185\u5BB9\u4E3Adot\uFF08\u7C97\u70B9\uFF09\uFF0C\u52A0\u8F7D\u7279\u5B9A\u6837\u5F0F "),
+        vue.createElementVNode("text", {
+          class: vue.normalizeClass(["u-line-1", [_ctx.status == "nomore" && _ctx.isDot == true ? "u-loadmore__content__dot-text" : "u-loadmore__content__text"]]),
+          style: vue.normalizeStyle([$options.loadTextStyle]),
+          onClick: _cache[0] || (_cache[0] = (...args) => $options.loadMore && $options.loadMore(...args))
+        }, vue.toDisplayString($options.showText), 7)
+      ], 2),
+      _ctx.line ? (vue.openBlock(), vue.createBlock(_component_u_line, {
+        key: 1,
+        length: "140rpx",
+        color: _ctx.lineColor,
+        hairline: false,
+        dashed: _ctx.dashed
+      }, null, 8, ["color", "dashed"])) : vue.createCommentVNode("v-if", true)
+    ], 4);
   }
-  var __easycom_0$5 = /* @__PURE__ */ _export_sfc(_sfc_main$$, [["render", _sfc_render$_], ["__scopeId", "data-v-059431e1"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-line/u-line.vue"]]);
-  var props$m = {
+  const __easycom_2$3 = /* @__PURE__ */ _export_sfc(_sfc_main$M, [["render", _sfc_render$L], ["__scopeId", "data-v-5817e4cf"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-loadmore/u-loadmore.vue"]]);
+  const props$a = {
+    props: {
+      icon: {
+        type: String,
+        default: props$s.empty.icon
+      },
+      text: {
+        type: String,
+        default: props$s.empty.text
+      },
+      textColor: {
+        type: String,
+        default: props$s.empty.textColor
+      },
+      textSize: {
+        type: [String, Number],
+        default: props$s.empty.textSize
+      },
+      iconColor: {
+        type: String,
+        default: props$s.empty.iconColor
+      },
+      iconSize: {
+        type: [String, Number],
+        default: props$s.empty.iconSize
+      },
+      mode: {
+        type: String,
+        default: props$s.empty.mode
+      },
+      width: {
+        type: [String, Number],
+        default: props$s.empty.width
+      },
+      height: {
+        type: [String, Number],
+        default: props$s.empty.height
+      },
+      show: {
+        type: Boolean,
+        default: props$s.empty.show
+      },
+      marginTop: {
+        type: [String, Number],
+        default: props$s.empty.marginTop
+      }
+    }
+  };
+  const _sfc_main$L = {
+    name: "u-empty",
+    mixins: [mpMixin, mixin, props$a],
+    data() {
+      return {
+        icons: {
+          car: "\u8D2D\u7269\u8F66\u4E3A\u7A7A",
+          page: "\u9875\u9762\u4E0D\u5B58\u5728",
+          search: "\u6CA1\u6709\u641C\u7D22\u7ED3\u679C",
+          address: "\u6CA1\u6709\u6536\u8D27\u5730\u5740",
+          wifi: "\u6CA1\u6709WiFi",
+          order: "\u8BA2\u5355\u4E3A\u7A7A",
+          coupon: "\u6CA1\u6709\u4F18\u60E0\u5238",
+          favor: "\u6682\u65E0\u6536\u85CF",
+          permission: "\u65E0\u6743\u9650",
+          history: "\u65E0\u5386\u53F2\u8BB0\u5F55",
+          news: "\u65E0\u65B0\u95FB\u5217\u8868",
+          message: "\u6D88\u606F\u5217\u8868\u4E3A\u7A7A",
+          list: "\u5217\u8868\u4E3A\u7A7A",
+          data: "\u6570\u636E\u4E3A\u7A7A",
+          comment: "\u6682\u65E0\u8BC4\u8BBA"
+        }
+      };
+    },
+    computed: {
+      emptyStyle() {
+        const style = {};
+        style.marginTop = uni.$u.addUnit(this.marginTop);
+        return uni.$u.deepMerge(uni.$u.addStyle(this.customStyle), style);
+      },
+      textStyle() {
+        const style = {};
+        style.color = this.textColor;
+        style.fontSize = uni.$u.addUnit(this.textSize);
+        return style;
+      },
+      isSrc() {
+        return this.icon.indexOf("/") >= 0;
+      }
+    }
+  };
+  function _sfc_render$K(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$6);
+    return _ctx.show ? (vue.openBlock(), vue.createElementBlock("view", {
+      key: 0,
+      class: "u-empty",
+      style: vue.normalizeStyle([$options.emptyStyle])
+    }, [
+      !$options.isSrc ? (vue.openBlock(), vue.createBlock(_component_u_icon, {
+        key: 0,
+        name: _ctx.mode === "message" ? "chat" : `empty-${_ctx.mode}`,
+        size: _ctx.iconSize,
+        color: _ctx.iconColor,
+        "margin-top": "14"
+      }, null, 8, ["name", "size", "color"])) : (vue.openBlock(), vue.createElementBlock("image", {
+        key: 1,
+        style: vue.normalizeStyle({
+          width: _ctx.$u.addUnit(_ctx.width),
+          height: _ctx.$u.addUnit(_ctx.height)
+        }),
+        src: _ctx.icon,
+        mode: "widthFix"
+      }, null, 12, ["src"])),
+      vue.createElementVNode("text", {
+        class: "u-empty__text",
+        style: vue.normalizeStyle([$options.textStyle])
+      }, vue.toDisplayString(_ctx.text ? _ctx.text : $data.icons[_ctx.mode]), 5),
+      _ctx.$slots.default || _ctx.$slots.$default ? (vue.openBlock(), vue.createElementBlock("view", {
+        key: 2,
+        class: "u-empty__wrap"
+      }, [
+        vue.renderSlot(_ctx.$slots, "default", {}, void 0, true)
+      ])) : vue.createCommentVNode("v-if", true)
+    ], 4)) : vue.createCommentVNode("v-if", true);
+  }
+  const __easycom_3$1 = /* @__PURE__ */ _export_sfc(_sfc_main$L, [["render", _sfc_render$K], ["__scopeId", "data-v-bd84101d"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-empty/u-empty.vue"]]);
+  const props$9 = {
     props: {
       label: {
         type: String,
@@ -2584,9 +5973,9 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  const _sfc_main$_ = {
+  const _sfc_main$K = {
     name: "u-form-item",
-    mixins: [mpMixin, mixin, props$m],
+    mixins: [mpMixin, mixin, props$9],
     data() {
       return {
         message: "",
@@ -2630,9 +6019,9 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$Z(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$7);
-    const _component_u_line = resolveEasycom(vue.resolveDynamicComponent("u-line"), __easycom_0$5);
+  function _sfc_render$J(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$6);
+    const _component_u_line = resolveEasycom(vue.resolveDynamicComponent("u-line"), __easycom_1$3);
     return vue.openBlock(), vue.createElementBlock("view", { class: "u-form-item" }, [
       vue.createElementVNode("view", {
         class: "u-form-item__body",
@@ -2707,8 +6096,8 @@ if (uni.restoreGlobal) {
       }, null, 8, ["color", "customStyle"])) : vue.createCommentVNode("v-if", true)
     ]);
   }
-  var __easycom_2$5 = /* @__PURE__ */ _export_sfc(_sfc_main$_, [["render", _sfc_render$Z], ["__scopeId", "data-v-212734aa"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-form-item/u-form-item.vue"]]);
-  var props$l = {
+  const __easycom_2$2 = /* @__PURE__ */ _export_sfc(_sfc_main$K, [["render", _sfc_render$J], ["__scopeId", "data-v-b4fd400b"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-form-item/u-form-item.vue"]]);
+  const props$8 = {
     props: {
       model: {
         type: Object,
@@ -2933,7 +6322,7 @@ if (uni.restoreGlobal) {
         if (source.hasOwnProperty(s)) {
           const value = source[s];
           if (typeof value === "object" && typeof target[s] === "object") {
-            target[s] = __spreadValues(__spreadValues({}, target[s]), value);
+            target[s] = { ...target[s], ...value };
           } else {
             target[s] = value;
           }
@@ -2954,7 +6343,10 @@ if (uni.restoreGlobal) {
   }
   const pattern = {
     email: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-    url: new RegExp("^(?!mailto:)(?:(?:http|https|ftp)://|//)(?:\\S+(?::\\S*)?@)?(?:(?:(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[0-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z\\u00a1-\\uffff0-9]+-*)*[a-z\\u00a1-\\uffff0-9]+)(?:\\.(?:[a-z\\u00a1-\\uffff0-9]+-*)*[a-z\\u00a1-\\uffff0-9]+)*(?:\\.(?:[a-z\\u00a1-\\uffff]{2,})))|localhost)(?::\\d{2,5})?(?:(/|\\?|#)[^\\s]*)?$", "i"),
+    url: new RegExp(
+      "^(?!mailto:)(?:(?:http|https|ftp)://|//)(?:\\S+(?::\\S*)?@)?(?:(?:(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[0-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z\\u00a1-\\uffff0-9]+-*)*[a-z\\u00a1-\\uffff0-9]+)(?:\\.(?:[a-z\\u00a1-\\uffff0-9]+-*)*[a-z\\u00a1-\\uffff0-9]+)*(?:\\.(?:[a-z\\u00a1-\\uffff]{2,})))|localhost)(?::\\d{2,5})?(?:(/|\\?|#)[^\\s]*)?$",
+      "i"
+    ),
     hex: /^#?([a-f0-9]{6}|[a-f0-9]{3})$/i
   };
   var types = {
@@ -3476,7 +6868,7 @@ if (uni.restoreGlobal) {
           let rule = r;
           if (typeof rule.transform === "function") {
             if (source === source_) {
-              source = __spreadValues({}, source);
+              source = { ...source };
             }
             value = source[z] = rule.transform(value);
           }
@@ -3485,7 +6877,7 @@ if (uni.restoreGlobal) {
               validator: rule
             };
           } else {
-            rule = __spreadValues({}, rule);
+            rule = { ...rule };
           }
           rule.validator = _this.getValidationMethod(rule);
           rule.field = z;
@@ -3510,7 +6902,7 @@ if (uni.restoreGlobal) {
         deep = deep && (rule.required || !rule.required && data.value);
         rule.field = data.field;
         function addFullfield(key, schema) {
-          return __spreadProps(__spreadValues({}, schema), { fullField: `${rule.fullField}.${key}` });
+          return { ...schema, fullField: `${rule.fullField}.${key}` };
         }
         function cb(e) {
           if (e === void 0) {
@@ -3552,7 +6944,7 @@ if (uni.restoreGlobal) {
                 }
               }
             }
-            fieldsSchema = __spreadValues(__spreadValues({}, fieldsSchema), data.rule.fields);
+            fieldsSchema = { ...fieldsSchema, ...data.rule.fields };
             for (const f in fieldsSchema) {
               if (fieldsSchema.hasOwnProperty(f)) {
                 const fieldSchema = Array.isArray(fieldsSchema[f]) ? fieldsSchema[f] : [fieldsSchema[f]];
@@ -3633,9 +7025,9 @@ if (uni.restoreGlobal) {
   Schema.messages = messages;
   Schema.warning = function() {
   };
-  const _sfc_main$Z = {
+  const _sfc_main$J = {
     name: "u-form",
-    mixins: [mpMixin, mixin, props$l],
+    mixins: [mpMixin, mixin, props$8],
     provide() {
       return {
         uForm: this
@@ -3723,7 +7115,10 @@ if (uni.restoreGlobal) {
           this.children.map((child) => {
             const childErrors = [];
             if (value.includes(child.prop)) {
-              const propertyVal = uni.$u.getProperty(this.model, child.prop);
+              const propertyVal = uni.$u.getProperty(
+                this.model,
+                child.prop
+              );
               const propertyChain = child.prop.split(".");
               const propertyName = propertyChain[propertyChain.length - 1];
               const rule = this.formRules[child.prop];
@@ -3738,16 +7133,19 @@ if (uni.restoreGlobal) {
                 const validator = new Schema({
                   [propertyName]: ruleItem
                 });
-                validator.validate({
-                  [propertyName]: propertyVal
-                }, (errors, fields) => {
-                  var _a, _b;
-                  if (uni.$u.test.array(errors)) {
-                    errorsRes.push(...errors);
-                    childErrors.push(...errors);
+                validator.validate(
+                  {
+                    [propertyName]: propertyVal
+                  },
+                  (errors, fields) => {
+                    var _a, _b;
+                    if (uni.$u.test.array(errors)) {
+                      errorsRes.push(...errors);
+                      childErrors.push(...errors);
+                    }
+                    child.message = (_b = (_a = childErrors[0]) == null ? void 0 : _a.message) != null ? _b : null;
                   }
-                  child.message = (_b = (_a = childErrors[0]) == null ? void 0 : _a.message) != null ? _b : null;
-                });
+                );
               }
             }
           });
@@ -3761,7 +7159,9 @@ if (uni.restoreGlobal) {
         }
         return new Promise((resolve, reject) => {
           this.$nextTick(() => {
-            const formItemProps = this.children.map((item2) => item2.prop);
+            const formItemProps = this.children.map(
+              (item2) => item2.prop
+            );
             this.validateField(formItemProps, (errors) => {
               if (errors.length) {
                 this.errorType === "toast" && uni.$u.toast(errors[0].message);
@@ -3775,15 +7175,15 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$Y(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$I(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("view", { class: "u-form" }, [
       vue.renderSlot(_ctx.$slots, "default")
     ]);
   }
-  var uvForm = /* @__PURE__ */ _export_sfc(_sfc_main$Z, [["render", _sfc_render$Y], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-form/u-form.vue"]]);
-  const _sfc_main$Y = {
+  const uvForm = /* @__PURE__ */ _export_sfc(_sfc_main$J, [["render", _sfc_render$I], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-form/u-form.vue"]]);
+  const _sfc_main$I = {
     name: "u--form",
-    mixins: [mpMixin, props$l, mixin],
+    mixins: [mpMixin, props$8, mixin],
     components: {
       uvForm
     },
@@ -3811,7 +7211,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$X(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$H(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_uvForm = vue.resolveComponent("uvForm");
     return vue.openBlock(), vue.createBlock(_component_uvForm, {
       ref: "uForm",
@@ -3831,4041 +7231,8 @@ if (uni.restoreGlobal) {
       _: 3
     }, 8, ["model", "rules", "errorType", "borderBottom", "labelPosition", "labelWidth", "labelAlign", "labelStyle", "customStyle"]);
   }
-  var __easycom_3$2 = /* @__PURE__ */ _export_sfc(_sfc_main$Y, [["render", _sfc_render$X], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u--form/u--form.vue"]]);
-  var props$k = {
-    props: {
-      show: {
-        type: Boolean,
-        default: props$s.loadingIcon.show
-      },
-      color: {
-        type: String,
-        default: props$s.loadingIcon.color
-      },
-      textColor: {
-        type: String,
-        default: props$s.loadingIcon.textColor
-      },
-      vertical: {
-        type: Boolean,
-        default: props$s.loadingIcon.vertical
-      },
-      mode: {
-        type: String,
-        default: props$s.loadingIcon.mode
-      },
-      size: {
-        type: [String, Number],
-        default: props$s.loadingIcon.size
-      },
-      textSize: {
-        type: [String, Number],
-        default: props$s.loadingIcon.textSize
-      },
-      text: {
-        type: [String, Number],
-        default: props$s.loadingIcon.text
-      },
-      timingFunction: {
-        type: String,
-        default: props$s.loadingIcon.timingFunction
-      },
-      duration: {
-        type: [String, Number],
-        default: props$s.loadingIcon.duration
-      },
-      inactiveColor: {
-        type: String,
-        default: props$s.loadingIcon.inactiveColor
-      }
-    }
-  };
-  const _sfc_main$X = {
-    name: "u-loading-icon",
-    mixins: [mpMixin, mixin, props$k],
-    data() {
-      return {
-        array12: Array.from({
-          length: 12
-        }),
-        aniAngel: 360,
-        webviewHide: false,
-        loading: false
-      };
-    },
-    computed: {
-      otherBorderColor() {
-        const lightColor = uni.$u.colorGradient(this.color, "#ffffff", 100)[80];
-        if (this.mode === "circle") {
-          return this.inactiveColor ? this.inactiveColor : lightColor;
-        } else {
-          return "transparent";
-        }
-      }
-    },
-    watch: {
-      show(n) {
-      }
-    },
-    mounted() {
-      this.init();
-    },
-    methods: {
-      init() {
-        setTimeout(() => {
-          this.show && this.addEventListenerToWebview();
-        }, 20);
-      },
-      addEventListenerToWebview() {
-        const pages2 = getCurrentPages();
-        const page2 = pages2[pages2.length - 1];
-        const currentWebview = page2.$getAppWebview();
-        currentWebview.addEventListener("hide", () => {
-          this.webviewHide = true;
-        });
-        currentWebview.addEventListener("show", () => {
-          this.webviewHide = false;
-        });
-      }
-    }
-  };
-  function _sfc_render$W(_ctx, _cache, $props, $setup, $data, $options) {
-    return _ctx.show ? (vue.openBlock(), vue.createElementBlock("view", {
-      key: 0,
-      class: vue.normalizeClass(["u-loading-icon", [_ctx.vertical && "u-loading-icon--vertical"]]),
-      style: vue.normalizeStyle([_ctx.$u.addStyle(_ctx.customStyle)])
-    }, [
-      !$data.webviewHide ? (vue.openBlock(), vue.createElementBlock("view", {
-        key: 0,
-        class: vue.normalizeClass(["u-loading-icon__spinner", [`u-loading-icon__spinner--${_ctx.mode}`]]),
-        ref: "ani",
-        style: vue.normalizeStyle({
-          color: _ctx.color,
-          width: _ctx.$u.addUnit(_ctx.size),
-          height: _ctx.$u.addUnit(_ctx.size),
-          borderTopColor: _ctx.color,
-          borderBottomColor: $options.otherBorderColor,
-          borderLeftColor: $options.otherBorderColor,
-          borderRightColor: $options.otherBorderColor,
-          "animation-duration": `${_ctx.duration}ms`,
-          "animation-timing-function": _ctx.mode === "semicircle" || _ctx.mode === "circle" ? _ctx.timingFunction : ""
-        })
-      }, [
-        _ctx.mode === "spinner" ? (vue.openBlock(true), vue.createElementBlock(vue.Fragment, { key: 0 }, vue.renderList($data.array12, (item2, index2) => {
-          return vue.openBlock(), vue.createElementBlock("view", {
-            key: index2,
-            class: "u-loading-icon__dot"
-          });
-        }), 128)) : vue.createCommentVNode("v-if", true)
-      ], 6)) : vue.createCommentVNode("v-if", true),
-      _ctx.text ? (vue.openBlock(), vue.createElementBlock("text", {
-        key: 1,
-        class: "u-loading-icon__text",
-        style: vue.normalizeStyle({
-          fontSize: _ctx.$u.addUnit(_ctx.textSize),
-          color: _ctx.textColor
-        })
-      }, vue.toDisplayString(_ctx.text), 5)) : vue.createCommentVNode("v-if", true)
-    ], 6)) : vue.createCommentVNode("v-if", true);
-  }
-  var __easycom_1$3 = /* @__PURE__ */ _export_sfc(_sfc_main$X, [["render", _sfc_render$W], ["__scopeId", "data-v-854b5fbe"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-loading-icon/u-loading-icon.vue"]]);
-  var props$j = {
-    props: {
-      hairline: {
-        type: Boolean,
-        default: props$s.button.hairline
-      },
-      type: {
-        type: String,
-        default: props$s.button.type
-      },
-      size: {
-        type: String,
-        default: props$s.button.size
-      },
-      shape: {
-        type: String,
-        default: props$s.button.shape
-      },
-      plain: {
-        type: Boolean,
-        default: props$s.button.plain
-      },
-      disabled: {
-        type: Boolean,
-        default: props$s.button.disabled
-      },
-      loading: {
-        type: Boolean,
-        default: props$s.button.loading
-      },
-      loadingText: {
-        type: [String, Number],
-        default: props$s.button.loadingText
-      },
-      loadingMode: {
-        type: String,
-        default: props$s.button.loadingMode
-      },
-      loadingSize: {
-        type: [String, Number],
-        default: props$s.button.loadingSize
-      },
-      openType: {
-        type: String,
-        default: props$s.button.openType
-      },
-      formType: {
-        type: String,
-        default: props$s.button.formType
-      },
-      appParameter: {
-        type: String,
-        default: props$s.button.appParameter
-      },
-      hoverStopPropagation: {
-        type: Boolean,
-        default: props$s.button.hoverStopPropagation
-      },
-      lang: {
-        type: String,
-        default: props$s.button.lang
-      },
-      sessionFrom: {
-        type: String,
-        default: props$s.button.sessionFrom
-      },
-      sendMessageTitle: {
-        type: String,
-        default: props$s.button.sendMessageTitle
-      },
-      sendMessagePath: {
-        type: String,
-        default: props$s.button.sendMessagePath
-      },
-      sendMessageImg: {
-        type: String,
-        default: props$s.button.sendMessageImg
-      },
-      showMessageCard: {
-        type: Boolean,
-        default: props$s.button.showMessageCard
-      },
-      dataName: {
-        type: String,
-        default: props$s.button.dataName
-      },
-      throttleTime: {
-        type: [String, Number],
-        default: props$s.button.throttleTime
-      },
-      hoverStartTime: {
-        type: [String, Number],
-        default: props$s.button.hoverStartTime
-      },
-      hoverStayTime: {
-        type: [String, Number],
-        default: props$s.button.hoverStayTime
-      },
-      text: {
-        type: [String, Number],
-        default: props$s.button.text
-      },
-      icon: {
-        type: String,
-        default: props$s.button.icon
-      },
-      iconColor: {
-        type: String,
-        default: props$s.button.icon
-      },
-      color: {
-        type: String,
-        default: props$s.button.color
-      }
-    }
-  };
-  const _sfc_main$W = {
-    name: "u-button",
-    mixins: [mpMixin, mixin, props$j],
-    data() {
-      return {};
-    },
-    computed: {
-      bemClass() {
-        if (!this.color) {
-          return this.bem("button", ["type", "shape", "size"], ["disabled", "plain", "hairline"]);
-        } else {
-          return this.bem("button", ["shape", "size"], ["disabled", "plain", "hairline"]);
-        }
-      },
-      loadingColor() {
-        if (this.plain) {
-          return this.color ? this.color : uni.$u.config.color[`u-${this.type}`];
-        }
-        if (this.type === "info") {
-          return "#c9c9c9";
-        }
-        return "rgb(200, 200, 200)";
-      },
-      iconColorCom() {
-        if (this.iconColor)
-          return this.iconColor;
-        if (this.plain) {
-          return this.color ? this.color : this.type;
-        } else {
-          return this.type === "info" ? "#000000" : "#ffffff";
-        }
-      },
-      baseColor() {
-        let style = {};
-        if (this.color) {
-          style.color = this.plain ? this.color : "white";
-          if (!this.plain) {
-            style["background-color"] = this.color;
-          }
-          if (this.color.indexOf("gradient") !== -1) {
-            style.borderTopWidth = 0;
-            style.borderRightWidth = 0;
-            style.borderBottomWidth = 0;
-            style.borderLeftWidth = 0;
-            if (!this.plain) {
-              style.backgroundImage = this.color;
-            }
-          } else {
-            style.borderColor = this.color;
-            style.borderWidth = "1px";
-            style.borderStyle = "solid";
-          }
-        }
-        return style;
-      },
-      nvueTextStyle() {
-        let style = {};
-        if (this.type === "info") {
-          style.color = "#323233";
-        }
-        if (this.color) {
-          style.color = this.plain ? this.color : "white";
-        }
-        style.fontSize = this.textSize + "px";
-        return style;
-      },
-      textSize() {
-        let fontSize = 14, { size } = this;
-        if (size === "large")
-          fontSize = 16;
-        if (size === "normal")
-          fontSize = 14;
-        if (size === "small")
-          fontSize = 12;
-        if (size === "mini")
-          fontSize = 10;
-        return fontSize;
-      }
-    },
-    emits: [
-      "click",
-      "getphonenumber",
-      "getuserinfo",
-      "error",
-      "opensetting",
-      "launchapp"
-    ],
-    methods: {
-      clickHandler() {
-        if (!this.disabled && !this.loading) {
-          uni.$u.throttle(() => {
-            this.$emit("click");
-          }, this.throttleTime);
-        }
-      },
-      getphonenumber(res) {
-        this.$emit("getphonenumber", res);
-      },
-      getuserinfo(res) {
-        this.$emit("getuserinfo", res);
-      },
-      error(res) {
-        this.$emit("error", res);
-      },
-      opensetting(res) {
-        this.$emit("opensetting", res);
-      },
-      launchapp(res) {
-        this.$emit("launchapp", res);
-      }
-    }
-  };
-  function _sfc_render$V(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_loading_icon = resolveEasycom(vue.resolveDynamicComponent("u-loading-icon"), __easycom_1$3);
-    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$7);
-    return vue.openBlock(), vue.createElementBlock("button", {
-      "hover-start-time": Number(_ctx.hoverStartTime),
-      "hover-stay-time": Number(_ctx.hoverStayTime),
-      "form-type": _ctx.formType,
-      "open-type": _ctx.openType,
-      "app-parameter": _ctx.appParameter,
-      "hover-stop-propagation": _ctx.hoverStopPropagation,
-      "send-message-title": _ctx.sendMessageTitle,
-      "send-message-path": _ctx.sendMessagePath,
-      lang: _ctx.lang,
-      "data-name": _ctx.dataName,
-      "session-from": _ctx.sessionFrom,
-      "send-message-img": _ctx.sendMessageImg,
-      "show-message-card": _ctx.showMessageCard,
-      onGetphonenumber: _cache[0] || (_cache[0] = (...args) => $options.getphonenumber && $options.getphonenumber(...args)),
-      onGetuserinfo: _cache[1] || (_cache[1] = (...args) => $options.getuserinfo && $options.getuserinfo(...args)),
-      onError: _cache[2] || (_cache[2] = (...args) => $options.error && $options.error(...args)),
-      onOpensetting: _cache[3] || (_cache[3] = (...args) => $options.opensetting && $options.opensetting(...args)),
-      onLaunchapp: _cache[4] || (_cache[4] = (...args) => $options.launchapp && $options.launchapp(...args)),
-      "hover-class": !_ctx.disabled && !_ctx.loading ? "u-button--active" : "",
-      class: vue.normalizeClass(["u-button u-reset-button", $options.bemClass]),
-      style: vue.normalizeStyle([$options.baseColor, _ctx.$u.addStyle(_ctx.customStyle)]),
-      onClick: _cache[5] || (_cache[5] = (...args) => $options.clickHandler && $options.clickHandler(...args))
-    }, [
-      _ctx.loading ? (vue.openBlock(), vue.createElementBlock(vue.Fragment, { key: 0 }, [
-        vue.createVNode(_component_u_loading_icon, {
-          mode: _ctx.loadingMode,
-          size: _ctx.loadingSize * 1.15,
-          color: $options.loadingColor
-        }, null, 8, ["mode", "size", "color"]),
-        vue.createElementVNode("text", {
-          class: "u-button__loading-text",
-          style: vue.normalizeStyle([{ fontSize: $options.textSize + "px" }])
-        }, vue.toDisplayString(_ctx.loadingText || _ctx.text), 5)
-      ], 64)) : (vue.openBlock(), vue.createElementBlock(vue.Fragment, { key: 1 }, [
-        _ctx.icon ? (vue.openBlock(), vue.createBlock(_component_u_icon, {
-          key: 0,
-          name: _ctx.icon,
-          color: $options.iconColorCom,
-          size: $options.textSize * 1.35,
-          customStyle: { marginRight: "2px" }
-        }, null, 8, ["name", "color", "size"])) : vue.createCommentVNode("v-if", true),
-        vue.renderSlot(_ctx.$slots, "default", {}, () => [
-          vue.createElementVNode("text", {
-            class: "u-button__text",
-            style: vue.normalizeStyle([{ fontSize: $options.textSize + "px" }])
-          }, vue.toDisplayString(_ctx.text), 5)
-        ], true)
-      ], 64))
-    ], 46, ["hover-start-time", "hover-stay-time", "form-type", "open-type", "app-parameter", "hover-stop-propagation", "send-message-title", "send-message-path", "lang", "data-name", "session-from", "send-message-img", "show-message-card", "hover-class"]);
-  }
-  var __easycom_4$1 = /* @__PURE__ */ _export_sfc(_sfc_main$W, [["render", _sfc_render$V], ["__scopeId", "data-v-6f953de1"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-button/u-button.vue"]]);
-  var props$i = {
-    props: {
-      name: {
-        type: [String, Number, Boolean],
-        default: props$s.checkbox.name
-      },
-      shape: {
-        type: String,
-        default: props$s.checkbox.shape
-      },
-      size: {
-        type: [String, Number],
-        default: props$s.checkbox.size
-      },
-      checked: {
-        type: Boolean,
-        default: props$s.checkbox.checked
-      },
-      disabled: {
-        type: [String, Boolean],
-        default: props$s.checkbox.disabled
-      },
-      activeColor: {
-        type: String,
-        default: props$s.checkbox.activeColor
-      },
-      inactiveColor: {
-        type: String,
-        default: props$s.checkbox.inactiveColor
-      },
-      iconSize: {
-        type: [String, Number],
-        default: props$s.checkbox.iconSize
-      },
-      iconColor: {
-        type: String,
-        default: props$s.checkbox.iconColor
-      },
-      label: {
-        type: [String, Number],
-        default: props$s.checkbox.label
-      },
-      labelSize: {
-        type: [String, Number],
-        default: props$s.checkbox.labelSize
-      },
-      labelColor: {
-        type: String,
-        default: props$s.checkbox.labelColor
-      },
-      labelDisabled: {
-        type: [String, Boolean],
-        default: props$s.checkbox.labelDisabled
-      }
-    }
-  };
-  const _sfc_main$V = {
-    name: "u-checkbox",
-    mixins: [mpMixin, mixin, props$i],
-    data() {
-      return {
-        isChecked: false,
-        parentData: {
-          iconSize: 12,
-          labelDisabled: null,
-          disabled: null,
-          shape: "square",
-          activeColor: null,
-          inactiveColor: null,
-          size: 18,
-          modelValue: null,
-          iconColor: null,
-          placement: "row",
-          borderBottom: false,
-          iconPlacement: "left"
-        }
-      };
-    },
-    computed: {
-      elDisabled() {
-        return this.disabled !== "" ? this.disabled : this.parentData.disabled !== null ? this.parentData.disabled : false;
-      },
-      elLabelDisabled() {
-        return this.labelDisabled !== "" ? this.labelDisabled : this.parentData.labelDisabled !== null ? this.parentData.labelDisabled : false;
-      },
-      elSize() {
-        return this.size ? this.size : this.parentData.size ? this.parentData.size : 21;
-      },
-      elIconSize() {
-        return this.iconSize ? this.iconSize : this.parentData.iconSize ? this.parentData.iconSize : 12;
-      },
-      elActiveColor() {
-        return this.activeColor ? this.activeColor : this.parentData.activeColor ? this.parentData.activeColor : "#2979ff";
-      },
-      elInactiveColor() {
-        return this.inactiveColor ? this.inactiveColor : this.parentData.inactiveColor ? this.parentData.inactiveColor : "#c8c9cc";
-      },
-      elLabelColor() {
-        return this.labelColor ? this.labelColor : this.parentData.labelColor ? this.parentData.labelColor : "#606266";
-      },
-      elShape() {
-        return this.shape ? this.shape : this.parentData.shape ? this.parentData.shape : "circle";
-      },
-      elLabelSize() {
-        return uni.$u.addUnit(this.labelSize ? this.labelSize : this.parentData.labelSize ? this.parentData.labelSize : "15");
-      },
-      elIconColor() {
-        const iconColor = this.iconColor ? this.iconColor : this.parentData.iconColor ? this.parentData.iconColor : "#ffffff";
-        if (this.elDisabled) {
-          return this.isChecked ? this.elInactiveColor : "transparent";
-        } else {
-          return this.isChecked ? iconColor : "transparent";
-        }
-      },
-      iconClasses() {
-        let classes = [];
-        classes.push("u-checkbox__icon-wrap--" + this.elShape);
-        if (this.elDisabled) {
-          classes.push("u-checkbox__icon-wrap--disabled");
-        }
-        if (this.isChecked && this.elDisabled) {
-          classes.push("u-checkbox__icon-wrap--disabled--checked");
-        }
-        return classes;
-      },
-      iconWrapStyle() {
-        const style = {};
-        style.backgroundColor = this.isChecked && !this.elDisabled ? this.elActiveColor : "#ffffff";
-        style.borderColor = this.isChecked && !this.elDisabled ? this.elActiveColor : this.elInactiveColor;
-        style.width = uni.$u.addUnit(this.elSize);
-        style.height = uni.$u.addUnit(this.elSize);
-        if (this.parentData.iconPlacement === "right") {
-          style.marginRight = 0;
-        }
-        return style;
-      },
-      checkboxStyle() {
-        const style = {};
-        if (this.parentData.borderBottom && this.parentData.placement === "row") {
-          uni.$u.error("\u68C0\u6D4B\u5230\u60A8\u5C06borderBottom\u8BBE\u7F6E\u4E3Atrue\uFF0C\u9700\u8981\u540C\u65F6\u5C06u-checkbox-group\u7684placement\u8BBE\u7F6E\u4E3Acolumn\u624D\u6709\u6548");
-        }
-        if (this.parentData.borderBottom && this.parentData.placement === "column") {
-          style.paddingBottom = "8px";
-        }
-        return uni.$u.deepMerge(style, uni.$u.addStyle(this.customStyle));
-      }
-    },
-    mounted() {
-      this.init();
-    },
-    methods: {
-      init() {
-        this.updateParentData();
-        if (!this.parent) {
-          uni.$u.error("u-checkbox\u5FC5\u987B\u642D\u914Du-checkbox-group\u7EC4\u4EF6\u4F7F\u7528");
-        }
-        const value = this.parentData.modelValue;
-        if (this.checked) {
-          this.isChecked = true;
-        } else if (uni.$u.test.array(value)) {
-          this.isChecked = value.some((item2) => {
-            return item2 === this.name;
-          });
-        }
-      },
-      updateParentData() {
-        this.getParentData("u-checkbox-group");
-      },
-      wrapperClickHandler(e) {
-        this.parentData.iconPlacement === "right" && this.iconClickHandler(e);
-      },
-      iconClickHandler(e) {
-        this.preventEvent(e);
-        if (!this.elDisabled) {
-          this.setRadioCheckedStatus();
-        }
-      },
-      labelClickHandler(e) {
-        this.preventEvent(e);
-        if (!this.elLabelDisabled && !this.elDisabled) {
-          this.setRadioCheckedStatus();
-        }
-      },
-      emitEvent() {
-        this.$emit("change", this.isChecked);
-        this.$nextTick(() => {
-          uni.$u.formValidate(this, "change");
-        });
-      },
-      setRadioCheckedStatus() {
-        this.isChecked = !this.isChecked;
-        this.emitEvent();
-        typeof this.parent.unCheckedOther === "function" && this.parent.unCheckedOther(this);
-      }
-    },
-    watch: {
-      checked() {
-        this.isChecked = this.checked;
-      }
-    }
-  };
-  function _sfc_render$U(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$7);
-    return vue.openBlock(), vue.createElementBlock("view", {
-      class: vue.normalizeClass(["u-checkbox", [`u-checkbox-label--${$data.parentData.iconPlacement}`, $data.parentData.borderBottom && $data.parentData.placement === "column" && "u-border-bottom"]]),
-      style: vue.normalizeStyle([$options.checkboxStyle]),
-      onClick: _cache[2] || (_cache[2] = vue.withModifiers((...args) => $options.wrapperClickHandler && $options.wrapperClickHandler(...args), ["stop"]))
-    }, [
-      vue.createElementVNode("view", {
-        class: vue.normalizeClass(["u-checkbox__icon-wrap", $options.iconClasses]),
-        onClick: _cache[0] || (_cache[0] = vue.withModifiers((...args) => $options.iconClickHandler && $options.iconClickHandler(...args), ["stop"])),
-        style: vue.normalizeStyle([$options.iconWrapStyle])
-      }, [
-        vue.renderSlot(_ctx.$slots, "icon", {}, () => [
-          vue.createVNode(_component_u_icon, {
-            class: "u-checkbox__icon-wrap__icon",
-            name: "checkbox-mark",
-            size: $options.elIconSize,
-            color: $options.elIconColor
-          }, null, 8, ["size", "color"])
-        ], true)
-      ], 6),
-      vue.createElementVNode("text", {
-        onClick: _cache[1] || (_cache[1] = vue.withModifiers((...args) => $options.labelClickHandler && $options.labelClickHandler(...args), ["stop"])),
-        style: vue.normalizeStyle({
-          color: $options.elDisabled ? $options.elInactiveColor : $options.elLabelColor,
-          fontSize: $options.elLabelSize,
-          lineHeight: $options.elLabelSize
-        })
-      }, vue.toDisplayString(_ctx.label), 5)
-    ], 6);
-  }
-  var __easycom_5$2 = /* @__PURE__ */ _export_sfc(_sfc_main$V, [["render", _sfc_render$U], ["__scopeId", "data-v-4dffb701"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-checkbox/u-checkbox.vue"]]);
-  var props$h = {
-    props: {
-      name: {
-        type: String,
-        default: props$s.checkboxGroup.name
-      },
-      modelValue: {
-        type: Array,
-        default: props$s.checkboxGroup.value
-      },
-      shape: {
-        type: String,
-        default: props$s.checkboxGroup.shape
-      },
-      disabled: {
-        type: Boolean,
-        default: props$s.checkboxGroup.disabled
-      },
-      activeColor: {
-        type: String,
-        default: props$s.checkboxGroup.activeColor
-      },
-      inactiveColor: {
-        type: String,
-        default: props$s.checkboxGroup.inactiveColor
-      },
-      size: {
-        type: [String, Number],
-        default: props$s.checkboxGroup.size
-      },
-      placement: {
-        type: String,
-        default: props$s.checkboxGroup.placement
-      },
-      labelSize: {
-        type: [String, Number],
-        default: props$s.checkboxGroup.labelSize
-      },
-      labelColor: {
-        type: [String],
-        default: props$s.checkboxGroup.labelColor
-      },
-      labelDisabled: {
-        type: Boolean,
-        default: props$s.checkboxGroup.labelDisabled
-      },
-      iconColor: {
-        type: String,
-        default: props$s.checkboxGroup.iconColor
-      },
-      iconSize: {
-        type: [String, Number],
-        default: props$s.checkboxGroup.iconSize
-      },
-      iconPlacement: {
-        type: String,
-        default: props$s.checkboxGroup.iconPlacement
-      },
-      borderBottom: {
-        type: Boolean,
-        default: props$s.checkboxGroup.borderBottom
-      }
-    }
-  };
-  const _sfc_main$U = {
-    name: "u-checkbox-group",
-    mixins: [mpMixin, mixin, props$h],
-    computed: {
-      parentData() {
-        return [
-          this.modelValue,
-          this.disabled,
-          this.inactiveColor,
-          this.activeColor,
-          this.size,
-          this.labelDisabled,
-          this.shape,
-          this.iconSize,
-          this.borderBottom,
-          this.placement
-        ];
-      },
-      bemClass() {
-        return this.bem("checkbox-group", ["placement"]);
-      }
-    },
-    watch: {
-      parentData: {
-        handler() {
-          if (this.children.length) {
-            this.children.map((child) => {
-              typeof child.init === "function" && child.init();
-            });
-          }
-        },
-        deep: true
-      }
-    },
-    data() {
-      return {};
-    },
-    created() {
-      this.children = [];
-    },
-    emits: ["update:modelValue", "change"],
-    methods: {
-      unCheckedOther(childInstance) {
-        const values = [];
-        this.children.map((child) => {
-          if (child.isChecked) {
-            values.push(child.name);
-          }
-        });
-        this.$emit("change", values);
-        this.$emit("update:modelValue", values);
-      }
-    }
-  };
-  function _sfc_render$T(_ctx, _cache, $props, $setup, $data, $options) {
-    return vue.openBlock(), vue.createElementBlock("view", {
-      class: vue.normalizeClass(["u-checkbox-group", $options.bemClass])
-    }, [
-      vue.renderSlot(_ctx.$slots, "default", {}, void 0, true)
-    ], 2);
-  }
-  var __easycom_6 = /* @__PURE__ */ _export_sfc(_sfc_main$U, [["render", _sfc_render$T], ["__scopeId", "data-v-42e5b97e"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-checkbox-group/u-checkbox-group.vue"]]);
-  const _sfc_main$T = {
-    data() {
-      return {
-        form: {
-          email: "",
-          arrgee: ""
-        },
-        rules: {
-          "email": {
-            type: "email",
-            required: true,
-            message: "\u8ACB\u8F38\u5165\u6B63\u786E\u7684\u90AE\u7BB1",
-            trigger: ["blur", "change"]
-          }
-        }
-      };
-    },
-    methods: {
-      nextStep() {
-        formatAppLog("log", "at pages/login/login.vue:56", this.form.arrgee);
-        if (!this.form.arrgee) {
-          uni.$u.toast("\u8BF7\u52FE\u9009\u7EDF\u4E00\u7528\u6237\u534F\u8BAE\uFF01");
-          return;
-        }
-        this.$refs.form.validate().then((res) => {
-          uni.navigateTo({
-            url: `/pages/login/password/password`
-          });
-        }).catch((errors) => {
-          formatAppLog("log", "at pages/login/login.vue:66", "login", errors);
-        });
-      },
-      navigatorTo() {
-        uni.navigateTo({
-          url: `/pages/login/register/register`
-        });
-      }
-    }
-  };
-  function _sfc_render$S(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$6);
-    const _component_u__input = resolveEasycom(vue.resolveDynamicComponent("u--input"), __easycom_1$4);
-    const _component_u_form_item = resolveEasycom(vue.resolveDynamicComponent("u-form-item"), __easycom_2$5);
-    const _component_u__form = resolveEasycom(vue.resolveDynamicComponent("u--form"), __easycom_3$2);
-    const _component_u_button = resolveEasycom(vue.resolveDynamicComponent("u-button"), __easycom_4$1);
-    const _component_u_checkbox = resolveEasycom(vue.resolveDynamicComponent("u-checkbox"), __easycom_5$2);
-    const _component_u_checkbox_group = resolveEasycom(vue.resolveDynamicComponent("u-checkbox-group"), __easycom_6);
-    return vue.openBlock(), vue.createElementBlock("view", { class: "login" }, [
-      vue.createCommentVNode(" \u5BFC\u822A "),
-      vue.createVNode(_component_u_navbar, {
-        bgColor: "rgba(255, 195, 0, 1)",
-        leftIconSize: "62rpx",
-        titleStyle: "font-weight: 500;font-size: 38.46rpx;color: #000",
-        fixed: false,
-        leftIcon: "",
-        title: "\u767B\u9304",
-        height: "92rpx"
-      }),
-      vue.createElementVNode("view", { class: "login-content" }, [
-        vue.createElementVNode("view", { class: "lc-img" }, [
-          vue.createElementVNode("image", {
-            class: "lci-img",
-            src: "/static/login/login.png"
-          })
-        ]),
-        vue.createElementVNode("view", { class: "lc-inter" }, [
-          vue.createElementVNode("view", { class: "lci-form" }, [
-            vue.createVNode(_component_u__form, {
-              labelPosition: "top",
-              model: $data.form,
-              rules: $data.rules,
-              ref: "form"
-            }, {
-              default: vue.withCtx(() => [
-                vue.createVNode(_component_u_form_item, {
-                  labelWidth: "100%",
-                  label: "\u8ACB\u8F38\u5165\u90F5\u7BB1",
-                  prop: "email",
-                  ref: "email"
-                }, {
-                  default: vue.withCtx(() => [
-                    vue.createVNode(_component_u__input, {
-                      class: "lcif-input",
-                      type: "email",
-                      inputAlign: "left",
-                      modelValue: $data.form.email,
-                      "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => $data.form.email = $event),
-                      placeholder: "\u8ACB\u8F38\u5165\u4F60\u7684\u90F5\u7BB1"
-                    }, null, 8, ["modelValue"])
-                  ]),
-                  _: 1
-                }, 512)
-              ]),
-              _: 1
-            }, 8, ["model", "rules"])
-          ]),
-          vue.createElementVNode("view", { class: "lci-next" }, [
-            vue.createVNode(_component_u_button, {
-              onClick: $options.nextStep,
-              class: "color000 border-radius-default",
-              color: "linear-gradient(270deg, #FCA504 0%, #FDC50E 100%)"
-            }, {
-              default: vue.withCtx(() => [
-                vue.createTextVNode("\u4E0B\u4E00\u6B65")
-              ]),
-              _: 1
-            }, 8, ["onClick"]),
-            vue.createElementVNode("view", { class: "lcin-argee" }, [
-              vue.createVNode(_component_u_checkbox_group, {
-                modelValue: $data.form.arrgee,
-                "onUpdate:modelValue": _cache[1] || (_cache[1] = ($event) => $data.form.arrgee = $event)
-              }, {
-                default: vue.withCtx(() => [
-                  vue.createVNode(_component_u_checkbox, {
-                    shape: "circle",
-                    activeColor: "#FCA504",
-                    iconColor: "#666666",
-                    label: "\u6211\u5DF2\u95B1\u8B80\u4E26\u540C\u610F \u7528\u6236\u5354\u8B70",
-                    name: "1"
-                  })
-                ]),
-                _: 1
-              }, 8, ["modelValue"])
-            ])
-          ])
-        ]),
-        vue.createElementVNode("view", {
-          class: "lc-bottom",
-          onClick: _cache[2] || (_cache[2] = (...args) => $options.navigatorTo && $options.navigatorTo(...args))
-        }, "\u9084\u6C92\u6709\u8CEC\u865F\uFF1F\u7ACB\u5373\u8A3B\u518A")
-      ])
-    ]);
-  }
-  var PagesLoginLogin = /* @__PURE__ */ _export_sfc(_sfc_main$T, [["render", _sfc_render$S], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/login/login.vue"]]);
-  var props$g = {
-    props: {
-      length: {
-        type: [String, Number],
-        default: props$s.swiperIndicator.length
-      },
-      current: {
-        type: [String, Number],
-        default: props$s.swiperIndicator.current
-      },
-      indicatorActiveColor: {
-        type: String,
-        default: props$s.swiperIndicator.indicatorActiveColor
-      },
-      indicatorInactiveColor: {
-        type: String,
-        default: props$s.swiperIndicator.indicatorInactiveColor
-      },
-      indicatorMode: {
-        type: String,
-        default: props$s.swiperIndicator.indicatorMode
-      }
-    }
-  };
-  const _sfc_main$S = {
-    name: "u-swiper-indicator",
-    mixins: [mpMixin, mixin, props$g],
-    data() {
-      return {
-        lineWidth: 22
-      };
-    },
-    computed: {
-      lineStyle() {
-        let style = {};
-        style.width = uni.$u.addUnit(this.lineWidth);
-        style.transform = `translateX(${uni.$u.addUnit(this.current * this.lineWidth)})`;
-        style.backgroundColor = this.indicatorActiveColor;
-        return style;
-      },
-      dotStyle() {
-        return (index2) => {
-          let style = {};
-          style.backgroundColor = index2 === this.current ? this.indicatorActiveColor : this.indicatorInactiveColor;
-          return style;
-        };
-      }
-    }
-  };
-  function _sfc_render$R(_ctx, _cache, $props, $setup, $data, $options) {
-    return vue.openBlock(), vue.createElementBlock("view", { class: "u-swiper-indicator" }, [
-      _ctx.indicatorMode === "line" ? (vue.openBlock(), vue.createElementBlock("view", {
-        key: 0,
-        class: vue.normalizeClass(["u-swiper-indicator__wrapper", [`u-swiper-indicator__wrapper--${_ctx.indicatorMode}`]]),
-        style: vue.normalizeStyle({
-          width: _ctx.$u.addUnit($data.lineWidth * _ctx.length),
-          backgroundColor: _ctx.indicatorInactiveColor
-        })
-      }, [
-        vue.createElementVNode("view", {
-          class: "u-swiper-indicator__wrapper--line__bar",
-          style: vue.normalizeStyle([$options.lineStyle])
-        }, null, 4)
-      ], 6)) : vue.createCommentVNode("v-if", true),
-      _ctx.indicatorMode === "dot" ? (vue.openBlock(), vue.createElementBlock("view", {
-        key: 1,
-        class: "u-swiper-indicator__wrapper"
-      }, [
-        (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(_ctx.length, (item2, index2) => {
-          return vue.openBlock(), vue.createElementBlock("view", {
-            class: vue.normalizeClass(["u-swiper-indicator__wrapper__dot", [index2 === _ctx.current && "u-swiper-indicator__wrapper__dot--active"]]),
-            key: index2,
-            style: vue.normalizeStyle([$options.dotStyle(index2)])
-          }, null, 6);
-        }), 128))
-      ])) : vue.createCommentVNode("v-if", true)
-    ]);
-  }
-  var __easycom_1$2 = /* @__PURE__ */ _export_sfc(_sfc_main$S, [["render", _sfc_render$R], ["__scopeId", "data-v-487724be"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-swiper-indicator/u-swiper-indicator.vue"]]);
-  var props$f = {
-    props: {
-      list: {
-        type: Array,
-        default: props$s.swiper.list
-      },
-      indicator: {
-        type: Boolean,
-        default: props$s.swiper.indicator
-      },
-      indicatorActiveColor: {
-        type: String,
-        default: props$s.swiper.indicatorActiveColor
-      },
-      indicatorInactiveColor: {
-        type: String,
-        default: props$s.swiper.indicatorInactiveColor
-      },
-      indicatorStyle: {
-        type: [String, Object],
-        default: props$s.swiper.indicatorStyle
-      },
-      indicatorMode: {
-        type: String,
-        default: props$s.swiper.indicatorMode
-      },
-      autoplay: {
-        type: Boolean,
-        default: props$s.swiper.autoplay
-      },
-      current: {
-        type: [String, Number],
-        default: props$s.swiper.current
-      },
-      currentItemId: {
-        type: String,
-        default: props$s.swiper.currentItemId
-      },
-      interval: {
-        type: [String, Number],
-        default: props$s.swiper.interval
-      },
-      duration: {
-        type: [String, Number],
-        default: props$s.swiper.duration
-      },
-      circular: {
-        type: Boolean,
-        default: props$s.swiper.circular
-      },
-      previousMargin: {
-        type: [String, Number],
-        default: props$s.swiper.previousMargin
-      },
-      nextMargin: {
-        type: [String, Number],
-        default: props$s.swiper.nextMargin
-      },
-      acceleration: {
-        type: Boolean,
-        default: props$s.swiper.acceleration
-      },
-      displayMultipleItems: {
-        type: Number,
-        default: props$s.swiper.displayMultipleItems
-      },
-      easingFunction: {
-        type: String,
-        default: props$s.swiper.easingFunction
-      },
-      keyName: {
-        type: String,
-        default: props$s.swiper.keyName
-      },
-      imgMode: {
-        type: String,
-        default: props$s.swiper.imgMode
-      },
-      height: {
-        type: [String, Number],
-        default: props$s.swiper.height
-      },
-      bgColor: {
-        type: String,
-        default: props$s.swiper.bgColor
-      },
-      radius: {
-        type: [String, Number],
-        default: props$s.swiper.radius
-      },
-      loading: {
-        type: Boolean,
-        default: props$s.swiper.loading
-      },
-      showTitle: {
-        type: Boolean,
-        default: props$s.swiper.showTitle
-      }
-    }
-  };
-  const _sfc_main$R = {
-    name: "u-swiper",
-    mixins: [mpMixin, mixin, props$f],
-    data() {
-      return {
-        currentIndex: 0
-      };
-    },
-    watch: {
-      current(val, preVal) {
-        if (val === preVal)
-          return;
-        this.currentIndex = val;
-      }
-    },
-    computed: {
-      itemStyle() {
-        return (index2) => {
-          const style = {};
-          if (this.nextMargin && this.previousMargin) {
-            style.borderRadius = uni.$u.addUnit(this.radius);
-            if (index2 !== this.currentIndex)
-              style.transform = "scale(0.92)";
-          }
-          return style;
-        };
-      }
-    },
-    methods: {
-      getItemType(item2) {
-        if (typeof item2 === "string")
-          return uni.$u.test.video(this.getSource(item2)) ? "video" : "image";
-        if (typeof item2 === "object" && this.keyName) {
-          if (!item2.type)
-            return uni.$u.test.video(this.getSource(item2)) ? "video" : "image";
-          if (item2.type === "image")
-            return "image";
-          if (item2.type === "video")
-            return "video";
-          return "image";
-        }
-      },
-      getSource(item2) {
-        if (typeof item2 === "string")
-          return item2;
-        if (typeof item2 === "object" && this.keyName)
-          return item2[this.keyName];
-        else
-          uni.$u.error("\u8BF7\u6309\u683C\u5F0F\u4F20\u9012\u5217\u8868\u53C2\u6570");
-        return "";
-      },
-      change(e) {
-        const {
-          current
-        } = e.detail;
-        this.pauseVideo(this.currentIndex);
-        this.currentIndex = current;
-        this.$emit("change", e.detail);
-      },
-      pauseVideo(index2) {
-        const lastItem = this.getSource(this.list[index2]);
-        if (uni.$u.test.video(lastItem)) {
-          const video2 = uni.createVideoContext(`video-${index2}`, this);
-          video2.pause();
-        }
-      },
-      getPoster(item2) {
-        return typeof item2 === "object" && item2.poster ? item2.poster : "";
-      },
-      clickHandler(index2) {
-        this.$emit("click", index2);
-      }
-    }
-  };
-  function _sfc_render$Q(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_loading_icon = resolveEasycom(vue.resolveDynamicComponent("u-loading-icon"), __easycom_1$3);
-    const _component_u_swiper_indicator = resolveEasycom(vue.resolveDynamicComponent("u-swiper-indicator"), __easycom_1$2);
-    return vue.openBlock(), vue.createElementBlock("view", {
-      class: "u-swiper",
-      style: vue.normalizeStyle({
-        backgroundColor: _ctx.bgColor,
-        height: _ctx.$u.addUnit(_ctx.height),
-        borderRadius: _ctx.$u.addUnit(_ctx.radius)
-      })
-    }, [
-      _ctx.loading ? (vue.openBlock(), vue.createElementBlock("view", {
-        key: 0,
-        class: "u-swiper__loading"
-      }, [
-        vue.createVNode(_component_u_loading_icon, { mode: "circle" })
-      ])) : (vue.openBlock(), vue.createElementBlock("swiper", {
-        key: 1,
-        class: "u-swiper__wrapper",
-        style: vue.normalizeStyle({
-          height: _ctx.$u.addUnit(_ctx.height)
-        }),
-        onChange: _cache[0] || (_cache[0] = (...args) => $options.change && $options.change(...args)),
-        circular: _ctx.circular,
-        interval: _ctx.interval,
-        duration: _ctx.duration,
-        autoplay: _ctx.autoplay,
-        current: _ctx.current,
-        currentItemId: _ctx.currentItemId,
-        previousMargin: _ctx.$u.addUnit(_ctx.previousMargin),
-        nextMargin: _ctx.$u.addUnit(_ctx.nextMargin),
-        acceleration: _ctx.acceleration,
-        displayMultipleItems: _ctx.displayMultipleItems,
-        easingFunction: _ctx.easingFunction
-      }, [
-        (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(_ctx.list, (item2, index2) => {
-          return vue.openBlock(), vue.createElementBlock("swiper-item", {
-            class: "u-swiper__wrapper__item",
-            key: index2
-          }, [
-            vue.createElementVNode("view", {
-              class: "u-swiper__wrapper__item__wrapper",
-              style: vue.normalizeStyle([$options.itemStyle(index2)])
-            }, [
-              vue.createCommentVNode(" \u5728nvue\u4E2D\uFF0Cimage\u56FE\u7247\u7684\u5BBD\u5EA6\u9ED8\u8BA4\u4E3A\u5C4F\u5E55\u5BBD\u5EA6\uFF0C\u9700\u8981\u901A\u8FC7flex:1\u6491\u5F00\uFF0C\u53E6\u5916\u5FC5\u987B\u8BBE\u7F6E\u9AD8\u5EA6\u624D\u80FD\u663E\u793A\u56FE\u7247 "),
-              $options.getItemType(item2) === "image" ? (vue.openBlock(), vue.createElementBlock("image", {
-                key: 0,
-                class: "u-swiper__wrapper__item__wrapper__image",
-                src: $options.getSource(item2),
-                mode: _ctx.imgMode,
-                onClick: ($event) => $options.clickHandler(index2),
-                style: vue.normalizeStyle({
-                  height: _ctx.$u.addUnit(_ctx.height),
-                  borderRadius: _ctx.$u.addUnit(_ctx.radius)
-                })
-              }, null, 12, ["src", "mode", "onClick"])) : vue.createCommentVNode("v-if", true),
-              $options.getItemType(item2) === "video" ? (vue.openBlock(), vue.createElementBlock("video", {
-                key: 1,
-                class: "u-swiper__wrapper__item__wrapper__video",
-                id: `video-${index2}`,
-                "enable-progress-gesture": false,
-                src: $options.getSource(item2),
-                poster: $options.getPoster(item2),
-                title: _ctx.showTitle && _ctx.$u.test.object(item2) && item2.title ? item2.title : "",
-                style: vue.normalizeStyle({
-                  height: _ctx.$u.addUnit(_ctx.height)
-                }),
-                controls: "",
-                onClick: ($event) => $options.clickHandler(index2)
-              }, null, 12, ["id", "src", "poster", "title", "onClick"])) : vue.createCommentVNode("v-if", true),
-              _ctx.showTitle && _ctx.$u.test.object(item2) && item2.title && _ctx.$u.test.image($options.getSource(item2)) ? (vue.openBlock(), vue.createElementBlock("text", {
-                key: 2,
-                class: "u-swiper__wrapper__item__wrapper__title u-line-1"
-              }, vue.toDisplayString(item2.title), 1)) : vue.createCommentVNode("v-if", true)
-            ], 4)
-          ]);
-        }), 128))
-      ], 44, ["circular", "interval", "duration", "autoplay", "current", "currentItemId", "previousMargin", "nextMargin", "acceleration", "displayMultipleItems", "easingFunction"])),
-      vue.createElementVNode("view", {
-        class: "u-swiper__indicator",
-        style: vue.normalizeStyle([_ctx.$u.addStyle(_ctx.indicatorStyle)])
-      }, [
-        vue.renderSlot(_ctx.$slots, "indicator", {}, () => [
-          !_ctx.loading && _ctx.indicator && !_ctx.showTitle ? (vue.openBlock(), vue.createBlock(_component_u_swiper_indicator, {
-            key: 0,
-            indicatorActiveColor: _ctx.indicatorActiveColor,
-            indicatorInactiveColor: _ctx.indicatorInactiveColor,
-            length: _ctx.list.length,
-            current: $data.currentIndex,
-            indicatorMode: _ctx.indicatorMode
-          }, null, 8, ["indicatorActiveColor", "indicatorInactiveColor", "length", "current", "indicatorMode"])) : vue.createCommentVNode("v-if", true)
-        ], true)
-      ], 4)
-    ], 4);
-  }
-  var __easycom_0$4 = /* @__PURE__ */ _export_sfc(_sfc_main$R, [["render", _sfc_render$Q], ["__scopeId", "data-v-a2b426be"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-swiper/u-swiper.vue"]]);
-  var props$e = {
-    props: {
-      show: {
-        type: Boolean,
-        default: props$s.transition.show
-      },
-      mode: {
-        type: String,
-        default: props$s.transition.mode
-      },
-      duration: {
-        type: [String, Number],
-        default: props$s.transition.duration
-      },
-      timingFunction: {
-        type: String,
-        default: props$s.transition.timingFunction
-      }
-    }
-  };
-  const getClassNames = (name) => ({
-    enter: `u-${name}-enter u-${name}-enter-active`,
-    "enter-to": `u-${name}-enter-to u-${name}-enter-active`,
-    leave: `u-${name}-leave u-${name}-leave-active`,
-    "leave-to": `u-${name}-leave-to u-${name}-leave-active`
-  });
-  var transition = {
-    methods: {
-      clickHandler() {
-        this.$emit("click");
-      },
-      vueEnter() {
-        const classNames = getClassNames(this.mode);
-        this.status = "enter";
-        this.$emit("beforeEnter");
-        this.inited = true;
-        this.display = true;
-        this.classes = classNames.enter;
-        this.$nextTick(async () => {
-          this.$emit("enter");
-          this.transitionEnded = false;
-          this.$emit("afterEnter");
-          this.classes = classNames["enter-to"];
-        });
-      },
-      vueLeave() {
-        if (!this.display)
-          return;
-        const classNames = getClassNames(this.mode);
-        this.status = "leave";
-        this.$emit("beforeLeave");
-        this.classes = classNames.leave;
-        this.$nextTick(() => {
-          this.transitionEnded = false;
-          this.$emit("leave");
-          setTimeout(this.onTransitionEnd, this.duration);
-          this.classes = classNames["leave-to"];
-        });
-      },
-      onTransitionEnd() {
-        if (this.transitionEnded)
-          return;
-        this.transitionEnded = true;
-        this.$emit(this.status === "leave" ? "afterLeave" : "afterEnter");
-        if (!this.show && this.display) {
-          this.display = false;
-          this.inited = false;
-        }
-      }
-    }
-  };
-  const _sfc_main$Q = {
-    name: "u-transition",
-    data() {
-      return {
-        inited: false,
-        viewStyle: {},
-        status: "",
-        transitionEnded: false,
-        display: false,
-        classes: ""
-      };
-    },
-    computed: {
-      mergeStyle() {
-        const { viewStyle, customStyle } = this;
-        return __spreadValues(__spreadValues({
-          transitionDuration: `${this.duration}ms`,
-          transitionTimingFunction: this.timingFunction
-        }, uni.$u.addStyle(customStyle)), viewStyle);
-      }
-    },
-    mixins: [mpMixin, mixin, transition, props$e],
-    watch: {
-      show: {
-        handler(newVal) {
-          newVal ? this.vueEnter() : this.vueLeave();
-        },
-        immediate: true
-      }
-    }
-  };
-  function _sfc_render$P(_ctx, _cache, $props, $setup, $data, $options) {
-    return $data.inited ? (vue.openBlock(), vue.createElementBlock("view", {
-      key: 0,
-      class: vue.normalizeClass(["u-transition", $data.classes]),
-      ref: "u-transition",
-      onClick: _cache[0] || (_cache[0] = (...args) => _ctx.clickHandler && _ctx.clickHandler(...args)),
-      style: vue.normalizeStyle([$options.mergeStyle]),
-      onTouchmove: _cache[1] || (_cache[1] = (...args) => _ctx.noop && _ctx.noop(...args))
-    }, [
-      vue.renderSlot(_ctx.$slots, "default", {}, void 0, true)
-    ], 38)) : vue.createCommentVNode("v-if", true);
-  }
-  var __easycom_4 = /* @__PURE__ */ _export_sfc(_sfc_main$Q, [["render", _sfc_render$P], ["__scopeId", "data-v-1eafea41"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-transition/u-transition.vue"]]);
-  var props$d = {
-    props: {
-      src: {
-        type: String,
-        default: props$s.image.src
-      },
-      mode: {
-        type: String,
-        default: props$s.image.mode
-      },
-      width: {
-        type: [String, Number],
-        default: props$s.image.width
-      },
-      height: {
-        type: [String, Number],
-        default: props$s.image.height
-      },
-      shape: {
-        type: String,
-        default: props$s.image.shape
-      },
-      radius: {
-        type: [String, Number],
-        default: props$s.image.radius
-      },
-      lazyLoad: {
-        type: Boolean,
-        default: props$s.image.lazyLoad
-      },
-      showMenuByLongpress: {
-        type: Boolean,
-        default: props$s.image.showMenuByLongpress
-      },
-      loadingIcon: {
-        type: String,
-        default: props$s.image.loadingIcon
-      },
-      errorIcon: {
-        type: String,
-        default: props$s.image.errorIcon
-      },
-      showLoading: {
-        type: Boolean,
-        default: props$s.image.showLoading
-      },
-      showError: {
-        type: Boolean,
-        default: props$s.image.showError
-      },
-      fade: {
-        type: Boolean,
-        default: props$s.image.fade
-      },
-      webp: {
-        type: Boolean,
-        default: props$s.image.webp
-      },
-      duration: {
-        type: [String, Number],
-        default: props$s.image.duration
-      },
-      bgColor: {
-        type: String,
-        default: props$s.image.bgColor
-      }
-    }
-  };
-  const _sfc_main$P = {
-    name: "u-image",
-    mixins: [mpMixin, mixin, props$d],
-    data() {
-      return {
-        isError: false,
-        loading: true,
-        opacity: 1,
-        durationTime: this.duration,
-        backgroundStyle: {},
-        show: false
-      };
-    },
-    watch: {
-      src: {
-        immediate: true,
-        handler(n) {
-          if (!n) {
-            this.isError = true;
-          } else {
-            this.isError = false;
-            this.loading = true;
-          }
-        }
-      }
-    },
-    computed: {
-      wrapStyle() {
-        let style = {};
-        style.width = this.$u.addUnit(this.width);
-        style.height = this.$u.addUnit(this.height);
-        style.borderRadius = this.shape == "circle" ? "10000px" : uni.$u.addUnit(this.radius);
-        style.overflow = this.radius > 0 ? "hidden" : "visible";
-        return uni.$u.deepMerge(style, uni.$u.addStyle(this.customStyle));
-      }
-    },
-    mounted() {
-      this.show = true;
-    },
-    emits: ["click", "error", "load"],
-    methods: {
-      onClick() {
-        this.$emit("click");
-      },
-      onErrorHandler(err) {
-        this.loading = false;
-        this.isError = true;
-        this.$emit("error", err);
-      },
-      onLoadHandler(event2) {
-        this.loading = false;
-        this.isError = false;
-        this.$emit("load", event2);
-        this.removeBgColor();
-      },
-      removeBgColor() {
-        this.backgroundStyle = {
-          backgroundColor: "transparent"
-        };
-      }
-    }
-  };
-  function _sfc_render$O(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$7);
-    const _component_u_transition = resolveEasycom(vue.resolveDynamicComponent("u-transition"), __easycom_4);
-    return vue.openBlock(), vue.createBlock(_component_u_transition, {
-      mode: "fade",
-      show: $data.show,
-      duration: _ctx.fade ? 1e3 : 0
-    }, {
-      default: vue.withCtx(() => [
-        vue.createElementVNode("view", {
-          class: "u-image",
-          onClick: _cache[2] || (_cache[2] = (...args) => $options.onClick && $options.onClick(...args)),
-          style: vue.normalizeStyle([$options.wrapStyle, $data.backgroundStyle])
-        }, [
-          !$data.isError ? (vue.openBlock(), vue.createElementBlock("image", {
-            key: 0,
-            src: _ctx.src,
-            mode: _ctx.mode,
-            onError: _cache[0] || (_cache[0] = (...args) => $options.onErrorHandler && $options.onErrorHandler(...args)),
-            onLoad: _cache[1] || (_cache[1] = (...args) => $options.onLoadHandler && $options.onLoadHandler(...args)),
-            "show-menu-by-longpress": _ctx.showMenuByLongpress,
-            "lazy-load": _ctx.lazyLoad,
-            class: "u-image__image",
-            style: vue.normalizeStyle({
-              borderRadius: _ctx.shape == "circle" ? "10000px" : _ctx.$u.addUnit(_ctx.radius),
-              width: _ctx.$u.addUnit(_ctx.width),
-              height: _ctx.$u.addUnit(_ctx.height)
-            })
-          }, null, 44, ["src", "mode", "show-menu-by-longpress", "lazy-load"])) : vue.createCommentVNode("v-if", true),
-          _ctx.showLoading && $data.loading ? (vue.openBlock(), vue.createElementBlock("view", {
-            key: 1,
-            class: "u-image__loading",
-            style: vue.normalizeStyle({
-              borderRadius: _ctx.shape == "circle" ? "50%" : _ctx.$u.addUnit(_ctx.radius),
-              backgroundColor: this.bgColor,
-              width: _ctx.$u.addUnit(_ctx.width),
-              height: _ctx.$u.addUnit(_ctx.height)
-            })
-          }, [
-            vue.renderSlot(_ctx.$slots, "loading", {}, () => [
-              vue.createVNode(_component_u_icon, {
-                name: _ctx.loadingIcon,
-                width: _ctx.width,
-                height: _ctx.height
-              }, null, 8, ["name", "width", "height"])
-            ], true)
-          ], 4)) : vue.createCommentVNode("v-if", true),
-          _ctx.showError && $data.isError && !$data.loading ? (vue.openBlock(), vue.createElementBlock("view", {
-            key: 2,
-            class: "u-image__error",
-            style: vue.normalizeStyle({
-              borderRadius: _ctx.shape == "circle" ? "50%" : _ctx.$u.addUnit(_ctx.radius),
-              width: _ctx.$u.addUnit(_ctx.width),
-              height: _ctx.$u.addUnit(_ctx.height)
-            })
-          }, [
-            vue.renderSlot(_ctx.$slots, "error", {}, () => [
-              vue.createVNode(_component_u_icon, {
-                name: _ctx.errorIcon,
-                width: _ctx.width,
-                height: _ctx.height
-              }, null, 8, ["name", "width", "height"])
-            ], true)
-          ], 4)) : vue.createCommentVNode("v-if", true)
-        ], 4)
-      ]),
-      _: 3
-    }, 8, ["show", "duration"]);
-  }
-  var __easycom_0$3 = /* @__PURE__ */ _export_sfc(_sfc_main$P, [["render", _sfc_render$O], ["__scopeId", "data-v-558b0c2e"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-image/u-image.vue"]]);
-  const _sfc_main$O = {
-    name: "u--image",
-    mixins: [mpMixin, props$d, mixin],
-    components: {
-      uvImage: __easycom_0$3
-    },
-    emits: ["click", "error", "load"]
-  };
-  function _sfc_render$N(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_uvImage = vue.resolveComponent("uvImage");
-    return vue.openBlock(), vue.createBlock(_component_uvImage, {
-      src: _ctx.src,
-      mode: _ctx.mode,
-      width: _ctx.width,
-      height: _ctx.height,
-      shape: _ctx.shape,
-      radius: _ctx.radius,
-      lazyLoad: _ctx.lazyLoad,
-      showMenuByLongpress: _ctx.showMenuByLongpress,
-      loadingIcon: _ctx.loadingIcon,
-      errorIcon: _ctx.errorIcon,
-      showLoading: _ctx.showLoading,
-      showError: _ctx.showError,
-      fade: _ctx.fade,
-      webp: _ctx.webp,
-      duration: _ctx.duration,
-      bgColor: _ctx.bgColor,
-      customStyle: _ctx.customStyle,
-      onClick: _cache[0] || (_cache[0] = ($event) => _ctx.$emit("click")),
-      onError: _cache[1] || (_cache[1] = ($event) => _ctx.$emit("error")),
-      onLoad: _cache[2] || (_cache[2] = ($event) => _ctx.$emit("load"))
-    }, {
-      loading: vue.withCtx(() => [
-        vue.renderSlot(_ctx.$slots, "loading")
-      ]),
-      error: vue.withCtx(() => [
-        vue.renderSlot(_ctx.$slots, "error")
-      ]),
-      _: 3
-    }, 8, ["src", "mode", "width", "height", "shape", "radius", "lazyLoad", "showMenuByLongpress", "loadingIcon", "errorIcon", "showLoading", "showError", "fade", "webp", "duration", "bgColor", "customStyle"]);
-  }
-  var __easycom_0$2 = /* @__PURE__ */ _export_sfc(_sfc_main$O, [["render", _sfc_render$N], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u--image/u--image.vue"]]);
-  var props$c = {
-    props: {
-      show: {
-        type: Boolean,
-        default: props$s.overlay.show
-      },
-      zIndex: {
-        type: [String, Number],
-        default: props$s.overlay.zIndex
-      },
-      duration: {
-        type: [String, Number],
-        default: props$s.overlay.duration
-      },
-      opacity: {
-        type: [String, Number],
-        default: props$s.overlay.opacity
-      }
-    }
-  };
-  const _sfc_main$N = {
-    name: "u-overlay",
-    mixins: [mpMixin, mixin, props$c],
-    computed: {
-      overlayStyle() {
-        const style = {
-          position: "fixed",
-          top: 0,
-          left: 0,
-          right: 0,
-          zIndex: this.zIndex,
-          bottom: 0,
-          "background-color": `rgba(0, 0, 0, ${this.opacity})`
-        };
-        return uni.$u.deepMerge(style, uni.$u.addStyle(this.customStyle));
-      }
-    },
-    methods: {
-      clickHandler() {
-        this.$emit("click");
-      }
-    }
-  };
-  function _sfc_render$M(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_transition = resolveEasycom(vue.resolveDynamicComponent("u-transition"), __easycom_4);
-    return vue.openBlock(), vue.createBlock(_component_u_transition, {
-      show: _ctx.show,
-      "custom-class": "u-overlay",
-      duration: _ctx.duration,
-      "custom-style": $options.overlayStyle,
-      onClick: $options.clickHandler
-    }, {
-      default: vue.withCtx(() => [
-        vue.renderSlot(_ctx.$slots, "default", {}, void 0, true)
-      ]),
-      _: 3
-    }, 8, ["show", "duration", "custom-style", "onClick"]);
-  }
-  var __easycom_0$1 = /* @__PURE__ */ _export_sfc(_sfc_main$N, [["render", _sfc_render$M], ["__scopeId", "data-v-02151e93"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-overlay/u-overlay.vue"]]);
-  var props$b = {
-    props: {}
-  };
-  const _sfc_main$M = {
-    name: "u-safe-bottom",
-    mixins: [mpMixin, mixin, props$b],
-    data() {
-      return {
-        safeAreaBottomHeight: 0,
-        isNvue: false
-      };
-    },
-    computed: {
-      style() {
-        const style = {};
-        return uni.$u.deepMerge(style, uni.$u.addStyle(this.customStyle));
-      }
-    },
-    mounted() {
-    }
-  };
-  function _sfc_render$L(_ctx, _cache, $props, $setup, $data, $options) {
-    return vue.openBlock(), vue.createElementBlock("view", {
-      class: vue.normalizeClass(["u-safe-bottom", [!$data.isNvue && "u-safe-area-inset-bottom"]]),
-      style: vue.normalizeStyle([$options.style])
-    }, null, 6);
-  }
-  var __easycom_3$1 = /* @__PURE__ */ _export_sfc(_sfc_main$M, [["render", _sfc_render$L], ["__scopeId", "data-v-4ef03a09"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-safe-bottom/u-safe-bottom.vue"]]);
-  var props$a = {
-    props: {
-      show: {
-        type: Boolean,
-        default: props$s.popup.show
-      },
-      overlay: {
-        type: Boolean,
-        default: props$s.popup.overlay
-      },
-      mode: {
-        type: String,
-        default: props$s.popup.mode
-      },
-      duration: {
-        type: [String, Number],
-        default: props$s.popup.duration
-      },
-      closeable: {
-        type: Boolean,
-        default: props$s.popup.closeable
-      },
-      overlayStyle: {
-        type: [Object, String],
-        default: props$s.popup.overlayStyle
-      },
-      closeOnClickOverlay: {
-        type: Boolean,
-        default: props$s.popup.closeOnClickOverlay
-      },
-      zIndex: {
-        type: [String, Number],
-        default: props$s.popup.zIndex
-      },
-      safeAreaInsetBottom: {
-        type: Boolean,
-        default: props$s.popup.safeAreaInsetBottom
-      },
-      safeAreaInsetTop: {
-        type: Boolean,
-        default: props$s.popup.safeAreaInsetTop
-      },
-      closeIconPos: {
-        type: String,
-        default: props$s.popup.closeIconPos
-      },
-      round: {
-        type: [Boolean, String, Number],
-        default: props$s.popup.round
-      },
-      zoom: {
-        type: Boolean,
-        default: props$s.popup.zoom
-      },
-      bgColor: {
-        type: String,
-        default: props$s.popup.bgColor
-      },
-      overlayOpacity: {
-        type: [Number, String],
-        default: props$s.popup.overlayOpacity
-      }
-    }
-  };
-  const _sfc_main$L = {
-    name: "u-popup",
-    mixins: [mpMixin, mixin, props$a],
-    data() {
-      return {
-        overlayDuration: this.duration + 50
-      };
-    },
-    watch: {
-      show(newValue, oldValue) {
-      }
-    },
-    computed: {
-      transitionStyle() {
-        const style = {
-          zIndex: this.zIndex,
-          position: "fixed",
-          display: "flex"
-        };
-        style[this.mode] = 0;
-        if (this.mode === "left") {
-          return uni.$u.deepMerge(style, {
-            bottom: 0,
-            top: 0
-          });
-        } else if (this.mode === "right") {
-          return uni.$u.deepMerge(style, {
-            bottom: 0,
-            top: 0
-          });
-        } else if (this.mode === "top") {
-          return uni.$u.deepMerge(style, {
-            left: 0,
-            right: 0
-          });
-        } else if (this.mode === "bottom") {
-          return uni.$u.deepMerge(style, {
-            left: 0,
-            right: 0
-          });
-        } else if (this.mode === "center") {
-          return uni.$u.deepMerge(style, {
-            alignItems: "center",
-            "justify-content": "center",
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0
-          });
-        }
-      },
-      contentStyle() {
-        const style = {};
-        uni.$u.sys();
-        if (this.mode !== "center") {
-          style.flex = 1;
-        }
-        if (this.bgColor) {
-          style.backgroundColor = this.bgColor;
-        }
-        if (this.round) {
-          const value = uni.$u.addUnit(this.round);
-          if (this.mode === "top") {
-            style.borderBottomLeftRadius = value;
-            style.borderBottomRightRadius = value;
-          } else if (this.mode === "bottom") {
-            style.borderTopLeftRadius = value;
-            style.borderTopRightRadius = value;
-          } else if (this.mode === "center") {
-            style.borderRadius = value;
-          }
-        }
-        return uni.$u.deepMerge(style, uni.$u.addStyle(this.customStyle));
-      },
-      position() {
-        if (this.mode === "center") {
-          return this.zoom ? "fade-zoom" : "fade";
-        }
-        if (this.mode === "left") {
-          return "slide-left";
-        }
-        if (this.mode === "right") {
-          return "slide-right";
-        }
-        if (this.mode === "bottom") {
-          return "slide-up";
-        }
-        if (this.mode === "top") {
-          return "slide-down";
-        }
-      }
-    },
-    methods: {
-      overlayClick() {
-        if (this.closeOnClickOverlay) {
-          this.$emit("close");
-        }
-      },
-      close(e) {
-        this.$emit("close");
-      },
-      afterEnter() {
-        this.$emit("open");
-      },
-      clickHandler() {
-        if (this.mode === "center") {
-          this.overlayClick();
-        }
-        this.$emit("click");
-      }
-    }
-  };
-  function _sfc_render$K(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_overlay = resolveEasycom(vue.resolveDynamicComponent("u-overlay"), __easycom_0$1);
-    const _component_u_status_bar = resolveEasycom(vue.resolveDynamicComponent("u-status-bar"), __easycom_1$5);
-    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$7);
-    const _component_u_safe_bottom = resolveEasycom(vue.resolveDynamicComponent("u-safe-bottom"), __easycom_3$1);
-    const _component_u_transition = resolveEasycom(vue.resolveDynamicComponent("u-transition"), __easycom_4);
-    return vue.openBlock(), vue.createElementBlock("view", { class: "u-popup" }, [
-      _ctx.overlay ? (vue.openBlock(), vue.createBlock(_component_u_overlay, {
-        key: 0,
-        show: _ctx.show,
-        onClick: $options.overlayClick,
-        duration: $data.overlayDuration,
-        customStyle: _ctx.overlayStyle,
-        opacity: _ctx.overlayOpacity
-      }, null, 8, ["show", "onClick", "duration", "customStyle", "opacity"])) : vue.createCommentVNode("v-if", true),
-      vue.createVNode(_component_u_transition, {
-        show: _ctx.show,
-        customStyle: $options.transitionStyle,
-        mode: $options.position,
-        duration: _ctx.duration,
-        onAfterEnter: $options.afterEnter,
-        onClick: $options.clickHandler
-      }, {
-        default: vue.withCtx(() => [
-          vue.createElementVNode("view", {
-            class: "u-popup__content",
-            style: vue.normalizeStyle([$options.contentStyle]),
-            onClick: _cache[1] || (_cache[1] = vue.withModifiers((...args) => _ctx.noop && _ctx.noop(...args), ["stop"]))
-          }, [
-            _ctx.safeAreaInsetTop ? (vue.openBlock(), vue.createBlock(_component_u_status_bar, { key: 0 })) : vue.createCommentVNode("v-if", true),
-            vue.renderSlot(_ctx.$slots, "default", {}, void 0, true),
-            _ctx.closeable ? (vue.openBlock(), vue.createElementBlock("view", {
-              key: 1,
-              onClick: _cache[0] || (_cache[0] = vue.withModifiers((...args) => $options.close && $options.close(...args), ["stop"])),
-              class: vue.normalizeClass(["u-popup__content__close", ["u-popup__content__close--" + _ctx.closeIconPos]]),
-              "hover-class": "u-popup__content__close--hover",
-              "hover-stay-time": "150"
-            }, [
-              vue.createVNode(_component_u_icon, {
-                name: "close",
-                color: "#909399",
-                size: "18",
-                bold: ""
-              })
-            ], 2)) : vue.createCommentVNode("v-if", true),
-            _ctx.safeAreaInsetBottom ? (vue.openBlock(), vue.createBlock(_component_u_safe_bottom, { key: 2 })) : vue.createCommentVNode("v-if", true)
-          ], 4)
-        ]),
-        _: 3
-      }, 8, ["show", "customStyle", "mode", "duration", "onAfterEnter", "onClick"])
-    ]);
-  }
-  var __easycom_2$4 = /* @__PURE__ */ _export_sfc(_sfc_main$L, [["render", _sfc_render$K], ["__scopeId", "data-v-8b82f2ea"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-popup/u-popup.vue"]]);
-  var props$9 = {
-    props: {
-      show: {
-        type: Boolean,
-        default: props$s.modal.show
-      },
-      title: {
-        type: [String],
-        default: props$s.modal.title
-      },
-      content: {
-        type: String,
-        default: props$s.modal.content
-      },
-      confirmText: {
-        type: String,
-        default: props$s.modal.confirmText
-      },
-      cancelText: {
-        type: String,
-        default: props$s.modal.cancelText
-      },
-      showConfirmButton: {
-        type: Boolean,
-        default: props$s.modal.showConfirmButton
-      },
-      showCancelButton: {
-        type: Boolean,
-        default: props$s.modal.showCancelButton
-      },
-      confirmColor: {
-        type: String,
-        default: props$s.modal.confirmColor
-      },
-      cancelColor: {
-        type: String,
-        default: props$s.modal.cancelColor
-      },
-      buttonReverse: {
-        type: Boolean,
-        default: props$s.modal.buttonReverse
-      },
-      zoom: {
-        type: Boolean,
-        default: props$s.modal.zoom
-      },
-      asyncClose: {
-        type: Boolean,
-        default: props$s.modal.asyncClose
-      },
-      closeOnClickOverlay: {
-        type: Boolean,
-        default: props$s.modal.closeOnClickOverlay
-      },
-      negativeTop: {
-        type: [String, Number],
-        default: props$s.modal.negativeTop
-      },
-      width: {
-        type: [String, Number],
-        default: props$s.modal.width
-      },
-      confirmButtonShape: {
-        type: String,
-        default: props$s.modal.confirmButtonShape
-      }
-    }
-  };
-  const _sfc_main$K = {
-    name: "u-modal",
-    mixins: [mpMixin, mixin, props$9],
-    data() {
-      return {
-        loading: false
-      };
-    },
-    watch: {
-      show(n) {
-        if (n && this.loading)
-          this.loading = false;
-      }
-    },
-    methods: {
-      confirmHandler() {
-        if (this.asyncClose) {
-          this.loading = true;
-        }
-        this.$emit("confirm");
-      },
-      cancelHandler() {
-        this.$emit("cancel");
-      },
-      clickHandler() {
-        if (this.closeOnClickOverlay) {
-          this.$emit("close");
-        }
-      }
-    }
-  };
-  function _sfc_render$J(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_line = resolveEasycom(vue.resolveDynamicComponent("u-line"), __easycom_0$5);
-    const _component_u_loading_icon = resolveEasycom(vue.resolveDynamicComponent("u-loading-icon"), __easycom_1$3);
-    const _component_u_popup = resolveEasycom(vue.resolveDynamicComponent("u-popup"), __easycom_2$4);
-    return vue.openBlock(), vue.createBlock(_component_u_popup, {
-      mode: "center",
-      zoom: _ctx.zoom,
-      show: _ctx.show,
-      customStyle: {
-        borderRadius: "6px",
-        overflow: "hidden",
-        marginTop: `-${_ctx.$u.addUnit(_ctx.negativeTop)}`
-      },
-      closeOnClickOverlay: _ctx.closeOnClickOverlay,
-      safeAreaInsetBottom: false,
-      duration: 400,
-      onClick: $options.clickHandler
-    }, {
-      default: vue.withCtx(() => [
-        vue.createElementVNode("view", {
-          class: "u-modal",
-          style: vue.normalizeStyle({
-            width: _ctx.$u.addUnit(_ctx.width)
-          })
-        }, [
-          _ctx.title ? (vue.openBlock(), vue.createElementBlock("text", {
-            key: 0,
-            class: "u-modal__title"
-          }, vue.toDisplayString(_ctx.title), 1)) : vue.createCommentVNode("v-if", true),
-          vue.createElementVNode("view", {
-            class: "u-modal__content",
-            style: vue.normalizeStyle({
-              paddingTop: `${_ctx.title ? 12 : 25}px`
-            })
-          }, [
-            vue.renderSlot(_ctx.$slots, "default", {}, () => [
-              vue.createElementVNode("text", { class: "u-modal__content__text" }, vue.toDisplayString(_ctx.content), 1)
-            ], true)
-          ], 4),
-          _ctx.$slots.confirmButton ? (vue.openBlock(), vue.createElementBlock("view", {
-            key: 1,
-            class: "u-modal__button-group--confirm-button"
-          }, [
-            vue.renderSlot(_ctx.$slots, "confirmButton", {}, void 0, true)
-          ])) : (vue.openBlock(), vue.createElementBlock(vue.Fragment, { key: 2 }, [
-            vue.createVNode(_component_u_line),
-            vue.createElementVNode("view", {
-              class: "u-modal__button-group",
-              style: vue.normalizeStyle({
-                flexDirection: _ctx.buttonReverse ? "row-reverse" : "row"
-              })
-            }, [
-              _ctx.showCancelButton ? (vue.openBlock(), vue.createElementBlock("view", {
-                key: 0,
-                class: vue.normalizeClass(["u-modal__button-group__wrapper u-modal__button-group__wrapper--cancel", [_ctx.showCancelButton && !_ctx.showConfirmButton && "u-modal__button-group__wrapper--only-cancel"]]),
-                "hover-stay-time": 150,
-                "hover-class": "u-modal__button-group__wrapper--hover",
-                onClick: _cache[0] || (_cache[0] = (...args) => $options.cancelHandler && $options.cancelHandler(...args))
-              }, [
-                vue.createElementVNode("text", {
-                  class: "u-modal__button-group__wrapper__text",
-                  style: vue.normalizeStyle({
-                    color: _ctx.cancelColor
-                  })
-                }, vue.toDisplayString(_ctx.cancelText), 5)
-              ], 2)) : vue.createCommentVNode("v-if", true),
-              _ctx.showConfirmButton && _ctx.showCancelButton ? (vue.openBlock(), vue.createBlock(_component_u_line, {
-                key: 1,
-                direction: "column"
-              })) : vue.createCommentVNode("v-if", true),
-              _ctx.showConfirmButton ? (vue.openBlock(), vue.createElementBlock("view", {
-                key: 2,
-                class: vue.normalizeClass(["u-modal__button-group__wrapper u-modal__button-group__wrapper--confirm", [!_ctx.showCancelButton && _ctx.showConfirmButton && "u-modal__button-group__wrapper--only-confirm"]]),
-                "hover-stay-time": 150,
-                "hover-class": "u-modal__button-group__wrapper--hover",
-                onClick: _cache[1] || (_cache[1] = (...args) => $options.confirmHandler && $options.confirmHandler(...args))
-              }, [
-                $data.loading ? (vue.openBlock(), vue.createBlock(_component_u_loading_icon, { key: 0 })) : (vue.openBlock(), vue.createElementBlock("text", {
-                  key: 1,
-                  class: "u-modal__button-group__wrapper__text",
-                  style: vue.normalizeStyle({
-                    color: _ctx.confirmColor
-                  })
-                }, vue.toDisplayString(_ctx.confirmText), 5))
-              ], 2)) : vue.createCommentVNode("v-if", true)
-            ], 4)
-          ], 64))
-        ], 4)
-      ]),
-      _: 3
-    }, 8, ["zoom", "show", "customStyle", "closeOnClickOverlay", "onClick"]);
-  }
-  var __easycom_5$1 = /* @__PURE__ */ _export_sfc(_sfc_main$K, [["render", _sfc_render$J], ["__scopeId", "data-v-4eb28ee6"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-modal/u-modal.vue"]]);
-  function getDevtoolsGlobalHook() {
-    return getTarget().__VUE_DEVTOOLS_GLOBAL_HOOK__;
-  }
-  function getTarget() {
-    return typeof navigator !== "undefined" && typeof window !== "undefined" ? window : typeof global !== "undefined" ? global : {};
-  }
-  const isProxyAvailable = typeof Proxy === "function";
-  const HOOK_SETUP = "devtools-plugin:setup";
-  const HOOK_PLUGIN_SETTINGS_SET = "plugin:settings:set";
-  class ApiProxy {
-    constructor(plugin, hook) {
-      this.target = null;
-      this.targetQueue = [];
-      this.onQueue = [];
-      this.plugin = plugin;
-      this.hook = hook;
-      const defaultSettings = {};
-      if (plugin.settings) {
-        for (const id in plugin.settings) {
-          const item2 = plugin.settings[id];
-          defaultSettings[id] = item2.defaultValue;
-        }
-      }
-      const localSettingsSaveId = `__vue-devtools-plugin-settings__${plugin.id}`;
-      let currentSettings = __spreadValues({}, defaultSettings);
-      try {
-        const raw = localStorage.getItem(localSettingsSaveId);
-        const data = JSON.parse(raw);
-        Object.assign(currentSettings, data);
-      } catch (e) {
-      }
-      this.fallbacks = {
-        getSettings() {
-          return currentSettings;
-        },
-        setSettings(value) {
-          try {
-            localStorage.setItem(localSettingsSaveId, JSON.stringify(value));
-          } catch (e) {
-          }
-          currentSettings = value;
-        }
-      };
-      hook.on(HOOK_PLUGIN_SETTINGS_SET, (pluginId, value) => {
-        if (pluginId === this.plugin.id) {
-          this.fallbacks.setSettings(value);
-        }
-      });
-      this.proxiedOn = new Proxy({}, {
-        get: (_target, prop) => {
-          if (this.target) {
-            return this.target.on[prop];
-          } else {
-            return (...args) => {
-              this.onQueue.push({
-                method: prop,
-                args
-              });
-            };
-          }
-        }
-      });
-      this.proxiedTarget = new Proxy({}, {
-        get: (_target, prop) => {
-          if (this.target) {
-            return this.target[prop];
-          } else if (prop === "on") {
-            return this.proxiedOn;
-          } else if (Object.keys(this.fallbacks).includes(prop)) {
-            return (...args) => {
-              this.targetQueue.push({
-                method: prop,
-                args,
-                resolve: () => {
-                }
-              });
-              return this.fallbacks[prop](...args);
-            };
-          } else {
-            return (...args) => {
-              return new Promise((resolve) => {
-                this.targetQueue.push({
-                  method: prop,
-                  args,
-                  resolve
-                });
-              });
-            };
-          }
-        }
-      });
-    }
-    async setRealTarget(target) {
-      this.target = target;
-      for (const item2 of this.onQueue) {
-        this.target.on[item2.method](...item2.args);
-      }
-      for (const item2 of this.targetQueue) {
-        item2.resolve(await this.target[item2.method](...item2.args));
-      }
-    }
-  }
-  function setupDevtoolsPlugin(pluginDescriptor, setupFn) {
-    const target = getTarget();
-    const hook = getDevtoolsGlobalHook();
-    const enableProxy = isProxyAvailable && pluginDescriptor.enableEarlyProxy;
-    if (hook && (target.__VUE_DEVTOOLS_PLUGIN_API_AVAILABLE__ || !enableProxy)) {
-      hook.emit(HOOK_SETUP, pluginDescriptor, setupFn);
-    } else {
-      const proxy = enableProxy ? new ApiProxy(pluginDescriptor, hook) : null;
-      const list2 = target.__VUE_DEVTOOLS_PLUGINS__ = target.__VUE_DEVTOOLS_PLUGINS__ || [];
-      list2.push({
-        pluginDescriptor,
-        setupFn,
-        proxy
-      });
-      if (proxy)
-        setupFn(proxy.proxiedTarget);
-    }
-  }
-  /*!
-   * vuex v4.0.2
-   * (c) 2021 Evan You
-   * @license MIT
-   */
-  var storeKey = "store";
-  function forEachValue(obj, fn) {
-    Object.keys(obj).forEach(function(key) {
-      return fn(obj[key], key);
-    });
-  }
-  function isObject$1(obj) {
-    return obj !== null && typeof obj === "object";
-  }
-  function isPromise(val) {
-    return val && typeof val.then === "function";
-  }
-  function assert(condition, msg) {
-    if (!condition) {
-      throw new Error("[vuex] " + msg);
-    }
-  }
-  function partial(fn, arg) {
-    return function() {
-      return fn(arg);
-    };
-  }
-  function genericSubscribe(fn, subs, options) {
-    if (subs.indexOf(fn) < 0) {
-      options && options.prepend ? subs.unshift(fn) : subs.push(fn);
-    }
-    return function() {
-      var i2 = subs.indexOf(fn);
-      if (i2 > -1) {
-        subs.splice(i2, 1);
-      }
-    };
-  }
-  function resetStore(store2, hot) {
-    store2._actions = /* @__PURE__ */ Object.create(null);
-    store2._mutations = /* @__PURE__ */ Object.create(null);
-    store2._wrappedGetters = /* @__PURE__ */ Object.create(null);
-    store2._modulesNamespaceMap = /* @__PURE__ */ Object.create(null);
-    var state = store2.state;
-    installModule(store2, state, [], store2._modules.root, true);
-    resetStoreState(store2, state, hot);
-  }
-  function resetStoreState(store2, state, hot) {
-    var oldState = store2._state;
-    store2.getters = {};
-    store2._makeLocalGettersCache = /* @__PURE__ */ Object.create(null);
-    var wrappedGetters = store2._wrappedGetters;
-    var computedObj = {};
-    forEachValue(wrappedGetters, function(fn, key) {
-      computedObj[key] = partial(fn, store2);
-      Object.defineProperty(store2.getters, key, {
-        get: function() {
-          return computedObj[key]();
-        },
-        enumerable: true
-      });
-    });
-    store2._state = vue.reactive({
-      data: state
-    });
-    if (store2.strict) {
-      enableStrictMode(store2);
-    }
-    if (oldState) {
-      if (hot) {
-        store2._withCommit(function() {
-          oldState.data = null;
-        });
-      }
-    }
-  }
-  function installModule(store2, rootState, path, module, hot) {
-    var isRoot = !path.length;
-    var namespace = store2._modules.getNamespace(path);
-    if (module.namespaced) {
-      if (store2._modulesNamespaceMap[namespace] && true) {
-        console.error("[vuex] duplicate namespace " + namespace + " for the namespaced module " + path.join("/"));
-      }
-      store2._modulesNamespaceMap[namespace] = module;
-    }
-    if (!isRoot && !hot) {
-      var parentState = getNestedState(rootState, path.slice(0, -1));
-      var moduleName = path[path.length - 1];
-      store2._withCommit(function() {
-        {
-          if (moduleName in parentState) {
-            console.warn('[vuex] state field "' + moduleName + '" was overridden by a module with the same name at "' + path.join(".") + '"');
-          }
-        }
-        parentState[moduleName] = module.state;
-      });
-    }
-    var local = module.context = makeLocalContext(store2, namespace, path);
-    module.forEachMutation(function(mutation, key) {
-      var namespacedType = namespace + key;
-      registerMutation(store2, namespacedType, mutation, local);
-    });
-    module.forEachAction(function(action, key) {
-      var type2 = action.root ? key : namespace + key;
-      var handler = action.handler || action;
-      registerAction(store2, type2, handler, local);
-    });
-    module.forEachGetter(function(getter, key) {
-      var namespacedType = namespace + key;
-      registerGetter(store2, namespacedType, getter, local);
-    });
-    module.forEachChild(function(child, key) {
-      installModule(store2, rootState, path.concat(key), child, hot);
-    });
-  }
-  function makeLocalContext(store2, namespace, path) {
-    var noNamespace = namespace === "";
-    var local = {
-      dispatch: noNamespace ? store2.dispatch : function(_type, _payload, _options) {
-        var args = unifyObjectStyle(_type, _payload, _options);
-        var payload = args.payload;
-        var options = args.options;
-        var type2 = args.type;
-        if (!options || !options.root) {
-          type2 = namespace + type2;
-          if (!store2._actions[type2]) {
-            console.error("[vuex] unknown local action type: " + args.type + ", global type: " + type2);
-            return;
-          }
-        }
-        return store2.dispatch(type2, payload);
-      },
-      commit: noNamespace ? store2.commit : function(_type, _payload, _options) {
-        var args = unifyObjectStyle(_type, _payload, _options);
-        var payload = args.payload;
-        var options = args.options;
-        var type2 = args.type;
-        if (!options || !options.root) {
-          type2 = namespace + type2;
-          if (!store2._mutations[type2]) {
-            console.error("[vuex] unknown local mutation type: " + args.type + ", global type: " + type2);
-            return;
-          }
-        }
-        store2.commit(type2, payload, options);
-      }
-    };
-    Object.defineProperties(local, {
-      getters: {
-        get: noNamespace ? function() {
-          return store2.getters;
-        } : function() {
-          return makeLocalGetters(store2, namespace);
-        }
-      },
-      state: {
-        get: function() {
-          return getNestedState(store2.state, path);
-        }
-      }
-    });
-    return local;
-  }
-  function makeLocalGetters(store2, namespace) {
-    if (!store2._makeLocalGettersCache[namespace]) {
-      var gettersProxy = {};
-      var splitPos = namespace.length;
-      Object.keys(store2.getters).forEach(function(type2) {
-        if (type2.slice(0, splitPos) !== namespace) {
-          return;
-        }
-        var localType = type2.slice(splitPos);
-        Object.defineProperty(gettersProxy, localType, {
-          get: function() {
-            return store2.getters[type2];
-          },
-          enumerable: true
-        });
-      });
-      store2._makeLocalGettersCache[namespace] = gettersProxy;
-    }
-    return store2._makeLocalGettersCache[namespace];
-  }
-  function registerMutation(store2, type2, handler, local) {
-    var entry = store2._mutations[type2] || (store2._mutations[type2] = []);
-    entry.push(function wrappedMutationHandler(payload) {
-      handler.call(store2, local.state, payload);
-    });
-  }
-  function registerAction(store2, type2, handler, local) {
-    var entry = store2._actions[type2] || (store2._actions[type2] = []);
-    entry.push(function wrappedActionHandler(payload) {
-      var res = handler.call(store2, {
-        dispatch: local.dispatch,
-        commit: local.commit,
-        getters: local.getters,
-        state: local.state,
-        rootGetters: store2.getters,
-        rootState: store2.state
-      }, payload);
-      if (!isPromise(res)) {
-        res = Promise.resolve(res);
-      }
-      if (store2._devtoolHook) {
-        return res.catch(function(err) {
-          store2._devtoolHook.emit("vuex:error", err);
-          throw err;
-        });
-      } else {
-        return res;
-      }
-    });
-  }
-  function registerGetter(store2, type2, rawGetter, local) {
-    if (store2._wrappedGetters[type2]) {
-      {
-        console.error("[vuex] duplicate getter key: " + type2);
-      }
-      return;
-    }
-    store2._wrappedGetters[type2] = function wrappedGetter(store3) {
-      return rawGetter(local.state, local.getters, store3.state, store3.getters);
-    };
-  }
-  function enableStrictMode(store2) {
-    vue.watch(function() {
-      return store2._state.data;
-    }, function() {
-      {
-        assert(store2._committing, "do not mutate vuex store state outside mutation handlers.");
-      }
-    }, { deep: true, flush: "sync" });
-  }
-  function getNestedState(state, path) {
-    return path.reduce(function(state2, key) {
-      return state2[key];
-    }, state);
-  }
-  function unifyObjectStyle(type2, payload, options) {
-    if (isObject$1(type2) && type2.type) {
-      options = payload;
-      payload = type2;
-      type2 = type2.type;
-    }
-    {
-      assert(typeof type2 === "string", "expects string as the type, but found " + typeof type2 + ".");
-    }
-    return { type: type2, payload, options };
-  }
-  var LABEL_VUEX_BINDINGS = "vuex bindings";
-  var MUTATIONS_LAYER_ID = "vuex:mutations";
-  var ACTIONS_LAYER_ID = "vuex:actions";
-  var INSPECTOR_ID = "vuex";
-  var actionId = 0;
-  function addDevtools(app, store2) {
-    setupDevtoolsPlugin({
-      id: "org.vuejs.vuex",
-      app,
-      label: "Vuex",
-      homepage: "https://next.vuex.vuejs.org/",
-      logo: "https://vuejs.org/images/icons/favicon-96x96.png",
-      packageName: "vuex",
-      componentStateTypes: [LABEL_VUEX_BINDINGS]
-    }, function(api) {
-      api.addTimelineLayer({
-        id: MUTATIONS_LAYER_ID,
-        label: "Vuex Mutations",
-        color: COLOR_LIME_500
-      });
-      api.addTimelineLayer({
-        id: ACTIONS_LAYER_ID,
-        label: "Vuex Actions",
-        color: COLOR_LIME_500
-      });
-      api.addInspector({
-        id: INSPECTOR_ID,
-        label: "Vuex",
-        icon: "storage",
-        treeFilterPlaceholder: "Filter stores..."
-      });
-      api.on.getInspectorTree(function(payload) {
-        if (payload.app === app && payload.inspectorId === INSPECTOR_ID) {
-          if (payload.filter) {
-            var nodes = [];
-            flattenStoreForInspectorTree(nodes, store2._modules.root, payload.filter, "");
-            payload.rootNodes = nodes;
-          } else {
-            payload.rootNodes = [
-              formatStoreForInspectorTree(store2._modules.root, "")
-            ];
-          }
-        }
-      });
-      api.on.getInspectorState(function(payload) {
-        if (payload.app === app && payload.inspectorId === INSPECTOR_ID) {
-          var modulePath = payload.nodeId;
-          makeLocalGetters(store2, modulePath);
-          payload.state = formatStoreForInspectorState(getStoreModule(store2._modules, modulePath), modulePath === "root" ? store2.getters : store2._makeLocalGettersCache, modulePath);
-        }
-      });
-      api.on.editInspectorState(function(payload) {
-        if (payload.app === app && payload.inspectorId === INSPECTOR_ID) {
-          var modulePath = payload.nodeId;
-          var path = payload.path;
-          if (modulePath !== "root") {
-            path = modulePath.split("/").filter(Boolean).concat(path);
-          }
-          store2._withCommit(function() {
-            payload.set(store2._state.data, path, payload.state.value);
-          });
-        }
-      });
-      store2.subscribe(function(mutation, state) {
-        var data = {};
-        if (mutation.payload) {
-          data.payload = mutation.payload;
-        }
-        data.state = state;
-        api.notifyComponentUpdate();
-        api.sendInspectorTree(INSPECTOR_ID);
-        api.sendInspectorState(INSPECTOR_ID);
-        api.addTimelineEvent({
-          layerId: MUTATIONS_LAYER_ID,
-          event: {
-            time: Date.now(),
-            title: mutation.type,
-            data
-          }
-        });
-      });
-      store2.subscribeAction({
-        before: function(action, state) {
-          var data = {};
-          if (action.payload) {
-            data.payload = action.payload;
-          }
-          action._id = actionId++;
-          action._time = Date.now();
-          data.state = state;
-          api.addTimelineEvent({
-            layerId: ACTIONS_LAYER_ID,
-            event: {
-              time: action._time,
-              title: action.type,
-              groupId: action._id,
-              subtitle: "start",
-              data
-            }
-          });
-        },
-        after: function(action, state) {
-          var data = {};
-          var duration = Date.now() - action._time;
-          data.duration = {
-            _custom: {
-              type: "duration",
-              display: duration + "ms",
-              tooltip: "Action duration",
-              value: duration
-            }
-          };
-          if (action.payload) {
-            data.payload = action.payload;
-          }
-          data.state = state;
-          api.addTimelineEvent({
-            layerId: ACTIONS_LAYER_ID,
-            event: {
-              time: Date.now(),
-              title: action.type,
-              groupId: action._id,
-              subtitle: "end",
-              data
-            }
-          });
-        }
-      });
-    });
-  }
-  var COLOR_LIME_500 = 8702998;
-  var COLOR_DARK = 6710886;
-  var COLOR_WHITE = 16777215;
-  var TAG_NAMESPACED = {
-    label: "namespaced",
-    textColor: COLOR_WHITE,
-    backgroundColor: COLOR_DARK
-  };
-  function extractNameFromPath(path) {
-    return path && path !== "root" ? path.split("/").slice(-2, -1)[0] : "Root";
-  }
-  function formatStoreForInspectorTree(module, path) {
-    return {
-      id: path || "root",
-      label: extractNameFromPath(path),
-      tags: module.namespaced ? [TAG_NAMESPACED] : [],
-      children: Object.keys(module._children).map(function(moduleName) {
-        return formatStoreForInspectorTree(module._children[moduleName], path + moduleName + "/");
-      })
-    };
-  }
-  function flattenStoreForInspectorTree(result, module, filter, path) {
-    if (path.includes(filter)) {
-      result.push({
-        id: path || "root",
-        label: path.endsWith("/") ? path.slice(0, path.length - 1) : path || "Root",
-        tags: module.namespaced ? [TAG_NAMESPACED] : []
-      });
-    }
-    Object.keys(module._children).forEach(function(moduleName) {
-      flattenStoreForInspectorTree(result, module._children[moduleName], filter, path + moduleName + "/");
-    });
-  }
-  function formatStoreForInspectorState(module, getters, path) {
-    getters = path === "root" ? getters : getters[path];
-    var gettersKeys = Object.keys(getters);
-    var storeState = {
-      state: Object.keys(module.state).map(function(key) {
-        return {
-          key,
-          editable: true,
-          value: module.state[key]
-        };
-      })
-    };
-    if (gettersKeys.length) {
-      var tree = transformPathsToObjectTree(getters);
-      storeState.getters = Object.keys(tree).map(function(key) {
-        return {
-          key: key.endsWith("/") ? extractNameFromPath(key) : key,
-          editable: false,
-          value: canThrow(function() {
-            return tree[key];
-          })
-        };
-      });
-    }
-    return storeState;
-  }
-  function transformPathsToObjectTree(getters) {
-    var result = {};
-    Object.keys(getters).forEach(function(key) {
-      var path = key.split("/");
-      if (path.length > 1) {
-        var target = result;
-        var leafKey = path.pop();
-        path.forEach(function(p) {
-          if (!target[p]) {
-            target[p] = {
-              _custom: {
-                value: {},
-                display: p,
-                tooltip: "Module",
-                abstract: true
-              }
-            };
-          }
-          target = target[p]._custom.value;
-        });
-        target[leafKey] = canThrow(function() {
-          return getters[key];
-        });
-      } else {
-        result[key] = canThrow(function() {
-          return getters[key];
-        });
-      }
-    });
-    return result;
-  }
-  function getStoreModule(moduleMap, path) {
-    var names = path.split("/").filter(function(n) {
-      return n;
-    });
-    return names.reduce(function(module, moduleName, i2) {
-      var child = module[moduleName];
-      if (!child) {
-        throw new Error('Missing module "' + moduleName + '" for path "' + path + '".');
-      }
-      return i2 === names.length - 1 ? child : child._children;
-    }, path === "root" ? moduleMap : moduleMap.root._children);
-  }
-  function canThrow(cb) {
-    try {
-      return cb();
-    } catch (e) {
-      return e;
-    }
-  }
-  var Module = function Module2(rawModule, runtime) {
-    this.runtime = runtime;
-    this._children = /* @__PURE__ */ Object.create(null);
-    this._rawModule = rawModule;
-    var rawState = rawModule.state;
-    this.state = (typeof rawState === "function" ? rawState() : rawState) || {};
-  };
-  var prototypeAccessors$1 = { namespaced: { configurable: true } };
-  prototypeAccessors$1.namespaced.get = function() {
-    return !!this._rawModule.namespaced;
-  };
-  Module.prototype.addChild = function addChild(key, module) {
-    this._children[key] = module;
-  };
-  Module.prototype.removeChild = function removeChild(key) {
-    delete this._children[key];
-  };
-  Module.prototype.getChild = function getChild(key) {
-    return this._children[key];
-  };
-  Module.prototype.hasChild = function hasChild(key) {
-    return key in this._children;
-  };
-  Module.prototype.update = function update2(rawModule) {
-    this._rawModule.namespaced = rawModule.namespaced;
-    if (rawModule.actions) {
-      this._rawModule.actions = rawModule.actions;
-    }
-    if (rawModule.mutations) {
-      this._rawModule.mutations = rawModule.mutations;
-    }
-    if (rawModule.getters) {
-      this._rawModule.getters = rawModule.getters;
-    }
-  };
-  Module.prototype.forEachChild = function forEachChild(fn) {
-    forEachValue(this._children, fn);
-  };
-  Module.prototype.forEachGetter = function forEachGetter(fn) {
-    if (this._rawModule.getters) {
-      forEachValue(this._rawModule.getters, fn);
-    }
-  };
-  Module.prototype.forEachAction = function forEachAction(fn) {
-    if (this._rawModule.actions) {
-      forEachValue(this._rawModule.actions, fn);
-    }
-  };
-  Module.prototype.forEachMutation = function forEachMutation(fn) {
-    if (this._rawModule.mutations) {
-      forEachValue(this._rawModule.mutations, fn);
-    }
-  };
-  Object.defineProperties(Module.prototype, prototypeAccessors$1);
-  var ModuleCollection = function ModuleCollection2(rawRootModule) {
-    this.register([], rawRootModule, false);
-  };
-  ModuleCollection.prototype.get = function get(path) {
-    return path.reduce(function(module, key) {
-      return module.getChild(key);
-    }, this.root);
-  };
-  ModuleCollection.prototype.getNamespace = function getNamespace(path) {
-    var module = this.root;
-    return path.reduce(function(namespace, key) {
-      module = module.getChild(key);
-      return namespace + (module.namespaced ? key + "/" : "");
-    }, "");
-  };
-  ModuleCollection.prototype.update = function update$1(rawRootModule) {
-    update([], this.root, rawRootModule);
-  };
-  ModuleCollection.prototype.register = function register(path, rawModule, runtime) {
-    var this$1$1 = this;
-    if (runtime === void 0)
-      runtime = true;
-    {
-      assertRawModule(path, rawModule);
-    }
-    var newModule = new Module(rawModule, runtime);
-    if (path.length === 0) {
-      this.root = newModule;
-    } else {
-      var parent = this.get(path.slice(0, -1));
-      parent.addChild(path[path.length - 1], newModule);
-    }
-    if (rawModule.modules) {
-      forEachValue(rawModule.modules, function(rawChildModule, key) {
-        this$1$1.register(path.concat(key), rawChildModule, runtime);
-      });
-    }
-  };
-  ModuleCollection.prototype.unregister = function unregister(path) {
-    var parent = this.get(path.slice(0, -1));
-    var key = path[path.length - 1];
-    var child = parent.getChild(key);
-    if (!child) {
-      {
-        console.warn("[vuex] trying to unregister module '" + key + "', which is not registered");
-      }
-      return;
-    }
-    if (!child.runtime) {
-      return;
-    }
-    parent.removeChild(key);
-  };
-  ModuleCollection.prototype.isRegistered = function isRegistered(path) {
-    var parent = this.get(path.slice(0, -1));
-    var key = path[path.length - 1];
-    if (parent) {
-      return parent.hasChild(key);
-    }
-    return false;
-  };
-  function update(path, targetModule, newModule) {
-    {
-      assertRawModule(path, newModule);
-    }
-    targetModule.update(newModule);
-    if (newModule.modules) {
-      for (var key in newModule.modules) {
-        if (!targetModule.getChild(key)) {
-          {
-            console.warn("[vuex] trying to add a new module '" + key + "' on hot reloading, manual reload is needed");
-          }
-          return;
-        }
-        update(path.concat(key), targetModule.getChild(key), newModule.modules[key]);
-      }
-    }
-  }
-  var functionAssert = {
-    assert: function(value) {
-      return typeof value === "function";
-    },
-    expected: "function"
-  };
-  var objectAssert = {
-    assert: function(value) {
-      return typeof value === "function" || typeof value === "object" && typeof value.handler === "function";
-    },
-    expected: 'function or object with "handler" function'
-  };
-  var assertTypes = {
-    getters: functionAssert,
-    mutations: functionAssert,
-    actions: objectAssert
-  };
-  function assertRawModule(path, rawModule) {
-    Object.keys(assertTypes).forEach(function(key) {
-      if (!rawModule[key]) {
-        return;
-      }
-      var assertOptions = assertTypes[key];
-      forEachValue(rawModule[key], function(value, type2) {
-        assert(assertOptions.assert(value), makeAssertionMessage(path, key, type2, value, assertOptions.expected));
-      });
-    });
-  }
-  function makeAssertionMessage(path, key, type2, value, expected) {
-    var buf = key + " should be " + expected + ' but "' + key + "." + type2 + '"';
-    if (path.length > 0) {
-      buf += ' in module "' + path.join(".") + '"';
-    }
-    buf += " is " + JSON.stringify(value) + ".";
-    return buf;
-  }
-  function createStore(options) {
-    return new Store(options);
-  }
-  var Store = function Store2(options) {
-    var this$1$1 = this;
-    if (options === void 0)
-      options = {};
-    {
-      assert(typeof Promise !== "undefined", "vuex requires a Promise polyfill in this browser.");
-      assert(this instanceof Store2, "store must be called with the new operator.");
-    }
-    var plugins = options.plugins;
-    if (plugins === void 0)
-      plugins = [];
-    var strict = options.strict;
-    if (strict === void 0)
-      strict = false;
-    var devtools = options.devtools;
-    this._committing = false;
-    this._actions = /* @__PURE__ */ Object.create(null);
-    this._actionSubscribers = [];
-    this._mutations = /* @__PURE__ */ Object.create(null);
-    this._wrappedGetters = /* @__PURE__ */ Object.create(null);
-    this._modules = new ModuleCollection(options);
-    this._modulesNamespaceMap = /* @__PURE__ */ Object.create(null);
-    this._subscribers = [];
-    this._makeLocalGettersCache = /* @__PURE__ */ Object.create(null);
-    this._devtools = devtools;
-    var store2 = this;
-    var ref = this;
-    var dispatch = ref.dispatch;
-    var commit = ref.commit;
-    this.dispatch = function boundDispatch(type2, payload) {
-      return dispatch.call(store2, type2, payload);
-    };
-    this.commit = function boundCommit(type2, payload, options2) {
-      return commit.call(store2, type2, payload, options2);
-    };
-    this.strict = strict;
-    var state = this._modules.root.state;
-    installModule(this, state, [], this._modules.root);
-    resetStoreState(this, state);
-    plugins.forEach(function(plugin) {
-      return plugin(this$1$1);
-    });
-  };
-  var prototypeAccessors = { state: { configurable: true } };
-  Store.prototype.install = function install2(app, injectKey) {
-    app.provide(injectKey || storeKey, this);
-    app.config.globalProperties.$store = this;
-    var useDevtools = this._devtools !== void 0 ? this._devtools : true;
-    if (useDevtools) {
-      addDevtools(app, this);
-    }
-  };
-  prototypeAccessors.state.get = function() {
-    return this._state.data;
-  };
-  prototypeAccessors.state.set = function(v) {
-    {
-      assert(false, "use store.replaceState() to explicit replace store state.");
-    }
-  };
-  Store.prototype.commit = function commit(_type, _payload, _options) {
-    var this$1$1 = this;
-    var ref = unifyObjectStyle(_type, _payload, _options);
-    var type2 = ref.type;
-    var payload = ref.payload;
-    var options = ref.options;
-    var mutation = { type: type2, payload };
-    var entry = this._mutations[type2];
-    if (!entry) {
-      {
-        console.error("[vuex] unknown mutation type: " + type2);
-      }
-      return;
-    }
-    this._withCommit(function() {
-      entry.forEach(function commitIterator(handler) {
-        handler(payload);
-      });
-    });
-    this._subscribers.slice().forEach(function(sub) {
-      return sub(mutation, this$1$1.state);
-    });
-    if (options && options.silent) {
-      console.warn("[vuex] mutation type: " + type2 + ". Silent option has been removed. Use the filter functionality in the vue-devtools");
-    }
-  };
-  Store.prototype.dispatch = function dispatch(_type, _payload) {
-    var this$1$1 = this;
-    var ref = unifyObjectStyle(_type, _payload);
-    var type2 = ref.type;
-    var payload = ref.payload;
-    var action = { type: type2, payload };
-    var entry = this._actions[type2];
-    if (!entry) {
-      {
-        console.error("[vuex] unknown action type: " + type2);
-      }
-      return;
-    }
-    try {
-      this._actionSubscribers.slice().filter(function(sub) {
-        return sub.before;
-      }).forEach(function(sub) {
-        return sub.before(action, this$1$1.state);
-      });
-    } catch (e) {
-      {
-        console.warn("[vuex] error in before action subscribers: ");
-        console.error(e);
-      }
-    }
-    var result = entry.length > 1 ? Promise.all(entry.map(function(handler) {
-      return handler(payload);
-    })) : entry[0](payload);
-    return new Promise(function(resolve, reject) {
-      result.then(function(res) {
-        try {
-          this$1$1._actionSubscribers.filter(function(sub) {
-            return sub.after;
-          }).forEach(function(sub) {
-            return sub.after(action, this$1$1.state);
-          });
-        } catch (e) {
-          {
-            console.warn("[vuex] error in after action subscribers: ");
-            console.error(e);
-          }
-        }
-        resolve(res);
-      }, function(error2) {
-        try {
-          this$1$1._actionSubscribers.filter(function(sub) {
-            return sub.error;
-          }).forEach(function(sub) {
-            return sub.error(action, this$1$1.state, error2);
-          });
-        } catch (e) {
-          {
-            console.warn("[vuex] error in error action subscribers: ");
-            console.error(e);
-          }
-        }
-        reject(error2);
-      });
-    });
-  };
-  Store.prototype.subscribe = function subscribe(fn, options) {
-    return genericSubscribe(fn, this._subscribers, options);
-  };
-  Store.prototype.subscribeAction = function subscribeAction(fn, options) {
-    var subs = typeof fn === "function" ? { before: fn } : fn;
-    return genericSubscribe(subs, this._actionSubscribers, options);
-  };
-  Store.prototype.watch = function watch$1(getter, cb, options) {
-    var this$1$1 = this;
-    {
-      assert(typeof getter === "function", "store.watch only accepts a function.");
-    }
-    return vue.watch(function() {
-      return getter(this$1$1.state, this$1$1.getters);
-    }, cb, Object.assign({}, options));
-  };
-  Store.prototype.replaceState = function replaceState(state) {
-    var this$1$1 = this;
-    this._withCommit(function() {
-      this$1$1._state.data = state;
-    });
-  };
-  Store.prototype.registerModule = function registerModule(path, rawModule, options) {
-    if (options === void 0)
-      options = {};
-    if (typeof path === "string") {
-      path = [path];
-    }
-    {
-      assert(Array.isArray(path), "module path must be a string or an Array.");
-      assert(path.length > 0, "cannot register the root module by using registerModule.");
-    }
-    this._modules.register(path, rawModule);
-    installModule(this, this.state, path, this._modules.get(path), options.preserveState);
-    resetStoreState(this, this.state);
-  };
-  Store.prototype.unregisterModule = function unregisterModule(path) {
-    var this$1$1 = this;
-    if (typeof path === "string") {
-      path = [path];
-    }
-    {
-      assert(Array.isArray(path), "module path must be a string or an Array.");
-    }
-    this._modules.unregister(path);
-    this._withCommit(function() {
-      var parentState = getNestedState(this$1$1.state, path.slice(0, -1));
-      delete parentState[path[path.length - 1]];
-    });
-    resetStore(this);
-  };
-  Store.prototype.hasModule = function hasModule(path) {
-    if (typeof path === "string") {
-      path = [path];
-    }
-    {
-      assert(Array.isArray(path), "module path must be a string or an Array.");
-    }
-    return this._modules.isRegistered(path);
-  };
-  Store.prototype.hotUpdate = function hotUpdate(newOptions) {
-    this._modules.update(newOptions);
-    resetStore(this, true);
-  };
-  Store.prototype._withCommit = function _withCommit(fn) {
-    var committing = this._committing;
-    this._committing = true;
-    fn();
-    this._committing = committing;
-  };
-  Object.defineProperties(Store.prototype, prototypeAccessors);
-  var mapState = normalizeNamespace(function(namespace, states) {
-    var res = {};
-    if (!isValidMap(states)) {
-      console.error("[vuex] mapState: mapper parameter must be either an Array or an Object");
-    }
-    normalizeMap(states).forEach(function(ref) {
-      var key = ref.key;
-      var val = ref.val;
-      res[key] = function mappedState() {
-        var state = this.$store.state;
-        var getters = this.$store.getters;
-        if (namespace) {
-          var module = getModuleByNamespace(this.$store, "mapState", namespace);
-          if (!module) {
-            return;
-          }
-          state = module.context.state;
-          getters = module.context.getters;
-        }
-        return typeof val === "function" ? val.call(this, state, getters) : state[val];
-      };
-      res[key].vuex = true;
-    });
-    return res;
-  });
-  function normalizeMap(map) {
-    if (!isValidMap(map)) {
-      return [];
-    }
-    return Array.isArray(map) ? map.map(function(key) {
-      return { key, val: key };
-    }) : Object.keys(map).map(function(key) {
-      return { key, val: map[key] };
-    });
-  }
-  function isValidMap(map) {
-    return Array.isArray(map) || isObject$1(map);
-  }
-  function normalizeNamespace(fn) {
-    return function(namespace, map) {
-      if (typeof namespace !== "string") {
-        map = namespace;
-        namespace = "";
-      } else if (namespace.charAt(namespace.length - 1) !== "/") {
-        namespace += "/";
-      }
-      return fn(namespace, map);
-    };
-  }
-  function getModuleByNamespace(store2, helper, namespace) {
-    var module = store2._modulesNamespaceMap[namespace];
-    if (!module) {
-      console.error("[vuex] module namespace not found in " + helper + "(): " + namespace);
-    }
-    return module;
-  }
-  const navigate = function(url2) {
-    uni.navigateTo({
-      url: url2
-    });
-  };
-  const copy = function(data) {
-    uni.setClipboardData({
-      data,
-      success: () => {
-        uni.showToast({
-          icon: "none",
-          title: "\u590D\u5236\u6210\u529F"
-        });
-      }
-    });
-  };
-  const _sfc_main$J = {
-    data() {
-      return {
-        bannerList: [{
-          image: "https://cdn.uviewui.com/uview/swiper/swiper2.png",
-          title: "\u6628\u591C\u661F\u8FB0\u6628\u591C\u98CE\uFF0C\u753B\u697C\u897F\u7554\u6842\u5802\u4E1C"
-        }, {
-          image: "https://cdn.uviewui.com/uview/swiper/swiper1.png",
-          title: "\u8EAB\u65E0\u5F69\u51E4\u53CC\u98DE\u7FFC\uFF0C\u5FC3\u6709\u7075\u7280\u4E00\u70B9\u901A"
-        }, {
-          image: "https://cdn.uviewui.com/uview/swiper/swiper3.png",
-          title: "\u8C01\u5FF5\u897F\u98CE\u72EC\u81EA\u51C9\uFF0C\u8427\u8427\u9EC4\u53F6\u95ED\u758F\u7A97\uFF0C\u6C89\u601D\u5F80\u4E8B\u7ACB\u6B8B\u9633"
-        }],
-        messageTip: {
-          USDTCount: 10,
-          time: "11-11"
-        },
-        show: false,
-        netTitleList: ["\u5E63\u7A2E", "\u6301\u5009\u8CC7\u7522USDT", "\u50F9\u683CUSDT"],
-        netContentList: [
-          {
-            type: "BTC",
-            assets: "123456.1234",
-            price: "1234.12"
-          },
-          {
-            type: "ETH",
-            assets: "83456.1234",
-            price: "1234.12"
-          },
-          {
-            type: "HT",
-            assets: "53456.1234",
-            price: "1234.12"
-          },
-          {
-            type: "XRP",
-            assets: "23456.1234",
-            price: "1234.12"
-          },
-          {
-            type: "DOGE",
-            assets: "23456.1234",
-            price: "1234.12"
-          }
-        ]
-      };
-    },
-    computed: __spreadValues({}, mapState(["init"])),
-    onLoad() {
-      formatAppLog("log", "at pages/home/home.vue:123", this.$http.post);
-    },
-    methods: {
-      navigateAuth() {
-        navigate("/pages/home/apiAuth/apiAuth");
-      },
-      confirm() {
-        navigate("/pages/home/toBePaid/toBePaid");
-      },
-      navigateToCenter() {
-        navigate("/pages/home/billingCenter/billingCenter");
-      },
-      cancel() {
-        uni.reLaunch({
-          url: `/pages/login/login`
-        });
-      }
-    }
-  };
-  function _sfc_render$I(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_swiper = resolveEasycom(vue.resolveDynamicComponent("u-swiper"), __easycom_0$4);
-    const _component_u__image = resolveEasycom(vue.resolveDynamicComponent("u--image"), __easycom_0$2);
-    const _component_u_image = resolveEasycom(vue.resolveDynamicComponent("u-image"), __easycom_0$3);
-    const _component_u_modal = resolveEasycom(vue.resolveDynamicComponent("u-modal"), __easycom_5$1);
-    return vue.openBlock(), vue.createElementBlock("view", null, [
-      vue.createCommentVNode(' <u-navbar height="48" title="" :bgColor="bgColor"></u-navbar> '),
-      vue.createElementVNode("view", null, [
-        vue.createCommentVNode(" \u6EDA\u52A8 "),
-        vue.createVNode(_component_u_swiper, {
-          height: "485rpx",
-          list: $data.bannerList,
-          keyName: "image",
-          indicatorActiveColor: "#F5A700",
-          indicatorInactiveColor: "#FFFFFF",
-          indicatorStyle: "bottom: 65rpx;",
-          autoplay: true,
-          circular: "",
-          indicator: "",
-          indicatorMode: "dot"
-        }, null, 8, ["list"]),
-        vue.createCommentVNode(" \u5185\u5BB9 "),
-        vue.createElementVNode("view", { class: "content" }, [
-          vue.createCommentVNode(" \u6D88\u606F\u63D0\u9192 "),
-          vue.createElementVNode("view", {
-            class: "c-tip",
-            onClick: _cache[0] || (_cache[0] = (...args) => $options.confirm && $options.confirm(...args))
-          }, [
-            vue.createVNode(_component_u__image, {
-              width: "56rpx",
-              height: "54rpx",
-              src: "/static/home/message.png"
-            }),
-            vue.createElementVNode("view", { class: "color222" }, "\u60A8\u6709\u4E00\u7B46\u91D1\u984D" + vue.toDisplayString($data.messageTip.USDTCount) + " USDT\u7684\u8CEC\u55AE\u5F85\u652F\u4ED8", 1),
-            vue.createElementVNode("view", { class: "color666" }, vue.toDisplayString($data.messageTip.time), 1)
-          ]),
-          vue.createCommentVNode(" api\u6388\u6743\uFF0C\u8D26\u5355\u4E2D\u5FC3 "),
-          vue.createElementVNode("view", { class: "c-ul" }, [
-            vue.createElementVNode("view", {
-              class: "cu-li cu-first",
-              onClick: _cache[1] || (_cache[1] = (...args) => $options.navigateAuth && $options.navigateAuth(...args))
-            }, [
-              vue.createElementVNode("text", { class: "color000" }, "API\u6388\u6B0A"),
-              vue.createVNode(_component_u_image, {
-                width: "160rpx",
-                height: "150rpx",
-                src: "/static/home/api.png"
-              })
-            ]),
-            vue.createElementVNode("view", {
-              class: "cu-li cu-second",
-              onClick: _cache[2] || (_cache[2] = (...args) => $options.navigateToCenter && $options.navigateToCenter(...args))
-            }, [
-              vue.createElementVNode("text", { class: "color000" }, "\u8CEC\u55AE\u4E2D\u5FC3"),
-              vue.createVNode(_component_u_image, {
-                width: "152rpx",
-                height: "157rpx",
-                src: "/static/home/center.png"
-              })
-            ])
-          ]),
-          vue.createCommentVNode(" \u5168\u7F51\u6392\u884C "),
-          vue.createElementVNode("view", { class: "c-net" }, [
-            vue.createElementVNode("view", { class: "cn-title" }, [
-              vue.createElementVNode("view", { class: "cnt-left" }, [
-                vue.createElementVNode("text", { class: "cntl-text" }, "\u5168\u7DB2\u6301\u5009\u6392\u884C"),
-                vue.createElementVNode("view", { class: "cntl-div" })
-              ]),
-              vue.createElementVNode("view", { class: "cnt-more" }, [
-                vue.createElementVNode("text", { class: "cntm-left" }, "\u66F4\u591A"),
-                vue.createVNode(_component_u_image, {
-                  width: "12",
-                  height: "7",
-                  src: "/static/home/left-arrow.png"
-                })
-              ])
-            ])
-          ]),
-          vue.createCommentVNode(" \u5168\u7F51\u6392\u884C\u5217\u8868 "),
-          vue.createElementVNode("view", { class: "c-net-list" }, [
-            vue.createElementVNode("view", { class: "cnl-title" }, [
-              (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList($data.netTitleList, (item2) => {
-                return vue.openBlock(), vue.createElementBlock("text", { class: "cnlt-text" }, vue.toDisplayString(item2), 1);
-              }), 256))
-            ]),
-            vue.createElementVNode("view", { class: "cnl-content" }, [
-              (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList($data.netContentList, (item2) => {
-                return vue.openBlock(), vue.createElementBlock("view", { class: "cnlc-data" }, [
-                  vue.createElementVNode("text", null, vue.toDisplayString(item2.type), 1),
-                  vue.createElementVNode("text", null, vue.toDisplayString(item2.assets), 1),
-                  vue.createElementVNode("text", null, vue.toDisplayString(item2.price), 1)
-                ]);
-              }), 256))
-            ])
-          ])
-        ])
-      ]),
-      vue.createCommentVNode(" \u5F85\u652F\u4ED8\u5F39\u7A97 "),
-      vue.createVNode(_component_u_modal, {
-        onConfirm: $options.confirm,
-        onCancel: $options.cancel,
-        confirmText: "\u53BB\u652F\u4ED8",
-        cancelText: "\u9000\u51FA",
-        showCancelButton: "",
-        confirmColor: "#FFB119",
-        cancelColor: "#333333",
-        show: $data.show,
-        title: _ctx.\u5F85\u652F\u4ED8
-      }, {
-        default: vue.withCtx(() => [
-          vue.createElementVNode("view", { class: "slot-content" }, [
-            vue.createElementVNode("view", { style: { "padding": "106upx 0" } }, "\u60A8\u7684\u8CEC\u55AE\u5DF2\u903E\u671F\uFF0C\u8ACB\u5148\u524D\u5F80\u652F\u4ED8")
-          ])
-        ]),
-        _: 1
-      }, 8, ["onConfirm", "onCancel", "show", "title"])
-    ]);
-  }
-  var PagesHomeHome = /* @__PURE__ */ _export_sfc(_sfc_main$J, [["render", _sfc_render$I], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/home/home.vue"]]);
-  var props$8 = {
-    props: {
-      isDot: {
-        type: Boolean,
-        default: props$s.badge.isDot
-      },
-      value: {
-        type: [Number, String],
-        default: props$s.badge.value
-      },
-      modelValue: {
-        type: [Number, String],
-        default: props$s.badge.modelValue
-      },
-      show: {
-        type: Boolean,
-        default: props$s.badge.show
-      },
-      max: {
-        type: [Number, String],
-        default: props$s.badge.max
-      },
-      type: {
-        type: String,
-        default: props$s.badge.type
-      },
-      showZero: {
-        type: Boolean,
-        default: props$s.badge.showZero
-      },
-      bgColor: {
-        type: [String, null],
-        default: props$s.badge.bgColor
-      },
-      color: {
-        type: [String, null],
-        default: props$s.badge.color
-      },
-      shape: {
-        type: String,
-        default: props$s.badge.shape
-      },
-      numberType: {
-        type: String,
-        default: props$s.badge.numberType
-      },
-      offset: {
-        type: Array,
-        default: props$s.badge.offset
-      },
-      inverted: {
-        type: Boolean,
-        default: props$s.badge.inverted
-      },
-      absolute: {
-        type: Boolean,
-        default: props$s.badge.absolute
-      }
-    }
-  };
-  const _sfc_main$I = {
-    name: "u-badge",
-    mixins: [mpMixin, props$8, mixin],
-    computed: {
-      boxStyle() {
-        let style = {};
-        return style;
-      },
-      badgeStyle() {
-        const style = {};
-        if (this.color) {
-          style.color = this.color;
-        }
-        if (this.bgColor && !this.inverted) {
-          style.backgroundColor = this.bgColor;
-        }
-        if (this.absolute) {
-          style.position = "absolute";
-          if (this.offset.length) {
-            const top = this.offset[0];
-            const right = this.offset[1] || top;
-            style.top = uni.$u.addUnit(top);
-            style.right = uni.$u.addUnit(right);
-          }
-        }
-        return style;
-      },
-      showValue() {
-        switch (this.numberType) {
-          case "overflow":
-            return Number(this.value) > Number(this.max) ? this.max + "+" : this.value;
-          case "ellipsis":
-            return Number(this.value) > Number(this.max) ? "..." : this.value;
-          case "limit":
-            return Number(this.value) > 999 ? Number(this.value) >= 9999 ? Math.floor(this.value / 1e4 * 100) / 100 + "w" : Math.floor(this.value / 1e3 * 100) / 100 + "k" : this.value;
-          default:
-            return Number(this.value);
-        }
-      }
-    }
-  };
-  function _sfc_render$H(_ctx, _cache, $props, $setup, $data, $options) {
-    return _ctx.show && ((Number(_ctx.value) === 0 ? _ctx.showZero : true) || _ctx.isDot) ? (vue.openBlock(), vue.createElementBlock("text", {
-      key: 0,
-      class: vue.normalizeClass([[_ctx.isDot ? "u-badge--dot" : "u-badge--not-dot", _ctx.inverted && "u-badge--inverted", _ctx.shape === "horn" && "u-badge--horn", `u-badge--${_ctx.type}${_ctx.inverted ? "--inverted" : ""}`], "u-badge"]),
-      style: vue.normalizeStyle([_ctx.$u.addStyle(_ctx.customStyle), $options.badgeStyle])
-    }, vue.toDisplayString(_ctx.isDot ? "" : $options.showValue), 7)) : vue.createCommentVNode("v-if", true);
-  }
-  var __easycom_0 = /* @__PURE__ */ _export_sfc(_sfc_main$I, [["render", _sfc_render$H], ["__scopeId", "data-v-64d2630e"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-badge/u-badge.vue"]]);
-  var props$7 = {
-    props: {
-      duration: {
-        type: Number,
-        default: props$s.tabs.duration
-      },
-      list: {
-        type: Array,
-        default: props$s.tabs.list
-      },
-      lineColor: {
-        type: String,
-        default: props$s.tabs.lineColor
-      },
-      activeStyle: {
-        type: [String, Object],
-        default: props$s.tabs.activeStyle
-      },
-      inactiveStyle: {
-        type: [String, Object],
-        default: props$s.tabs.inactiveStyle
-      },
-      lineWidth: {
-        type: [String, Number],
-        default: props$s.tabs.lineWidth
-      },
-      lineHeight: {
-        type: [String, Number],
-        default: props$s.tabs.lineHeight
-      },
-      lineBgSize: {
-        type: String,
-        default: props$s.tabs.lineBgSize
-      },
-      itemStyle: {
-        type: [String, Object],
-        default: props$s.tabs.itemStyle
-      },
-      scrollable: {
-        type: Boolean,
-        default: props$s.tabs.scrollable
-      },
-      current: {
-        type: [Number, String],
-        default: props$s.tabs.current
-      },
-      keyName: {
-        type: String,
-        default: props$s.tabs.keyName
-      }
-    }
-  };
+  const __easycom_3 = /* @__PURE__ */ _export_sfc(_sfc_main$I, [["render", _sfc_render$H], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u--form/u--form.vue"]]);
   const _sfc_main$H = {
-    name: "u-tabs",
-    mixins: [mpMixin, mixin, props$7],
-    data() {
-      return {
-        firstTime: true,
-        scrollLeft: 0,
-        scrollViewWidth: 0,
-        lineOffsetLeft: 0,
-        tabsRect: {
-          left: 0
-        },
-        innerCurrent: 0,
-        moving: false
-      };
-    },
-    watch: {
-      current: {
-        immediate: true,
-        handler(newValue, oldValue) {
-          if (newValue !== this.innerCurrent) {
-            this.innerCurrent = newValue;
-            this.$nextTick(() => {
-              this.resize();
-            });
-          }
-        }
-      },
-      list() {
-        this.$nextTick(() => {
-          this.resize();
-        });
-      }
-    },
-    computed: {
-      textStyle() {
-        return (index2) => {
-          const style = {};
-          const customeStyle = index2 === this.innerCurrent ? uni.$u.addStyle(this.activeStyle) : uni.$u.addStyle(this.inactiveStyle);
-          if (this.list[index2].disabled) {
-            style.color = "#c8c9cc";
-          }
-          return uni.$u.deepMerge(customeStyle, style);
-        };
-      },
-      propsBadge() {
-        return uni.$u.props.badge;
-      }
-    },
-    async mounted() {
-      this.init();
-    },
-    emits: ["click", "change"],
-    methods: {
-      setLineLeft() {
-        const tabItem = this.list[this.innerCurrent];
-        if (!tabItem) {
-          return;
-        }
-        let lineOffsetLeft = this.list.slice(0, this.innerCurrent).reduce((total, curr) => total + curr.rect.width, 0);
-        const lineWidth = uni.$u.getPx(this.lineWidth);
-        this.lineOffsetLeft = lineOffsetLeft + (tabItem.rect.width - lineWidth) / 2;
-        if (this.firstTime) {
-          setTimeout(() => {
-            this.firstTime = false;
-          }, 10);
-        }
-      },
-      animation(x, duration = 0) {
-      },
-      clickHandler(item2, index2) {
-        this.$emit("click", __spreadProps(__spreadValues({}, item2), {
-          index: index2
-        }));
-        if (item2.disabled)
-          return;
-        this.innerCurrent = index2;
-        this.resize();
-        this.$emit("change", __spreadProps(__spreadValues({}, item2), {
-          index: index2
-        }));
-      },
-      init() {
-        uni.$u.sleep().then(() => {
-          this.resize();
-        });
-      },
-      setScrollLeft() {
-        const tabRect = this.list[this.innerCurrent];
-        const offsetLeft = this.list.slice(0, this.innerCurrent).reduce((total, curr) => {
-          return total + curr.rect.width;
-        }, 0);
-        const windowWidth = uni.$u.sys().windowWidth;
-        let scrollLeft = offsetLeft - (this.tabsRect.width - tabRect.rect.width) / 2 - (windowWidth - this.tabsRect.right) / 2 + this.tabsRect.left / 2;
-        scrollLeft = Math.min(scrollLeft, this.scrollViewWidth - this.tabsRect.width);
-        this.scrollLeft = Math.max(0, scrollLeft);
-      },
-      resize() {
-        if (this.list.length === 0) {
-          return;
-        }
-        Promise.all([this.getTabsRect(), this.getAllItemRect()]).then(([tabsRect, itemRect = []]) => {
-          this.tabsRect = tabsRect;
-          this.scrollViewWidth = 0;
-          itemRect.map((item2, index2) => {
-            this.scrollViewWidth += item2.width;
-            this.list[index2].rect = item2;
-          });
-          this.setLineLeft();
-          this.setScrollLeft();
-        });
-      },
-      getTabsRect() {
-        return new Promise((resolve) => {
-          this.queryRect("u-tabs__wrapper__scroll-view").then((size) => resolve(size));
-        });
-      },
-      getAllItemRect() {
-        return new Promise((resolve) => {
-          const promiseAllArr = this.list.map((item2, index2) => this.queryRect(`u-tabs__wrapper__nav__item-${index2}`, true));
-          Promise.all(promiseAllArr).then((sizes) => resolve(sizes));
-        });
-      },
-      queryRect(el, item2) {
-        return new Promise((resolve) => {
-          this.$uGetRect(`.${el}`).then((size) => {
-            resolve(size);
-          });
-        });
-      }
-    }
-  };
-  function _sfc_render$G(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_badge = resolveEasycom(vue.resolveDynamicComponent("u-badge"), __easycom_0);
-    return vue.openBlock(), vue.createElementBlock("view", { class: "u-tabs" }, [
-      vue.createElementVNode("view", { class: "u-tabs__wrapper" }, [
-        vue.renderSlot(_ctx.$slots, "left", {}, void 0, true),
-        vue.createElementVNode("view", { class: "u-tabs__wrapper__scroll-view-wrapper" }, [
-          vue.createElementVNode("scroll-view", {
-            "scroll-x": _ctx.scrollable,
-            "scroll-left": $data.scrollLeft,
-            "scroll-with-animation": "",
-            class: "u-tabs__wrapper__scroll-view",
-            "show-scrollbar": false,
-            ref: "u-tabs__wrapper__scroll-view"
-          }, [
-            vue.createElementVNode("view", {
-              class: "u-tabs__wrapper__nav",
-              ref: "u-tabs__wrapper__nav"
-            }, [
-              (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(_ctx.list, (item2, index2) => {
-                return vue.openBlock(), vue.createElementBlock("view", {
-                  class: vue.normalizeClass(["u-tabs__wrapper__nav__item", [`u-tabs__wrapper__nav__item-${index2}`, item2.disabled && "u-tabs__wrapper__nav__item--disabled"]]),
-                  key: index2,
-                  onClick: ($event) => $options.clickHandler(item2, index2),
-                  ref_for: true,
-                  ref: `u-tabs__wrapper__nav__item-${index2}`,
-                  style: vue.normalizeStyle([_ctx.$u.addStyle(_ctx.itemStyle), { flex: _ctx.scrollable ? "" : 1 }])
-                }, [
-                  vue.createElementVNode("text", {
-                    class: vue.normalizeClass([[item2.disabled && "u-tabs__wrapper__nav__item__text--disabled"], "u-tabs__wrapper__nav__item__text"]),
-                    style: vue.normalizeStyle([$options.textStyle(index2)])
-                  }, vue.toDisplayString(item2[_ctx.keyName]), 7),
-                  vue.createVNode(_component_u_badge, {
-                    show: !!(item2.badge && (item2.badge.show || item2.badge.isDot || item2.badge.value)),
-                    isDot: item2.badge && item2.badge.isDot || $options.propsBadge.isDot,
-                    value: item2.badge && item2.badge.value || $options.propsBadge.value,
-                    max: item2.badge && item2.badge.max || $options.propsBadge.max,
-                    type: item2.badge && item2.badge.type || $options.propsBadge.type,
-                    showZero: item2.badge && item2.badge.showZero || $options.propsBadge.showZero,
-                    bgColor: item2.badge && item2.badge.bgColor || $options.propsBadge.bgColor,
-                    color: item2.badge && item2.badge.color || $options.propsBadge.color,
-                    shape: item2.badge && item2.badge.shape || $options.propsBadge.shape,
-                    numberType: item2.badge && item2.badge.numberType || $options.propsBadge.numberType,
-                    inverted: item2.badge && item2.badge.inverted || $options.propsBadge.inverted,
-                    customStyle: "margin-left: 4px;"
-                  }, null, 8, ["show", "isDot", "value", "max", "type", "showZero", "bgColor", "color", "shape", "numberType", "inverted"])
-                ], 14, ["onClick"]);
-              }), 128)),
-              vue.createElementVNode("view", {
-                class: "u-tabs__wrapper__nav__line",
-                ref: "u-tabs__wrapper__nav__line",
-                style: vue.normalizeStyle([{
-                  width: _ctx.$u.addUnit(_ctx.lineWidth),
-                  transform: `translate(${$data.lineOffsetLeft}px)`,
-                  transitionDuration: `${$data.firstTime ? 0 : _ctx.duration}ms`,
-                  height: _ctx.$u.addUnit(_ctx.lineHeight),
-                  background: _ctx.lineColor,
-                  backgroundSize: _ctx.lineBgSize
-                }])
-              }, null, 4)
-            ], 512)
-          ], 8, ["scroll-x", "scroll-left"])
-        ]),
-        vue.renderSlot(_ctx.$slots, "right", {}, void 0, true)
-      ])
-    ]);
-  }
-  var __easycom_2$3 = /* @__PURE__ */ _export_sfc(_sfc_main$H, [["render", _sfc_render$G], ["__scopeId", "data-v-f192babe"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-tabs/u-tabs.vue"]]);
-  var props$6 = {
-    props: {
-      status: {
-        type: String,
-        default: props$s.loadmore.status
-      },
-      bgColor: {
-        type: String,
-        default: props$s.loadmore.bgColor
-      },
-      icon: {
-        type: Boolean,
-        default: props$s.loadmore.icon
-      },
-      fontSize: {
-        type: [String, Number],
-        default: props$s.loadmore.fontSize
-      },
-      iconSize: {
-        type: [String, Number],
-        default: props$s.loadmore.iconSize
-      },
-      color: {
-        type: String,
-        default: props$s.loadmore.color
-      },
-      loadingIcon: {
-        type: String,
-        default: props$s.loadmore.loadingIcon
-      },
-      loadmoreText: {
-        type: String,
-        default: props$s.loadmore.loadmoreText
-      },
-      loadingText: {
-        type: String,
-        default: props$s.loadmore.loadingText
-      },
-      nomoreText: {
-        type: String,
-        default: props$s.loadmore.nomoreText
-      },
-      isDot: {
-        type: Boolean,
-        default: props$s.loadmore.isDot
-      },
-      iconColor: {
-        type: String,
-        default: props$s.loadmore.iconColor
-      },
-      marginTop: {
-        type: [String, Number],
-        default: props$s.loadmore.marginTop
-      },
-      marginBottom: {
-        type: [String, Number],
-        default: props$s.loadmore.marginBottom
-      },
-      height: {
-        type: [String, Number],
-        default: props$s.loadmore.height
-      },
-      line: {
-        type: Boolean,
-        default: props$s.loadmore.line
-      },
-      lineColor: {
-        type: String,
-        default: props$s.loadmore.lineColor
-      },
-      dashed: {
-        type: Boolean,
-        default: props$s.loadmore.dashed
-      }
-    }
-  };
-  const _sfc_main$G = {
-    name: "u-loadmore",
-    mixins: [mpMixin, mixin, props$6],
-    data() {
-      return {
-        dotText: "\u25CF"
-      };
-    },
-    computed: {
-      loadTextStyle() {
-        return {
-          color: this.color,
-          fontSize: uni.$u.addUnit(this.fontSize),
-          lineHeight: uni.$u.addUnit(this.fontSize),
-          backgroundColor: this.bgColor
-        };
-      },
-      showText() {
-        let text2 = "";
-        if (this.status == "loadmore")
-          text2 = this.loadmoreText;
-        else if (this.status == "loading")
-          text2 = this.loadingText;
-        else if (this.status == "nomore" && this.isDot)
-          text2 = this.dotText;
-        else
-          text2 = this.nomoreText;
-        return text2;
-      }
-    },
-    methods: {
-      loadMore() {
-        if (this.status == "loadmore")
-          this.$emit("loadmore");
-      }
-    }
-  };
-  function _sfc_render$F(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_line = resolveEasycom(vue.resolveDynamicComponent("u-line"), __easycom_0$5);
-    const _component_u_loading_icon = resolveEasycom(vue.resolveDynamicComponent("u-loading-icon"), __easycom_1$3);
-    return vue.openBlock(), vue.createElementBlock("view", {
-      class: "u-loadmore",
-      style: vue.normalizeStyle([
-        _ctx.$u.addStyle(_ctx.customStyle),
-        {
-          backgroundColor: _ctx.bgColor,
-          marginBottom: _ctx.$u.addUnit(_ctx.marginBottom),
-          marginTop: _ctx.$u.addUnit(_ctx.marginTop),
-          height: _ctx.$u.addUnit(_ctx.height)
-        }
-      ])
-    }, [
-      _ctx.line ? (vue.openBlock(), vue.createBlock(_component_u_line, {
-        key: 0,
-        length: "140rpx",
-        color: _ctx.lineColor,
-        hairline: false,
-        dashed: _ctx.dashed
-      }, null, 8, ["color", "dashed"])) : vue.createCommentVNode("v-if", true),
-      vue.createCommentVNode(" \u52A0\u8F7D\u4E2D\u548C\u6CA1\u6709\u66F4\u591A\u7684\u72B6\u6001\u624D\u663E\u793A\u4E24\u8FB9\u7684\u6A2A\u7EBF "),
-      vue.createElementVNode("view", {
-        class: vue.normalizeClass([_ctx.status == "loadmore" || _ctx.status == "nomore" ? "u-more" : "", "u-loadmore__content"])
-      }, [
-        _ctx.status === "loading" && _ctx.icon ? (vue.openBlock(), vue.createElementBlock("view", {
-          key: 0,
-          class: "u-loadmore__content__icon-wrap"
-        }, [
-          vue.createVNode(_component_u_loading_icon, {
-            color: _ctx.iconColor,
-            size: _ctx.iconSize,
-            mode: _ctx.loadingIcon
-          }, null, 8, ["color", "size", "mode"])
-        ])) : vue.createCommentVNode("v-if", true),
-        vue.createCommentVNode(" \u5982\u679C\u6CA1\u6709\u66F4\u591A\u7684\u72B6\u6001\u4E0B\uFF0C\u663E\u793A\u5185\u5BB9\u4E3Adot\uFF08\u7C97\u70B9\uFF09\uFF0C\u52A0\u8F7D\u7279\u5B9A\u6837\u5F0F "),
-        vue.createElementVNode("text", {
-          class: vue.normalizeClass(["u-line-1", [_ctx.status == "nomore" && _ctx.isDot == true ? "u-loadmore__content__dot-text" : "u-loadmore__content__text"]]),
-          style: vue.normalizeStyle([$options.loadTextStyle]),
-          onClick: _cache[0] || (_cache[0] = (...args) => $options.loadMore && $options.loadMore(...args))
-        }, vue.toDisplayString($options.showText), 7)
-      ], 2),
-      _ctx.line ? (vue.openBlock(), vue.createBlock(_component_u_line, {
-        key: 1,
-        length: "140rpx",
-        color: _ctx.lineColor,
-        hairline: false,
-        dashed: _ctx.dashed
-      }, null, 8, ["color", "dashed"])) : vue.createCommentVNode("v-if", true)
-    ], 4);
-  }
-  var __easycom_2$2 = /* @__PURE__ */ _export_sfc(_sfc_main$G, [["render", _sfc_render$F], ["__scopeId", "data-v-949fc7fe"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-loadmore/u-loadmore.vue"]]);
-  var props$5 = {
-    props: {
-      icon: {
-        type: String,
-        default: props$s.empty.icon
-      },
-      text: {
-        type: String,
-        default: props$s.empty.text
-      },
-      textColor: {
-        type: String,
-        default: props$s.empty.textColor
-      },
-      textSize: {
-        type: [String, Number],
-        default: props$s.empty.textSize
-      },
-      iconColor: {
-        type: String,
-        default: props$s.empty.iconColor
-      },
-      iconSize: {
-        type: [String, Number],
-        default: props$s.empty.iconSize
-      },
-      mode: {
-        type: String,
-        default: props$s.empty.mode
-      },
-      width: {
-        type: [String, Number],
-        default: props$s.empty.width
-      },
-      height: {
-        type: [String, Number],
-        default: props$s.empty.height
-      },
-      show: {
-        type: Boolean,
-        default: props$s.empty.show
-      },
-      marginTop: {
-        type: [String, Number],
-        default: props$s.empty.marginTop
-      }
-    }
-  };
-  const _sfc_main$F = {
-    name: "u-empty",
-    mixins: [mpMixin, mixin, props$5],
-    data() {
-      return {
-        icons: {
-          car: "\u8D2D\u7269\u8F66\u4E3A\u7A7A",
-          page: "\u9875\u9762\u4E0D\u5B58\u5728",
-          search: "\u6CA1\u6709\u641C\u7D22\u7ED3\u679C",
-          address: "\u6CA1\u6709\u6536\u8D27\u5730\u5740",
-          wifi: "\u6CA1\u6709WiFi",
-          order: "\u8BA2\u5355\u4E3A\u7A7A",
-          coupon: "\u6CA1\u6709\u4F18\u60E0\u5238",
-          favor: "\u6682\u65E0\u6536\u85CF",
-          permission: "\u65E0\u6743\u9650",
-          history: "\u65E0\u5386\u53F2\u8BB0\u5F55",
-          news: "\u65E0\u65B0\u95FB\u5217\u8868",
-          message: "\u6D88\u606F\u5217\u8868\u4E3A\u7A7A",
-          list: "\u5217\u8868\u4E3A\u7A7A",
-          data: "\u6570\u636E\u4E3A\u7A7A",
-          comment: "\u6682\u65E0\u8BC4\u8BBA"
-        }
-      };
-    },
-    computed: {
-      emptyStyle() {
-        const style = {};
-        style.marginTop = uni.$u.addUnit(this.marginTop);
-        return uni.$u.deepMerge(uni.$u.addStyle(this.customStyle), style);
-      },
-      textStyle() {
-        const style = {};
-        style.color = this.textColor;
-        style.fontSize = uni.$u.addUnit(this.textSize);
-        return style;
-      },
-      isSrc() {
-        return this.icon.indexOf("/") >= 0;
-      }
-    }
-  };
-  function _sfc_render$E(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$7);
-    return _ctx.show ? (vue.openBlock(), vue.createElementBlock("view", {
-      key: 0,
-      class: "u-empty",
-      style: vue.normalizeStyle([$options.emptyStyle])
-    }, [
-      !$options.isSrc ? (vue.openBlock(), vue.createBlock(_component_u_icon, {
-        key: 0,
-        name: _ctx.mode === "message" ? "chat" : `empty-${_ctx.mode}`,
-        size: _ctx.iconSize,
-        color: _ctx.iconColor,
-        "margin-top": "14"
-      }, null, 8, ["name", "size", "color"])) : (vue.openBlock(), vue.createElementBlock("image", {
-        key: 1,
-        style: vue.normalizeStyle({
-          width: _ctx.$u.addUnit(_ctx.width),
-          height: _ctx.$u.addUnit(_ctx.height)
-        }),
-        src: _ctx.icon,
-        mode: "widthFix"
-      }, null, 12, ["src"])),
-      vue.createElementVNode("text", {
-        class: "u-empty__text",
-        style: vue.normalizeStyle([$options.textStyle])
-      }, vue.toDisplayString(_ctx.text ? _ctx.text : $data.icons[_ctx.mode]), 5),
-      _ctx.$slots.default || _ctx.$slots.$default ? (vue.openBlock(), vue.createElementBlock("view", {
-        key: 2,
-        class: "u-empty__wrap"
-      }, [
-        vue.renderSlot(_ctx.$slots, "default", {}, void 0, true)
-      ])) : vue.createCommentVNode("v-if", true)
-    ], 4)) : vue.createCommentVNode("v-if", true);
-  }
-  var __easycom_3 = /* @__PURE__ */ _export_sfc(_sfc_main$F, [["render", _sfc_render$E], ["__scopeId", "data-v-5ebae466"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-empty/u-empty.vue"]]);
-  const _sfc_main$E = {
     data() {
       return {
         showApiModal: false,
@@ -8175,18 +7542,18 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$D(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$7);
-    const _component_u__input = resolveEasycom(vue.resolveDynamicComponent("u--input"), __easycom_1$4);
-    const _component_u_tabs = resolveEasycom(vue.resolveDynamicComponent("u-tabs"), __easycom_2$3);
-    const _component_u_image = resolveEasycom(vue.resolveDynamicComponent("u-image"), __easycom_0$3);
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$6);
-    const _component_u_loadmore = resolveEasycom(vue.resolveDynamicComponent("u-loadmore"), __easycom_2$2);
-    const _component_u_empty = resolveEasycom(vue.resolveDynamicComponent("u-empty"), __easycom_3);
-    const _component_u__image = resolveEasycom(vue.resolveDynamicComponent("u--image"), __easycom_0$2);
-    const _component_u_modal = resolveEasycom(vue.resolveDynamicComponent("u-modal"), __easycom_5$1);
-    const _component_u_form_item = resolveEasycom(vue.resolveDynamicComponent("u-form-item"), __easycom_2$5);
-    const _component_u__form = resolveEasycom(vue.resolveDynamicComponent("u--form"), __easycom_3$2);
+  function _sfc_render$G(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$6);
+    const _component_u__input = resolveEasycom(vue.resolveDynamicComponent("u--input"), __easycom_1$2);
+    const _component_u_tabs = resolveEasycom(vue.resolveDynamicComponent("u-tabs"), __easycom_2$4);
+    const _component_u_image = resolveEasycom(vue.resolveDynamicComponent("u-image"), __easycom_0$5);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0);
+    const _component_u_loadmore = resolveEasycom(vue.resolveDynamicComponent("u-loadmore"), __easycom_2$3);
+    const _component_u_empty = resolveEasycom(vue.resolveDynamicComponent("u-empty"), __easycom_3$1);
+    const _component_u__image = resolveEasycom(vue.resolveDynamicComponent("u--image"), __easycom_0$4);
+    const _component_u_modal = resolveEasycom(vue.resolveDynamicComponent("u-modal"), __easycom_5$2);
+    const _component_u_form_item = resolveEasycom(vue.resolveDynamicComponent("u-form-item"), __easycom_2$2);
+    const _component_u__form = resolveEasycom(vue.resolveDynamicComponent("u--form"), __easycom_3);
     return vue.openBlock(), vue.createElementBlock(vue.Fragment, null, [
       vue.createCommentVNode(" \u4EA4\u6613 "),
       vue.createElementVNode("view", { class: "trade page" }, [
@@ -8584,8 +7951,8 @@ if (uni.restoreGlobal) {
       ])
     ], 2112);
   }
-  var PagesTradeTrade = /* @__PURE__ */ _export_sfc(_sfc_main$E, [["render", _sfc_render$D], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/trade/trade.vue"]]);
-  const _sfc_main$D = {
+  const PagesTradeTrade = /* @__PURE__ */ _export_sfc(_sfc_main$H, [["render", _sfc_render$G], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/trade/trade.vue"]]);
+  const _sfc_main$G = {
     data() {
       return {
         bgColor: "rgba(0, 0, 0, 0)",
@@ -8644,11 +8011,11 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$C(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_image = resolveEasycom(vue.resolveDynamicComponent("u-image"), __easycom_0$3);
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$6);
-    const _component_u__image = resolveEasycom(vue.resolveDynamicComponent("u--image"), __easycom_0$2);
-    const _component_u_modal = resolveEasycom(vue.resolveDynamicComponent("u-modal"), __easycom_5$1);
+  function _sfc_render$F(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_u_image = resolveEasycom(vue.resolveDynamicComponent("u-image"), __easycom_0$5);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0);
+    const _component_u__image = resolveEasycom(vue.resolveDynamicComponent("u--image"), __easycom_0$4);
+    const _component_u_modal = resolveEasycom(vue.resolveDynamicComponent("u-modal"), __easycom_5$2);
     return vue.openBlock(), vue.createElementBlock("view", { class: "assets" }, [
       vue.createVNode(_component_u_navbar, {
         bgColor: $data.bgColor,
@@ -8781,8 +8148,8 @@ if (uni.restoreGlobal) {
       }, 8, ["show"])
     ]);
   }
-  var PagesAssetsAssets = /* @__PURE__ */ _export_sfc(_sfc_main$D, [["render", _sfc_render$C], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/assets/assets.vue"]]);
-  const _sfc_main$C = {
+  const PagesAssetsAssets = /* @__PURE__ */ _export_sfc(_sfc_main$G, [["render", _sfc_render$F], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/assets/assets.vue"]]);
+  const _sfc_main$F = {
     data() {
       return {
         userInfo: {
@@ -8801,9 +8168,9 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$B(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$6);
-    const _component_u_image = resolveEasycom(vue.resolveDynamicComponent("u-image"), __easycom_0$3);
+  function _sfc_render$E(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0);
+    const _component_u_image = resolveEasycom(vue.resolveDynamicComponent("u-image"), __easycom_0$5);
     return vue.openBlock(), vue.createElementBlock("view", { class: "page" }, [
       vue.createElementVNode("view", { class: "my" }, [
         vue.createVNode(_component_u_navbar, {
@@ -8971,8 +8338,8 @@ if (uni.restoreGlobal) {
       ])
     ]);
   }
-  var PagesMyMy = /* @__PURE__ */ _export_sfc(_sfc_main$C, [["render", _sfc_render$B], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/my/my.vue"]]);
-  const _sfc_main$B = {
+  const PagesMyMy = /* @__PURE__ */ _export_sfc(_sfc_main$F, [["render", _sfc_render$E], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/my/my.vue"]]);
+  const _sfc_main$E = {
     data() {
       return {
         authList: [
@@ -9013,10 +8380,10 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$A(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_image = resolveEasycom(vue.resolveDynamicComponent("u-image"), __easycom_0$3);
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$6);
-    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$7);
+  function _sfc_render$D(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_u_image = resolveEasycom(vue.resolveDynamicComponent("u-image"), __easycom_0$5);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0);
+    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$6);
     return vue.openBlock(), vue.createElementBlock("view", { class: "api-auth page" }, [
       vue.createCommentVNode(" \u5BFC\u822A "),
       vue.createVNode(_component_u_navbar, {
@@ -9056,8 +8423,299 @@ if (uni.restoreGlobal) {
       ])
     ]);
   }
-  var PagesHomeApiAuthApiAuth = /* @__PURE__ */ _export_sfc(_sfc_main$B, [["render", _sfc_render$A], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/home/apiAuth/apiAuth.vue"]]);
-  const _sfc_main$A = {
+  const PagesHomeApiAuthApiAuth = /* @__PURE__ */ _export_sfc(_sfc_main$E, [["render", _sfc_render$D], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/home/apiAuth/apiAuth.vue"]]);
+  const props$7 = {
+    props: {
+      hairline: {
+        type: Boolean,
+        default: props$s.button.hairline
+      },
+      type: {
+        type: String,
+        default: props$s.button.type
+      },
+      size: {
+        type: String,
+        default: props$s.button.size
+      },
+      shape: {
+        type: String,
+        default: props$s.button.shape
+      },
+      plain: {
+        type: Boolean,
+        default: props$s.button.plain
+      },
+      disabled: {
+        type: Boolean,
+        default: props$s.button.disabled
+      },
+      loading: {
+        type: Boolean,
+        default: props$s.button.loading
+      },
+      loadingText: {
+        type: [String, Number],
+        default: props$s.button.loadingText
+      },
+      loadingMode: {
+        type: String,
+        default: props$s.button.loadingMode
+      },
+      loadingSize: {
+        type: [String, Number],
+        default: props$s.button.loadingSize
+      },
+      openType: {
+        type: String,
+        default: props$s.button.openType
+      },
+      formType: {
+        type: String,
+        default: props$s.button.formType
+      },
+      appParameter: {
+        type: String,
+        default: props$s.button.appParameter
+      },
+      hoverStopPropagation: {
+        type: Boolean,
+        default: props$s.button.hoverStopPropagation
+      },
+      lang: {
+        type: String,
+        default: props$s.button.lang
+      },
+      sessionFrom: {
+        type: String,
+        default: props$s.button.sessionFrom
+      },
+      sendMessageTitle: {
+        type: String,
+        default: props$s.button.sendMessageTitle
+      },
+      sendMessagePath: {
+        type: String,
+        default: props$s.button.sendMessagePath
+      },
+      sendMessageImg: {
+        type: String,
+        default: props$s.button.sendMessageImg
+      },
+      showMessageCard: {
+        type: Boolean,
+        default: props$s.button.showMessageCard
+      },
+      dataName: {
+        type: String,
+        default: props$s.button.dataName
+      },
+      throttleTime: {
+        type: [String, Number],
+        default: props$s.button.throttleTime
+      },
+      hoverStartTime: {
+        type: [String, Number],
+        default: props$s.button.hoverStartTime
+      },
+      hoverStayTime: {
+        type: [String, Number],
+        default: props$s.button.hoverStayTime
+      },
+      text: {
+        type: [String, Number],
+        default: props$s.button.text
+      },
+      icon: {
+        type: String,
+        default: props$s.button.icon
+      },
+      iconColor: {
+        type: String,
+        default: props$s.button.icon
+      },
+      color: {
+        type: String,
+        default: props$s.button.color
+      }
+    }
+  };
+  const _sfc_main$D = {
+    name: "u-button",
+    mixins: [mpMixin, mixin, props$7],
+    data() {
+      return {};
+    },
+    computed: {
+      bemClass() {
+        if (!this.color) {
+          return this.bem(
+            "button",
+            ["type", "shape", "size"],
+            ["disabled", "plain", "hairline"]
+          );
+        } else {
+          return this.bem(
+            "button",
+            ["shape", "size"],
+            ["disabled", "plain", "hairline"]
+          );
+        }
+      },
+      loadingColor() {
+        if (this.plain) {
+          return this.color ? this.color : uni.$u.config.color[`u-${this.type}`];
+        }
+        if (this.type === "info") {
+          return "#c9c9c9";
+        }
+        return "rgb(200, 200, 200)";
+      },
+      iconColorCom() {
+        if (this.iconColor)
+          return this.iconColor;
+        if (this.plain) {
+          return this.color ? this.color : this.type;
+        } else {
+          return this.type === "info" ? "#000000" : "#ffffff";
+        }
+      },
+      baseColor() {
+        let style = {};
+        if (this.color) {
+          style.color = this.plain ? this.color : "white";
+          if (!this.plain) {
+            style["background-color"] = this.color;
+          }
+          if (this.color.indexOf("gradient") !== -1) {
+            style.borderTopWidth = 0;
+            style.borderRightWidth = 0;
+            style.borderBottomWidth = 0;
+            style.borderLeftWidth = 0;
+            if (!this.plain) {
+              style.backgroundImage = this.color;
+            }
+          } else {
+            style.borderColor = this.color;
+            style.borderWidth = "1px";
+            style.borderStyle = "solid";
+          }
+        }
+        return style;
+      },
+      nvueTextStyle() {
+        let style = {};
+        if (this.type === "info") {
+          style.color = "#323233";
+        }
+        if (this.color) {
+          style.color = this.plain ? this.color : "white";
+        }
+        style.fontSize = this.textSize + "px";
+        return style;
+      },
+      textSize() {
+        let fontSize = 14, { size } = this;
+        if (size === "large")
+          fontSize = 16;
+        if (size === "normal")
+          fontSize = 14;
+        if (size === "small")
+          fontSize = 12;
+        if (size === "mini")
+          fontSize = 10;
+        return fontSize;
+      }
+    },
+    emits: [
+      "click",
+      "getphonenumber",
+      "getuserinfo",
+      "error",
+      "opensetting",
+      "launchapp"
+    ],
+    methods: {
+      clickHandler() {
+        if (!this.disabled && !this.loading) {
+          uni.$u.throttle(() => {
+            this.$emit("click");
+          }, this.throttleTime);
+        }
+      },
+      getphonenumber(res) {
+        this.$emit("getphonenumber", res);
+      },
+      getuserinfo(res) {
+        this.$emit("getuserinfo", res);
+      },
+      error(res) {
+        this.$emit("error", res);
+      },
+      opensetting(res) {
+        this.$emit("opensetting", res);
+      },
+      launchapp(res) {
+        this.$emit("launchapp", res);
+      }
+    }
+  };
+  function _sfc_render$C(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_u_loading_icon = resolveEasycom(vue.resolveDynamicComponent("u-loading-icon"), __easycom_1$5);
+    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$6);
+    return vue.openBlock(), vue.createElementBlock("button", {
+      "hover-start-time": Number(_ctx.hoverStartTime),
+      "hover-stay-time": Number(_ctx.hoverStayTime),
+      "form-type": _ctx.formType,
+      "open-type": _ctx.openType,
+      "app-parameter": _ctx.appParameter,
+      "hover-stop-propagation": _ctx.hoverStopPropagation,
+      "send-message-title": _ctx.sendMessageTitle,
+      "send-message-path": _ctx.sendMessagePath,
+      lang: _ctx.lang,
+      "data-name": _ctx.dataName,
+      "session-from": _ctx.sessionFrom,
+      "send-message-img": _ctx.sendMessageImg,
+      "show-message-card": _ctx.showMessageCard,
+      onGetphonenumber: _cache[0] || (_cache[0] = (...args) => $options.getphonenumber && $options.getphonenumber(...args)),
+      onGetuserinfo: _cache[1] || (_cache[1] = (...args) => $options.getuserinfo && $options.getuserinfo(...args)),
+      onError: _cache[2] || (_cache[2] = (...args) => $options.error && $options.error(...args)),
+      onOpensetting: _cache[3] || (_cache[3] = (...args) => $options.opensetting && $options.opensetting(...args)),
+      onLaunchapp: _cache[4] || (_cache[4] = (...args) => $options.launchapp && $options.launchapp(...args)),
+      "hover-class": !_ctx.disabled && !_ctx.loading ? "u-button--active" : "",
+      class: vue.normalizeClass(["u-button u-reset-button", $options.bemClass]),
+      style: vue.normalizeStyle([$options.baseColor, _ctx.$u.addStyle(_ctx.customStyle)]),
+      onClick: _cache[5] || (_cache[5] = (...args) => $options.clickHandler && $options.clickHandler(...args))
+    }, [
+      _ctx.loading ? (vue.openBlock(), vue.createElementBlock(vue.Fragment, { key: 0 }, [
+        vue.createVNode(_component_u_loading_icon, {
+          mode: _ctx.loadingMode,
+          size: _ctx.loadingSize * 1.15,
+          color: $options.loadingColor
+        }, null, 8, ["mode", "size", "color"]),
+        vue.createElementVNode("text", {
+          class: "u-button__loading-text",
+          style: vue.normalizeStyle([{ fontSize: $options.textSize + "px" }])
+        }, vue.toDisplayString(_ctx.loadingText || _ctx.text), 5)
+      ], 64)) : (vue.openBlock(), vue.createElementBlock(vue.Fragment, { key: 1 }, [
+        _ctx.icon ? (vue.openBlock(), vue.createBlock(_component_u_icon, {
+          key: 0,
+          name: _ctx.icon,
+          color: $options.iconColorCom,
+          size: $options.textSize * 1.35,
+          customStyle: { marginRight: "2px" }
+        }, null, 8, ["name", "color", "size"])) : vue.createCommentVNode("v-if", true),
+        vue.renderSlot(_ctx.$slots, "default", {}, () => [
+          vue.createElementVNode("text", {
+            class: "u-button__text",
+            style: vue.normalizeStyle([{ fontSize: $options.textSize + "px" }])
+          }, vue.toDisplayString(_ctx.text), 5)
+        ], true)
+      ], 64))
+    ], 46, ["hover-start-time", "hover-stay-time", "form-type", "open-type", "app-parameter", "hover-stop-propagation", "send-message-title", "send-message-path", "lang", "data-name", "session-from", "send-message-img", "show-message-card", "hover-class"]);
+  }
+  const __easycom_4 = /* @__PURE__ */ _export_sfc(_sfc_main$D, [["render", _sfc_render$C], ["__scopeId", "data-v-461e713c"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-button/u-button.vue"]]);
+  const _sfc_main$C = {
     onLoad: function(option) {
       formatAppLog("log", "at pages/home/apiAuthSure/apiAuthSure.vue:56", option.name);
       const {
@@ -9142,13 +8800,13 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$z(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$6);
-    const _component_u__input = resolveEasycom(vue.resolveDynamicComponent("u--input"), __easycom_1$4);
-    const _component_u_form_item = resolveEasycom(vue.resolveDynamicComponent("u-form-item"), __easycom_2$5);
-    const _component_u__form = resolveEasycom(vue.resolveDynamicComponent("u--form"), __easycom_3$2);
-    const _component_u_button = resolveEasycom(vue.resolveDynamicComponent("u-button"), __easycom_4$1);
-    const _component_u_modal = resolveEasycom(vue.resolveDynamicComponent("u-modal"), __easycom_5$1);
+  function _sfc_render$B(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0);
+    const _component_u__input = resolveEasycom(vue.resolveDynamicComponent("u--input"), __easycom_1$2);
+    const _component_u_form_item = resolveEasycom(vue.resolveDynamicComponent("u-form-item"), __easycom_2$2);
+    const _component_u__form = resolveEasycom(vue.resolveDynamicComponent("u--form"), __easycom_3);
+    const _component_u_button = resolveEasycom(vue.resolveDynamicComponent("u-button"), __easycom_4);
+    const _component_u_modal = resolveEasycom(vue.resolveDynamicComponent("u-modal"), __easycom_5$2);
     return vue.openBlock(), vue.createElementBlock("view", { class: "api-auth-sure page" }, [
       vue.createCommentVNode(" \u5BFC\u822A "),
       vue.createVNode(_component_u_navbar, {
@@ -9288,8 +8946,8 @@ if (uni.restoreGlobal) {
       }, 8, ["onConfirm", "onCancel", "show", "title"])
     ]);
   }
-  var PagesHomeApiAuthSureApiAuthSure = /* @__PURE__ */ _export_sfc(_sfc_main$A, [["render", _sfc_render$z], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/home/apiAuthSure/apiAuthSure.vue"]]);
-  const _sfc_main$z = {
+  const PagesHomeApiAuthSureApiAuthSure = /* @__PURE__ */ _export_sfc(_sfc_main$C, [["render", _sfc_render$B], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/home/apiAuthSure/apiAuthSure.vue"]]);
+  const _sfc_main$B = {
     data() {
       return {
         noPayList: [
@@ -9348,9 +9006,9 @@ if (uni.restoreGlobal) {
     },
     methods: {}
   };
-  function _sfc_render$y(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$6);
-    const _component_u_empty = resolveEasycom(vue.resolveDynamicComponent("u-empty"), __easycom_3);
+  function _sfc_render$A(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0);
+    const _component_u_empty = resolveEasycom(vue.resolveDynamicComponent("u-empty"), __easycom_3$1);
     return vue.openBlock(), vue.createElementBlock("view", { class: "bill-center page" }, [
       vue.createCommentVNode(" \u5BFC\u822A "),
       vue.createVNode(_component_u_navbar, {
@@ -9430,8 +9088,8 @@ if (uni.restoreGlobal) {
       ], 32)
     ]);
   }
-  var PagesHomeBillingCenterBillingCenter = /* @__PURE__ */ _export_sfc(_sfc_main$z, [["render", _sfc_render$y], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/home/billingCenter/billingCenter.vue"]]);
-  const _sfc_main$y = {
+  const PagesHomeBillingCenterBillingCenter = /* @__PURE__ */ _export_sfc(_sfc_main$B, [["render", _sfc_render$A], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/home/billingCenter/billingCenter.vue"]]);
+  const _sfc_main$A = {
     onLoad() {
       this.isAdequateFn("ERC20");
     },
@@ -9510,10 +9168,10 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$x(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u__image = resolveEasycom(vue.resolveDynamicComponent("u--image"), __easycom_0$2);
-    const _component_u_button = resolveEasycom(vue.resolveDynamicComponent("u-button"), __easycom_4$1);
-    const _component_u_modal = resolveEasycom(vue.resolveDynamicComponent("u-modal"), __easycom_5$1);
+  function _sfc_render$z(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_u__image = resolveEasycom(vue.resolveDynamicComponent("u--image"), __easycom_0$4);
+    const _component_u_button = resolveEasycom(vue.resolveDynamicComponent("u-button"), __easycom_4);
+    const _component_u_modal = resolveEasycom(vue.resolveDynamicComponent("u-modal"), __easycom_5$2);
     return vue.openBlock(), vue.createElementBlock("view", { class: "to-be-paid" }, [
       vue.createCommentVNode(" \u5BFC\u822A\u6761 "),
       vue.createElementVNode("view", { class: "tbp-nav" }, [
@@ -9646,7 +9304,7 @@ if (uni.restoreGlobal) {
       }, 8, ["onConfirm", "show", "title"])
     ]);
   }
-  var PagesHomeToBePaidToBePaid = /* @__PURE__ */ _export_sfc(_sfc_main$y, [["render", _sfc_render$x], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/home/toBePaid/toBePaid.vue"]]);
+  const PagesHomeToBePaidToBePaid = /* @__PURE__ */ _export_sfc(_sfc_main$A, [["render", _sfc_render$z], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/home/toBePaid/toBePaid.vue"]]);
   var commonjsGlobal = typeof globalThis !== "undefined" ? globalThis : typeof window !== "undefined" ? window : typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : {};
   function getDefaultExportFromCjs(x) {
     return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, "default") ? x["default"] : x;
@@ -9699,17 +9357,17 @@ if (uni.restoreGlobal) {
           for (var i3 = 0; i3 < this.moduleCount; i3++)
             this.modules[t2][i3] = null;
         }
-        this.setupPositionProbePattern(0, 0), this.setupPositionProbePattern(this.moduleCount - 7, 0), this.setupPositionProbePattern(0, this.moduleCount - 7), this.setupPositionAdjustPattern(), this.setupTimingPattern(), this.setupTypeInfo(o2, r2), this.typeNumber >= 7 && this.setupTypeNumber(o2), this.dataCache == null && (this.dataCache = e.createData(this.typeNumber, this.errorCorrectLevel, this.dataList)), this.mapData(this.dataCache, r2);
+        this.setupPositionProbePattern(0, 0), this.setupPositionProbePattern(this.moduleCount - 7, 0), this.setupPositionProbePattern(0, this.moduleCount - 7), this.setupPositionAdjustPattern(), this.setupTimingPattern(), this.setupTypeInfo(o2, r2), this.typeNumber >= 7 && this.setupTypeNumber(o2), null == this.dataCache && (this.dataCache = e.createData(this.typeNumber, this.errorCorrectLevel, this.dataList)), this.mapData(this.dataCache, r2);
       }, setupPositionProbePattern: function(o2, e2) {
         for (var r2 = -1; r2 <= 7; r2++)
           if (!(o2 + r2 <= -1 || this.moduleCount <= o2 + r2))
             for (var t2 = -1; t2 <= 7; t2++)
-              e2 + t2 <= -1 || this.moduleCount <= e2 + t2 || (this.modules[o2 + r2][e2 + t2] = 0 <= r2 && r2 <= 6 && (t2 == 0 || t2 == 6) || 0 <= t2 && t2 <= 6 && (r2 == 0 || r2 == 6) || 2 <= r2 && r2 <= 4 && 2 <= t2 && t2 <= 4);
+              e2 + t2 <= -1 || this.moduleCount <= e2 + t2 || (this.modules[o2 + r2][e2 + t2] = 0 <= r2 && r2 <= 6 && (0 == t2 || 6 == t2) || 0 <= t2 && t2 <= 6 && (0 == r2 || 6 == r2) || 2 <= r2 && r2 <= 4 && 2 <= t2 && t2 <= 4);
       }, getBestMaskPattern: function() {
         for (var o2 = 0, e2 = 0, r2 = 0; r2 < 8; r2++) {
           this.makeImpl(true, r2);
           var t2 = h.getLostPoint(this);
-          (r2 == 0 || o2 > t2) && (o2 = t2, e2 = r2);
+          (0 == r2 || o2 > t2) && (o2 = t2, e2 = r2);
         }
         return e2;
       }, createMovieClip: function(o2, e2, r2) {
@@ -9723,44 +9381,44 @@ if (uni.restoreGlobal) {
         return t2;
       }, setupTimingPattern: function() {
         for (var o2 = 8; o2 < this.moduleCount - 8; o2++)
-          this.modules[o2][6] == null && (this.modules[o2][6] = o2 % 2 == 0);
+          null == this.modules[o2][6] && (this.modules[o2][6] = o2 % 2 == 0);
         for (var e2 = 8; e2 < this.moduleCount - 8; e2++)
-          this.modules[6][e2] == null && (this.modules[6][e2] = e2 % 2 == 0);
+          null == this.modules[6][e2] && (this.modules[6][e2] = e2 % 2 == 0);
       }, setupPositionAdjustPattern: function() {
         for (var o2 = h.getPatternPosition(this.typeNumber), e2 = 0; e2 < o2.length; e2++)
           for (var r2 = 0; r2 < o2.length; r2++) {
             var t2 = o2[e2], i3 = o2[r2];
-            if (this.modules[t2][i3] == null)
+            if (null == this.modules[t2][i3])
               for (var n2 = -2; n2 <= 2; n2++)
                 for (var a2 = -2; a2 <= 2; a2++)
-                  this.modules[t2 + n2][i3 + a2] = n2 == -2 || n2 == 2 || a2 == -2 || a2 == 2 || n2 == 0 && a2 == 0;
+                  this.modules[t2 + n2][i3 + a2] = -2 == n2 || 2 == n2 || -2 == a2 || 2 == a2 || 0 == n2 && 0 == a2;
           }
       }, setupTypeNumber: function(o2) {
         for (var e2 = h.getBCHTypeNumber(this.typeNumber), r2 = 0; r2 < 18; r2++) {
-          var t2 = !o2 && (e2 >> r2 & 1) == 1;
+          var t2 = !o2 && 1 == (e2 >> r2 & 1);
           this.modules[Math.floor(r2 / 3)][r2 % 3 + this.moduleCount - 8 - 3] = t2;
         }
         for (r2 = 0; r2 < 18; r2++) {
-          t2 = !o2 && (e2 >> r2 & 1) == 1;
+          t2 = !o2 && 1 == (e2 >> r2 & 1);
           this.modules[r2 % 3 + this.moduleCount - 8 - 3][Math.floor(r2 / 3)] = t2;
         }
       }, setupTypeInfo: function(o2, e2) {
         for (var r2 = this.errorCorrectLevel << 3 | e2, t2 = h.getBCHTypeInfo(r2), i3 = 0; i3 < 15; i3++) {
-          var n2 = !o2 && (t2 >> i3 & 1) == 1;
+          var n2 = !o2 && 1 == (t2 >> i3 & 1);
           i3 < 6 ? this.modules[i3][8] = n2 : i3 < 8 ? this.modules[i3 + 1][8] = n2 : this.modules[this.moduleCount - 15 + i3][8] = n2;
         }
         for (i3 = 0; i3 < 15; i3++) {
-          n2 = !o2 && (t2 >> i3 & 1) == 1;
+          n2 = !o2 && 1 == (t2 >> i3 & 1);
           i3 < 8 ? this.modules[8][this.moduleCount - i3 - 1] = n2 : i3 < 9 ? this.modules[8][15 - i3 - 1 + 1] = n2 : this.modules[8][15 - i3 - 1] = n2;
         }
         this.modules[this.moduleCount - 8][8] = !o2;
       }, mapData: function(o2, e2) {
         for (var r2 = -1, t2 = this.moduleCount - 1, i3 = 7, n2 = 0, a2 = this.moduleCount - 1; a2 > 0; a2 -= 2)
-          for (a2 == 6 && a2--; ; ) {
+          for (6 == a2 && a2--; ; ) {
             for (var d2 = 0; d2 < 2; d2++)
-              if (this.modules[t2][a2 - d2] == null) {
+              if (null == this.modules[t2][a2 - d2]) {
                 var u2 = false;
-                n2 < o2.length && (u2 = (o2[n2] >>> i3 & 1) == 1), h.getMask(e2, t2, a2 - d2) && (u2 = !u2), this.modules[t2][a2 - d2] = u2, --i3 == -1 && (n2++, i3 = 7);
+                n2 < o2.length && (u2 = 1 == (o2[n2] >>> i3 & 1)), h.getMask(e2, t2, a2 - d2) && (u2 = !u2), this.modules[t2][a2 - d2] = u2, -1 == --i3 && (n2++, i3 = 7);
               }
             if ((t2 += r2) < 0 || this.moduleCount <= t2) {
               t2 -= r2, r2 = -r2;
@@ -9817,7 +9475,7 @@ if (uni.restoreGlobal) {
           e2 ^= h.G18 << h.getBCHDigit(e2) - h.getBCHDigit(h.G18);
         return o2 << 12 | e2;
       }, getBCHDigit: function(o2) {
-        for (var e2 = 0; o2 != 0; )
+        for (var e2 = 0; 0 != o2; )
           e2++, o2 >>>= 1;
         return e2;
       }, getPatternPosition: function(o2) {
@@ -9895,13 +9553,13 @@ if (uni.restoreGlobal) {
             for (var n2 = 0, a2 = o2.isDark(t2, i3), d2 = -1; d2 <= 1; d2++)
               if (!(t2 + d2 < 0 || e2 <= t2 + d2))
                 for (var u2 = -1; u2 <= 1; u2++)
-                  i3 + u2 < 0 || e2 <= i3 + u2 || d2 == 0 && u2 == 0 || a2 == o2.isDark(t2 + d2, i3 + u2) && n2++;
+                  i3 + u2 < 0 || e2 <= i3 + u2 || 0 == d2 && 0 == u2 || a2 == o2.isDark(t2 + d2, i3 + u2) && n2++;
             n2 > 5 && (r2 += 3 + n2 - 5);
           }
         for (t2 = 0; t2 < e2 - 1; t2++)
           for (i3 = 0; i3 < e2 - 1; i3++) {
             var s2 = 0;
-            o2.isDark(t2, i3) && s2++, o2.isDark(t2 + 1, i3) && s2++, o2.isDark(t2, i3 + 1) && s2++, o2.isDark(t2 + 1, i3 + 1) && s2++, s2 != 0 && s2 != 4 || (r2 += 3);
+            o2.isDark(t2, i3) && s2++, o2.isDark(t2 + 1, i3) && s2++, o2.isDark(t2, i3 + 1) && s2++, o2.isDark(t2 + 1, i3 + 1) && s2++, 0 != s2 && 4 != s2 || (r2 += 3);
           }
         for (t2 = 0; t2 < e2; t2++)
           for (i3 = 0; i3 < e2 - 6; i3++)
@@ -9931,9 +9589,9 @@ if (uni.restoreGlobal) {
       for (m = 0; m < 255; m++)
         c.LOG_TABLE[c.EXP_TABLE[m]] = m;
       function f(o2, e2) {
-        if (o2.length == null)
+        if (null == o2.length)
           throw new Error(o2.length + "/" + e2);
-        for (var r2 = 0; r2 < o2.length && o2[r2] == 0; )
+        for (var r2 = 0; r2 < o2.length && 0 == o2[r2]; )
           r2++;
         this.num = new Array(o2.length - r2 + e2);
         for (var t2 = 0; t2 < o2.length - r2; t2++)
@@ -9979,7 +9637,7 @@ if (uni.restoreGlobal) {
         this.base = void 0, this.modules = [], this.moduleCount = 0;
         var z = this.canvasContext = void 0;
         this.drawReserve = false, this.isMaked = false, Object.defineProperties(this, { data: { get() {
-          if (r2 === "" || r2 === void 0)
+          if ("" === r2 || void 0 === r2)
             throw formatAppLog("error", "at node_modules/uqrcodejs/uqrcode.js:34", "[uQRCode]: data must be set!"), new b.Error("data must be set!");
           return r2;
         }, set(o3) {
@@ -9991,37 +9649,37 @@ if (uni.restoreGlobal) {
         } }, margin: { get: () => n2, set(o3) {
           n2 = Number(o3);
         } }, backgroundImageWidth: { get() {
-          return a2 === void 0 ? this.dynamicSize : this.useDynamicSize ? this.dynamicSize / this.size * a2 : a2;
+          return void 0 === a2 ? this.dynamicSize : this.useDynamicSize ? this.dynamicSize / this.size * a2 : a2;
         }, set(o3) {
           a2 = Number(o3);
         } }, backgroundImageHeight: { get() {
-          return d2 === void 0 ? this.dynamicSize : this.useDynamicSize ? this.dynamicSize / this.size * d2 : d2;
+          return void 0 === d2 ? this.dynamicSize : this.useDynamicSize ? this.dynamicSize / this.size * d2 : d2;
         }, set(o3) {
           d2 = Number(o3);
         } }, backgroundImageX: { get() {
-          return u2 === void 0 ? 0 : this.useDynamicSize ? this.dynamicSize / this.size * u2 : u2;
+          return void 0 === u2 ? 0 : this.useDynamicSize ? this.dynamicSize / this.size * u2 : u2;
         }, set(o3) {
           u2 = Number(o3);
         } }, backgroundImageY: { get() {
-          return s2 === void 0 ? 0 : this.useDynamicSize ? this.dynamicSize / this.size * s2 : s2;
+          return void 0 === s2 ? 0 : this.useDynamicSize ? this.dynamicSize / this.size * s2 : s2;
         }, set(o3) {
           s2 = Number(o3);
         } }, backgroundPadding: { get: () => g2, set(o3) {
           g2 = o3 > 1 ? 1 : o3 < 0 ? 0 : o3;
         } }, foregroundImageWidth: { get() {
-          return l2 === void 0 ? (this.dynamicSize - 2 * this.margin) / 4 : this.useDynamicSize ? this.dynamicSize / this.size * l2 : l2;
+          return void 0 === l2 ? (this.dynamicSize - 2 * this.margin) / 4 : this.useDynamicSize ? this.dynamicSize / this.size * l2 : l2;
         }, set(o3) {
           l2 = Number(o3);
         } }, foregroundImageHeight: { get() {
-          return h2 === void 0 ? (this.dynamicSize - 2 * this.margin) / 4 : this.useDynamicSize ? this.dynamicSize / this.size * h2 : h2;
+          return void 0 === h2 ? (this.dynamicSize - 2 * this.margin) / 4 : this.useDynamicSize ? this.dynamicSize / this.size * h2 : h2;
         }, set(o3) {
           h2 = Number(o3);
         } }, foregroundImageX: { get() {
-          return c2 === void 0 ? this.dynamicSize / 2 - this.foregroundImageWidth / 2 : this.useDynamicSize ? this.dynamicSize / this.size * c2 : c2;
+          return void 0 === c2 ? this.dynamicSize / 2 - this.foregroundImageWidth / 2 : this.useDynamicSize ? this.dynamicSize / this.size * c2 : c2;
         }, set(o3) {
           c2 = Number(o3);
         } }, foregroundImageY: { get() {
-          return m2 === void 0 ? this.dynamicSize / 2 - this.foregroundImageHeight / 2 : this.useDynamicSize ? this.dynamicSize / this.size * m2 : m2;
+          return void 0 === m2 ? this.dynamicSize / 2 - this.foregroundImageHeight / 2 : this.useDynamicSize ? this.dynamicSize / this.size * m2 : m2;
         }, set(o3) {
           m2 = Number(o3);
         } }, foregroundImagePadding: { get() {
@@ -10087,7 +9745,7 @@ if (uni.restoreGlobal) {
         }, set(o3) {
           N = o3;
         } }, canvasContext: { get() {
-          if (z === void 0)
+          if (void 0 === z)
             throw formatAppLog("error", "at node_modules/uqrcodejs/uqrcode.js:34", "[uQRCode]: use drawCanvas, you need to set the canvasContext!"), new b.Error("use drawCanvas, you need to set the canvasContext!");
           return z;
         }, set(o3) {
@@ -10113,7 +9771,7 @@ if (uni.restoreGlobal) {
         return new f(r2, 0).mod(o2);
       } }, v.RS_BLOCK_TABLE = [[1, 26, 19], [1, 26, 16], [1, 26, 13], [1, 26, 9], [1, 44, 34], [1, 44, 28], [1, 44, 22], [1, 44, 16], [1, 70, 55], [1, 70, 44], [2, 35, 17], [2, 35, 13], [1, 100, 80], [2, 50, 32], [2, 50, 24], [4, 25, 9], [1, 134, 108], [2, 67, 43], [2, 33, 15, 2, 34, 16], [2, 33, 11, 2, 34, 12], [2, 86, 68], [4, 43, 27], [4, 43, 19], [4, 43, 15], [2, 98, 78], [4, 49, 31], [2, 32, 14, 4, 33, 15], [4, 39, 13, 1, 40, 14], [2, 121, 97], [2, 60, 38, 2, 61, 39], [4, 40, 18, 2, 41, 19], [4, 40, 14, 2, 41, 15], [2, 146, 116], [3, 58, 36, 2, 59, 37], [4, 36, 16, 4, 37, 17], [4, 36, 12, 4, 37, 13], [2, 86, 68, 2, 87, 69], [4, 69, 43, 1, 70, 44], [6, 43, 19, 2, 44, 20], [6, 43, 15, 2, 44, 16], [4, 101, 81], [1, 80, 50, 4, 81, 51], [4, 50, 22, 4, 51, 23], [3, 36, 12, 8, 37, 13], [2, 116, 92, 2, 117, 93], [6, 58, 36, 2, 59, 37], [4, 46, 20, 6, 47, 21], [7, 42, 14, 4, 43, 15], [4, 133, 107], [8, 59, 37, 1, 60, 38], [8, 44, 20, 4, 45, 21], [12, 33, 11, 4, 34, 12], [3, 145, 115, 1, 146, 116], [4, 64, 40, 5, 65, 41], [11, 36, 16, 5, 37, 17], [11, 36, 12, 5, 37, 13], [5, 109, 87, 1, 110, 88], [5, 65, 41, 5, 66, 42], [5, 54, 24, 7, 55, 25], [11, 36, 12], [5, 122, 98, 1, 123, 99], [7, 73, 45, 3, 74, 46], [15, 43, 19, 2, 44, 20], [3, 45, 15, 13, 46, 16], [1, 135, 107, 5, 136, 108], [10, 74, 46, 1, 75, 47], [1, 50, 22, 15, 51, 23], [2, 42, 14, 17, 43, 15], [5, 150, 120, 1, 151, 121], [9, 69, 43, 4, 70, 44], [17, 50, 22, 1, 51, 23], [2, 42, 14, 19, 43, 15], [3, 141, 113, 4, 142, 114], [3, 70, 44, 11, 71, 45], [17, 47, 21, 4, 48, 22], [9, 39, 13, 16, 40, 14], [3, 135, 107, 5, 136, 108], [3, 67, 41, 13, 68, 42], [15, 54, 24, 5, 55, 25], [15, 43, 15, 10, 44, 16], [4, 144, 116, 4, 145, 117], [17, 68, 42], [17, 50, 22, 6, 51, 23], [19, 46, 16, 6, 47, 17], [2, 139, 111, 7, 140, 112], [17, 74, 46], [7, 54, 24, 16, 55, 25], [34, 37, 13], [4, 151, 121, 5, 152, 122], [4, 75, 47, 14, 76, 48], [11, 54, 24, 14, 55, 25], [16, 45, 15, 14, 46, 16], [6, 147, 117, 4, 148, 118], [6, 73, 45, 14, 74, 46], [11, 54, 24, 16, 55, 25], [30, 46, 16, 2, 47, 17], [8, 132, 106, 4, 133, 107], [8, 75, 47, 13, 76, 48], [7, 54, 24, 22, 55, 25], [22, 45, 15, 13, 46, 16], [10, 142, 114, 2, 143, 115], [19, 74, 46, 4, 75, 47], [28, 50, 22, 6, 51, 23], [33, 46, 16, 4, 47, 17], [8, 152, 122, 4, 153, 123], [22, 73, 45, 3, 74, 46], [8, 53, 23, 26, 54, 24], [12, 45, 15, 28, 46, 16], [3, 147, 117, 10, 148, 118], [3, 73, 45, 23, 74, 46], [4, 54, 24, 31, 55, 25], [11, 45, 15, 31, 46, 16], [7, 146, 116, 7, 147, 117], [21, 73, 45, 7, 74, 46], [1, 53, 23, 37, 54, 24], [19, 45, 15, 26, 46, 16], [5, 145, 115, 10, 146, 116], [19, 75, 47, 10, 76, 48], [15, 54, 24, 25, 55, 25], [23, 45, 15, 25, 46, 16], [13, 145, 115, 3, 146, 116], [2, 74, 46, 29, 75, 47], [42, 54, 24, 1, 55, 25], [23, 45, 15, 28, 46, 16], [17, 145, 115], [10, 74, 46, 23, 75, 47], [10, 54, 24, 35, 55, 25], [19, 45, 15, 35, 46, 16], [17, 145, 115, 1, 146, 116], [14, 74, 46, 21, 75, 47], [29, 54, 24, 19, 55, 25], [11, 45, 15, 46, 46, 16], [13, 145, 115, 6, 146, 116], [14, 74, 46, 23, 75, 47], [44, 54, 24, 7, 55, 25], [59, 46, 16, 1, 47, 17], [12, 151, 121, 7, 152, 122], [12, 75, 47, 26, 76, 48], [39, 54, 24, 14, 55, 25], [22, 45, 15, 41, 46, 16], [6, 151, 121, 14, 152, 122], [6, 75, 47, 34, 76, 48], [46, 54, 24, 10, 55, 25], [2, 45, 15, 64, 46, 16], [17, 152, 122, 4, 153, 123], [29, 74, 46, 14, 75, 47], [49, 54, 24, 10, 55, 25], [24, 45, 15, 46, 46, 16], [4, 152, 122, 18, 153, 123], [13, 74, 46, 32, 75, 47], [48, 54, 24, 14, 55, 25], [42, 45, 15, 32, 46, 16], [20, 147, 117, 4, 148, 118], [40, 75, 47, 7, 76, 48], [43, 54, 24, 22, 55, 25], [10, 45, 15, 67, 46, 16], [19, 148, 118, 6, 149, 119], [18, 75, 47, 31, 76, 48], [34, 54, 24, 34, 55, 25], [20, 45, 15, 61, 46, 16]], v.getRSBlocks = function(o2, e2) {
         var r2 = v.getRsBlockTable(o2, e2);
-        if (r2 == null)
+        if (null == r2)
           throw new Error("bad rs block @ typeNumber:" + o2 + "/errorCorrectLevel:" + e2);
         for (var t2 = r2.length / 3, i3 = new Array(), n2 = 0; n2 < t2; n2++)
           for (var a2 = r2[3 * n2 + 0], d2 = r2[3 * n2 + 1], u2 = r2[3 * n2 + 2], s2 = 0; s2 < a2; s2++)
@@ -10134,10 +9792,10 @@ if (uni.restoreGlobal) {
         }
       }, p.prototype = { get: function(o2) {
         var e2 = Math.floor(o2 / 8);
-        return (this.buffer[e2] >>> 7 - o2 % 8 & 1) == 1;
+        return 1 == (this.buffer[e2] >>> 7 - o2 % 8 & 1);
       }, put: function(o2, e2) {
         for (var r2 = 0; r2 < e2; r2++)
-          this.putBit((o2 >>> e2 - r2 - 1 & 1) == 1);
+          this.putBit(1 == (o2 >>> e2 - r2 - 1 & 1));
       }, getLengthInBits: function() {
         return this.length;
       }, putBit: function(o2) {
@@ -10146,7 +9804,7 @@ if (uni.restoreGlobal) {
       } }, e.errorCorrectLevel = t, b.errorCorrectLevel = e.errorCorrectLevel, b.Error = function(o2) {
         this.errMsg = "[uQRCode]: " + o2;
       }, b.plugins = [], b.use = function(o2) {
-        typeof o2 == "function" && b.plugins.push(o2);
+        "function" == typeof o2 && b.plugins.push(o2);
       }, b.prototype.loadImage = function(o2) {
         return Promise.resolve(o2);
       }, b.prototype.setOptions = function(o2) {
@@ -10155,12 +9813,12 @@ if (uni.restoreGlobal) {
           this[e3] = o2[e3];
         }), function(o3 = {}, e3 = {}, r3 = false) {
           let t3;
-          t3 = r3 ? o3 : __spreadValues({}, o3);
+          t3 = r3 ? o3 : { ...o3 };
           for (let o4 in e3) {
             var i4 = e3[o4];
-            i4 != null && (i4.constructor == Object ? t3[o4] = this.deepReplace(t3[o4], i4) : i4.constructor != String || i4 ? t3[o4] = i4 : t3[o4] = t3[o4]);
+            null != i4 && (i4.constructor == Object ? t3[o4] = this.deepReplace(t3[o4], i4) : i4.constructor != String || i4 ? t3[o4] = i4 : t3[o4] = t3[o4]);
           }
-        }(this, { data: o2.data || o2.text, size: o2.size, useDynamicSize: o2.useDynamicSize, typeNumber: o2.typeNumber, errorCorrectLevel: o2.errorCorrectLevel, margin: o2.margin, areaColor: o2.areaColor, backgroundColor: o2.backgroundColor || ((e2 = o2.background) === null || e2 === void 0 ? void 0 : e2.color), backgroundImageSrc: o2.backgroundImageSrc || ((r2 = o2.background) === null || r2 === void 0 || (t2 = r2.image) === null || t2 === void 0 ? void 0 : t2.src), backgroundImageWidth: o2.backgroundImageWidth || ((i3 = o2.background) === null || i3 === void 0 || (n2 = i3.image) === null || n2 === void 0 ? void 0 : n2.width), backgroundImageHeight: o2.backgroundImageHeight || ((a2 = o2.background) === null || a2 === void 0 || (d2 = a2.image) === null || d2 === void 0 ? void 0 : d2.height), backgroundImageX: o2.backgroundImageX || ((u2 = o2.background) === null || u2 === void 0 || (s2 = u2.image) === null || s2 === void 0 ? void 0 : s2.x), backgroundImageY: o2.backgroundImageY || ((g2 = o2.background) === null || g2 === void 0 || (l2 = g2.image) === null || l2 === void 0 ? void 0 : l2.y), backgroundImageAlpha: o2.backgroundImageAlpha || ((h2 = o2.background) === null || h2 === void 0 || (c2 = h2.image) === null || c2 === void 0 ? void 0 : c2.alpha), backgroundImageBorderRadius: o2.backgroundImageBorderRadius || ((m2 = o2.background) === null || m2 === void 0 || (f2 = m2.image) === null || f2 === void 0 ? void 0 : f2.borderRadius), backgroundPadding: o2.backgroundPadding, foregroundColor: o2.foregroundColor || ((v2 = o2.foreground) === null || v2 === void 0 ? void 0 : v2.color), foregroundImageSrc: o2.foregroundImageSrc || ((p2 = o2.foreground) === null || p2 === void 0 || (C2 = p2.image) === null || C2 === void 0 ? void 0 : C2.src), foregroundImageWidth: o2.foregroundImageWidth || ((b2 = o2.foreground) === null || b2 === void 0 || (y = b2.image) === null || y === void 0 ? void 0 : y.width), foregroundImageHeight: o2.foregroundImageHeight || ((k = o2.foreground) === null || k === void 0 || (w = k.image) === null || w === void 0 ? void 0 : w.height), foregroundImageX: o2.foregroundImageX || ((I = o2.foreground) === null || I === void 0 || (B = I.image) === null || B === void 0 ? void 0 : B.x), foregroundImageY: o2.foregroundImageY || ((S = o2.foreground) === null || S === void 0 || (P = S.image) === null || P === void 0 ? void 0 : P.y), foregroundImagePadding: o2.foregroundImagePadding || ((T = o2.foreground) === null || T === void 0 || (L = T.image) === null || L === void 0 ? void 0 : L.padding), foregroundImageBackgroundColor: o2.foregroundImageBackgroundColor || ((D = o2.foreground) === null || D === void 0 || (E = D.image) === null || E === void 0 ? void 0 : E.backgroundColor), foregroundImageBorderRadius: o2.foregroundImageBorderRadius || ((A = o2.foreground) === null || A === void 0 || (N = A.image) === null || N === void 0 ? void 0 : N.borderRadius), foregroundImageShadowOffsetX: o2.foregroundImageShadowOffsetX || ((z = o2.foreground) === null || z === void 0 || (_ = z.image) === null || _ === void 0 ? void 0 : _.shadowOffsetX), foregroundImageShadowOffsetY: o2.foregroundImageShadowOffsetY || ((M = o2.foreground) === null || M === void 0 || (O = M.image) === null || O === void 0 ? void 0 : O.shadowOffsetY), foregroundImageShadowBlur: o2.foregroundImageShadowBlur || ((R = o2.foreground) === null || R === void 0 || (x = R.image) === null || x === void 0 ? void 0 : x.shadowBlur), foregroundImageShadowColor: o2.foregroundImageShadowColor || ((F = o2.foreground) === null || F === void 0 || (H = F.image) === null || H === void 0 ? void 0 : H.shadowColor), foregroundPadding: o2.foregroundPadding, positionProbeBackgroundColor: o2.positionProbeBackgroundColor || ((X = o2.positionProbe) === null || X === void 0 ? void 0 : X.backgroundColor) || ((Y = o2.positionDetection) === null || Y === void 0 ? void 0 : Y.backgroundColor), positionProbeForegroundColor: o2.positionProbeForegroundColor || ((j = o2.positionProbe) === null || j === void 0 ? void 0 : j.foregroundColor) || ((W = o2.positionDetection) === null || W === void 0 ? void 0 : W.foregroundColor), separatorColor: o2.separatorColor || ((G = o2.separator) === null || G === void 0 ? void 0 : G.color), positionAdjustBackgroundColor: o2.positionAdjustBackgroundColor || ((K = o2.positionAdjust) === null || K === void 0 ? void 0 : K.backgroundColor) || ((Q = o2.alignment) === null || Q === void 0 ? void 0 : Q.backgroundColor), positionAdjustForegroundColor: o2.positionAdjustForegroundColor || ((U = o2.positionAdjust) === null || U === void 0 ? void 0 : U.foregroundColor) || (($ = o2.alignment) === null || $ === void 0 ? void 0 : $.foregroundColor), timingBackgroundColor: o2.timingBackgroundColor || ((J = o2.timing) === null || J === void 0 ? void 0 : J.backgroundColor), timingForegroundColor: o2.timingForegroundColor || ((q = o2.timing) === null || q === void 0 ? void 0 : q.foregroundColor), typeNumberBackgroundColor: o2.typeNumberBackgroundColor || ((V = o2.typeNumber) === null || V === void 0 ? void 0 : V.backgroundColor) || ((Z = o2.versionInformation) === null || Z === void 0 ? void 0 : Z.backgroundColor), typeNumberForegroundColor: o2.typeNumberForegroundColor || ((oo = o2.typeNumber) === null || oo === void 0 ? void 0 : oo.foregroundColor) || ((eo = o2.versionInformation) === null || eo === void 0 ? void 0 : eo.foregroundColor), darkBlockColor: o2.darkBlockColor || ((ro = o2.darkBlock) === null || ro === void 0 ? void 0 : ro.color) }, true));
+        }(this, { data: o2.data || o2.text, size: o2.size, useDynamicSize: o2.useDynamicSize, typeNumber: o2.typeNumber, errorCorrectLevel: o2.errorCorrectLevel, margin: o2.margin, areaColor: o2.areaColor, backgroundColor: o2.backgroundColor || (null === (e2 = o2.background) || void 0 === e2 ? void 0 : e2.color), backgroundImageSrc: o2.backgroundImageSrc || (null === (r2 = o2.background) || void 0 === r2 || null === (t2 = r2.image) || void 0 === t2 ? void 0 : t2.src), backgroundImageWidth: o2.backgroundImageWidth || (null === (i3 = o2.background) || void 0 === i3 || null === (n2 = i3.image) || void 0 === n2 ? void 0 : n2.width), backgroundImageHeight: o2.backgroundImageHeight || (null === (a2 = o2.background) || void 0 === a2 || null === (d2 = a2.image) || void 0 === d2 ? void 0 : d2.height), backgroundImageX: o2.backgroundImageX || (null === (u2 = o2.background) || void 0 === u2 || null === (s2 = u2.image) || void 0 === s2 ? void 0 : s2.x), backgroundImageY: o2.backgroundImageY || (null === (g2 = o2.background) || void 0 === g2 || null === (l2 = g2.image) || void 0 === l2 ? void 0 : l2.y), backgroundImageAlpha: o2.backgroundImageAlpha || (null === (h2 = o2.background) || void 0 === h2 || null === (c2 = h2.image) || void 0 === c2 ? void 0 : c2.alpha), backgroundImageBorderRadius: o2.backgroundImageBorderRadius || (null === (m2 = o2.background) || void 0 === m2 || null === (f2 = m2.image) || void 0 === f2 ? void 0 : f2.borderRadius), backgroundPadding: o2.backgroundPadding, foregroundColor: o2.foregroundColor || (null === (v2 = o2.foreground) || void 0 === v2 ? void 0 : v2.color), foregroundImageSrc: o2.foregroundImageSrc || (null === (p2 = o2.foreground) || void 0 === p2 || null === (C2 = p2.image) || void 0 === C2 ? void 0 : C2.src), foregroundImageWidth: o2.foregroundImageWidth || (null === (b2 = o2.foreground) || void 0 === b2 || null === (y = b2.image) || void 0 === y ? void 0 : y.width), foregroundImageHeight: o2.foregroundImageHeight || (null === (k = o2.foreground) || void 0 === k || null === (w = k.image) || void 0 === w ? void 0 : w.height), foregroundImageX: o2.foregroundImageX || (null === (I = o2.foreground) || void 0 === I || null === (B = I.image) || void 0 === B ? void 0 : B.x), foregroundImageY: o2.foregroundImageY || (null === (S = o2.foreground) || void 0 === S || null === (P = S.image) || void 0 === P ? void 0 : P.y), foregroundImagePadding: o2.foregroundImagePadding || (null === (T = o2.foreground) || void 0 === T || null === (L = T.image) || void 0 === L ? void 0 : L.padding), foregroundImageBackgroundColor: o2.foregroundImageBackgroundColor || (null === (D = o2.foreground) || void 0 === D || null === (E = D.image) || void 0 === E ? void 0 : E.backgroundColor), foregroundImageBorderRadius: o2.foregroundImageBorderRadius || (null === (A = o2.foreground) || void 0 === A || null === (N = A.image) || void 0 === N ? void 0 : N.borderRadius), foregroundImageShadowOffsetX: o2.foregroundImageShadowOffsetX || (null === (z = o2.foreground) || void 0 === z || null === (_ = z.image) || void 0 === _ ? void 0 : _.shadowOffsetX), foregroundImageShadowOffsetY: o2.foregroundImageShadowOffsetY || (null === (M = o2.foreground) || void 0 === M || null === (O = M.image) || void 0 === O ? void 0 : O.shadowOffsetY), foregroundImageShadowBlur: o2.foregroundImageShadowBlur || (null === (R = o2.foreground) || void 0 === R || null === (x = R.image) || void 0 === x ? void 0 : x.shadowBlur), foregroundImageShadowColor: o2.foregroundImageShadowColor || (null === (F = o2.foreground) || void 0 === F || null === (H = F.image) || void 0 === H ? void 0 : H.shadowColor), foregroundPadding: o2.foregroundPadding, positionProbeBackgroundColor: o2.positionProbeBackgroundColor || (null === (X = o2.positionProbe) || void 0 === X ? void 0 : X.backgroundColor) || (null === (Y = o2.positionDetection) || void 0 === Y ? void 0 : Y.backgroundColor), positionProbeForegroundColor: o2.positionProbeForegroundColor || (null === (j = o2.positionProbe) || void 0 === j ? void 0 : j.foregroundColor) || (null === (W = o2.positionDetection) || void 0 === W ? void 0 : W.foregroundColor), separatorColor: o2.separatorColor || (null === (G = o2.separator) || void 0 === G ? void 0 : G.color), positionAdjustBackgroundColor: o2.positionAdjustBackgroundColor || (null === (K = o2.positionAdjust) || void 0 === K ? void 0 : K.backgroundColor) || (null === (Q = o2.alignment) || void 0 === Q ? void 0 : Q.backgroundColor), positionAdjustForegroundColor: o2.positionAdjustForegroundColor || (null === (U = o2.positionAdjust) || void 0 === U ? void 0 : U.foregroundColor) || (null === ($ = o2.alignment) || void 0 === $ ? void 0 : $.foregroundColor), timingBackgroundColor: o2.timingBackgroundColor || (null === (J = o2.timing) || void 0 === J ? void 0 : J.backgroundColor), timingForegroundColor: o2.timingForegroundColor || (null === (q = o2.timing) || void 0 === q ? void 0 : q.foregroundColor), typeNumberBackgroundColor: o2.typeNumberBackgroundColor || (null === (V = o2.typeNumber) || void 0 === V ? void 0 : V.backgroundColor) || (null === (Z = o2.versionInformation) || void 0 === Z ? void 0 : Z.backgroundColor), typeNumberForegroundColor: o2.typeNumberForegroundColor || (null === (oo = o2.typeNumber) || void 0 === oo ? void 0 : oo.foregroundColor) || (null === (eo = o2.versionInformation) || void 0 === eo ? void 0 : eo.foregroundColor), darkBlockColor: o2.darkBlockColor || (null === (ro = o2.darkBlock) || void 0 === ro ? void 0 : ro.color) }, true));
       }, b.prototype.make = function() {
         let { foregroundColor: o2, backgroundColor: r2, typeNumber: t2, errorCorrectLevel: i3, data: n2, size: a2, margin: d2, useDynamicSize: u2 } = this;
         if (o2 === r2)
@@ -10189,7 +9847,7 @@ if (uni.restoreGlobal) {
           let { modules: e2, moduleCount: r3, positionProbeBackgroundColor: t3, positionProbeForegroundColor: i4 } = o3, n3 = r3 - 7;
           [[0, 0, 1], [1, 0, 1], [2, 0, 1], [3, 0, 1], [4, 0, 1], [5, 0, 1], [6, 0, 1], [0, 1, 1], [1, 1, 0], [2, 1, 0], [3, 1, 0], [4, 1, 0], [5, 1, 0], [6, 1, 1], [0, 2, 1], [1, 2, 0], [2, 2, 1], [3, 2, 1], [4, 2, 1], [5, 2, 0], [6, 2, 1], [0, 3, 1], [1, 3, 0], [2, 3, 1], [3, 3, 1], [4, 3, 1], [5, 3, 0], [6, 3, 1], [0, 4, 1], [1, 4, 0], [2, 4, 1], [3, 4, 1], [4, 4, 1], [5, 4, 0], [6, 4, 1], [0, 5, 1], [1, 5, 0], [2, 5, 0], [3, 5, 0], [4, 5, 0], [5, 5, 0], [6, 5, 1], [0, 6, 1], [1, 6, 1], [2, 6, 1], [3, 6, 1], [4, 6, 1], [5, 6, 1], [6, 6, 1]].forEach((o4) => {
             var r4 = e2[o4[0]][o4[1]], a3 = e2[o4[0] + n3][o4[1]], d3 = e2[o4[0]][o4[1] + n3];
-            d3.type.push("positionProbe"), a3.type.push("positionProbe"), r4.type.push("positionProbe"), r4.color = o4[2] == 1 ? i4 : t3, a3.color = o4[2] == 1 ? i4 : t3, d3.color = o4[2] == 1 ? i4 : t3;
+            d3.type.push("positionProbe"), a3.type.push("positionProbe"), r4.type.push("positionProbe"), r4.color = 1 == o4[2] ? i4 : t3, a3.color = 1 == o4[2] ? i4 : t3, d3.color = 1 == o4[2] ? i4 : t3;
           });
         }(this), function(o3) {
           let { modules: e2, moduleCount: r3, separatorColor: t3 } = o3;
@@ -10207,7 +9865,7 @@ if (uni.restoreGlobal) {
                 let { x: e4, y: c2 } = { x: g2[l2], y: g2[h2] };
                 e4 < 9 && c2 < 9 || e4 > t3 - 9 - 1 && c2 < 9 || c2 > t3 - 9 - 1 && e4 < 9 || o4.forEach((o5) => {
                   var t4 = r3[e4 + o5[0]][c2 + o5[1]];
-                  t4.type.push("positionAdjust"), t4.type.includes("timing") ? o5[2] == 1 ? t4.color = a3 == i4 ? u3 : a3 : t4.color = a3 == i4 && d3 == n3 ? s3 : d3 : t4.color = o5[2] == 1 ? a3 : d3;
+                  t4.type.push("positionAdjust"), t4.type.includes("timing") ? 1 == o5[2] ? t4.color = a3 == i4 ? u3 : a3 : t4.color = a3 == i4 && d3 == n3 ? s3 : d3 : t4.color = 1 == o5[2] ? a3 : d3;
                 });
               }
           }
@@ -10229,7 +9887,7 @@ if (uni.restoreGlobal) {
           let d3 = a3[e2] + a3[e2], u3 = [t3 - 11, t3 - 10, t3 - 9];
           [[5, u3[2]], [5, u3[1]], [5, u3[0]], [4, u3[2]], [4, u3[1]], [4, u3[0]], [3, u3[2]], [3, u3[1]], [3, u3[0]], [2, u3[2]], [2, u3[1]], [2, u3[0]], [1, u3[2]], [1, u3[1]], [1, u3[0]], [0, u3[2]], [0, u3[1]], [0, u3[0]], [u3[2], 5], [u3[1], 5], [u3[0], 5], [u3[2], 4], [u3[1], 4], [u3[0], 4], [u3[2], 3], [u3[1], 3], [u3[0], 3], [u3[2], 2], [u3[1], 2], [u3[0], 2], [u3[2], 1], [u3[1], 1], [u3[0], 1], [u3[2], 0], [u3[1], 0], [u3[0], 0]].forEach((o4, e3) => {
             var t4 = r3[o4[0]][o4[1]];
-            t4.type.push("typeNumber"), t4.color = d3[e3] == "1" ? n3 : i4;
+            t4.type.push("typeNumber"), t4.color = "1" == d3[e3] ? n3 : i4;
           });
         }(this), this.isMaked = true;
       }, b.prototype.getDrawModules = function() {
@@ -10262,7 +9920,7 @@ if (uni.restoreGlobal) {
                   e2.beginPath(), e2.moveTo(a3, d3), e2.arcTo(a3 + s3, d3, a3 + s3, d3 + l3, 0), e2.arcTo(a3 + s3, d3 + l3, a3, d3 + l3, 0), e2.arcTo(a3, d3 + l3, a3, d3, 0), e2.arcTo(a3, d3, a3 + s3, d3, 0), e2.closePath(), e2.fillStyle = n3.color, e2.fill(), e2.clip();
                   break;
                 case "image":
-                  if (n3.name === "backgroundImage") {
+                  if ("backgroundImage" === n3.name) {
                     a3 = n3.x, d3 = n3.y, s3 = n3.width, l3 = n3.height;
                     s3 < 2 * (c2 = n3.borderRadius) && (c2 = s3 / 2), l3 < 2 * c2 && (c2 = l3 / 2), e2.globalAlpha = n3.alpha, e2.beginPath(), e2.moveTo(a3 + c2, d3), e2.arcTo(a3 + s3, d3, a3 + s3, d3 + l3, c2), e2.arcTo(a3 + s3, d3 + l3, a3, d3 + l3, c2), e2.arcTo(a3, d3 + l3, a3, d3, c2), e2.arcTo(a3, d3, a3 + s3, d3, c2), e2.closePath(), e2.strokeStyle = "rgba(0,0,0,0)", e2.stroke(), e2.clip();
                     try {
@@ -10271,7 +9929,7 @@ if (uni.restoreGlobal) {
                     } catch (o4) {
                       throw formatAppLog("error", "at node_modules/uqrcodejs/uqrcode.js:34", `[uQRCode]: ${n3.mappingName} invalid!`), new b.Error(`${n3.mappingName} invalid!`);
                     }
-                  } else if (n3.name === "foregroundImage") {
+                  } else if ("foregroundImage" === n3.name) {
                     var c2;
                     a3 = n3.x, d3 = n3.y, s3 = n3.width, l3 = n3.height;
                     s3 < 2 * (c2 = n3.borderRadius) && (c2 = s3 / 2), l3 < 2 * c2 && (c2 = l3 / 2);
@@ -10304,8 +9962,8 @@ if (uni.restoreGlobal) {
       }, b;
     });
   })(uqrcode);
-  var UQRCode = uqrcode.exports;
-  const _sfc_main$x = {
+  const UQRCode = uqrcode.exports;
+  const _sfc_main$z = {
     data() {
       return {
         qrcodeWidth: 275,
@@ -10358,10 +10016,10 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$w(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u__image = resolveEasycom(vue.resolveDynamicComponent("u--image"), __easycom_0$2);
-    const _component_u_button = resolveEasycom(vue.resolveDynamicComponent("u-button"), __easycom_4$1);
-    const _component_u_modal = resolveEasycom(vue.resolveDynamicComponent("u-modal"), __easycom_5$1);
+  function _sfc_render$y(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_u__image = resolveEasycom(vue.resolveDynamicComponent("u--image"), __easycom_0$4);
+    const _component_u_button = resolveEasycom(vue.resolveDynamicComponent("u-button"), __easycom_4);
+    const _component_u_modal = resolveEasycom(vue.resolveDynamicComponent("u-modal"), __easycom_5$2);
     return vue.openBlock(), vue.createElementBlock("view", {
       class: "add-usdt",
       id: "addUSDT"
@@ -10469,8 +10127,8 @@ if (uni.restoreGlobal) {
       }, 8, ["onConfirm", "show"])
     ]);
   }
-  var PagesHomeAddUSDTAddUSDT = /* @__PURE__ */ _export_sfc(_sfc_main$x, [["render", _sfc_render$w], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/home/addUSDT/addUSDT.vue"]]);
-  const _sfc_main$w = {
+  const PagesHomeAddUSDTAddUSDT = /* @__PURE__ */ _export_sfc(_sfc_main$z, [["render", _sfc_render$y], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/home/addUSDT/addUSDT.vue"]]);
+  const _sfc_main$y = {
     data() {
       return {};
     },
@@ -10482,9 +10140,9 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$v(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_image = resolveEasycom(vue.resolveDynamicComponent("u-image"), __easycom_0$3);
-    const _component_u_button = resolveEasycom(vue.resolveDynamicComponent("u-button"), __easycom_4$1);
+  function _sfc_render$x(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_u_image = resolveEasycom(vue.resolveDynamicComponent("u-image"), __easycom_0$5);
+    const _component_u_button = resolveEasycom(vue.resolveDynamicComponent("u-button"), __easycom_4);
     return vue.openBlock(), vue.createElementBlock("view", { class: "pay-success" }, [
       vue.createElementVNode("view", { class: "ps-null" }, [
         vue.createVNode(_component_u_image, {
@@ -10502,8 +10160,8 @@ if (uni.restoreGlobal) {
       ])
     ]);
   }
-  var PagesHomePaySuccessPaySuccess = /* @__PURE__ */ _export_sfc(_sfc_main$w, [["render", _sfc_render$v], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/home/paySuccess/paySuccess.vue"]]);
-  const _sfc_main$v = {
+  const PagesHomePaySuccessPaySuccess = /* @__PURE__ */ _export_sfc(_sfc_main$y, [["render", _sfc_render$x], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/home/paySuccess/paySuccess.vue"]]);
+  const _sfc_main$x = {
     data() {
       return {
         value: "",
@@ -10534,8 +10192,8 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$u(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u__input = resolveEasycom(vue.resolveDynamicComponent("u--input"), __easycom_1$4);
+  function _sfc_render$w(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_u__input = resolveEasycom(vue.resolveDynamicComponent("u--input"), __easycom_1$2);
     return vue.openBlock(), vue.createElementBlock("view", { class: "search" }, [
       vue.createElementVNode("view", { class: "s-top" }, [
         vue.createVNode(_component_u__input, {
@@ -10583,8 +10241,8 @@ if (uni.restoreGlobal) {
       ])
     ]);
   }
-  var PagesTradeSearchSearch = /* @__PURE__ */ _export_sfc(_sfc_main$v, [["render", _sfc_render$u], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/trade/search/search.vue"]]);
-  var props$4 = {
+  const PagesTradeSearchSearch = /* @__PURE__ */ _export_sfc(_sfc_main$x, [["render", _sfc_render$w], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/trade/search/search.vue"]]);
+  const props$6 = {
     props: {
       name: {
         type: [String, Number, Boolean],
@@ -10640,9 +10298,9 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  const _sfc_main$u = {
+  const _sfc_main$w = {
     name: "u-radio",
-    mixins: [mpMixin, mixin, props$4],
+    mixins: [mpMixin, mixin, props$6],
     data() {
       return {
         checked: false,
@@ -10776,8 +10434,8 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$t(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$7);
+  function _sfc_render$v(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$6);
     return vue.openBlock(), vue.createElementBlock("view", {
       class: vue.normalizeClass(["u-radio", [`u-radio-label--${$data.parentData.iconPlacement}`, $data.parentData.borderBottom && $data.parentData.placement === "column" && "u-border-bottom"]]),
       onClick: _cache[2] || (_cache[2] = vue.withModifiers((...args) => $options.wrapperClickHandler && $options.wrapperClickHandler(...args), ["stop"])),
@@ -10808,8 +10466,8 @@ if (uni.restoreGlobal) {
       }, vue.toDisplayString(_ctx.label), 5)
     ], 6);
   }
-  var __easycom_1$1 = /* @__PURE__ */ _export_sfc(_sfc_main$u, [["render", _sfc_render$t], ["__scopeId", "data-v-354c0f29"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-radio/u-radio.vue"]]);
-  var props$3 = {
+  const __easycom_1$1 = /* @__PURE__ */ _export_sfc(_sfc_main$w, [["render", _sfc_render$v], ["__scopeId", "data-v-edf95844"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-radio/u-radio.vue"]]);
+  const props$5 = {
     props: {
       modelValue: {
         type: [String, Number, Boolean],
@@ -10877,9 +10535,9 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  const _sfc_main$t = {
+  const _sfc_main$v = {
     name: "u-radio-group",
-    mixins: [mpMixin, mixin, props$3],
+    mixins: [mpMixin, mixin, props$5],
     computed: {
       parentData() {
         return [
@@ -10930,15 +10588,15 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$s(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$u(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("view", {
       class: vue.normalizeClass(["u-radio-group", $options.bemClass])
     }, [
       vue.renderSlot(_ctx.$slots, "default", {}, void 0, true)
     ], 2);
   }
-  var __easycom_2$1 = /* @__PURE__ */ _export_sfc(_sfc_main$t, [["render", _sfc_render$s], ["__scopeId", "data-v-2363100d"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-radio-group/u-radio-group.vue"]]);
-  const _sfc_main$s = {
+  const __easycom_2$1 = /* @__PURE__ */ _export_sfc(_sfc_main$v, [["render", _sfc_render$u], ["__scopeId", "data-v-272bb654"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-radio-group/u-radio-group.vue"]]);
+  const _sfc_main$u = {
     data() {
       return {
         bgColor: "#FFCA5D",
@@ -10996,13 +10654,13 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$r(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_image = resolveEasycom(vue.resolveDynamicComponent("u-image"), __easycom_0$3);
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$6);
+  function _sfc_render$t(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_u_image = resolveEasycom(vue.resolveDynamicComponent("u-image"), __easycom_0$5);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0);
     const _component_u_radio = resolveEasycom(vue.resolveDynamicComponent("u-radio"), __easycom_1$1);
     const _component_u_radio_group = resolveEasycom(vue.resolveDynamicComponent("u-radio-group"), __easycom_2$1);
-    const _component_u__input = resolveEasycom(vue.resolveDynamicComponent("u--input"), __easycom_1$4);
-    const _component_u_button = resolveEasycom(vue.resolveDynamicComponent("u-button"), __easycom_4$1);
+    const _component_u__input = resolveEasycom(vue.resolveDynamicComponent("u--input"), __easycom_1$2);
+    const _component_u_button = resolveEasycom(vue.resolveDynamicComponent("u-button"), __easycom_4);
     return vue.openBlock(), vue.createElementBlock("view", { class: "set-strategy page" }, [
       vue.createCommentVNode(" \u5BFC\u822A "),
       vue.createVNode(_component_u_navbar, {
@@ -11180,7 +10838,366 @@ if (uni.restoreGlobal) {
       ])
     ]);
   }
-  var PagesTradeSetStrategySetStrategy = /* @__PURE__ */ _export_sfc(_sfc_main$s, [["render", _sfc_render$r], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/trade/setStrategy/setStrategy.vue"]]);
+  const PagesTradeSetStrategySetStrategy = /* @__PURE__ */ _export_sfc(_sfc_main$u, [["render", _sfc_render$t], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/trade/setStrategy/setStrategy.vue"]]);
+  const props$4 = {
+    props: {
+      name: {
+        type: [String, Number, Boolean],
+        default: props$s.checkbox.name
+      },
+      shape: {
+        type: String,
+        default: props$s.checkbox.shape
+      },
+      size: {
+        type: [String, Number],
+        default: props$s.checkbox.size
+      },
+      checked: {
+        type: Boolean,
+        default: props$s.checkbox.checked
+      },
+      disabled: {
+        type: [String, Boolean],
+        default: props$s.checkbox.disabled
+      },
+      activeColor: {
+        type: String,
+        default: props$s.checkbox.activeColor
+      },
+      inactiveColor: {
+        type: String,
+        default: props$s.checkbox.inactiveColor
+      },
+      iconSize: {
+        type: [String, Number],
+        default: props$s.checkbox.iconSize
+      },
+      iconColor: {
+        type: String,
+        default: props$s.checkbox.iconColor
+      },
+      label: {
+        type: [String, Number],
+        default: props$s.checkbox.label
+      },
+      labelSize: {
+        type: [String, Number],
+        default: props$s.checkbox.labelSize
+      },
+      labelColor: {
+        type: String,
+        default: props$s.checkbox.labelColor
+      },
+      labelDisabled: {
+        type: [String, Boolean],
+        default: props$s.checkbox.labelDisabled
+      }
+    }
+  };
+  const _sfc_main$t = {
+    name: "u-checkbox",
+    mixins: [mpMixin, mixin, props$4],
+    data() {
+      return {
+        isChecked: false,
+        parentData: {
+          iconSize: 12,
+          labelDisabled: null,
+          disabled: null,
+          shape: "square",
+          activeColor: null,
+          inactiveColor: null,
+          size: 18,
+          modelValue: null,
+          iconColor: null,
+          placement: "row",
+          borderBottom: false,
+          iconPlacement: "left"
+        }
+      };
+    },
+    computed: {
+      elDisabled() {
+        return this.disabled !== "" ? this.disabled : this.parentData.disabled !== null ? this.parentData.disabled : false;
+      },
+      elLabelDisabled() {
+        return this.labelDisabled !== "" ? this.labelDisabled : this.parentData.labelDisabled !== null ? this.parentData.labelDisabled : false;
+      },
+      elSize() {
+        return this.size ? this.size : this.parentData.size ? this.parentData.size : 21;
+      },
+      elIconSize() {
+        return this.iconSize ? this.iconSize : this.parentData.iconSize ? this.parentData.iconSize : 12;
+      },
+      elActiveColor() {
+        return this.activeColor ? this.activeColor : this.parentData.activeColor ? this.parentData.activeColor : "#2979ff";
+      },
+      elInactiveColor() {
+        return this.inactiveColor ? this.inactiveColor : this.parentData.inactiveColor ? this.parentData.inactiveColor : "#c8c9cc";
+      },
+      elLabelColor() {
+        return this.labelColor ? this.labelColor : this.parentData.labelColor ? this.parentData.labelColor : "#606266";
+      },
+      elShape() {
+        return this.shape ? this.shape : this.parentData.shape ? this.parentData.shape : "circle";
+      },
+      elLabelSize() {
+        return uni.$u.addUnit(this.labelSize ? this.labelSize : this.parentData.labelSize ? this.parentData.labelSize : "15");
+      },
+      elIconColor() {
+        const iconColor = this.iconColor ? this.iconColor : this.parentData.iconColor ? this.parentData.iconColor : "#ffffff";
+        if (this.elDisabled) {
+          return this.isChecked ? this.elInactiveColor : "transparent";
+        } else {
+          return this.isChecked ? iconColor : "transparent";
+        }
+      },
+      iconClasses() {
+        let classes = [];
+        classes.push("u-checkbox__icon-wrap--" + this.elShape);
+        if (this.elDisabled) {
+          classes.push("u-checkbox__icon-wrap--disabled");
+        }
+        if (this.isChecked && this.elDisabled) {
+          classes.push("u-checkbox__icon-wrap--disabled--checked");
+        }
+        return classes;
+      },
+      iconWrapStyle() {
+        const style = {};
+        style.backgroundColor = this.isChecked && !this.elDisabled ? this.elActiveColor : "#ffffff";
+        style.borderColor = this.isChecked && !this.elDisabled ? this.elActiveColor : this.elInactiveColor;
+        style.width = uni.$u.addUnit(this.elSize);
+        style.height = uni.$u.addUnit(this.elSize);
+        if (this.parentData.iconPlacement === "right") {
+          style.marginRight = 0;
+        }
+        return style;
+      },
+      checkboxStyle() {
+        const style = {};
+        if (this.parentData.borderBottom && this.parentData.placement === "row") {
+          uni.$u.error("\u68C0\u6D4B\u5230\u60A8\u5C06borderBottom\u8BBE\u7F6E\u4E3Atrue\uFF0C\u9700\u8981\u540C\u65F6\u5C06u-checkbox-group\u7684placement\u8BBE\u7F6E\u4E3Acolumn\u624D\u6709\u6548");
+        }
+        if (this.parentData.borderBottom && this.parentData.placement === "column") {
+          style.paddingBottom = "8px";
+        }
+        return uni.$u.deepMerge(style, uni.$u.addStyle(this.customStyle));
+      }
+    },
+    mounted() {
+      this.init();
+    },
+    methods: {
+      init() {
+        this.updateParentData();
+        if (!this.parent) {
+          uni.$u.error("u-checkbox\u5FC5\u987B\u642D\u914Du-checkbox-group\u7EC4\u4EF6\u4F7F\u7528");
+        }
+        const value = this.parentData.modelValue;
+        if (this.checked) {
+          this.isChecked = true;
+        } else if (uni.$u.test.array(value)) {
+          this.isChecked = value.some((item2) => {
+            return item2 === this.name;
+          });
+        }
+      },
+      updateParentData() {
+        this.getParentData("u-checkbox-group");
+      },
+      wrapperClickHandler(e) {
+        this.parentData.iconPlacement === "right" && this.iconClickHandler(e);
+      },
+      iconClickHandler(e) {
+        this.preventEvent(e);
+        if (!this.elDisabled) {
+          this.setRadioCheckedStatus();
+        }
+      },
+      labelClickHandler(e) {
+        this.preventEvent(e);
+        if (!this.elLabelDisabled && !this.elDisabled) {
+          this.setRadioCheckedStatus();
+        }
+      },
+      emitEvent() {
+        this.$emit("change", this.isChecked);
+        this.$nextTick(() => {
+          uni.$u.formValidate(this, "change");
+        });
+      },
+      setRadioCheckedStatus() {
+        this.isChecked = !this.isChecked;
+        this.emitEvent();
+        typeof this.parent.unCheckedOther === "function" && this.parent.unCheckedOther(this);
+      }
+    },
+    watch: {
+      checked() {
+        this.isChecked = this.checked;
+      }
+    }
+  };
+  function _sfc_render$s(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$6);
+    return vue.openBlock(), vue.createElementBlock("view", {
+      class: vue.normalizeClass(["u-checkbox", [`u-checkbox-label--${$data.parentData.iconPlacement}`, $data.parentData.borderBottom && $data.parentData.placement === "column" && "u-border-bottom"]]),
+      style: vue.normalizeStyle([$options.checkboxStyle]),
+      onClick: _cache[2] || (_cache[2] = vue.withModifiers((...args) => $options.wrapperClickHandler && $options.wrapperClickHandler(...args), ["stop"]))
+    }, [
+      vue.createElementVNode("view", {
+        class: vue.normalizeClass(["u-checkbox__icon-wrap", $options.iconClasses]),
+        onClick: _cache[0] || (_cache[0] = vue.withModifiers((...args) => $options.iconClickHandler && $options.iconClickHandler(...args), ["stop"])),
+        style: vue.normalizeStyle([$options.iconWrapStyle])
+      }, [
+        vue.renderSlot(_ctx.$slots, "icon", {}, () => [
+          vue.createVNode(_component_u_icon, {
+            class: "u-checkbox__icon-wrap__icon",
+            name: "checkbox-mark",
+            size: $options.elIconSize,
+            color: $options.elIconColor
+          }, null, 8, ["size", "color"])
+        ], true)
+      ], 6),
+      vue.createElementVNode("text", {
+        onClick: _cache[1] || (_cache[1] = vue.withModifiers((...args) => $options.labelClickHandler && $options.labelClickHandler(...args), ["stop"])),
+        style: vue.normalizeStyle({
+          color: $options.elDisabled ? $options.elInactiveColor : $options.elLabelColor,
+          fontSize: $options.elLabelSize,
+          lineHeight: $options.elLabelSize
+        })
+      }, vue.toDisplayString(_ctx.label), 5)
+    ], 6);
+  }
+  const __easycom_5$1 = /* @__PURE__ */ _export_sfc(_sfc_main$t, [["render", _sfc_render$s], ["__scopeId", "data-v-abd63d8e"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-checkbox/u-checkbox.vue"]]);
+  const props$3 = {
+    props: {
+      name: {
+        type: String,
+        default: props$s.checkboxGroup.name
+      },
+      modelValue: {
+        type: Array,
+        default: props$s.checkboxGroup.value
+      },
+      shape: {
+        type: String,
+        default: props$s.checkboxGroup.shape
+      },
+      disabled: {
+        type: Boolean,
+        default: props$s.checkboxGroup.disabled
+      },
+      activeColor: {
+        type: String,
+        default: props$s.checkboxGroup.activeColor
+      },
+      inactiveColor: {
+        type: String,
+        default: props$s.checkboxGroup.inactiveColor
+      },
+      size: {
+        type: [String, Number],
+        default: props$s.checkboxGroup.size
+      },
+      placement: {
+        type: String,
+        default: props$s.checkboxGroup.placement
+      },
+      labelSize: {
+        type: [String, Number],
+        default: props$s.checkboxGroup.labelSize
+      },
+      labelColor: {
+        type: [String],
+        default: props$s.checkboxGroup.labelColor
+      },
+      labelDisabled: {
+        type: Boolean,
+        default: props$s.checkboxGroup.labelDisabled
+      },
+      iconColor: {
+        type: String,
+        default: props$s.checkboxGroup.iconColor
+      },
+      iconSize: {
+        type: [String, Number],
+        default: props$s.checkboxGroup.iconSize
+      },
+      iconPlacement: {
+        type: String,
+        default: props$s.checkboxGroup.iconPlacement
+      },
+      borderBottom: {
+        type: Boolean,
+        default: props$s.checkboxGroup.borderBottom
+      }
+    }
+  };
+  const _sfc_main$s = {
+    name: "u-checkbox-group",
+    mixins: [mpMixin, mixin, props$3],
+    computed: {
+      parentData() {
+        return [
+          this.modelValue,
+          this.disabled,
+          this.inactiveColor,
+          this.activeColor,
+          this.size,
+          this.labelDisabled,
+          this.shape,
+          this.iconSize,
+          this.borderBottom,
+          this.placement
+        ];
+      },
+      bemClass() {
+        return this.bem("checkbox-group", ["placement"]);
+      }
+    },
+    watch: {
+      parentData: {
+        handler() {
+          if (this.children.length) {
+            this.children.map((child) => {
+              typeof child.init === "function" && child.init();
+            });
+          }
+        },
+        deep: true
+      }
+    },
+    data() {
+      return {};
+    },
+    created() {
+      this.children = [];
+    },
+    emits: ["update:modelValue", "change"],
+    methods: {
+      unCheckedOther(childInstance) {
+        const values = [];
+        this.children.map((child) => {
+          if (child.isChecked) {
+            values.push(child.name);
+          }
+        });
+        this.$emit("change", values);
+        this.$emit("update:modelValue", values);
+      }
+    }
+  };
+  function _sfc_render$r(_ctx, _cache, $props, $setup, $data, $options) {
+    return vue.openBlock(), vue.createElementBlock("view", {
+      class: vue.normalizeClass(["u-checkbox-group", $options.bemClass])
+    }, [
+      vue.renderSlot(_ctx.$slots, "default", {}, void 0, true)
+    ], 2);
+  }
+  const __easycom_6 = /* @__PURE__ */ _export_sfc(_sfc_main$s, [["render", _sfc_render$r], ["__scopeId", "data-v-504cd728"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-checkbox-group/u-checkbox-group.vue"]]);
   const _sfc_main$r = {
     data() {
       return {
@@ -11305,13 +11322,13 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$q(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_image = resolveEasycom(vue.resolveDynamicComponent("u-image"), __easycom_0$3);
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$6);
-    const _component_u_loadmore = resolveEasycom(vue.resolveDynamicComponent("u-loadmore"), __easycom_2$2);
-    const _component_u_empty = resolveEasycom(vue.resolveDynamicComponent("u-empty"), __easycom_3);
-    const _component_u__image = resolveEasycom(vue.resolveDynamicComponent("u--image"), __easycom_0$2);
-    const _component_u_modal = resolveEasycom(vue.resolveDynamicComponent("u-modal"), __easycom_5$1);
-    const _component_u_checkbox = resolveEasycom(vue.resolveDynamicComponent("u-checkbox"), __easycom_5$2);
+    const _component_u_image = resolveEasycom(vue.resolveDynamicComponent("u-image"), __easycom_0$5);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0);
+    const _component_u_loadmore = resolveEasycom(vue.resolveDynamicComponent("u-loadmore"), __easycom_2$3);
+    const _component_u_empty = resolveEasycom(vue.resolveDynamicComponent("u-empty"), __easycom_3$1);
+    const _component_u__image = resolveEasycom(vue.resolveDynamicComponent("u--image"), __easycom_0$4);
+    const _component_u_modal = resolveEasycom(vue.resolveDynamicComponent("u-modal"), __easycom_5$2);
+    const _component_u_checkbox = resolveEasycom(vue.resolveDynamicComponent("u-checkbox"), __easycom_5$1);
     const _component_u_checkbox_group = resolveEasycom(vue.resolveDynamicComponent("u-checkbox-group"), __easycom_6);
     return vue.openBlock(), vue.createElementBlock("view", { class: "position page" }, [
       vue.createCommentVNode(" \u5BFC\u822A "),
@@ -11410,7 +11427,7 @@ if (uni.restoreGlobal) {
           vue.createElementVNode("view", {
             onClick: _cache[2] || (_cache[2] = (...args) => $options.clearAll && $options.clearAll(...args)),
             class: "obb-li isActive"
-          }, "\u4E00\u9375\u6E05\u5009"),
+          }, vue.toDisplayString(!$data.isSlectList ? "\u4E00\u9375\u6E05\u5009" : "\u6E05\u5009"), 1),
           vue.createElementVNode("view", {
             onClick: _cache[3] || (_cache[3] = (...args) => $options.stopStr && $options.stopStr(...args)),
             class: vue.normalizeClass(["obb-li", $data.isSlectList ? "isActive" : ""])
@@ -11541,7 +11558,7 @@ if (uni.restoreGlobal) {
       }, 8, ["onConfirm", "show"])
     ]);
   }
-  var PagesTradePositionPosition = /* @__PURE__ */ _export_sfc(_sfc_main$r, [["render", _sfc_render$q], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/trade/position/position.vue"]]);
+  const PagesTradePositionPosition = /* @__PURE__ */ _export_sfc(_sfc_main$r, [["render", _sfc_render$q], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/trade/position/position.vue"]]);
   const _sfc_main$q = {
     data() {
       return {};
@@ -11549,7 +11566,7 @@ if (uni.restoreGlobal) {
     methods: {}
   };
   function _sfc_render$p(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$6);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0);
     return vue.openBlock(), vue.createElementBlock("view", { class: "strateg-explain page" }, [
       vue.createCommentVNode(" \u5BFC\u822A "),
       vue.createVNode(_component_u_navbar, {
@@ -11579,8 +11596,8 @@ if (uni.restoreGlobal) {
       ])
     ]);
   }
-  var PagesTradeStrategEexplainStrategEexplain = /* @__PURE__ */ _export_sfc(_sfc_main$q, [["render", _sfc_render$p], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/trade/strategEexplain/strategEexplain.vue"]]);
-  var props$2 = {
+  const PagesTradeStrategEexplainStrategEexplain = /* @__PURE__ */ _export_sfc(_sfc_main$q, [["render", _sfc_render$p], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/trade/strategEexplain/strategEexplain.vue"]]);
+  const props$2 = {
     props: {
       loading: {
         type: Boolean,
@@ -11692,7 +11709,7 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$o(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_loading_icon = resolveEasycom(vue.resolveDynamicComponent("u-loading-icon"), __easycom_1$3);
+    const _component_u_loading_icon = resolveEasycom(vue.resolveDynamicComponent("u-loading-icon"), __easycom_1$5);
     return vue.openBlock(), vue.createElementBlock("view", {
       class: vue.normalizeClass(["u-switch", [_ctx.disabled && "u-switch--disabled"]]),
       style: vue.normalizeStyle([$options.switchStyle, _ctx.$u.addStyle(_ctx.customStyle)]),
@@ -11717,7 +11734,7 @@ if (uni.restoreGlobal) {
       ], 6)
     ], 6);
   }
-  var __easycom_5 = /* @__PURE__ */ _export_sfc(_sfc_main$p, [["render", _sfc_render$o], ["__scopeId", "data-v-7e2f0021"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-switch/u-switch.vue"]]);
+  const __easycom_5 = /* @__PURE__ */ _export_sfc(_sfc_main$p, [["render", _sfc_render$o], ["__scopeId", "data-v-1e6bcefd"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-switch/u-switch.vue"]]);
   const _sfc_main$o = {
     data() {
       return {
@@ -11755,14 +11772,14 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$n(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$6);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0);
     const _component_u_radio = resolveEasycom(vue.resolveDynamicComponent("u-radio"), __easycom_1$1);
     const _component_u_radio_group = resolveEasycom(vue.resolveDynamicComponent("u-radio-group"), __easycom_2$1);
-    const _component_u_form_item = resolveEasycom(vue.resolveDynamicComponent("u-form-item"), __easycom_2$5);
-    const _component_u__input = resolveEasycom(vue.resolveDynamicComponent("u--input"), __easycom_1$4);
+    const _component_u_form_item = resolveEasycom(vue.resolveDynamicComponent("u-form-item"), __easycom_2$2);
+    const _component_u__input = resolveEasycom(vue.resolveDynamicComponent("u--input"), __easycom_1$2);
     const _component_u_switch = resolveEasycom(vue.resolveDynamicComponent("u-switch"), __easycom_5);
-    const _component_u__form = resolveEasycom(vue.resolveDynamicComponent("u--form"), __easycom_3$2);
-    const _component_u_button = resolveEasycom(vue.resolveDynamicComponent("u-button"), __easycom_4$1);
+    const _component_u__form = resolveEasycom(vue.resolveDynamicComponent("u--form"), __easycom_3);
+    const _component_u_button = resolveEasycom(vue.resolveDynamicComponent("u-button"), __easycom_4);
     return vue.openBlock(), vue.createElementBlock("view", { class: "cus-strategy page" }, [
       vue.createCommentVNode(" \u5BFC\u822A "),
       vue.createVNode(_component_u_navbar, {
@@ -12029,7 +12046,7 @@ if (uni.restoreGlobal) {
       ])
     ]);
   }
-  var PagesTradeCustomStrategyCustomStrategy = /* @__PURE__ */ _export_sfc(_sfc_main$o, [["render", _sfc_render$n], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/trade/customStrategy/customStrategy.vue"]]);
+  const PagesTradeCustomStrategyCustomStrategy = /* @__PURE__ */ _export_sfc(_sfc_main$o, [["render", _sfc_render$n], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/trade/customStrategy/customStrategy.vue"]]);
   const _sfc_main$n = {
     data() {
       return {
@@ -12117,9 +12134,9 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$m(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$6);
-    const _component_u_loadmore = resolveEasycom(vue.resolveDynamicComponent("u-loadmore"), __easycom_2$2);
-    const _component_u_empty = resolveEasycom(vue.resolveDynamicComponent("u-empty"), __easycom_3);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0);
+    const _component_u_loadmore = resolveEasycom(vue.resolveDynamicComponent("u-loadmore"), __easycom_2$3);
+    const _component_u_empty = resolveEasycom(vue.resolveDynamicComponent("u-empty"), __easycom_3$1);
     return vue.openBlock(), vue.createElementBlock("view", { class: "position-record page" }, [
       vue.createCommentVNode(" \u5BFC\u822A "),
       vue.createVNode(_component_u_navbar, {
@@ -12201,7 +12218,7 @@ if (uni.restoreGlobal) {
       ], 32)
     ]);
   }
-  var PagesTradePositionRecordPositionRecord = /* @__PURE__ */ _export_sfc(_sfc_main$n, [["render", _sfc_render$m], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/trade/positionRecord/positionRecord.vue"]]);
+  const PagesTradePositionRecordPositionRecord = /* @__PURE__ */ _export_sfc(_sfc_main$n, [["render", _sfc_render$m], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/trade/positionRecord/positionRecord.vue"]]);
   const _sfc_main$m = {
     data() {
       return {
@@ -12305,9 +12322,6 @@ if (uni.restoreGlobal) {
         if (!this.isSlectList)
           return;
         this.showStrateModal = true;
-        setTimeout(() => {
-          this.showOkModal = true;
-        });
       },
       editStr() {
         if (!this.isSlectList)
@@ -12327,13 +12341,13 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$l(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_image = resolveEasycom(vue.resolveDynamicComponent("u-image"), __easycom_0$3);
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$6);
-    const _component_u_loadmore = resolveEasycom(vue.resolveDynamicComponent("u-loadmore"), __easycom_2$2);
-    const _component_u_empty = resolveEasycom(vue.resolveDynamicComponent("u-empty"), __easycom_3);
-    const _component_u__image = resolveEasycom(vue.resolveDynamicComponent("u--image"), __easycom_0$2);
-    const _component_u_modal = resolveEasycom(vue.resolveDynamicComponent("u-modal"), __easycom_5$1);
-    const _component_u_checkbox = resolveEasycom(vue.resolveDynamicComponent("u-checkbox"), __easycom_5$2);
+    const _component_u_image = resolveEasycom(vue.resolveDynamicComponent("u-image"), __easycom_0$5);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0);
+    const _component_u_loadmore = resolveEasycom(vue.resolveDynamicComponent("u-loadmore"), __easycom_2$3);
+    const _component_u_empty = resolveEasycom(vue.resolveDynamicComponent("u-empty"), __easycom_3$1);
+    const _component_u__image = resolveEasycom(vue.resolveDynamicComponent("u--image"), __easycom_0$4);
+    const _component_u_modal = resolveEasycom(vue.resolveDynamicComponent("u-modal"), __easycom_5$2);
+    const _component_u_checkbox = resolveEasycom(vue.resolveDynamicComponent("u-checkbox"), __easycom_5$1);
     const _component_u_checkbox_group = resolveEasycom(vue.resolveDynamicComponent("u-checkbox-group"), __easycom_6);
     return vue.openBlock(), vue.createElementBlock("view", { class: "position page" }, [
       vue.createCommentVNode(" \u5BFC\u822A "),
@@ -12439,7 +12453,7 @@ if (uni.restoreGlobal) {
           vue.createElementVNode("view", {
             onClick: _cache[2] || (_cache[2] = (...args) => $options.clearAll && $options.clearAll(...args)),
             class: "obb-li isActive"
-          }, "\u4E00\u9375\u6E05\u5009"),
+          }, vue.toDisplayString(!$data.isSlectList ? "\u4E00\u9375\u6E05\u5009" : "\u6E05\u5009"), 1),
           vue.createElementVNode("view", {
             onClick: _cache[3] || (_cache[3] = (...args) => $options.stopStr && $options.stopStr(...args)),
             class: vue.normalizeClass(["obb-li", $data.isSlectList ? "isActive" : ""])
@@ -12570,7 +12584,7 @@ if (uni.restoreGlobal) {
       }, 8, ["onConfirm", "show"])
     ]);
   }
-  var PagesTradePositionContractPositionContract = /* @__PURE__ */ _export_sfc(_sfc_main$m, [["render", _sfc_render$l], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/trade/positionContract/positionContract.vue"]]);
+  const PagesTradePositionContractPositionContract = /* @__PURE__ */ _export_sfc(_sfc_main$m, [["render", _sfc_render$l], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/trade/positionContract/positionContract.vue"]]);
   const _sfc_main$l = {
     data() {
       return {
@@ -12658,9 +12672,9 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$k(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$6);
-    const _component_u_loadmore = resolveEasycom(vue.resolveDynamicComponent("u-loadmore"), __easycom_2$2);
-    const _component_u_empty = resolveEasycom(vue.resolveDynamicComponent("u-empty"), __easycom_3);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0);
+    const _component_u_loadmore = resolveEasycom(vue.resolveDynamicComponent("u-loadmore"), __easycom_2$3);
+    const _component_u_empty = resolveEasycom(vue.resolveDynamicComponent("u-empty"), __easycom_3$1);
     return vue.openBlock(), vue.createElementBlock("view", { class: "position-record page" }, [
       vue.createCommentVNode(" \u5BFC\u822A "),
       vue.createVNode(_component_u_navbar, {
@@ -12737,7 +12751,7 @@ if (uni.restoreGlobal) {
       ], 32)
     ]);
   }
-  var PagesTradePositionReContractPositionReContract = /* @__PURE__ */ _export_sfc(_sfc_main$l, [["render", _sfc_render$k], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/trade/positionReContract/positionReContract.vue"]]);
+  const PagesTradePositionReContractPositionReContract = /* @__PURE__ */ _export_sfc(_sfc_main$l, [["render", _sfc_render$k], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/trade/positionReContract/positionReContract.vue"]]);
   const _sfc_main$k = {
     data() {
       return {
@@ -12778,9 +12792,9 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$j(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$6);
-    const _component_u_loadmore = resolveEasycom(vue.resolveDynamicComponent("u-loadmore"), __easycom_2$2);
-    const _component_u_empty = resolveEasycom(vue.resolveDynamicComponent("u-empty"), __easycom_3);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0);
+    const _component_u_loadmore = resolveEasycom(vue.resolveDynamicComponent("u-loadmore"), __easycom_2$3);
+    const _component_u_empty = resolveEasycom(vue.resolveDynamicComponent("u-empty"), __easycom_3$1);
     return vue.openBlock(), vue.createElementBlock("view", { class: "trans-details page" }, [
       vue.createCommentVNode(" \u5BFC\u822A "),
       vue.createVNode(_component_u_navbar, {
@@ -12829,7 +12843,7 @@ if (uni.restoreGlobal) {
       ], 32)
     ]);
   }
-  var PagesAssetsTransactionDetailsTransactionDetails = /* @__PURE__ */ _export_sfc(_sfc_main$k, [["render", _sfc_render$j], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/assets/transactionDetails/transactionDetails.vue"]]);
+  const PagesAssetsTransactionDetailsTransactionDetails = /* @__PURE__ */ _export_sfc(_sfc_main$k, [["render", _sfc_render$j], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/assets/transactionDetails/transactionDetails.vue"]]);
   const _sfc_main$j = {
     data() {
       return {
@@ -12875,12 +12889,12 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$i(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u__image = resolveEasycom(vue.resolveDynamicComponent("u--image"), __easycom_0$2);
-    const _component_u__input = resolveEasycom(vue.resolveDynamicComponent("u--input"), __easycom_1$4);
-    const _component_u_form_item = resolveEasycom(vue.resolveDynamicComponent("u-form-item"), __easycom_2$5);
-    const _component_u__form = resolveEasycom(vue.resolveDynamicComponent("u--form"), __easycom_3$2);
-    const _component_u_button = resolveEasycom(vue.resolveDynamicComponent("u-button"), __easycom_4$1);
-    const _component_u_modal = resolveEasycom(vue.resolveDynamicComponent("u-modal"), __easycom_5$1);
+    const _component_u__image = resolveEasycom(vue.resolveDynamicComponent("u--image"), __easycom_0$4);
+    const _component_u__input = resolveEasycom(vue.resolveDynamicComponent("u--input"), __easycom_1$2);
+    const _component_u_form_item = resolveEasycom(vue.resolveDynamicComponent("u-form-item"), __easycom_2$2);
+    const _component_u__form = resolveEasycom(vue.resolveDynamicComponent("u--form"), __easycom_3);
+    const _component_u_button = resolveEasycom(vue.resolveDynamicComponent("u-button"), __easycom_4);
+    const _component_u_modal = resolveEasycom(vue.resolveDynamicComponent("u-modal"), __easycom_5$2);
     return vue.openBlock(), vue.createElementBlock("view", { class: "awidth-usdt page" }, [
       vue.createCommentVNode(" \u5BFC\u822A\u6761 "),
       vue.createElementVNode("view", { class: "au-nav" }, [
@@ -12992,7 +13006,7 @@ if (uni.restoreGlobal) {
       }, 8, ["onConfirm", "show"])
     ]);
   }
-  var PagesAssetsWithdrawalWithdrawal = /* @__PURE__ */ _export_sfc(_sfc_main$j, [["render", _sfc_render$i], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/assets/withdrawal/withdrawal.vue"]]);
+  const PagesAssetsWithdrawalWithdrawal = /* @__PURE__ */ _export_sfc(_sfc_main$j, [["render", _sfc_render$i], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/assets/withdrawal/withdrawal.vue"]]);
   const _sfc_main$i = {
     data() {
       return {
@@ -13039,8 +13053,8 @@ if (uni.restoreGlobal) {
     methods: {}
   };
   function _sfc_render$h(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$6);
-    const _component_u_empty = resolveEasycom(vue.resolveDynamicComponent("u-empty"), __easycom_3);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0);
+    const _component_u_empty = resolveEasycom(vue.resolveDynamicComponent("u-empty"), __easycom_3$1);
     return vue.openBlock(), vue.createElementBlock("view", { class: "bill-center page" }, [
       vue.createCommentVNode(" \u5BFC\u822A "),
       vue.createVNode(_component_u_navbar, {
@@ -13091,7 +13105,7 @@ if (uni.restoreGlobal) {
       ], 32)
     ]);
   }
-  var PagesMyMybillingCenterMybillingCenter = /* @__PURE__ */ _export_sfc(_sfc_main$i, [["render", _sfc_render$h], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/my/mybillingCenter/mybillingCenter.vue"]]);
+  const PagesMyMybillingCenterMybillingCenter = /* @__PURE__ */ _export_sfc(_sfc_main$i, [["render", _sfc_render$h], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/my/mybillingCenter/mybillingCenter.vue"]]);
   const _sfc_main$h = {
     onLoad: function(option) {
     },
@@ -13131,11 +13145,11 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$g(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$6);
-    const _component_u__input = resolveEasycom(vue.resolveDynamicComponent("u--input"), __easycom_1$4);
-    const _component_u_form_item = resolveEasycom(vue.resolveDynamicComponent("u-form-item"), __easycom_2$5);
-    const _component_u__form = resolveEasycom(vue.resolveDynamicComponent("u--form"), __easycom_3$2);
-    const _component_u_button = resolveEasycom(vue.resolveDynamicComponent("u-button"), __easycom_4$1);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0);
+    const _component_u__input = resolveEasycom(vue.resolveDynamicComponent("u--input"), __easycom_1$2);
+    const _component_u_form_item = resolveEasycom(vue.resolveDynamicComponent("u-form-item"), __easycom_2$2);
+    const _component_u__form = resolveEasycom(vue.resolveDynamicComponent("u--form"), __easycom_3);
+    const _component_u_button = resolveEasycom(vue.resolveDynamicComponent("u-button"), __easycom_4);
     return vue.openBlock(), vue.createElementBlock("view", { class: "my-sub" }, [
       vue.createCommentVNode(" \u5BFC\u822A "),
       vue.createVNode(_component_u_navbar, {
@@ -13214,7 +13228,7 @@ if (uni.restoreGlobal) {
       ])
     ]);
   }
-  var PagesMyMySubscribeMySubscribe = /* @__PURE__ */ _export_sfc(_sfc_main$h, [["render", _sfc_render$g], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/my/mySubscribe/mySubscribe.vue"]]);
+  const PagesMyMySubscribeMySubscribe = /* @__PURE__ */ _export_sfc(_sfc_main$h, [["render", _sfc_render$g], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/my/mySubscribe/mySubscribe.vue"]]);
   const _sfc_main$g = {
     data() {
       return {
@@ -13303,9 +13317,9 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$f(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$6);
-    const _component_u_loadmore = resolveEasycom(vue.resolveDynamicComponent("u-loadmore"), __easycom_2$2);
-    const _component_u_empty = resolveEasycom(vue.resolveDynamicComponent("u-empty"), __easycom_3);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0);
+    const _component_u_loadmore = resolveEasycom(vue.resolveDynamicComponent("u-loadmore"), __easycom_2$3);
+    const _component_u_empty = resolveEasycom(vue.resolveDynamicComponent("u-empty"), __easycom_3$1);
     return vue.openBlock(), vue.createElementBlock("view", { class: "position-record page" }, [
       vue.createCommentVNode(" \u5BFC\u822A "),
       vue.createVNode(_component_u_navbar, {
@@ -13384,8 +13398,8 @@ if (uni.restoreGlobal) {
       ], 32)
     ]);
   }
-  var PagesMyMuOpertaionRecordMuOpertaionRecord = /* @__PURE__ */ _export_sfc(_sfc_main$g, [["render", _sfc_render$f], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/my/muOpertaionRecord/muOpertaionRecord.vue"]]);
-  var props$1 = {
+  const PagesMyMuOpertaionRecordMuOpertaionRecord = /* @__PURE__ */ _export_sfc(_sfc_main$g, [["render", _sfc_render$f], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/my/muOpertaionRecord/muOpertaionRecord.vue"]]);
+  const props$1 = {
     props: {
       value: {
         type: [String, Number],
@@ -13610,7 +13624,7 @@ if (uni.restoreGlobal) {
       }, vue.toDisplayString($data.innerValue.length) + "/" + vue.toDisplayString(_ctx.maxlength), 5)) : vue.createCommentVNode("v-if", true)
     ], 6);
   }
-  var uvTextarea = /* @__PURE__ */ _export_sfc(_sfc_main$f, [["render", _sfc_render$e], ["__scopeId", "data-v-8c2832be"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-textarea/u-textarea.vue"]]);
+  const uvTextarea = /* @__PURE__ */ _export_sfc(_sfc_main$f, [["render", _sfc_render$e], ["__scopeId", "data-v-31706dd7"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-textarea/u-textarea.vue"]]);
   const _sfc_main$e = {
     name: "u--textarea",
     mixins: [mpMixin, props$1, mixin],
@@ -13648,7 +13662,7 @@ if (uni.restoreGlobal) {
       "onUpdate:modelValue": _cache[1] || (_cache[1] = (e) => _ctx.$emit("update:modelValue", e))
     }, null, 8, ["value", "modelValue", "placeholder", "height", "confirmType", "disabled", "count", "focus", "autoHeight", "fixed", "cursorSpacing", "cursor", "showConfirmBar", "selectionStart", "selectionEnd", "adjustPosition", "disableDefaultPadding", "holdKeyboard", "maxlength", "border", "customStyle", "formatter", "ignoreCompositionEvent"]);
   }
-  var __easycom_1 = /* @__PURE__ */ _export_sfc(_sfc_main$e, [["render", _sfc_render$d], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u--textarea/u--textarea.vue"]]);
+  const __easycom_1 = /* @__PURE__ */ _export_sfc(_sfc_main$e, [["render", _sfc_render$d], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u--textarea/u--textarea.vue"]]);
   const _sfc_main$d = {
     data() {
       return {
@@ -13661,9 +13675,9 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$c(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$6);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0);
     const _component_u__textarea = resolveEasycom(vue.resolveDynamicComponent("u--textarea"), __easycom_1);
-    const _component_u_button = resolveEasycom(vue.resolveDynamicComponent("u-button"), __easycom_4$1);
+    const _component_u_button = resolveEasycom(vue.resolveDynamicComponent("u-button"), __easycom_4);
     return vue.openBlock(), vue.createElementBlock("view", { class: "user-fadeback page" }, [
       vue.createCommentVNode(" \u5BFC\u822A "),
       vue.createVNode(_component_u_navbar, {
@@ -13699,7 +13713,7 @@ if (uni.restoreGlobal) {
       ])
     ]);
   }
-  var PagesMyUserFadebackUserFadeback = /* @__PURE__ */ _export_sfc(_sfc_main$d, [["render", _sfc_render$c], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/my/userFadeback/userFadeback.vue"]]);
+  const PagesMyUserFadebackUserFadeback = /* @__PURE__ */ _export_sfc(_sfc_main$d, [["render", _sfc_render$c], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/my/userFadeback/userFadeback.vue"]]);
   const _sfc_main$c = {
     data() {
       return {
@@ -13754,10 +13768,10 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$b(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$6);
-    const _component_u__image = resolveEasycom(vue.resolveDynamicComponent("u--image"), __easycom_0$2);
-    const _component_u_loadmore = resolveEasycom(vue.resolveDynamicComponent("u-loadmore"), __easycom_2$2);
-    const _component_u_empty = resolveEasycom(vue.resolveDynamicComponent("u-empty"), __easycom_3);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0);
+    const _component_u__image = resolveEasycom(vue.resolveDynamicComponent("u--image"), __easycom_0$4);
+    const _component_u_loadmore = resolveEasycom(vue.resolveDynamicComponent("u-loadmore"), __easycom_2$3);
+    const _component_u_empty = resolveEasycom(vue.resolveDynamicComponent("u-empty"), __easycom_3$1);
     return vue.openBlock(), vue.createElementBlock("view", { class: "message-center page" }, [
       vue.createCommentVNode(" \u5BFC\u822A "),
       vue.createVNode(_component_u_navbar, {
@@ -13815,7 +13829,7 @@ if (uni.restoreGlobal) {
       ], 32)
     ]);
   }
-  var PagesMyMessageCenterMessageCenter = /* @__PURE__ */ _export_sfc(_sfc_main$c, [["render", _sfc_render$b], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/my/messageCenter/messageCenter.vue"]]);
+  const PagesMyMessageCenterMessageCenter = /* @__PURE__ */ _export_sfc(_sfc_main$c, [["render", _sfc_render$b], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/my/messageCenter/messageCenter.vue"]]);
   const _sfc_main$b = {
     data() {
       return {
@@ -13829,8 +13843,8 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$a(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$6);
-    const _component_u_button = resolveEasycom(vue.resolveDynamicComponent("u-button"), __easycom_4$1);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0);
+    const _component_u_button = resolveEasycom(vue.resolveDynamicComponent("u-button"), __easycom_4);
     return vue.openBlock(), vue.createElementBlock("view", { class: "about-us page" }, [
       vue.createCommentVNode(" \u5BFC\u822A "),
       vue.createVNode(_component_u_navbar, {
@@ -13860,7 +13874,7 @@ if (uni.restoreGlobal) {
       ])
     ]);
   }
-  var PagesMyAboutUsAboutUs = /* @__PURE__ */ _export_sfc(_sfc_main$b, [["render", _sfc_render$a], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/my/aboutUs/aboutUs.vue"]]);
+  const PagesMyAboutUsAboutUs = /* @__PURE__ */ _export_sfc(_sfc_main$b, [["render", _sfc_render$a], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/my/aboutUs/aboutUs.vue"]]);
   const _sfc_main$a = {
     data() {
       return {
@@ -13889,8 +13903,8 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$9(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$6);
-    const _component_u__image = resolveEasycom(vue.resolveDynamicComponent("u--image"), __easycom_0$2);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0);
+    const _component_u__image = resolveEasycom(vue.resolveDynamicComponent("u--image"), __easycom_0$4);
     return vue.openBlock(), vue.createElementBlock("view", { class: "setting page" }, [
       vue.createCommentVNode(" \u5BFC\u822A "),
       vue.createVNode(_component_u_navbar, {
@@ -13921,7 +13935,7 @@ if (uni.restoreGlobal) {
       ])
     ]);
   }
-  var PagesMySettingSetting = /* @__PURE__ */ _export_sfc(_sfc_main$a, [["render", _sfc_render$9], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/my/setting/setting.vue"]]);
+  const PagesMySettingSetting = /* @__PURE__ */ _export_sfc(_sfc_main$a, [["render", _sfc_render$9], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/my/setting/setting.vue"]]);
   function pickExclude(obj, keys) {
     if (!["[object Object]", "[object File]"].includes(Object.prototype.toString.call(obj))) {
       return {};
@@ -13934,7 +13948,8 @@ if (uni.restoreGlobal) {
     }, {});
   }
   function formatImage(res) {
-    return res.tempFiles.map((item2) => __spreadProps(__spreadValues({}, pickExclude(item2, ["path"])), {
+    return res.tempFiles.map((item2) => ({
+      ...pickExclude(item2, ["path"]),
       type: "image",
       url: item2.path,
       thumb: item2.path,
@@ -13943,12 +13958,13 @@ if (uni.restoreGlobal) {
   }
   function formatVideo(res) {
     return [
-      __spreadProps(__spreadValues({}, pickExclude(res, ["tempFilePath", "thumbTempFilePath", "errMsg"])), {
+      {
+        ...pickExclude(res, ["tempFilePath", "thumbTempFilePath", "errMsg"]),
         type: "video",
         url: res.tempFilePath,
         thumb: res.thumbTempFilePath,
         size: res.size
-      })
+      }
     ];
   }
   function chooseFile({
@@ -13985,7 +14001,7 @@ if (uni.restoreGlobal) {
       }
     });
   }
-  var mixinUp = {
+  const mixinUp = {
     watch: {
       accept: {
         immediate: true,
@@ -14000,7 +14016,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  var props = {
+  const props = {
     props: {
       accept: {
         type: String,
@@ -14126,11 +14142,13 @@ if (uni.restoreGlobal) {
           fileList = [],
           maxCount
         } = this;
-        const lists = fileList.map((item2) => Object.assign(Object.assign({}, item2), {
-          isImage: this.accept === "image" || uni.$u.test.image(item2.url || item2.thumb),
-          isVideo: this.accept === "video" || uni.$u.test.video(item2.url || item2.thumb),
-          deletable: typeof item2.deletable === "boolean" ? item2.deletable : this.deletable
-        }));
+        const lists = fileList.map(
+          (item2) => Object.assign(Object.assign({}, item2), {
+            isImage: this.accept === "image" || uni.$u.test.image(item2.url || item2.thumb),
+            isVideo: this.accept === "video" || uni.$u.test.video(item2.url || item2.thumb),
+            deletable: typeof item2.deletable === "boolean" ? item2.deletable : this.deletable
+          })
+        );
         this.lists = lists;
         this.isInCount = lists.length < maxCount;
       },
@@ -14149,17 +14167,19 @@ if (uni.restoreGlobal) {
         } catch (e) {
           capture = [];
         }
-        chooseFile(Object.assign({
-          accept: this.accept,
-          multiple: this.multiple,
-          capture,
-          compressed: this.compressed,
-          maxDuration: this.maxDuration,
-          sizeType: this.sizeType,
-          camera: this.camera
-        }, {
-          maxCount: maxCount - lists.length
-        })).then((res) => {
+        chooseFile(
+          Object.assign({
+            accept: this.accept,
+            multiple: this.multiple,
+            capture,
+            compressed: this.compressed,
+            maxDuration: this.maxDuration,
+            sizeType: this.sizeType,
+            camera: this.camera
+          }, {
+            maxCount: maxCount - lists.length
+          })
+        ).then((res) => {
           this.onBeforeRead(multiple ? res : res[0]);
         }).catch((error2) => {
           this.$emit("error", error2);
@@ -14176,13 +14196,16 @@ if (uni.restoreGlobal) {
         }
         if (useBeforeRead) {
           res = new Promise((resolve, reject) => {
-            this.$emit("beforeRead", Object.assign(Object.assign({
-              file
-            }, this.getDetail()), {
-              callback: (ok) => {
-                ok ? resolve() : reject();
-              }
-            }));
+            this.$emit(
+              "beforeRead",
+              Object.assign(Object.assign({
+                file
+              }, this.getDetail()), {
+                callback: (ok) => {
+                  ok ? resolve() : reject();
+                }
+              })
+            );
           });
         }
         if (!res) {
@@ -14220,9 +14243,12 @@ if (uni.restoreGlobal) {
         }, this.getDetail()));
       },
       deleteItem(index2) {
-        this.$emit("delete", Object.assign(Object.assign({}, this.getDetail(index2)), {
-          file: this.fileList[index2]
-        }));
+        this.$emit(
+          "delete",
+          Object.assign(Object.assign({}, this.getDetail(index2)), {
+            file: this.fileList[index2]
+          })
+        );
       },
       onPreviewImage(item2) {
         if (!item2.isImage || !this.previewFullImage)
@@ -14245,9 +14271,11 @@ if (uni.restoreGlobal) {
           lists
         } = this.data;
         wx.previewMedia({
-          sources: lists.filter((item2) => isVideoFile(item2)).map((item2) => Object.assign(Object.assign({}, item2), {
-            type: "video"
-          })),
+          sources: lists.filter((item2) => isVideoFile(item2)).map(
+            (item2) => Object.assign(Object.assign({}, item2), {
+              type: "video"
+            })
+          ),
           current: index2,
           fail() {
             uni.$u.toast("\u9884\u89C8\u89C6\u9891\u5931\u8D25");
@@ -14259,13 +14287,16 @@ if (uni.restoreGlobal) {
           index: index2
         } = event2.currentTarget.dataset;
         const item2 = this.data.lists[index2];
-        this.$emit("clickPreview", Object.assign(Object.assign({}, item2), this.getDetail(index2)));
+        this.$emit(
+          "clickPreview",
+          Object.assign(Object.assign({}, item2), this.getDetail(index2))
+        );
       }
     }
   };
   function _sfc_render$8(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$7);
-    const _component_u_loading_icon = resolveEasycom(vue.resolveDynamicComponent("u-loading-icon"), __easycom_1$3);
+    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$6);
+    const _component_u_loading_icon = resolveEasycom(vue.resolveDynamicComponent("u-loading-icon"), __easycom_1$5);
     return vue.openBlock(), vue.createElementBlock("view", {
       class: "u-upload",
       style: vue.normalizeStyle([_ctx.$u.addStyle(_ctx.customStyle)])
@@ -14377,7 +14408,7 @@ if (uni.restoreGlobal) {
       ])
     ], 4);
   }
-  var __easycom_2 = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["render", _sfc_render$8], ["__scopeId", "data-v-0eb306c1"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-upload/u-upload.vue"]]);
+  const __easycom_2 = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["render", _sfc_render$8], ["__scopeId", "data-v-cafe0b2a"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-upload/u-upload.vue"]]);
   const _sfc_main$8 = {
     data() {
       return {
@@ -14390,10 +14421,11 @@ if (uni.restoreGlobal) {
     },
     methods: {
       async afterRead(file, lists, name) {
-        this[`fileList${event.name}`].push(__spreadProps(__spreadValues({}, item), {
+        this[`fileList${event.name}`].push({
+          ...item,
           status: "uploading",
           message: "\u4E0A\u4F20\u4E2D"
-        }));
+        });
         const result = await this.uploadFilePromise(lists[i].url);
         this.form.photo = result;
       },
@@ -14419,10 +14451,10 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$7(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$6);
-    const _component_u_button = resolveEasycom(vue.resolveDynamicComponent("u-button"), __easycom_4$1);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0);
+    const _component_u_button = resolveEasycom(vue.resolveDynamicComponent("u-button"), __easycom_4);
     const _component_u_upload = resolveEasycom(vue.resolveDynamicComponent("u-upload"), __easycom_2);
-    const _component_u__input = resolveEasycom(vue.resolveDynamicComponent("u--input"), __easycom_1$4);
+    const _component_u__input = resolveEasycom(vue.resolveDynamicComponent("u--input"), __easycom_1$2);
     return vue.openBlock(), vue.createElementBlock("view", { class: "edit-user page" }, [
       vue.createCommentVNode(" \u5BFC\u822A "),
       vue.createVNode(_component_u_navbar, {
@@ -14480,7 +14512,7 @@ if (uni.restoreGlobal) {
       ])
     ]);
   }
-  var PagesMyEditUserEditUser = /* @__PURE__ */ _export_sfc(_sfc_main$8, [["render", _sfc_render$7], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/my/editUser/editUser.vue"]]);
+  const PagesMyEditUserEditUser = /* @__PURE__ */ _export_sfc(_sfc_main$8, [["render", _sfc_render$7], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/my/editUser/editUser.vue"]]);
   const _sfc_main$7 = {
     data() {
       return {
@@ -14529,7 +14561,7 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$6(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u__image = resolveEasycom(vue.resolveDynamicComponent("u--image"), __easycom_0$2);
+    const _component_u__image = resolveEasycom(vue.resolveDynamicComponent("u--image"), __easycom_0$4);
     return vue.openBlock(), vue.createElementBlock("view", {
       class: "invite-friends",
       onLongpress: _cache[2] || (_cache[2] = (...args) => $options.savePic && $options.savePic(...args)),
@@ -14618,7 +14650,7 @@ if (uni.restoreGlobal) {
       })
     ], 32);
   }
-  var PagesMyInviteFriendsInviteFriends = /* @__PURE__ */ _export_sfc(_sfc_main$7, [["render", _sfc_render$6], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/my/inviteFriends/inviteFriends.vue"]]);
+  const PagesMyInviteFriendsInviteFriends = /* @__PURE__ */ _export_sfc(_sfc_main$7, [["render", _sfc_render$6], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/my/inviteFriends/inviteFriends.vue"]]);
   const _sfc_main$6 = {
     data() {
       return {};
@@ -14626,7 +14658,7 @@ if (uni.restoreGlobal) {
     methods: {}
   };
   function _sfc_render$5(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$6);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0);
     return vue.openBlock(), vue.createElementBlock("view", { class: "sys-bullet page" }, [
       vue.createCommentVNode(" \u5BFC\u822A "),
       vue.createVNode(_component_u_navbar, {
@@ -14642,7 +14674,7 @@ if (uni.restoreGlobal) {
       ])
     ]);
   }
-  var PagesMySystemBulletinSystemBulletin = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["render", _sfc_render$5], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/my/systemBulletin/systemBulletin.vue"]]);
+  const PagesMySystemBulletinSystemBulletin = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["render", _sfc_render$5], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/my/systemBulletin/systemBulletin.vue"]]);
   const _sfc_main$5 = {
     data() {
       return {
@@ -14687,12 +14719,12 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$4(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$6);
-    const _component_u__input = resolveEasycom(vue.resolveDynamicComponent("u--input"), __easycom_1$4);
-    const _component_u_form_item = resolveEasycom(vue.resolveDynamicComponent("u-form-item"), __easycom_2$5);
-    const _component_u__form = resolveEasycom(vue.resolveDynamicComponent("u--form"), __easycom_3$2);
-    const _component_u_button = resolveEasycom(vue.resolveDynamicComponent("u-button"), __easycom_4$1);
-    const _component_u_checkbox = resolveEasycom(vue.resolveDynamicComponent("u-checkbox"), __easycom_5$2);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0);
+    const _component_u__input = resolveEasycom(vue.resolveDynamicComponent("u--input"), __easycom_1$2);
+    const _component_u_form_item = resolveEasycom(vue.resolveDynamicComponent("u-form-item"), __easycom_2$2);
+    const _component_u__form = resolveEasycom(vue.resolveDynamicComponent("u--form"), __easycom_3);
+    const _component_u_button = resolveEasycom(vue.resolveDynamicComponent("u-button"), __easycom_4);
+    const _component_u_checkbox = resolveEasycom(vue.resolveDynamicComponent("u-checkbox"), __easycom_5$1);
     const _component_u_checkbox_group = resolveEasycom(vue.resolveDynamicComponent("u-checkbox-group"), __easycom_6);
     return vue.openBlock(), vue.createElementBlock("view", { class: "login" }, [
       vue.createCommentVNode(" \u5BFC\u822A "),
@@ -14785,7 +14817,7 @@ if (uni.restoreGlobal) {
       ])
     ]);
   }
-  var PagesLoginPasswordPassword = /* @__PURE__ */ _export_sfc(_sfc_main$5, [["render", _sfc_render$4], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/login/password/password.vue"]]);
+  const PagesLoginPasswordPassword = /* @__PURE__ */ _export_sfc(_sfc_main$5, [["render", _sfc_render$4], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/login/password/password.vue"]]);
   const _sfc_main$4 = {
     data() {
       return {
@@ -14825,12 +14857,12 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$6);
-    const _component_u__input = resolveEasycom(vue.resolveDynamicComponent("u--input"), __easycom_1$4);
-    const _component_u_form_item = resolveEasycom(vue.resolveDynamicComponent("u-form-item"), __easycom_2$5);
-    const _component_u__form = resolveEasycom(vue.resolveDynamicComponent("u--form"), __easycom_3$2);
-    const _component_u_button = resolveEasycom(vue.resolveDynamicComponent("u-button"), __easycom_4$1);
-    const _component_u_checkbox = resolveEasycom(vue.resolveDynamicComponent("u-checkbox"), __easycom_5$2);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0);
+    const _component_u__input = resolveEasycom(vue.resolveDynamicComponent("u--input"), __easycom_1$2);
+    const _component_u_form_item = resolveEasycom(vue.resolveDynamicComponent("u-form-item"), __easycom_2$2);
+    const _component_u__form = resolveEasycom(vue.resolveDynamicComponent("u--form"), __easycom_3);
+    const _component_u_button = resolveEasycom(vue.resolveDynamicComponent("u-button"), __easycom_4);
+    const _component_u_checkbox = resolveEasycom(vue.resolveDynamicComponent("u-checkbox"), __easycom_5$1);
     const _component_u_checkbox_group = resolveEasycom(vue.resolveDynamicComponent("u-checkbox-group"), __easycom_6);
     return vue.openBlock(), vue.createElementBlock("view", { class: "login" }, [
       vue.createCommentVNode(" \u5BFC\u822A "),
@@ -14919,7 +14951,7 @@ if (uni.restoreGlobal) {
       ])
     ]);
   }
-  var PagesLoginRegisterRegister = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["render", _sfc_render$3], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/login/register/register.vue"]]);
+  const PagesLoginRegisterRegister = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["render", _sfc_render$3], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/login/register/register.vue"]]);
   const _sfc_main$3 = {
     data() {
       return {
@@ -14955,12 +14987,12 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$2(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$6);
-    const _component_u__input = resolveEasycom(vue.resolveDynamicComponent("u--input"), __easycom_1$4);
-    const _component_u_form_item = resolveEasycom(vue.resolveDynamicComponent("u-form-item"), __easycom_2$5);
-    const _component_u__form = resolveEasycom(vue.resolveDynamicComponent("u--form"), __easycom_3$2);
-    const _component_u_button = resolveEasycom(vue.resolveDynamicComponent("u-button"), __easycom_4$1);
-    const _component_u_checkbox = resolveEasycom(vue.resolveDynamicComponent("u-checkbox"), __easycom_5$2);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0);
+    const _component_u__input = resolveEasycom(vue.resolveDynamicComponent("u--input"), __easycom_1$2);
+    const _component_u_form_item = resolveEasycom(vue.resolveDynamicComponent("u-form-item"), __easycom_2$2);
+    const _component_u__form = resolveEasycom(vue.resolveDynamicComponent("u--form"), __easycom_3);
+    const _component_u_button = resolveEasycom(vue.resolveDynamicComponent("u-button"), __easycom_4);
+    const _component_u_checkbox = resolveEasycom(vue.resolveDynamicComponent("u-checkbox"), __easycom_5$1);
     const _component_u_checkbox_group = resolveEasycom(vue.resolveDynamicComponent("u-checkbox-group"), __easycom_6);
     return vue.openBlock(), vue.createElementBlock("view", { class: "login" }, [
       vue.createCommentVNode(" \u5BFC\u822A "),
@@ -15048,7 +15080,7 @@ if (uni.restoreGlobal) {
       ])
     ]);
   }
-  var PagesLoginInvitationCodeInvitationCode = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["render", _sfc_render$2], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/login/invitationCode/invitationCode.vue"]]);
+  const PagesLoginInvitationCodeInvitationCode = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["render", _sfc_render$2], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/login/invitationCode/invitationCode.vue"]]);
   const _sfc_main$2 = {
     data() {
       return {
@@ -15089,12 +15121,12 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$6);
-    const _component_u__input = resolveEasycom(vue.resolveDynamicComponent("u--input"), __easycom_1$4);
-    const _component_u_form_item = resolveEasycom(vue.resolveDynamicComponent("u-form-item"), __easycom_2$5);
-    const _component_u__form = resolveEasycom(vue.resolveDynamicComponent("u--form"), __easycom_3$2);
-    const _component_u_button = resolveEasycom(vue.resolveDynamicComponent("u-button"), __easycom_4$1);
-    const _component_u_checkbox = resolveEasycom(vue.resolveDynamicComponent("u-checkbox"), __easycom_5$2);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0);
+    const _component_u__input = resolveEasycom(vue.resolveDynamicComponent("u--input"), __easycom_1$2);
+    const _component_u_form_item = resolveEasycom(vue.resolveDynamicComponent("u-form-item"), __easycom_2$2);
+    const _component_u__form = resolveEasycom(vue.resolveDynamicComponent("u--form"), __easycom_3);
+    const _component_u_button = resolveEasycom(vue.resolveDynamicComponent("u-button"), __easycom_4);
+    const _component_u_checkbox = resolveEasycom(vue.resolveDynamicComponent("u-checkbox"), __easycom_5$1);
     const _component_u_checkbox_group = resolveEasycom(vue.resolveDynamicComponent("u-checkbox-group"), __easycom_6);
     return vue.openBlock(), vue.createElementBlock("view", { class: "login" }, [
       vue.createCommentVNode(" \u5BFC\u822A "),
@@ -15183,7 +15215,7 @@ if (uni.restoreGlobal) {
       ])
     ]);
   }
-  var PagesLoginRegisterPwdRegisterPwd = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", _sfc_render$1], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/login/registerPwd/registerPwd.vue"]]);
+  const PagesLoginRegisterPwdRegisterPwd = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", _sfc_render$1], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/login/registerPwd/registerPwd.vue"]]);
   const _sfc_main$1 = {
     data() {
       return {
@@ -15213,11 +15245,11 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$6);
-    const _component_u__input = resolveEasycom(vue.resolveDynamicComponent("u--input"), __easycom_1$4);
-    const _component_u_form_item = resolveEasycom(vue.resolveDynamicComponent("u-form-item"), __easycom_2$5);
-    const _component_u__form = resolveEasycom(vue.resolveDynamicComponent("u--form"), __easycom_3$2);
-    const _component_u_button = resolveEasycom(vue.resolveDynamicComponent("u-button"), __easycom_4$1);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0);
+    const _component_u__input = resolveEasycom(vue.resolveDynamicComponent("u--input"), __easycom_1$2);
+    const _component_u_form_item = resolveEasycom(vue.resolveDynamicComponent("u-form-item"), __easycom_2$2);
+    const _component_u__form = resolveEasycom(vue.resolveDynamicComponent("u--form"), __easycom_3);
+    const _component_u_button = resolveEasycom(vue.resolveDynamicComponent("u-button"), __easycom_4);
     return vue.openBlock(), vue.createElementBlock("view", { class: "forget-pwd" }, [
       vue.createCommentVNode(" \u5BFC\u822A\u6761 "),
       vue.createVNode(_component_u_navbar, {
@@ -15268,8 +15300,7 @@ if (uni.restoreGlobal) {
       ])
     ]);
   }
-  var PagesLoginForgetPwdForgetPwd = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", _sfc_render], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/login/forgetPwd/forgetPwd.vue"]]);
-  __definePage("pages/login/login", PagesLoginLogin);
+  const PagesLoginForgetPwdForgetPwd = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", _sfc_render], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/login/forgetPwd/forgetPwd.vue"]]);
   __definePage("pages/home/home", PagesHomeHome);
   __definePage("pages/trade/trade", PagesTradeTrade);
   __definePage("pages/assets/assets", PagesAssetsAssets);
@@ -15317,7 +15348,7 @@ if (uni.restoreGlobal) {
       formatAppLog("log", "at App.vue:12", "App Hide");
     }
   };
-  var App = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/App.vue"]]);
+  const App = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/App.vue"]]);
   const store = createStore({
     state: {
       init: "1234556"
@@ -16002,7 +16033,7 @@ if (uni.restoreGlobal) {
       ]);
     });
   })(wx$1);
-  var Fly = /* @__PURE__ */ getDefaultExportFromCjs(wx$1.exports);
+  const Fly = /* @__PURE__ */ getDefaultExportFromCjs(wx$1.exports);
   const install$1 = (app, vm) => {
     const fly = new Fly();
     fly.interceptors.request.use((request) => {
@@ -16021,7 +16052,7 @@ if (uni.restoreGlobal) {
     });
     app.config.globalProperties.$http = fly;
   };
-  var http = {
+  const http = {
     install: install$1
   };
   const { toString } = Object.prototype;
@@ -16149,7 +16180,7 @@ if (uni.restoreGlobal) {
     });
     return config3;
   };
-  var adapter = (config2) => new Promise((resolve, reject) => {
+  const adapter = (config2) => new Promise((resolve, reject) => {
     const fullPath = buildURL(buildFullPath(config2.baseURL, config2.url), config2.params);
     const _config = {
       url: fullPath,
@@ -16179,7 +16210,7 @@ if (uni.restoreGlobal) {
         "timeout",
         "formData"
       ];
-      requestTask = uni.uploadFile(__spreadValues(__spreadValues(__spreadValues({}, _config), otherConfig), mergeKeys$1(optionalKeys, config2)));
+      requestTask = uni.uploadFile({ ..._config, ...otherConfig, ...mergeKeys$1(optionalKeys, config2) });
     } else if (config2.method === "DOWNLOAD") {
       if (!isUndefined(config2.timeout)) {
         _config.timeout = config2.timeout;
@@ -16195,13 +16226,13 @@ if (uni.restoreGlobal) {
         "sslVerify",
         "firstIpv4"
       ];
-      requestTask = uni.request(__spreadValues(__spreadValues({}, _config), mergeKeys$1(optionalKeys, config2)));
+      requestTask = uni.request({ ..._config, ...mergeKeys$1(optionalKeys, config2) });
     }
     if (config2.getTask) {
       config2.getTask(requestTask, config2);
     }
   });
-  var dispatchRequest = (config2) => adapter(config2);
+  const dispatchRequest = (config2) => adapter(config2);
   function InterceptorManager() {
     this.handlers = [];
   }
@@ -16235,18 +16266,18 @@ if (uni.restoreGlobal) {
     });
     return config3;
   };
-  var mergeConfig = (globalsConfig, config2 = {}) => {
+  const mergeConfig = (globalsConfig, config2 = {}) => {
     const method2 = config2.method || globalsConfig.method || "GET";
     let config3 = {
       baseURL: globalsConfig.baseURL || "",
       method: method2,
       url: config2.url || "",
       params: config2.params || {},
-      custom: __spreadValues(__spreadValues({}, globalsConfig.custom || {}), config2.custom || {}),
+      custom: { ...globalsConfig.custom || {}, ...config2.custom || {} },
       header: deepMerge$1(globalsConfig.header || {}, config2.header || {})
     };
     const defaultToConfig2Keys = ["getTask", "validateStatus"];
-    config3 = __spreadValues(__spreadValues({}, config3), mergeKeys(defaultToConfig2Keys, globalsConfig, config2));
+    config3 = { ...config3, ...mergeKeys(defaultToConfig2Keys, globalsConfig, config2) };
     if (method2 === "DOWNLOAD") {
       if (!isUndefined(config2.timeout)) {
         config3.timeout = config2.timeout;
@@ -16280,11 +16311,11 @@ if (uni.restoreGlobal) {
         "sslVerify",
         "firstIpv4"
       ];
-      config3 = __spreadValues(__spreadValues({}, config3), mergeKeys(defaultsKeys, globalsConfig, config2));
+      config3 = { ...config3, ...mergeKeys(defaultsKeys, globalsConfig, config2) };
     }
     return config3;
   };
-  var defaults = {
+  const defaults = {
     baseURL: "",
     header: {},
     method: "GET",
@@ -16497,7 +16528,7 @@ if (uni.restoreGlobal) {
         arg = {};
         formatAppLog("warn", "at node_modules/uview-plus/libs/luch-request/core/Request.js:39", "\u8BBE\u7F6E\u5168\u5C40\u53C2\u6570\u5FC5\u987B\u63A5\u6536\u4E00\u4E2AObject");
       }
-      this.config = clone(__spreadValues(__spreadValues({}, defaults), arg));
+      this.config = clone({ ...defaults, ...arg });
       this.interceptors = {
         request: new InterceptorManager(),
         response: new InterceptorManager()
@@ -16525,38 +16556,43 @@ if (uni.restoreGlobal) {
       return this.middleware(config2);
     }
     get(url2, options = {}) {
-      return this.middleware(__spreadValues({
+      return this.middleware({
         url: url2,
-        method: "GET"
-      }, options));
+        method: "GET",
+        ...options
+      });
     }
     post(url2, data, options = {}) {
-      return this.middleware(__spreadValues({
+      return this.middleware({
         url: url2,
         data,
-        method: "POST"
-      }, options));
+        method: "POST",
+        ...options
+      });
     }
     put(url2, data, options = {}) {
-      return this.middleware(__spreadValues({
+      return this.middleware({
         url: url2,
         data,
-        method: "PUT"
-      }, options));
+        method: "PUT",
+        ...options
+      });
     }
     delete(url2, data, options = {}) {
-      return this.middleware(__spreadValues({
+      return this.middleware({
         url: url2,
         data,
-        method: "DELETE"
-      }, options));
+        method: "DELETE",
+        ...options
+      });
     }
     options(url2, data, options = {}) {
-      return this.middleware(__spreadValues({
+      return this.middleware({
         url: url2,
         data,
-        method: "OPTIONS"
-      }, options));
+        method: "OPTIONS",
+        ...options
+      });
     }
     upload(url2, config2 = {}) {
       config2.url = url2;
@@ -16657,7 +16693,7 @@ if (uni.restoreGlobal) {
       }
     }
   }
-  var route = new Router().route;
+  const route = new Router().route;
   function colorGradient(startColor = "rgb(0, 0, 0)", endColor = "rgb(255, 255, 255)", step = 10) {
     const startRGB = hexToRgb(startColor, false);
     const startR = startRGB[0];
@@ -16762,7 +16798,7 @@ if (uni.restoreGlobal) {
     }
     return sColor;
   }
-  var colorGradient$1 = {
+  const colorGradient$1 = {
     colorGradient,
     hexToRgb,
     rgbToHex,
@@ -16797,7 +16833,9 @@ if (uni.restoreGlobal) {
     return /^\d+$/.test(value);
   }
   function idCard(value) {
-    return /^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}([0-9]|X)$/.test(value);
+    return /^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}([0-9]|X)$/.test(
+      value
+    );
   }
   function carNo(value) {
     const xreg = /^[京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领A-Z]{1}[A-Z]{1}(([0-9]{5}[DF]$)|([DF][A-HJ-NP-Z0-9][0-9]{4}$))/;
@@ -16907,7 +16945,7 @@ if (uni.restoreGlobal) {
   function regExp(o) {
     return o && Object.prototype.toString.call(o) === "[object RegExp]";
   }
-  var test = {
+  const test = {
     email,
     mobile,
     url,
@@ -17179,7 +17217,9 @@ if (uni.restoreGlobal) {
   if (!String.prototype.padStart) {
     String.prototype.padStart = function(maxLength, fillString = " ") {
       if (Object.prototype.toString.call(fillString) !== "[object String]") {
-        throw new TypeError("fillString must be String");
+        throw new TypeError(
+          "fillString must be String"
+        );
       }
       const str = this;
       if (str.length >= maxLength)
@@ -17204,7 +17244,9 @@ if (uni.restoreGlobal) {
     } else if (typeof dateTime === "string" && /^\d+$/.test(dateTime.trim())) {
       date2 = new Date(Number(dateTime));
     } else {
-      date2 = new Date(typeof dateTime === "string" ? dateTime.replace(/-/g, "/") : dateTime);
+      date2 = new Date(
+        typeof dateTime === "string" ? dateTime.replace(/-/g, "/") : dateTime
+      );
     }
     const timeSource = {
       "y": date2.getFullYear().toString(),
@@ -17463,7 +17505,7 @@ if (uni.restoreGlobal) {
     uni.$u.color = deepMerge2(uni.$u.color, color2);
     uni.$u.zIndex = deepMerge2(uni.$u.zIndex, zIndex2);
   }
-  var index = {
+  const index = {
     range,
     getPx,
     sleep,
@@ -17494,7 +17536,7 @@ if (uni.restoreGlobal) {
     pages,
     setConfig
   };
-  var zIndex = {
+  const zIndex = {
     toast: 10090,
     noNetwork: 10080,
     popup: 10075,
@@ -17507,8 +17549,8 @@ if (uni.restoreGlobal) {
   let platform = "none";
   platform = "vue3";
   platform = "plus";
-  var platform$1 = platform;
-  const $u = __spreadProps(__spreadValues({
+  const platform$1 = platform;
+  const $u = {
     route,
     date: index.timeFormat,
     colorGradient: colorGradient$1.colorGradient,
@@ -17524,11 +17566,11 @@ if (uni.restoreGlobal) {
     throttle,
     mixin,
     mpMixin,
-    props: props$s
-  }, index), {
+    props: props$s,
+    ...index,
     color,
     platform: platform$1
-  });
+  };
   uni.$u = $u;
   const install = (Vue2) => {
     Vue2.config.globalProperties.$u = $u;
@@ -17537,7 +17579,7 @@ if (uni.restoreGlobal) {
     };
     Vue2.mixin(mixin);
   };
-  var uviewPlus = {
+  const uviewPlus = {
     install
   };
   var vueClipboard = { exports: {} };
@@ -17569,39 +17611,39 @@ if (uni.restoreGlobal) {
           return c("cut"), t2;
         };
         function o2(t2, e2) {
-          var n3, o3, t2 = (n3 = t2, o3 = document.documentElement.getAttribute("dir") === "rtl", (t2 = document.createElement("textarea")).style.fontSize = "12pt", t2.style.border = "0", t2.style.padding = "0", t2.style.margin = "0", t2.style.position = "absolute", t2.style[o3 ? "right" : "left"] = "-9999px", o3 = window.pageYOffset || document.documentElement.scrollTop, t2.style.top = "".concat(o3, "px"), t2.setAttribute("readonly", ""), t2.value = n3, t2);
+          var n3, o3, t2 = (n3 = t2, o3 = "rtl" === document.documentElement.getAttribute("dir"), (t2 = document.createElement("textarea")).style.fontSize = "12pt", t2.style.border = "0", t2.style.padding = "0", t2.style.margin = "0", t2.style.position = "absolute", t2.style[o3 ? "right" : "left"] = "-9999px", o3 = window.pageYOffset || document.documentElement.scrollTop, t2.style.top = "".concat(o3, "px"), t2.setAttribute("readonly", ""), t2.value = n3, t2);
           return e2.container.appendChild(t2), e2 = r2()(t2), c("copy"), t2.remove(), e2;
         }
         var f = function(t2) {
-          var e2 = 1 < arguments.length && arguments[1] !== void 0 ? arguments[1] : { container: document.body }, n3 = "";
-          return typeof t2 == "string" ? n3 = o2(t2, e2) : t2 instanceof HTMLInputElement && !["text", "search", "url", "tel", "password"].includes(t2 == null ? void 0 : t2.type) ? n3 = o2(t2.value, e2) : (n3 = r2()(t2), c("copy")), n3;
+          var e2 = 1 < arguments.length && void 0 !== arguments[1] ? arguments[1] : { container: document.body }, n3 = "";
+          return "string" == typeof t2 ? n3 = o2(t2, e2) : t2 instanceof HTMLInputElement && !["text", "search", "url", "tel", "password"].includes(null == t2 ? void 0 : t2.type) ? n3 = o2(t2.value, e2) : (n3 = r2()(t2), c("copy")), n3;
         };
         function l(t2) {
-          return (l = typeof Symbol == "function" && typeof Symbol.iterator == "symbol" ? function(t3) {
+          return (l = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(t3) {
             return typeof t3;
           } : function(t3) {
-            return t3 && typeof Symbol == "function" && t3.constructor === Symbol && t3 !== Symbol.prototype ? "symbol" : typeof t3;
+            return t3 && "function" == typeof Symbol && t3.constructor === Symbol && t3 !== Symbol.prototype ? "symbol" : typeof t3;
           })(t2);
         }
         var s = function() {
-          var t2 = 0 < arguments.length && arguments[0] !== void 0 ? arguments[0] : {}, e2 = t2.action, n3 = e2 === void 0 ? "copy" : e2, o3 = t2.container, e2 = t2.target, t2 = t2.text;
-          if (n3 !== "copy" && n3 !== "cut")
+          var t2 = 0 < arguments.length && void 0 !== arguments[0] ? arguments[0] : {}, e2 = t2.action, n3 = void 0 === e2 ? "copy" : e2, o3 = t2.container, e2 = t2.target, t2 = t2.text;
+          if ("copy" !== n3 && "cut" !== n3)
             throw new Error('Invalid "action" value, use either "copy" or "cut"');
-          if (e2 !== void 0) {
-            if (!e2 || l(e2) !== "object" || e2.nodeType !== 1)
+          if (void 0 !== e2) {
+            if (!e2 || "object" !== l(e2) || 1 !== e2.nodeType)
               throw new Error('Invalid "target" value, use a valid Element');
-            if (n3 === "copy" && e2.hasAttribute("disabled"))
+            if ("copy" === n3 && e2.hasAttribute("disabled"))
               throw new Error('Invalid "target" attribute. Please use "readonly" instead of "disabled" attribute');
-            if (n3 === "cut" && (e2.hasAttribute("readonly") || e2.hasAttribute("disabled")))
+            if ("cut" === n3 && (e2.hasAttribute("readonly") || e2.hasAttribute("disabled")))
               throw new Error(`Invalid "target" attribute. You can't cut text from elements with "readonly" or "disabled" attributes`);
           }
-          return t2 ? f(t2, { container: o3 }) : e2 ? n3 === "cut" ? a(e2) : f(e2, { container: o3 }) : void 0;
+          return t2 ? f(t2, { container: o3 }) : e2 ? "cut" === n3 ? a(e2) : f(e2, { container: o3 }) : void 0;
         };
         function p(t2) {
-          return (p = typeof Symbol == "function" && typeof Symbol.iterator == "symbol" ? function(t3) {
+          return (p = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(t3) {
             return typeof t3;
           } : function(t3) {
-            return t3 && typeof Symbol == "function" && t3.constructor === Symbol && t3 !== Symbol.prototype ? "symbol" : typeof t3;
+            return t3 && "function" == typeof Symbol && t3.constructor === Symbol && t3 !== Symbol.prototype ? "symbol" : typeof t3;
           })(t2);
         }
         function d(t2, e2) {
@@ -17617,11 +17659,11 @@ if (uni.restoreGlobal) {
         }
         function h(n3) {
           var o3 = function() {
-            if (typeof Reflect == "undefined" || !Reflect.construct)
+            if ("undefined" == typeof Reflect || !Reflect.construct)
               return false;
             if (Reflect.construct.sham)
               return false;
-            if (typeof Proxy == "function")
+            if ("function" == typeof Proxy)
               return true;
             try {
               return Date.prototype.toString.call(Reflect.construct(Date, [], function() {
@@ -17632,8 +17674,8 @@ if (uni.restoreGlobal) {
           }();
           return function() {
             var t2, e2 = v(n3);
-            return t2 = o3 ? (t2 = v(this).constructor, Reflect.construct(e2, arguments, t2)) : e2.apply(this, arguments), e2 = this, !(t2 = t2) || p(t2) !== "object" && typeof t2 != "function" ? function(t3) {
-              if (t3 !== void 0)
+            return t2 = o3 ? (t2 = v(this).constructor, Reflect.construct(e2, arguments, t2)) : e2.apply(this, arguments), e2 = this, !(t2 = t2) || "object" !== p(t2) && "function" != typeof t2 ? function(t3) {
+              if (void 0 !== t3)
                 return t3;
               throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
             }(e2) : t2;
@@ -17651,7 +17693,7 @@ if (uni.restoreGlobal) {
         }
         var b = function() {
           !function(t3, e3) {
-            if (typeof e3 != "function" && e3 !== null)
+            if ("function" != typeof e3 && null !== e3)
               throw new TypeError("Super expression must either be null or a function");
             t3.prototype = Object.create(e3 && e3.prototype, { constructor: { value: t3, writable: true, configurable: true } }), e3 && y(t3, e3);
           }(r3, i2());
@@ -17664,18 +17706,18 @@ if (uni.restoreGlobal) {
             }(this), (n4 = o3.call(this)).resolveOptions(e3), n4.listenClick(t3), n4;
           }
           return t2 = r3, n3 = [{ key: "copy", value: function(t3) {
-            var e3 = 1 < arguments.length && arguments[1] !== void 0 ? arguments[1] : { container: document.body };
+            var e3 = 1 < arguments.length && void 0 !== arguments[1] ? arguments[1] : { container: document.body };
             return f(t3, e3);
           } }, { key: "cut", value: function(t3) {
             return a(t3);
           } }, { key: "isSupported", value: function() {
-            var t3 = 0 < arguments.length && arguments[0] !== void 0 ? arguments[0] : ["copy", "cut"], t3 = typeof t3 == "string" ? [t3] : t3, e3 = !!document.queryCommandSupported;
+            var t3 = 0 < arguments.length && void 0 !== arguments[0] ? arguments[0] : ["copy", "cut"], t3 = "string" == typeof t3 ? [t3] : t3, e3 = !!document.queryCommandSupported;
             return t3.forEach(function(t4) {
               e3 = e3 && !!document.queryCommandSupported(t4);
             }), e3;
           } }], (e2 = [{ key: "resolveOptions", value: function() {
-            var t3 = 0 < arguments.length && arguments[0] !== void 0 ? arguments[0] : {};
-            this.action = typeof t3.action == "function" ? t3.action : this.defaultAction, this.target = typeof t3.target == "function" ? t3.target : this.defaultTarget, this.text = typeof t3.text == "function" ? t3.text : this.defaultText, this.container = p(t3.container) === "object" ? t3.container : document.body;
+            var t3 = 0 < arguments.length && void 0 !== arguments[0] ? arguments[0] : {};
+            this.action = "function" == typeof t3.action ? t3.action : this.defaultAction, this.target = "function" == typeof t3.target ? t3.target : this.defaultTarget, this.text = "function" == typeof t3.text ? t3.text : this.defaultText, this.container = "object" === p(t3.container) ? t3.container : document.body;
           } }, { key: "listenClick", value: function(t3) {
             var e3 = this;
             this.listener = u()(t3, "click", function(t4) {
@@ -17700,9 +17742,9 @@ if (uni.restoreGlobal) {
         }();
       }, 828: function(t) {
         var e;
-        typeof Element == "undefined" || Element.prototype.matches || ((e = Element.prototype).matches = e.matchesSelector || e.mozMatchesSelector || e.msMatchesSelector || e.oMatchesSelector || e.webkitMatchesSelector), t.exports = function(t2, e2) {
-          for (; t2 && t2.nodeType !== 9; ) {
-            if (typeof t2.matches == "function" && t2.matches(e2))
+        "undefined" == typeof Element || Element.prototype.matches || ((e = Element.prototype).matches = e.matchesSelector || e.mozMatchesSelector || e.msMatchesSelector || e.oMatchesSelector || e.webkitMatchesSelector), t.exports = function(t2, e2) {
+          for (; t2 && 9 !== t2.nodeType; ) {
+            if ("function" == typeof t2.matches && t2.matches(e2))
               return t2;
             t2 = t2.parentNode;
           }
@@ -17720,20 +17762,20 @@ if (uni.restoreGlobal) {
           } };
         }
         t.exports = function(t2, e2, n3, o2, r2) {
-          return typeof t2.addEventListener == "function" ? i2.apply(null, arguments) : typeof n3 == "function" ? i2.bind(null, document).apply(null, arguments) : (typeof t2 == "string" && (t2 = document.querySelectorAll(t2)), Array.prototype.map.call(t2, function(t3) {
+          return "function" == typeof t2.addEventListener ? i2.apply(null, arguments) : "function" == typeof n3 ? i2.bind(null, document).apply(null, arguments) : ("string" == typeof t2 && (t2 = document.querySelectorAll(t2)), Array.prototype.map.call(t2, function(t3) {
             return i2(t3, e2, n3, o2, r2);
           }));
         };
       }, 879: function(t, n2) {
         n2.node = function(t2) {
-          return t2 !== void 0 && t2 instanceof HTMLElement && t2.nodeType === 1;
+          return void 0 !== t2 && t2 instanceof HTMLElement && 1 === t2.nodeType;
         }, n2.nodeList = function(t2) {
           var e = Object.prototype.toString.call(t2);
-          return t2 !== void 0 && (e === "[object NodeList]" || e === "[object HTMLCollection]") && "length" in t2 && (t2.length === 0 || n2.node(t2[0]));
+          return void 0 !== t2 && ("[object NodeList]" === e || "[object HTMLCollection]" === e) && "length" in t2 && (0 === t2.length || n2.node(t2[0]));
         }, n2.string = function(t2) {
-          return typeof t2 == "string" || t2 instanceof String;
+          return "string" == typeof t2 || t2 instanceof String;
         }, n2.fn = function(t2) {
-          return Object.prototype.toString.call(t2) === "[object Function]";
+          return "[object Function]" === Object.prototype.toString.call(t2);
         };
       }, 370: function(t, e, n2) {
         var f = n2(879), l = n2(438);
@@ -17763,7 +17805,7 @@ if (uni.restoreGlobal) {
         };
       }, 817: function(t) {
         t.exports = function(t2) {
-          var e, n2 = t2.nodeName === "SELECT" ? (t2.focus(), t2.value) : t2.nodeName === "INPUT" || t2.nodeName === "TEXTAREA" ? ((e = t2.hasAttribute("readonly")) || t2.setAttribute("readonly", ""), t2.select(), t2.setSelectionRange(0, t2.value.length), e || t2.removeAttribute("readonly"), t2.value) : (t2.hasAttribute("contenteditable") && t2.focus(), n2 = window.getSelection(), (e = document.createRange()).selectNodeContents(t2), n2.removeAllRanges(), n2.addRange(e), n2.toString());
+          var e, n2 = "SELECT" === t2.nodeName ? (t2.focus(), t2.value) : "INPUT" === t2.nodeName || "TEXTAREA" === t2.nodeName ? ((e = t2.hasAttribute("readonly")) || t2.setAttribute("readonly", ""), t2.select(), t2.setSelectionRange(0, t2.value.length), e || t2.removeAttribute("readonly"), t2.value) : (t2.hasAttribute("contenteditable") && t2.focus(), n2 = window.getSelection(), (e = document.createRange()).selectNodeContents(t2), n2.removeAllRanges(), n2.addRange(e), n2.toString());
           return n2;
         };
       }, 279: function(t) {
@@ -17909,7 +17951,7 @@ if (uni.restoreGlobal) {
       module.exports = VueClipboard2;
     }
   })(vueClipboard);
-  var VueClipboard = vueClipboard.exports;
+  const VueClipboard = vueClipboard.exports;
   function createApp() {
     const app = vue.createVueApp(App);
     app.use(store);
