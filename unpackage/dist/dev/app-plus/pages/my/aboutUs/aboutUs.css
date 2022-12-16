@@ -586,7 +586,13 @@ uni-view[data-v-461e713c], uni-scroll-view[data-v-461e713c], uni-swiper-item[dat
 .about-us .au-content .au-box {
   width: 6rem;
   height: 6rem;
+  border-radius: 0.47813rem;
   background: #cccccc;
+}
+.about-us .au-content .au-box .ab-img {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 0.47813rem;
 }
 .about-us .au-content .au-title {
   width: 100%;

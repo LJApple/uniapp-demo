@@ -4,7 +4,9 @@
 		<u-navbar :fixed="false" leftIcon='/static/home/arrow-left-black.png' title="关于我们" height="92rpx" :autoBack="true">
 		</u-navbar>
 		<view class="au-content">
-			<view class="au-box"></view>
+			<view class="au-box">
+				<image class="ab-img" src="../../../static/logo.png"></image>
+			</view>
 			<view class="au-title">智能交易机器人</view>
 			<view class="au-current">当前版本{{currentVersion}}</view>
 			<view class="au-last">最新版本{{lastVersion}}</view>
@@ -43,7 +45,13 @@
 		.au-box {
 			width: 192rpx;
 			height: 192rpx;
+			border-radius: 15.3rpx;
 			background: rgba(204, 204, 204, 1);
+			.ab-img {
+				width: 192rpx;
+				height: 192rpx;
+				border-radius: 15.3rpx;
+			}
 		}
 		.au-title {
 			width: 100%;

@@ -1491,49 +1491,9 @@ if (uni.restoreGlobal) {
   };
   const props$r = {
     props: {
-      show: {
-        type: Boolean,
-        default: props$s.loadingIcon.show
-      },
-      color: {
+      bgColor: {
         type: String,
-        default: props$s.loadingIcon.color
-      },
-      textColor: {
-        type: String,
-        default: props$s.loadingIcon.textColor
-      },
-      vertical: {
-        type: Boolean,
-        default: props$s.loadingIcon.vertical
-      },
-      mode: {
-        type: String,
-        default: props$s.loadingIcon.mode
-      },
-      size: {
-        type: [String, Number],
-        default: props$s.loadingIcon.size
-      },
-      textSize: {
-        type: [String, Number],
-        default: props$s.loadingIcon.textSize
-      },
-      text: {
-        type: [String, Number],
-        default: props$s.loadingIcon.text
-      },
-      timingFunction: {
-        type: String,
-        default: props$s.loadingIcon.timingFunction
-      },
-      duration: {
-        type: [String, Number],
-        default: props$s.loadingIcon.duration
-      },
-      inactiveColor: {
-        type: String,
-        default: props$s.loadingIcon.inactiveColor
+        default: props$s.statusBar.bgColor
       }
     }
   };
@@ -1654,444 +1614,30 @@ if (uni.restoreGlobal) {
     }
     return target;
   };
-  const _sfc_main$13 = {
-    name: "u-loading-icon",
+  const _sfc_main$14 = {
+    name: "u-status-bar",
     mixins: [mpMixin, mixin, props$r],
     data() {
-      return {
-        array12: Array.from({
-          length: 12
-        }),
-        aniAngel: 360,
-        webviewHide: false,
-        loading: false
-      };
+      return {};
     },
     computed: {
-      otherBorderColor() {
-        const lightColor = uni.$u.colorGradient(this.color, "#ffffff", 100)[80];
-        if (this.mode === "circle") {
-          return this.inactiveColor ? this.inactiveColor : lightColor;
-        } else {
-          return "transparent";
-        }
-      }
-    },
-    watch: {
-      show(n) {
-      }
-    },
-    mounted() {
-      this.init();
-    },
-    methods: {
-      init() {
-        setTimeout(() => {
-          this.show && this.addEventListenerToWebview();
-        }, 20);
-      },
-      addEventListenerToWebview() {
-        const pages2 = getCurrentPages();
-        const page2 = pages2[pages2.length - 1];
-        const currentWebview = page2.$getAppWebview();
-        currentWebview.addEventListener("hide", () => {
-          this.webviewHide = true;
-        });
-        currentWebview.addEventListener("show", () => {
-          this.webviewHide = false;
-        });
+      style() {
+        const style = {};
+        style.height = uni.$u.addUnit(uni.$u.sys().statusBarHeight, "px");
+        style.backgroundColor = this.bgColor;
+        return uni.$u.deepMerge(style, uni.$u.addStyle(this.customStyle));
       }
     }
   };
-  function _sfc_render$12(_ctx, _cache, $props, $setup, $data, $options) {
-    return _ctx.show ? (vue.openBlock(), vue.createElementBlock("view", {
-      key: 0,
-      class: vue.normalizeClass(["u-loading-icon", [_ctx.vertical && "u-loading-icon--vertical"]]),
-      style: vue.normalizeStyle([_ctx.$u.addStyle(_ctx.customStyle)])
-    }, [
-      !$data.webviewHide ? (vue.openBlock(), vue.createElementBlock("view", {
-        key: 0,
-        class: vue.normalizeClass(["u-loading-icon__spinner", [`u-loading-icon__spinner--${_ctx.mode}`]]),
-        ref: "ani",
-        style: vue.normalizeStyle({
-          color: _ctx.color,
-          width: _ctx.$u.addUnit(_ctx.size),
-          height: _ctx.$u.addUnit(_ctx.size),
-          borderTopColor: _ctx.color,
-          borderBottomColor: $options.otherBorderColor,
-          borderLeftColor: $options.otherBorderColor,
-          borderRightColor: $options.otherBorderColor,
-          "animation-duration": `${_ctx.duration}ms`,
-          "animation-timing-function": _ctx.mode === "semicircle" || _ctx.mode === "circle" ? _ctx.timingFunction : ""
-        })
-      }, [
-        _ctx.mode === "spinner" ? (vue.openBlock(true), vue.createElementBlock(vue.Fragment, { key: 0 }, vue.renderList($data.array12, (item2, index2) => {
-          return vue.openBlock(), vue.createElementBlock("view", {
-            key: index2,
-            class: "u-loading-icon__dot"
-          });
-        }), 128)) : vue.createCommentVNode("v-if", true)
-      ], 6)) : vue.createCommentVNode("v-if", true),
-      _ctx.text ? (vue.openBlock(), vue.createElementBlock("text", {
-        key: 1,
-        class: "u-loading-icon__text",
-        style: vue.normalizeStyle({
-          fontSize: _ctx.$u.addUnit(_ctx.textSize),
-          color: _ctx.textColor
-        })
-      }, vue.toDisplayString(_ctx.text), 5)) : vue.createCommentVNode("v-if", true)
-    ], 6)) : vue.createCommentVNode("v-if", true);
-  }
-  const __easycom_1$5 = /* @__PURE__ */ _export_sfc(_sfc_main$13, [["render", _sfc_render$12], ["__scopeId", "data-v-00752c6d"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-loading-icon/u-loading-icon.vue"]]);
-  const props$q = {
-    props: {
-      length: {
-        type: [String, Number],
-        default: props$s.swiperIndicator.length
-      },
-      current: {
-        type: [String, Number],
-        default: props$s.swiperIndicator.current
-      },
-      indicatorActiveColor: {
-        type: String,
-        default: props$s.swiperIndicator.indicatorActiveColor
-      },
-      indicatorInactiveColor: {
-        type: String,
-        default: props$s.swiperIndicator.indicatorInactiveColor
-      },
-      indicatorMode: {
-        type: String,
-        default: props$s.swiperIndicator.indicatorMode
-      }
-    }
-  };
-  const _sfc_main$12 = {
-    name: "u-swiper-indicator",
-    mixins: [mpMixin, mixin, props$q],
-    data() {
-      return {
-        lineWidth: 22
-      };
-    },
-    computed: {
-      lineStyle() {
-        let style = {};
-        style.width = uni.$u.addUnit(this.lineWidth);
-        style.transform = `translateX(${uni.$u.addUnit(this.current * this.lineWidth)})`;
-        style.backgroundColor = this.indicatorActiveColor;
-        return style;
-      },
-      dotStyle() {
-        return (index2) => {
-          let style = {};
-          style.backgroundColor = index2 === this.current ? this.indicatorActiveColor : this.indicatorInactiveColor;
-          return style;
-        };
-      }
-    }
-  };
-  function _sfc_render$11(_ctx, _cache, $props, $setup, $data, $options) {
-    return vue.openBlock(), vue.createElementBlock("view", { class: "u-swiper-indicator" }, [
-      _ctx.indicatorMode === "line" ? (vue.openBlock(), vue.createElementBlock("view", {
-        key: 0,
-        class: vue.normalizeClass(["u-swiper-indicator__wrapper", [`u-swiper-indicator__wrapper--${_ctx.indicatorMode}`]]),
-        style: vue.normalizeStyle({
-          width: _ctx.$u.addUnit($data.lineWidth * _ctx.length),
-          backgroundColor: _ctx.indicatorInactiveColor
-        })
-      }, [
-        vue.createElementVNode("view", {
-          class: "u-swiper-indicator__wrapper--line__bar",
-          style: vue.normalizeStyle([$options.lineStyle])
-        }, null, 4)
-      ], 6)) : vue.createCommentVNode("v-if", true),
-      _ctx.indicatorMode === "dot" ? (vue.openBlock(), vue.createElementBlock("view", {
-        key: 1,
-        class: "u-swiper-indicator__wrapper"
-      }, [
-        (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(_ctx.length, (item2, index2) => {
-          return vue.openBlock(), vue.createElementBlock("view", {
-            class: vue.normalizeClass(["u-swiper-indicator__wrapper__dot", [index2 === _ctx.current && "u-swiper-indicator__wrapper__dot--active"]]),
-            key: index2,
-            style: vue.normalizeStyle([$options.dotStyle(index2)])
-          }, null, 6);
-        }), 128))
-      ])) : vue.createCommentVNode("v-if", true)
-    ]);
-  }
-  const __easycom_1$4 = /* @__PURE__ */ _export_sfc(_sfc_main$12, [["render", _sfc_render$11], ["__scopeId", "data-v-23112adb"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-swiper-indicator/u-swiper-indicator.vue"]]);
-  const props$p = {
-    props: {
-      list: {
-        type: Array,
-        default: props$s.swiper.list
-      },
-      indicator: {
-        type: Boolean,
-        default: props$s.swiper.indicator
-      },
-      indicatorActiveColor: {
-        type: String,
-        default: props$s.swiper.indicatorActiveColor
-      },
-      indicatorInactiveColor: {
-        type: String,
-        default: props$s.swiper.indicatorInactiveColor
-      },
-      indicatorStyle: {
-        type: [String, Object],
-        default: props$s.swiper.indicatorStyle
-      },
-      indicatorMode: {
-        type: String,
-        default: props$s.swiper.indicatorMode
-      },
-      autoplay: {
-        type: Boolean,
-        default: props$s.swiper.autoplay
-      },
-      current: {
-        type: [String, Number],
-        default: props$s.swiper.current
-      },
-      currentItemId: {
-        type: String,
-        default: props$s.swiper.currentItemId
-      },
-      interval: {
-        type: [String, Number],
-        default: props$s.swiper.interval
-      },
-      duration: {
-        type: [String, Number],
-        default: props$s.swiper.duration
-      },
-      circular: {
-        type: Boolean,
-        default: props$s.swiper.circular
-      },
-      previousMargin: {
-        type: [String, Number],
-        default: props$s.swiper.previousMargin
-      },
-      nextMargin: {
-        type: [String, Number],
-        default: props$s.swiper.nextMargin
-      },
-      acceleration: {
-        type: Boolean,
-        default: props$s.swiper.acceleration
-      },
-      displayMultipleItems: {
-        type: Number,
-        default: props$s.swiper.displayMultipleItems
-      },
-      easingFunction: {
-        type: String,
-        default: props$s.swiper.easingFunction
-      },
-      keyName: {
-        type: String,
-        default: props$s.swiper.keyName
-      },
-      imgMode: {
-        type: String,
-        default: props$s.swiper.imgMode
-      },
-      height: {
-        type: [String, Number],
-        default: props$s.swiper.height
-      },
-      bgColor: {
-        type: String,
-        default: props$s.swiper.bgColor
-      },
-      radius: {
-        type: [String, Number],
-        default: props$s.swiper.radius
-      },
-      loading: {
-        type: Boolean,
-        default: props$s.swiper.loading
-      },
-      showTitle: {
-        type: Boolean,
-        default: props$s.swiper.showTitle
-      }
-    }
-  };
-  const _sfc_main$11 = {
-    name: "u-swiper",
-    mixins: [mpMixin, mixin, props$p],
-    data() {
-      return {
-        currentIndex: 0
-      };
-    },
-    watch: {
-      current(val, preVal) {
-        if (val === preVal)
-          return;
-        this.currentIndex = val;
-      }
-    },
-    computed: {
-      itemStyle() {
-        return (index2) => {
-          const style = {};
-          if (this.nextMargin && this.previousMargin) {
-            style.borderRadius = uni.$u.addUnit(this.radius);
-            if (index2 !== this.currentIndex)
-              style.transform = "scale(0.92)";
-          }
-          return style;
-        };
-      }
-    },
-    methods: {
-      getItemType(item2) {
-        if (typeof item2 === "string")
-          return uni.$u.test.video(this.getSource(item2)) ? "video" : "image";
-        if (typeof item2 === "object" && this.keyName) {
-          if (!item2.type)
-            return uni.$u.test.video(this.getSource(item2)) ? "video" : "image";
-          if (item2.type === "image")
-            return "image";
-          if (item2.type === "video")
-            return "video";
-          return "image";
-        }
-      },
-      getSource(item2) {
-        if (typeof item2 === "string")
-          return item2;
-        if (typeof item2 === "object" && this.keyName)
-          return item2[this.keyName];
-        else
-          uni.$u.error("\u8BF7\u6309\u683C\u5F0F\u4F20\u9012\u5217\u8868\u53C2\u6570");
-        return "";
-      },
-      change(e) {
-        const {
-          current
-        } = e.detail;
-        this.pauseVideo(this.currentIndex);
-        this.currentIndex = current;
-        this.$emit("change", e.detail);
-      },
-      pauseVideo(index2) {
-        const lastItem = this.getSource(this.list[index2]);
-        if (uni.$u.test.video(lastItem)) {
-          const video2 = uni.createVideoContext(`video-${index2}`, this);
-          video2.pause();
-        }
-      },
-      getPoster(item2) {
-        return typeof item2 === "object" && item2.poster ? item2.poster : "";
-      },
-      clickHandler(index2) {
-        this.$emit("click", index2);
-      }
-    }
-  };
-  function _sfc_render$10(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_loading_icon = resolveEasycom(vue.resolveDynamicComponent("u-loading-icon"), __easycom_1$5);
-    const _component_u_swiper_indicator = resolveEasycom(vue.resolveDynamicComponent("u-swiper-indicator"), __easycom_1$4);
+  function _sfc_render$13(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("view", {
-      class: "u-swiper",
-      style: vue.normalizeStyle({
-        backgroundColor: _ctx.bgColor,
-        height: _ctx.$u.addUnit(_ctx.height),
-        borderRadius: _ctx.$u.addUnit(_ctx.radius)
-      })
+      style: vue.normalizeStyle([$options.style]),
+      class: "u-status-bar"
     }, [
-      _ctx.loading ? (vue.openBlock(), vue.createElementBlock("view", {
-        key: 0,
-        class: "u-swiper__loading"
-      }, [
-        vue.createVNode(_component_u_loading_icon, { mode: "circle" })
-      ])) : (vue.openBlock(), vue.createElementBlock("swiper", {
-        key: 1,
-        class: "u-swiper__wrapper",
-        style: vue.normalizeStyle({
-          height: _ctx.$u.addUnit(_ctx.height)
-        }),
-        onChange: _cache[0] || (_cache[0] = (...args) => $options.change && $options.change(...args)),
-        circular: _ctx.circular,
-        interval: _ctx.interval,
-        duration: _ctx.duration,
-        autoplay: _ctx.autoplay,
-        current: _ctx.current,
-        currentItemId: _ctx.currentItemId,
-        previousMargin: _ctx.$u.addUnit(_ctx.previousMargin),
-        nextMargin: _ctx.$u.addUnit(_ctx.nextMargin),
-        acceleration: _ctx.acceleration,
-        displayMultipleItems: _ctx.displayMultipleItems,
-        easingFunction: _ctx.easingFunction
-      }, [
-        (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(_ctx.list, (item2, index2) => {
-          return vue.openBlock(), vue.createElementBlock("swiper-item", {
-            class: "u-swiper__wrapper__item",
-            key: index2
-          }, [
-            vue.createElementVNode("view", {
-              class: "u-swiper__wrapper__item__wrapper",
-              style: vue.normalizeStyle([$options.itemStyle(index2)])
-            }, [
-              vue.createCommentVNode(" \u5728nvue\u4E2D\uFF0Cimage\u56FE\u7247\u7684\u5BBD\u5EA6\u9ED8\u8BA4\u4E3A\u5C4F\u5E55\u5BBD\u5EA6\uFF0C\u9700\u8981\u901A\u8FC7flex:1\u6491\u5F00\uFF0C\u53E6\u5916\u5FC5\u987B\u8BBE\u7F6E\u9AD8\u5EA6\u624D\u80FD\u663E\u793A\u56FE\u7247 "),
-              $options.getItemType(item2) === "image" ? (vue.openBlock(), vue.createElementBlock("image", {
-                key: 0,
-                class: "u-swiper__wrapper__item__wrapper__image",
-                src: $options.getSource(item2),
-                mode: _ctx.imgMode,
-                onClick: ($event) => $options.clickHandler(index2),
-                style: vue.normalizeStyle({
-                  height: _ctx.$u.addUnit(_ctx.height),
-                  borderRadius: _ctx.$u.addUnit(_ctx.radius)
-                })
-              }, null, 12, ["src", "mode", "onClick"])) : vue.createCommentVNode("v-if", true),
-              $options.getItemType(item2) === "video" ? (vue.openBlock(), vue.createElementBlock("video", {
-                key: 1,
-                class: "u-swiper__wrapper__item__wrapper__video",
-                id: `video-${index2}`,
-                "enable-progress-gesture": false,
-                src: $options.getSource(item2),
-                poster: $options.getPoster(item2),
-                title: _ctx.showTitle && _ctx.$u.test.object(item2) && item2.title ? item2.title : "",
-                style: vue.normalizeStyle({
-                  height: _ctx.$u.addUnit(_ctx.height)
-                }),
-                controls: "",
-                onClick: ($event) => $options.clickHandler(index2)
-              }, null, 12, ["id", "src", "poster", "title", "onClick"])) : vue.createCommentVNode("v-if", true),
-              _ctx.showTitle && _ctx.$u.test.object(item2) && item2.title && _ctx.$u.test.image($options.getSource(item2)) ? (vue.openBlock(), vue.createElementBlock("text", {
-                key: 2,
-                class: "u-swiper__wrapper__item__wrapper__title u-line-1"
-              }, vue.toDisplayString(item2.title), 1)) : vue.createCommentVNode("v-if", true)
-            ], 4)
-          ]);
-        }), 128))
-      ], 44, ["circular", "interval", "duration", "autoplay", "current", "currentItemId", "previousMargin", "nextMargin", "acceleration", "displayMultipleItems", "easingFunction"])),
-      vue.createElementVNode("view", {
-        class: "u-swiper__indicator",
-        style: vue.normalizeStyle([_ctx.$u.addStyle(_ctx.indicatorStyle)])
-      }, [
-        vue.renderSlot(_ctx.$slots, "indicator", {}, () => [
-          !_ctx.loading && _ctx.indicator && !_ctx.showTitle ? (vue.openBlock(), vue.createBlock(_component_u_swiper_indicator, {
-            key: 0,
-            indicatorActiveColor: _ctx.indicatorActiveColor,
-            indicatorInactiveColor: _ctx.indicatorInactiveColor,
-            length: _ctx.list.length,
-            current: $data.currentIndex,
-            indicatorMode: _ctx.indicatorMode
-          }, null, 8, ["indicatorActiveColor", "indicatorInactiveColor", "length", "current", "indicatorMode"])) : vue.createCommentVNode("v-if", true)
-        ], true)
-      ], 4)
+      vue.renderSlot(_ctx.$slots, "default", {}, void 0, true)
     ], 4);
   }
-  const __easycom_0$7 = /* @__PURE__ */ _export_sfc(_sfc_main$11, [["render", _sfc_render$10], ["__scopeId", "data-v-eda42115"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-swiper/u-swiper.vue"]]);
+  const __easycom_1$5 = /* @__PURE__ */ _export_sfc(_sfc_main$14, [["render", _sfc_render$13], ["__scopeId", "data-v-c0b45a48"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-status-bar/u-status-bar.vue"]]);
   const icons = {
     "uicon-level": "\uE693",
     "uicon-column-line": "\uE68E",
@@ -2306,7 +1852,7 @@ if (uni.restoreGlobal) {
     "uicon-zh": "\uE70A",
     "uicon-en": "\uE692"
   };
-  const props$o = {
+  const props$q = {
     props: {
       name: {
         type: String,
@@ -2378,13 +1924,13 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  const _sfc_main$10 = {
+  const _sfc_main$13 = {
     name: "u-icon",
     data() {
       return {};
     },
     emits: ["click"],
-    mixins: [mpMixin, mixin, props$o],
+    mixins: [mpMixin, mixin, props$q],
     computed: {
       uClasses() {
         let classes = [];
@@ -2425,7 +1971,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$$(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$12(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("view", {
       class: vue.normalizeClass(["u-icon", ["u-icon--" + _ctx.labelPos]]),
       onClick: _cache[0] || (_cache[0] = (...args) => $options.clickHandler && $options.clickHandler(...args))
@@ -2457,8 +2003,3189 @@ if (uni.restoreGlobal) {
       }, vue.toDisplayString(_ctx.label), 5)) : vue.createCommentVNode("v-if", true)
     ], 2);
   }
-  const __easycom_0$6 = /* @__PURE__ */ _export_sfc(_sfc_main$10, [["render", _sfc_render$$], ["__scopeId", "data-v-1c933a9a"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-icon/u-icon.vue"]]);
+  const __easycom_0$7 = /* @__PURE__ */ _export_sfc(_sfc_main$13, [["render", _sfc_render$12], ["__scopeId", "data-v-1c933a9a"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-icon/u-icon.vue"]]);
+  const props$p = {
+    props: {
+      safeAreaInsetTop: {
+        type: Boolean,
+        default: props$s.navbar.safeAreaInsetTop
+      },
+      placeholder: {
+        type: Boolean,
+        default: props$s.navbar.placeholder
+      },
+      fixed: {
+        type: Boolean,
+        default: props$s.navbar.fixed
+      },
+      border: {
+        type: Boolean,
+        default: props$s.navbar.border
+      },
+      leftIcon: {
+        type: String,
+        default: props$s.navbar.leftIcon
+      },
+      leftText: {
+        type: String,
+        default: props$s.navbar.leftText
+      },
+      rightText: {
+        type: String,
+        default: props$s.navbar.rightText
+      },
+      rightIcon: {
+        type: String,
+        default: props$s.navbar.rightIcon
+      },
+      title: {
+        type: [String, Number],
+        default: props$s.navbar.title
+      },
+      bgColor: {
+        type: String,
+        default: props$s.navbar.bgColor
+      },
+      titleWidth: {
+        type: [String, Number],
+        default: props$s.navbar.titleWidth
+      },
+      height: {
+        type: [String, Number],
+        default: props$s.navbar.height
+      },
+      leftIconSize: {
+        type: [String, Number],
+        default: props$s.navbar.leftIconSize
+      },
+      leftIconColor: {
+        type: String,
+        default: props$s.navbar.leftIconColor
+      },
+      autoBack: {
+        type: Boolean,
+        default: props$s.navbar.autoBack
+      },
+      titleStyle: {
+        type: [String, Object],
+        default: props$s.navbar.titleStyle
+      }
+    }
+  };
+  const _sfc_main$12 = {
+    name: "u-navbar",
+    mixins: [mpMixin, mixin, props$p],
+    data() {
+      return {};
+    },
+    methods: {
+      leftClick() {
+        this.$emit("leftClick");
+        if (this.autoBack) {
+          uni.navigateBack();
+        }
+      },
+      rightClick() {
+        this.$emit("rightClick");
+      }
+    }
+  };
+  function _sfc_render$11(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_u_status_bar = resolveEasycom(vue.resolveDynamicComponent("u-status-bar"), __easycom_1$5);
+    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$7);
+    return vue.openBlock(), vue.createElementBlock("view", { class: "u-navbar" }, [
+      _ctx.fixed && _ctx.placeholder ? (vue.openBlock(), vue.createElementBlock("view", {
+        key: 0,
+        class: "u-navbar__placeholder",
+        style: vue.normalizeStyle({
+          height: _ctx.$u.addUnit(_ctx.$u.getPx(_ctx.height) + _ctx.$u.sys().statusBarHeight, "px")
+        })
+      }, null, 4)) : vue.createCommentVNode("v-if", true),
+      vue.createElementVNode("view", {
+        class: vue.normalizeClass([_ctx.fixed && "u-navbar--fixed"])
+      }, [
+        _ctx.safeAreaInsetTop ? (vue.openBlock(), vue.createBlock(_component_u_status_bar, {
+          key: 0,
+          bgColor: _ctx.bgColor
+        }, null, 8, ["bgColor"])) : vue.createCommentVNode("v-if", true),
+        vue.createElementVNode("view", {
+          class: vue.normalizeClass(["u-navbar__content", [_ctx.border && "u-border-bottom"]]),
+          style: vue.normalizeStyle({
+            height: _ctx.$u.addUnit(_ctx.height),
+            backgroundColor: _ctx.bgColor
+          })
+        }, [
+          vue.createElementVNode("view", {
+            class: "u-navbar__content__left",
+            "hover-class": "u-navbar__content__left--hover",
+            "hover-start-time": "150",
+            onClick: _cache[0] || (_cache[0] = (...args) => $options.leftClick && $options.leftClick(...args))
+          }, [
+            vue.renderSlot(_ctx.$slots, "left", {}, () => [
+              _ctx.leftIcon ? (vue.openBlock(), vue.createBlock(_component_u_icon, {
+                key: 0,
+                name: _ctx.leftIcon,
+                size: _ctx.leftIconSize,
+                color: _ctx.leftIconColor
+              }, null, 8, ["name", "size", "color"])) : vue.createCommentVNode("v-if", true),
+              _ctx.leftText ? (vue.openBlock(), vue.createElementBlock("text", {
+                key: 1,
+                style: vue.normalizeStyle({
+                  color: _ctx.leftIconColor
+                }),
+                class: "u-navbar__content__left__text"
+              }, vue.toDisplayString(_ctx.leftText), 5)) : vue.createCommentVNode("v-if", true)
+            ], true)
+          ]),
+          vue.renderSlot(_ctx.$slots, "center", {}, () => [
+            vue.createElementVNode("text", {
+              class: "u-line-1 u-navbar__content__title",
+              style: vue.normalizeStyle([{
+                width: _ctx.$u.addUnit(_ctx.titleWidth)
+              }, _ctx.$u.addStyle(_ctx.titleStyle)])
+            }, vue.toDisplayString(_ctx.title), 5)
+          ], true),
+          _ctx.$slots.right || _ctx.rightIcon || _ctx.rightText ? (vue.openBlock(), vue.createElementBlock("view", {
+            key: 0,
+            class: "u-navbar__content__right",
+            onClick: _cache[1] || (_cache[1] = (...args) => $options.rightClick && $options.rightClick(...args))
+          }, [
+            vue.renderSlot(_ctx.$slots, "right", {}, () => [
+              _ctx.rightIcon ? (vue.openBlock(), vue.createBlock(_component_u_icon, {
+                key: 0,
+                name: _ctx.rightIcon,
+                size: "20"
+              }, null, 8, ["name"])) : vue.createCommentVNode("v-if", true),
+              _ctx.rightText ? (vue.openBlock(), vue.createElementBlock("text", {
+                key: 1,
+                class: "u-navbar__content__right__text"
+              }, vue.toDisplayString(_ctx.rightText), 1)) : vue.createCommentVNode("v-if", true)
+            ], true)
+          ])) : vue.createCommentVNode("v-if", true)
+        ], 6)
+      ], 2)
+    ]);
+  }
+  const __easycom_0$6 = /* @__PURE__ */ _export_sfc(_sfc_main$12, [["render", _sfc_render$11], ["__scopeId", "data-v-9d9e7ee2"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-navbar/u-navbar.vue"]]);
+  const props$o = {
+    props: {
+      modelValue: {
+        type: [String, Number],
+        default: props$s.input.value
+      },
+      type: {
+        type: String,
+        default: props$s.input.type
+      },
+      fixed: {
+        type: Boolean,
+        default: props$s.input.fixed
+      },
+      disabled: {
+        type: Boolean,
+        default: props$s.input.disabled
+      },
+      disabledColor: {
+        type: String,
+        default: props$s.input.disabledColor
+      },
+      clearable: {
+        type: Boolean,
+        default: props$s.input.clearable
+      },
+      password: {
+        type: Boolean,
+        default: props$s.input.password
+      },
+      maxlength: {
+        type: [String, Number],
+        default: props$s.input.maxlength
+      },
+      placeholder: {
+        type: String,
+        default: props$s.input.placeholder
+      },
+      placeholderClass: {
+        type: String,
+        default: props$s.input.placeholderClass
+      },
+      placeholderStyle: {
+        type: [String, Object],
+        default: props$s.input.placeholderStyle
+      },
+      showWordLimit: {
+        type: Boolean,
+        default: props$s.input.showWordLimit
+      },
+      confirmType: {
+        type: String,
+        default: props$s.input.confirmType
+      },
+      confirmHold: {
+        type: Boolean,
+        default: props$s.input.confirmHold
+      },
+      holdKeyboard: {
+        type: Boolean,
+        default: props$s.input.holdKeyboard
+      },
+      focus: {
+        type: Boolean,
+        default: props$s.input.focus
+      },
+      autoBlur: {
+        type: Boolean,
+        default: props$s.input.autoBlur
+      },
+      disableDefaultPadding: {
+        type: Boolean,
+        default: props$s.input.disableDefaultPadding
+      },
+      cursor: {
+        type: [String, Number],
+        default: props$s.input.cursor
+      },
+      cursorSpacing: {
+        type: [String, Number],
+        default: props$s.input.cursorSpacing
+      },
+      selectionStart: {
+        type: [String, Number],
+        default: props$s.input.selectionStart
+      },
+      selectionEnd: {
+        type: [String, Number],
+        default: props$s.input.selectionEnd
+      },
+      adjustPosition: {
+        type: Boolean,
+        default: props$s.input.adjustPosition
+      },
+      inputAlign: {
+        type: String,
+        default: props$s.input.inputAlign
+      },
+      fontSize: {
+        type: [String, Number],
+        default: props$s.input.fontSize
+      },
+      color: {
+        type: String,
+        default: props$s.input.color
+      },
+      prefixIcon: {
+        type: String,
+        default: props$s.input.prefixIcon
+      },
+      prefixIconStyle: {
+        type: [String, Object],
+        default: props$s.input.prefixIconStyle
+      },
+      suffixIcon: {
+        type: String,
+        default: props$s.input.suffixIcon
+      },
+      suffixIconStyle: {
+        type: [String, Object],
+        default: props$s.input.suffixIconStyle
+      },
+      border: {
+        type: String,
+        default: props$s.input.border
+      },
+      readonly: {
+        type: Boolean,
+        default: props$s.input.readonly
+      },
+      shape: {
+        type: String,
+        default: props$s.input.shape
+      },
+      formatter: {
+        type: [Function, null],
+        default: props$s.input.formatter
+      },
+      ignoreCompositionEvent: {
+        type: Boolean,
+        default: true
+      }
+    }
+  };
+  const _sfc_main$11 = {
+    name: "u-input",
+    mixins: [mpMixin, mixin, props$o],
+    data() {
+      return {
+        innerValue: "",
+        focused: false,
+        firstChange: true,
+        changeFromInner: false,
+        innerFormatter: (value) => value
+      };
+    },
+    watch: {
+      modelValue: {
+        immediate: true,
+        handler(newVal, oldVal) {
+          this.innerValue = newVal;
+          this.firstChange = false;
+          this.changeFromInner = false;
+        }
+      }
+    },
+    computed: {
+      isShowClear() {
+        const { clearable, readonly, focused, innerValue } = this;
+        return !!clearable && !readonly && !!focused && innerValue !== "";
+      },
+      inputClass() {
+        let classes = [], { border, disabled, shape } = this;
+        border === "surround" && (classes = classes.concat(["u-border", "u-input--radius"]));
+        classes.push(`u-input--${shape}`);
+        border === "bottom" && (classes = classes.concat([
+          "u-border-bottom",
+          "u-input--no-radius"
+        ]));
+        return classes.join(" ");
+      },
+      wrapperStyle() {
+        const style = {};
+        if (this.disabled) {
+          style.backgroundColor = this.disabledColor;
+        }
+        if (this.border === "none") {
+          style.padding = "0";
+        } else {
+          style.paddingTop = "6px";
+          style.paddingBottom = "6px";
+          style.paddingLeft = "9px";
+          style.paddingRight = "9px";
+        }
+        return uni.$u.deepMerge(style, uni.$u.addStyle(this.customStyle));
+      },
+      inputStyle() {
+        const style = {
+          color: this.color,
+          fontSize: uni.$u.addUnit(this.fontSize),
+          textAlign: this.inputAlign
+        };
+        return style;
+      }
+    },
+    emits: ["update:modelValue", "focus", "blur", "change", "confirm", "clear", "keyboardheightchange"],
+    methods: {
+      setFormatter(e) {
+        this.innerFormatter = e;
+      },
+      onInput(e) {
+        let { value = "" } = e.detail || {};
+        const formatter = this.formatter || this.innerFormatter;
+        const formatValue = formatter(value);
+        this.innerValue = value;
+        this.$nextTick(() => {
+          this.innerValue = formatValue;
+          this.valueChange();
+        });
+      },
+      onBlur(event2) {
+        this.$emit("blur", event2.detail.value);
+        uni.$u.sleep(50).then(() => {
+          this.focused = false;
+        });
+        uni.$u.formValidate(this, "blur");
+      },
+      onFocus(event2) {
+        this.focused = true;
+        this.$emit("focus");
+      },
+      onConfirm(event2) {
+        this.$emit("confirm", this.innerValue);
+      },
+      onkeyboardheightchange() {
+        this.$emit("keyboardheightchange");
+      },
+      valueChange() {
+        const value = this.innerValue;
+        this.$nextTick(() => {
+          this.$emit("update:modelValue", value);
+          this.changeFromInner = true;
+          this.$emit("change", value);
+          uni.$u.formValidate(this, "change");
+        });
+      },
+      onClear() {
+        this.innerValue = "";
+        this.$nextTick(() => {
+          this.valueChange();
+          this.$emit("clear");
+        });
+      },
+      clickHandler() {
+      }
+    }
+  };
+  function _sfc_render$10(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$7);
+    return vue.openBlock(), vue.createElementBlock("view", {
+      class: vue.normalizeClass(["u-input", $options.inputClass]),
+      style: vue.normalizeStyle([$options.wrapperStyle])
+    }, [
+      vue.createElementVNode("view", { class: "u-input__content" }, [
+        _ctx.prefixIcon || _ctx.$slots.prefix ? (vue.openBlock(), vue.createElementBlock("view", {
+          key: 0,
+          class: "u-input__content__prefix-icon"
+        }, [
+          vue.renderSlot(_ctx.$slots, "prefix", {}, () => [
+            vue.createVNode(_component_u_icon, {
+              name: _ctx.prefixIcon,
+              size: "18",
+              customStyle: _ctx.prefixIconStyle
+            }, null, 8, ["name", "customStyle"])
+          ], true)
+        ])) : vue.createCommentVNode("v-if", true),
+        vue.createElementVNode("view", {
+          class: "u-input__content__field-wrapper",
+          onClick: _cache[5] || (_cache[5] = (...args) => $options.clickHandler && $options.clickHandler(...args))
+        }, [
+          vue.createCommentVNode(" \u6839\u636Euni-app\u7684input\u7EC4\u4EF6\u6587\u6863\uFF0CH5\u548CAPP\u4E2D\u53EA\u8981\u58F0\u660E\u4E86password\u53C2\u6570(\u65E0\u8BBAtrue\u8FD8\u662Ffalse)\uFF0Ctype\u5747\u5931\u6548\uFF0C\u6B64\u65F6\n					\u4E3A\u4E86\u9632\u6B62type=number\u65F6\uFF0C\u53C8\u5B58\u5728password\u5C5E\u6027\uFF0Ctype\u65E0\u6548\uFF0C\u6B64\u65F6\u9700\u8981\u8BBE\u7F6Epassword\u4E3Aundefined\n				 "),
+          vue.createElementVNode("input", {
+            class: "u-input__content__field-wrapper__field",
+            style: vue.normalizeStyle([$options.inputStyle]),
+            type: _ctx.type,
+            focus: _ctx.focus,
+            cursor: _ctx.cursor,
+            value: $data.innerValue,
+            "auto-blur": _ctx.autoBlur,
+            disabled: _ctx.disabled || _ctx.readonly,
+            maxlength: _ctx.maxlength,
+            placeholder: _ctx.placeholder,
+            "placeholder-style": _ctx.placeholderStyle,
+            "placeholder-class": _ctx.placeholderClass,
+            "confirm-type": _ctx.confirmType,
+            "confirm-hold": _ctx.confirmHold,
+            "hold-keyboard": _ctx.holdKeyboard,
+            "cursor-spacing": _ctx.cursorSpacing,
+            "adjust-position": _ctx.adjustPosition,
+            "selection-end": _ctx.selectionEnd,
+            "selection-start": _ctx.selectionStart,
+            password: _ctx.password || _ctx.type === "password" || void 0,
+            ignoreCompositionEvent: _ctx.ignoreCompositionEvent,
+            onInput: _cache[0] || (_cache[0] = (...args) => $options.onInput && $options.onInput(...args)),
+            onBlur: _cache[1] || (_cache[1] = (...args) => $options.onBlur && $options.onBlur(...args)),
+            onFocus: _cache[2] || (_cache[2] = (...args) => $options.onFocus && $options.onFocus(...args)),
+            onConfirm: _cache[3] || (_cache[3] = (...args) => $options.onConfirm && $options.onConfirm(...args)),
+            onKeyboardheightchange: _cache[4] || (_cache[4] = (...args) => $options.onkeyboardheightchange && $options.onkeyboardheightchange(...args))
+          }, null, 44, ["type", "focus", "cursor", "value", "auto-blur", "disabled", "maxlength", "placeholder", "placeholder-style", "placeholder-class", "confirm-type", "confirm-hold", "hold-keyboard", "cursor-spacing", "adjust-position", "selection-end", "selection-start", "password", "ignoreCompositionEvent"])
+        ]),
+        $options.isShowClear ? (vue.openBlock(), vue.createElementBlock("view", {
+          key: 1,
+          class: "u-input__content__clear",
+          onClick: _cache[6] || (_cache[6] = (...args) => $options.onClear && $options.onClear(...args))
+        }, [
+          vue.createVNode(_component_u_icon, {
+            name: "close",
+            size: "11",
+            color: "#ffffff",
+            customStyle: "line-height: 12px"
+          })
+        ])) : vue.createCommentVNode("v-if", true),
+        _ctx.suffixIcon || _ctx.$slots.suffix ? (vue.openBlock(), vue.createElementBlock("view", {
+          key: 2,
+          class: "u-input__content__subfix-icon"
+        }, [
+          vue.renderSlot(_ctx.$slots, "suffix", {}, () => [
+            vue.createVNode(_component_u_icon, {
+              name: _ctx.suffixIcon,
+              size: "18",
+              customStyle: _ctx.suffixIconStyle
+            }, null, 8, ["name", "customStyle"])
+          ], true)
+        ])) : vue.createCommentVNode("v-if", true)
+      ])
+    ], 6);
+  }
+  const uvInput = /* @__PURE__ */ _export_sfc(_sfc_main$11, [["render", _sfc_render$10], ["__scopeId", "data-v-5904192e"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-input/u-input.vue"]]);
+  const _sfc_main$10 = {
+    name: "u--input",
+    mixins: [mpMixin, props$o, mixin],
+    components: {
+      uvInput
+    }
+  };
+  function _sfc_render$$(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_uvInput = vue.resolveComponent("uvInput");
+    return vue.openBlock(), vue.createBlock(_component_uvInput, {
+      modelValue: _ctx.modelValue,
+      "onUpdate:modelValue": _cache[0] || (_cache[0] = (e) => _ctx.$emit("update:modelValue", e)),
+      type: _ctx.type,
+      fixed: _ctx.fixed,
+      disabled: _ctx.disabled,
+      disabledColor: _ctx.disabledColor,
+      clearable: _ctx.clearable,
+      password: _ctx.password,
+      maxlength: _ctx.maxlength,
+      placeholder: _ctx.placeholder,
+      placeholderClass: _ctx.placeholderClass,
+      placeholderStyle: _ctx.placeholderStyle,
+      showWordLimit: _ctx.showWordLimit,
+      confirmType: _ctx.confirmType,
+      confirmHold: _ctx.confirmHold,
+      holdKeyboard: _ctx.holdKeyboard,
+      focus: _ctx.focus,
+      autoBlur: _ctx.autoBlur,
+      disableDefaultPadding: _ctx.disableDefaultPadding,
+      cursor: _ctx.cursor,
+      cursorSpacing: _ctx.cursorSpacing,
+      selectionStart: _ctx.selectionStart,
+      selectionEnd: _ctx.selectionEnd,
+      adjustPosition: _ctx.adjustPosition,
+      inputAlign: _ctx.inputAlign,
+      fontSize: _ctx.fontSize,
+      color: _ctx.color,
+      prefixIcon: _ctx.prefixIcon,
+      suffixIcon: _ctx.suffixIcon,
+      suffixIconStyle: _ctx.suffixIconStyle,
+      prefixIconStyle: _ctx.prefixIconStyle,
+      border: _ctx.border,
+      readonly: _ctx.readonly,
+      shape: _ctx.shape,
+      customStyle: _ctx.customStyle,
+      formatter: _ctx.formatter,
+      ignoreCompositionEvent: _ctx.ignoreCompositionEvent
+    }, {
+      default: vue.withCtx(() => [
+        vue.renderSlot(_ctx.$slots, "prefix", { slot: "prefix" }),
+        vue.renderSlot(_ctx.$slots, "suffix", { slot: "suffix" })
+      ]),
+      _: 3
+    }, 8, ["modelValue", "type", "fixed", "disabled", "disabledColor", "clearable", "password", "maxlength", "placeholder", "placeholderClass", "placeholderStyle", "showWordLimit", "confirmType", "confirmHold", "holdKeyboard", "focus", "autoBlur", "disableDefaultPadding", "cursor", "cursorSpacing", "selectionStart", "selectionEnd", "adjustPosition", "inputAlign", "fontSize", "color", "prefixIcon", "suffixIcon", "suffixIconStyle", "prefixIconStyle", "border", "readonly", "shape", "customStyle", "formatter", "ignoreCompositionEvent"]);
+  }
+  const __easycom_1$4 = /* @__PURE__ */ _export_sfc(_sfc_main$10, [["render", _sfc_render$$], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u--input/u--input.vue"]]);
   const props$n = {
+    props: {
+      color: {
+        type: String,
+        default: props$s.line.color
+      },
+      length: {
+        type: [String, Number],
+        default: props$s.line.length
+      },
+      direction: {
+        type: String,
+        default: props$s.line.direction
+      },
+      hairline: {
+        type: Boolean,
+        default: props$s.line.hairline
+      },
+      margin: {
+        type: [String, Number],
+        default: props$s.line.margin
+      },
+      dashed: {
+        type: Boolean,
+        default: props$s.line.dashed
+      }
+    }
+  };
+  const _sfc_main$$ = {
+    name: "u-line",
+    mixins: [mpMixin, mixin, props$n],
+    computed: {
+      lineStyle() {
+        const style = {};
+        style.margin = this.margin;
+        if (this.direction === "row") {
+          style.borderBottomWidth = "1px";
+          style.borderBottomStyle = this.dashed ? "dashed" : "solid";
+          style.width = uni.$u.addUnit(this.length);
+          if (this.hairline)
+            style.transform = "scaleY(0.5)";
+        } else {
+          style.borderLeftWidth = "1px";
+          style.borderLeftStyle = this.dashed ? "dashed" : "solid";
+          style.height = uni.$u.addUnit(this.length);
+          if (this.hairline)
+            style.transform = "scaleX(0.5)";
+        }
+        style.borderColor = this.color;
+        return uni.$u.deepMerge(style, uni.$u.addStyle(this.customStyle));
+      }
+    }
+  };
+  function _sfc_render$_(_ctx, _cache, $props, $setup, $data, $options) {
+    return vue.openBlock(), vue.createElementBlock("view", {
+      class: "u-line",
+      style: vue.normalizeStyle([$options.lineStyle])
+    }, null, 4);
+  }
+  const __easycom_0$5 = /* @__PURE__ */ _export_sfc(_sfc_main$$, [["render", _sfc_render$_], ["__scopeId", "data-v-bbd9963c"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-line/u-line.vue"]]);
+  const props$m = {
+    props: {
+      label: {
+        type: String,
+        default: props$s.formItem.label
+      },
+      prop: {
+        type: String,
+        default: props$s.formItem.prop
+      },
+      borderBottom: {
+        type: [String, Boolean],
+        default: props$s.formItem.borderBottom
+      },
+      labelWidth: {
+        type: [String, Number],
+        default: props$s.formItem.labelWidth
+      },
+      rightIcon: {
+        type: String,
+        default: props$s.formItem.rightIcon
+      },
+      leftIcon: {
+        type: String,
+        default: props$s.formItem.leftIcon
+      },
+      required: {
+        type: Boolean,
+        default: props$s.formItem.required
+      },
+      leftIconStyle: {
+        type: [String, Object],
+        default: props$s.formItem.leftIconStyle
+      }
+    }
+  };
+  const _sfc_main$_ = {
+    name: "u-form-item",
+    mixins: [mpMixin, mixin, props$m],
+    data() {
+      return {
+        message: "",
+        parentData: {
+          labelPosition: "left",
+          labelAlign: "left",
+          labelStyle: {},
+          labelWidth: 45,
+          errorType: "message"
+        }
+      };
+    },
+    computed: {
+      propsLine() {
+        return uni.$u.props.line;
+      }
+    },
+    mounted() {
+      this.init();
+    },
+    methods: {
+      init() {
+        this.updateParentData();
+        if (!this.parent) {
+          uni.$u.error("u-form-item\u9700\u8981\u7ED3\u5408u-form\u7EC4\u4EF6\u4F7F\u7528");
+        }
+      },
+      updateParentData() {
+        this.getParentData("u-form");
+      },
+      clearValidate() {
+        this.message = null;
+      },
+      resetField() {
+        const value = uni.$u.getProperty(this.parent.originalModel, this.prop);
+        uni.$u.setProperty(this.parent.model, this.prop, value);
+        this.message = null;
+      },
+      clickHandler() {
+        this.$emit("click");
+      }
+    }
+  };
+  function _sfc_render$Z(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$7);
+    const _component_u_line = resolveEasycom(vue.resolveDynamicComponent("u-line"), __easycom_0$5);
+    return vue.openBlock(), vue.createElementBlock("view", { class: "u-form-item" }, [
+      vue.createElementVNode("view", {
+        class: "u-form-item__body",
+        onClick: _cache[0] || (_cache[0] = (...args) => $options.clickHandler && $options.clickHandler(...args)),
+        style: vue.normalizeStyle([_ctx.$u.addStyle(_ctx.customStyle), {
+          flexDirection: $data.parentData.labelPosition === "left" ? "row" : "column"
+        }])
+      }, [
+        vue.createCommentVNode(' \u5FAE\u4FE1\u5C0F\u7A0B\u5E8F\u4E2D\uFF0C\u5C06\u4E00\u4E2A\u53C2\u6570\u8BBE\u7F6E\u7A7A\u5B57\u7B26\u4E32\uFF0C\u7ED3\u679C\u4F1A\u53D8\u6210\u5B57\u7B26\u4E32"true" '),
+        vue.renderSlot(_ctx.$slots, "label", {}, () => [
+          vue.createCommentVNode(" {{required}} "),
+          _ctx.required || _ctx.leftIcon || _ctx.label ? (vue.openBlock(), vue.createElementBlock("view", {
+            key: 0,
+            class: "u-form-item__body__left",
+            style: vue.normalizeStyle({
+              width: _ctx.$u.addUnit(_ctx.labelWidth || $data.parentData.labelWidth),
+              marginBottom: $data.parentData.labelPosition === "left" ? 0 : "5px"
+            })
+          }, [
+            vue.createCommentVNode(" \u4E3A\u4E86\u5757\u5BF9\u9F50 "),
+            vue.createElementVNode("view", { class: "u-form-item__body__left__content" }, [
+              vue.createCommentVNode(" nvue\u4E0D\u652F\u6301\u4F2A\u5143\u7D20before "),
+              _ctx.required ? (vue.openBlock(), vue.createElementBlock("text", {
+                key: 0,
+                class: "u-form-item__body__left__content__required"
+              }, "*")) : vue.createCommentVNode("v-if", true),
+              _ctx.leftIcon ? (vue.openBlock(), vue.createElementBlock("view", {
+                key: 1,
+                class: "u-form-item__body__left__content__icon"
+              }, [
+                vue.createVNode(_component_u_icon, {
+                  name: _ctx.leftIcon,
+                  "custom-style": _ctx.leftIconStyle
+                }, null, 8, ["name", "custom-style"])
+              ])) : vue.createCommentVNode("v-if", true),
+              vue.createElementVNode("text", {
+                class: "u-form-item__body__left__content__label",
+                style: vue.normalizeStyle([$data.parentData.labelStyle, {
+                  justifyContent: $data.parentData.labelAlign === "left" ? "flex-start" : $data.parentData.labelAlign === "center" ? "center" : "flex-end"
+                }])
+              }, vue.toDisplayString(_ctx.label), 5)
+            ])
+          ], 4)) : vue.createCommentVNode("v-if", true)
+        ], true),
+        vue.createElementVNode("view", { class: "u-form-item__body__right" }, [
+          vue.createElementVNode("view", { class: "u-form-item__body__right__content" }, [
+            vue.createElementVNode("view", { class: "u-form-item__body__right__content__slot" }, [
+              vue.renderSlot(_ctx.$slots, "default", {}, void 0, true)
+            ]),
+            _ctx.$slots.right ? (vue.openBlock(), vue.createElementBlock("view", {
+              key: 0,
+              class: "item__body__right__content__icon"
+            }, [
+              vue.renderSlot(_ctx.$slots, "right", {}, void 0, true)
+            ])) : vue.createCommentVNode("v-if", true)
+          ])
+        ])
+      ], 4),
+      vue.renderSlot(_ctx.$slots, "error", {}, () => [
+        !!$data.message && $data.parentData.errorType === "message" ? (vue.openBlock(), vue.createElementBlock("text", {
+          key: 0,
+          class: "u-form-item__body__right__message",
+          style: vue.normalizeStyle({
+            marginLeft: _ctx.$u.addUnit($data.parentData.labelPosition === "top" ? 0 : _ctx.labelWidth || $data.parentData.labelWidth)
+          })
+        }, vue.toDisplayString($data.message), 5)) : vue.createCommentVNode("v-if", true)
+      ], true),
+      _ctx.borderBottom ? (vue.openBlock(), vue.createBlock(_component_u_line, {
+        key: 0,
+        color: $data.message && $data.parentData.errorType === "border-bottom" ? _ctx.$u.color.error : $options.propsLine.color,
+        customStyle: `margin-top: ${$data.message && $data.parentData.errorType === "message" ? "5px" : 0}`
+      }, null, 8, ["color", "customStyle"])) : vue.createCommentVNode("v-if", true)
+    ]);
+  }
+  const __easycom_2$5 = /* @__PURE__ */ _export_sfc(_sfc_main$_, [["render", _sfc_render$Z], ["__scopeId", "data-v-b4fd400b"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-form-item/u-form-item.vue"]]);
+  const props$l = {
+    props: {
+      model: {
+        type: Object,
+        default: props$s.form.model
+      },
+      rules: {
+        type: [Object, Function, Array],
+        default: props$s.form.rules
+      },
+      errorType: {
+        type: String,
+        default: props$s.form.errorType
+      },
+      borderBottom: {
+        type: Boolean,
+        default: props$s.form.borderBottom
+      },
+      labelPosition: {
+        type: String,
+        default: props$s.form.labelPosition
+      },
+      labelWidth: {
+        type: [String, Number],
+        default: props$s.form.labelWidth
+      },
+      labelAlign: {
+        type: String,
+        default: props$s.form.labelAlign
+      },
+      labelStyle: {
+        type: Object,
+        default: props$s.form.labelStyle
+      }
+    }
+  };
+  const formatRegExp = /%[sdj%]/g;
+  let warning = function warning2() {
+  };
+  if (typeof process !== "undefined" && process.env && true && typeof window !== "undefined" && typeof document !== "undefined") {
+    warning = function warning2(type2, errors) {
+      if (typeof console !== "undefined" && console.warn) {
+        if (errors.every((e) => typeof e === "string")) {
+          formatAppLog("warn", "at node_modules/uview-plus/libs/util/async-validator.js:28", type2, errors);
+        }
+      }
+    };
+  }
+  function convertFieldsError(errors) {
+    if (!errors || !errors.length)
+      return null;
+    const fields = {};
+    errors.forEach((error2) => {
+      const { field } = error2;
+      fields[field] = fields[field] || [];
+      fields[field].push(error2);
+    });
+    return fields;
+  }
+  function format() {
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+    let i2 = 1;
+    const f = args[0];
+    const len = args.length;
+    if (typeof f === "function") {
+      return f.apply(null, args.slice(1));
+    }
+    if (typeof f === "string") {
+      let str = String(f).replace(formatRegExp, (x) => {
+        if (x === "%%") {
+          return "%";
+        }
+        if (i2 >= len) {
+          return x;
+        }
+        switch (x) {
+          case "%s":
+            return String(args[i2++]);
+          case "%d":
+            return Number(args[i2++]);
+          case "%j":
+            try {
+              return JSON.stringify(args[i2++]);
+            } catch (_) {
+              return "[Circular]";
+            }
+            break;
+          default:
+            return x;
+        }
+      });
+      for (let arg = args[i2]; i2 < len; arg = args[++i2]) {
+        str += ` ${arg}`;
+      }
+      return str;
+    }
+    return f;
+  }
+  function isNativeStringType(type2) {
+    return type2 === "string" || type2 === "url" || type2 === "hex" || type2 === "email" || type2 === "pattern";
+  }
+  function isEmptyValue(value, type2) {
+    if (value === void 0 || value === null) {
+      return true;
+    }
+    if (type2 === "array" && Array.isArray(value) && !value.length) {
+      return true;
+    }
+    if (isNativeStringType(type2) && typeof value === "string" && !value) {
+      return true;
+    }
+    return false;
+  }
+  function asyncParallelArray(arr, func2, callback) {
+    const results = [];
+    let total = 0;
+    const arrLength = arr.length;
+    function count(errors) {
+      results.push.apply(results, errors);
+      total++;
+      if (total === arrLength) {
+        callback(results);
+      }
+    }
+    arr.forEach((a) => {
+      func2(a, count);
+    });
+  }
+  function asyncSerialArray(arr, func2, callback) {
+    let index2 = 0;
+    const arrLength = arr.length;
+    function next(errors) {
+      if (errors && errors.length) {
+        callback(errors);
+        return;
+      }
+      const original = index2;
+      index2 += 1;
+      if (original < arrLength) {
+        func2(arr[original], next);
+      } else {
+        callback([]);
+      }
+    }
+    next([]);
+  }
+  function flattenObjArr(objArr) {
+    const ret = [];
+    Object.keys(objArr).forEach((k) => {
+      ret.push.apply(ret, objArr[k]);
+    });
+    return ret;
+  }
+  function asyncMap(objArr, option, func2, callback) {
+    if (option.first) {
+      const _pending = new Promise((resolve, reject) => {
+        const next = function next2(errors) {
+          callback(errors);
+          return errors.length ? reject({
+            errors,
+            fields: convertFieldsError(errors)
+          }) : resolve();
+        };
+        const flattenArr = flattenObjArr(objArr);
+        asyncSerialArray(flattenArr, func2, next);
+      });
+      _pending.catch((e) => e);
+      return _pending;
+    }
+    let firstFields = option.firstFields || [];
+    if (firstFields === true) {
+      firstFields = Object.keys(objArr);
+    }
+    const objArrKeys = Object.keys(objArr);
+    const objArrLength = objArrKeys.length;
+    let total = 0;
+    const results = [];
+    const pending = new Promise((resolve, reject) => {
+      const next = function next2(errors) {
+        results.push.apply(results, errors);
+        total++;
+        if (total === objArrLength) {
+          callback(results);
+          return results.length ? reject({
+            errors: results,
+            fields: convertFieldsError(results)
+          }) : resolve();
+        }
+      };
+      if (!objArrKeys.length) {
+        callback(results);
+        resolve();
+      }
+      objArrKeys.forEach((key) => {
+        const arr = objArr[key];
+        if (firstFields.indexOf(key) !== -1) {
+          asyncSerialArray(arr, func2, next);
+        } else {
+          asyncParallelArray(arr, func2, next);
+        }
+      });
+    });
+    pending.catch((e) => e);
+    return pending;
+  }
+  function complementError(rule) {
+    return function(oe) {
+      if (oe && oe.message) {
+        oe.field = oe.field || rule.fullField;
+        return oe;
+      }
+      return {
+        message: typeof oe === "function" ? oe() : oe,
+        field: oe.field || rule.fullField
+      };
+    };
+  }
+  function deepMerge$2(target, source) {
+    if (source) {
+      for (const s in source) {
+        if (source.hasOwnProperty(s)) {
+          const value = source[s];
+          if (typeof value === "object" && typeof target[s] === "object") {
+            target[s] = { ...target[s], ...value };
+          } else {
+            target[s] = value;
+          }
+        }
+      }
+    }
+    return target;
+  }
+  function required(rule, value, source, errors, options, type2) {
+    if (rule.required && (!source.hasOwnProperty(rule.field) || isEmptyValue(value, type2 || rule.type))) {
+      errors.push(format(options.messages.required, rule.fullField));
+    }
+  }
+  function whitespace(rule, value, source, errors, options) {
+    if (/^\s+$/.test(value) || value === "") {
+      errors.push(format(options.messages.whitespace, rule.fullField));
+    }
+  }
+  const pattern = {
+    email: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+    url: new RegExp(
+      "^(?!mailto:)(?:(?:http|https|ftp)://|//)(?:\\S+(?::\\S*)?@)?(?:(?:(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[0-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z\\u00a1-\\uffff0-9]+-*)*[a-z\\u00a1-\\uffff0-9]+)(?:\\.(?:[a-z\\u00a1-\\uffff0-9]+-*)*[a-z\\u00a1-\\uffff0-9]+)*(?:\\.(?:[a-z\\u00a1-\\uffff]{2,})))|localhost)(?::\\d{2,5})?(?:(/|\\?|#)[^\\s]*)?$",
+      "i"
+    ),
+    hex: /^#?([a-f0-9]{6}|[a-f0-9]{3})$/i
+  };
+  var types = {
+    integer: function integer2(value) {
+      return /^(-)?\d+$/.test(value);
+    },
+    float: function float(value) {
+      return /^(-)?\d+(\.\d+)?$/.test(value);
+    },
+    array: function array2(value) {
+      return Array.isArray(value);
+    },
+    regexp: function regexp2(value) {
+      if (value instanceof RegExp) {
+        return true;
+      }
+      try {
+        return !!new RegExp(value);
+      } catch (e) {
+        return false;
+      }
+    },
+    date: function date2(value) {
+      return typeof value.getTime === "function" && typeof value.getMonth === "function" && typeof value.getYear === "function";
+    },
+    number: function number2(value) {
+      if (isNaN(value)) {
+        return false;
+      }
+      return typeof +value === "number";
+    },
+    object: function object2(value) {
+      return typeof value === "object" && !types.array(value);
+    },
+    method: function method2(value) {
+      return typeof value === "function";
+    },
+    email: function email2(value) {
+      return typeof value === "string" && !!value.match(pattern.email) && value.length < 255;
+    },
+    url: function url2(value) {
+      return typeof value === "string" && !!value.match(pattern.url);
+    },
+    hex: function hex(value) {
+      return typeof value === "string" && !!value.match(pattern.hex);
+    }
+  };
+  function type(rule, value, source, errors, options) {
+    if (rule.required && value === void 0) {
+      required(rule, value, source, errors, options);
+      return;
+    }
+    const custom = ["integer", "float", "array", "regexp", "object", "method", "email", "number", "date", "url", "hex"];
+    const ruleType = rule.type;
+    if (custom.indexOf(ruleType) > -1) {
+      if (!types[ruleType](value)) {
+        errors.push(format(options.messages.types[ruleType], rule.fullField, rule.type));
+      }
+    } else if (ruleType && typeof value !== rule.type) {
+      errors.push(format(options.messages.types[ruleType], rule.fullField, rule.type));
+    }
+  }
+  function range$2(rule, value, source, errors, options) {
+    const len = typeof rule.len === "number";
+    const min = typeof rule.min === "number";
+    const max = typeof rule.max === "number";
+    const spRegexp = /[\uD800-\uDBFF][\uDC00-\uDFFF]/g;
+    let val = value;
+    let key = null;
+    const num = typeof value === "number";
+    const str = typeof value === "string";
+    const arr = Array.isArray(value);
+    if (num) {
+      key = "number";
+    } else if (str) {
+      key = "string";
+    } else if (arr) {
+      key = "array";
+    }
+    if (!key) {
+      return false;
+    }
+    if (arr) {
+      val = value.length;
+    }
+    if (str) {
+      val = value.replace(spRegexp, "_").length;
+    }
+    if (len) {
+      if (val !== rule.len) {
+        errors.push(format(options.messages[key].len, rule.fullField, rule.len));
+      }
+    } else if (min && !max && val < rule.min) {
+      errors.push(format(options.messages[key].min, rule.fullField, rule.min));
+    } else if (max && !min && val > rule.max) {
+      errors.push(format(options.messages[key].max, rule.fullField, rule.max));
+    } else if (min && max && (val < rule.min || val > rule.max)) {
+      errors.push(format(options.messages[key].range, rule.fullField, rule.min, rule.max));
+    }
+  }
+  const ENUM = "enum";
+  function enumerable(rule, value, source, errors, options) {
+    rule[ENUM] = Array.isArray(rule[ENUM]) ? rule[ENUM] : [];
+    if (rule[ENUM].indexOf(value) === -1) {
+      errors.push(format(options.messages[ENUM], rule.fullField, rule[ENUM].join(", ")));
+    }
+  }
+  function pattern$1(rule, value, source, errors, options) {
+    if (rule.pattern) {
+      if (rule.pattern instanceof RegExp) {
+        rule.pattern.lastIndex = 0;
+        if (!rule.pattern.test(value)) {
+          errors.push(format(options.messages.pattern.mismatch, rule.fullField, value, rule.pattern));
+        }
+      } else if (typeof rule.pattern === "string") {
+        const _pattern = new RegExp(rule.pattern);
+        if (!_pattern.test(value)) {
+          errors.push(format(options.messages.pattern.mismatch, rule.fullField, value, rule.pattern));
+        }
+      }
+    }
+  }
+  const rules = {
+    required,
+    whitespace,
+    type,
+    range: range$2,
+    enum: enumerable,
+    pattern: pattern$1
+  };
+  function string$1(rule, value, callback, source, options) {
+    const errors = [];
+    const validate = rule.required || !rule.required && source.hasOwnProperty(rule.field);
+    if (validate) {
+      if (isEmptyValue(value, "string") && !rule.required) {
+        return callback();
+      }
+      rules.required(rule, value, source, errors, options, "string");
+      if (!isEmptyValue(value, "string")) {
+        rules.type(rule, value, source, errors, options);
+        rules.range(rule, value, source, errors, options);
+        rules.pattern(rule, value, source, errors, options);
+        if (rule.whitespace === true) {
+          rules.whitespace(rule, value, source, errors, options);
+        }
+      }
+    }
+    callback(errors);
+  }
+  function method(rule, value, callback, source, options) {
+    const errors = [];
+    const validate = rule.required || !rule.required && source.hasOwnProperty(rule.field);
+    if (validate) {
+      if (isEmptyValue(value) && !rule.required) {
+        return callback();
+      }
+      rules.required(rule, value, source, errors, options);
+      if (value !== void 0) {
+        rules.type(rule, value, source, errors, options);
+      }
+    }
+    callback(errors);
+  }
+  function number$1(rule, value, callback, source, options) {
+    const errors = [];
+    const validate = rule.required || !rule.required && source.hasOwnProperty(rule.field);
+    if (validate) {
+      if (value === "") {
+        value = void 0;
+      }
+      if (isEmptyValue(value) && !rule.required) {
+        return callback();
+      }
+      rules.required(rule, value, source, errors, options);
+      if (value !== void 0) {
+        rules.type(rule, value, source, errors, options);
+        rules.range(rule, value, source, errors, options);
+      }
+    }
+    callback(errors);
+  }
+  function _boolean(rule, value, callback, source, options) {
+    const errors = [];
+    const validate = rule.required || !rule.required && source.hasOwnProperty(rule.field);
+    if (validate) {
+      if (isEmptyValue(value) && !rule.required) {
+        return callback();
+      }
+      rules.required(rule, value, source, errors, options);
+      if (value !== void 0) {
+        rules.type(rule, value, source, errors, options);
+      }
+    }
+    callback(errors);
+  }
+  function regexp(rule, value, callback, source, options) {
+    const errors = [];
+    const validate = rule.required || !rule.required && source.hasOwnProperty(rule.field);
+    if (validate) {
+      if (isEmptyValue(value) && !rule.required) {
+        return callback();
+      }
+      rules.required(rule, value, source, errors, options);
+      if (!isEmptyValue(value)) {
+        rules.type(rule, value, source, errors, options);
+      }
+    }
+    callback(errors);
+  }
+  function integer(rule, value, callback, source, options) {
+    const errors = [];
+    const validate = rule.required || !rule.required && source.hasOwnProperty(rule.field);
+    if (validate) {
+      if (isEmptyValue(value) && !rule.required) {
+        return callback();
+      }
+      rules.required(rule, value, source, errors, options);
+      if (value !== void 0) {
+        rules.type(rule, value, source, errors, options);
+        rules.range(rule, value, source, errors, options);
+      }
+    }
+    callback(errors);
+  }
+  function floatFn(rule, value, callback, source, options) {
+    const errors = [];
+    const validate = rule.required || !rule.required && source.hasOwnProperty(rule.field);
+    if (validate) {
+      if (isEmptyValue(value) && !rule.required) {
+        return callback();
+      }
+      rules.required(rule, value, source, errors, options);
+      if (value !== void 0) {
+        rules.type(rule, value, source, errors, options);
+        rules.range(rule, value, source, errors, options);
+      }
+    }
+    callback(errors);
+  }
+  function array$1(rule, value, callback, source, options) {
+    const errors = [];
+    const validate = rule.required || !rule.required && source.hasOwnProperty(rule.field);
+    if (validate) {
+      if (isEmptyValue(value, "array") && !rule.required) {
+        return callback();
+      }
+      rules.required(rule, value, source, errors, options, "array");
+      if (!isEmptyValue(value, "array")) {
+        rules.type(rule, value, source, errors, options);
+        rules.range(rule, value, source, errors, options);
+      }
+    }
+    callback(errors);
+  }
+  function object$1(rule, value, callback, source, options) {
+    const errors = [];
+    const validate = rule.required || !rule.required && source.hasOwnProperty(rule.field);
+    if (validate) {
+      if (isEmptyValue(value) && !rule.required) {
+        return callback();
+      }
+      rules.required(rule, value, source, errors, options);
+      if (value !== void 0) {
+        rules.type(rule, value, source, errors, options);
+      }
+    }
+    callback(errors);
+  }
+  const ENUM$1 = "enum";
+  function enumerable$1(rule, value, callback, source, options) {
+    const errors = [];
+    const validate = rule.required || !rule.required && source.hasOwnProperty(rule.field);
+    if (validate) {
+      if (isEmptyValue(value) && !rule.required) {
+        return callback();
+      }
+      rules.required(rule, value, source, errors, options);
+      if (value !== void 0) {
+        rules[ENUM$1](rule, value, source, errors, options);
+      }
+    }
+    callback(errors);
+  }
+  function pattern$2(rule, value, callback, source, options) {
+    const errors = [];
+    const validate = rule.required || !rule.required && source.hasOwnProperty(rule.field);
+    if (validate) {
+      if (isEmptyValue(value, "string") && !rule.required) {
+        return callback();
+      }
+      rules.required(rule, value, source, errors, options);
+      if (!isEmptyValue(value, "string")) {
+        rules.pattern(rule, value, source, errors, options);
+      }
+    }
+    callback(errors);
+  }
+  function date$1(rule, value, callback, source, options) {
+    const errors = [];
+    const validate = rule.required || !rule.required && source.hasOwnProperty(rule.field);
+    if (validate) {
+      if (isEmptyValue(value) && !rule.required) {
+        return callback();
+      }
+      rules.required(rule, value, source, errors, options);
+      if (!isEmptyValue(value)) {
+        let dateObject;
+        if (typeof value === "number") {
+          dateObject = new Date(value);
+        } else {
+          dateObject = value;
+        }
+        rules.type(rule, dateObject, source, errors, options);
+        if (dateObject) {
+          rules.range(rule, dateObject.getTime(), source, errors, options);
+        }
+      }
+    }
+    callback(errors);
+  }
+  function required$1(rule, value, callback, source, options) {
+    const errors = [];
+    const type2 = Array.isArray(value) ? "array" : typeof value;
+    rules.required(rule, value, source, errors, options, type2);
+    callback(errors);
+  }
+  function type$1(rule, value, callback, source, options) {
+    const ruleType = rule.type;
+    const errors = [];
+    const validate = rule.required || !rule.required && source.hasOwnProperty(rule.field);
+    if (validate) {
+      if (isEmptyValue(value, ruleType) && !rule.required) {
+        return callback();
+      }
+      rules.required(rule, value, source, errors, options, ruleType);
+      if (!isEmptyValue(value, ruleType)) {
+        rules.type(rule, value, source, errors, options);
+      }
+    }
+    callback(errors);
+  }
+  function any(rule, value, callback, source, options) {
+    const errors = [];
+    const validate = rule.required || !rule.required && source.hasOwnProperty(rule.field);
+    if (validate) {
+      if (isEmptyValue(value) && !rule.required) {
+        return callback();
+      }
+      rules.required(rule, value, source, errors, options);
+    }
+    callback(errors);
+  }
+  const validators = {
+    string: string$1,
+    method,
+    number: number$1,
+    boolean: _boolean,
+    regexp,
+    integer,
+    float: floatFn,
+    array: array$1,
+    object: object$1,
+    enum: enumerable$1,
+    pattern: pattern$2,
+    date: date$1,
+    url: type$1,
+    hex: type$1,
+    email: type$1,
+    required: required$1,
+    any
+  };
+  function newMessages() {
+    return {
+      default: "Validation error on field %s",
+      required: "%s is required",
+      enum: "%s must be one of %s",
+      whitespace: "%s cannot be empty",
+      date: {
+        format: "%s date %s is invalid for format %s",
+        parse: "%s date could not be parsed, %s is invalid ",
+        invalid: "%s date %s is invalid"
+      },
+      types: {
+        string: "%s is not a %s",
+        method: "%s is not a %s (function)",
+        array: "%s is not an %s",
+        object: "%s is not an %s",
+        number: "%s is not a %s",
+        date: "%s is not a %s",
+        boolean: "%s is not a %s",
+        integer: "%s is not an %s",
+        float: "%s is not a %s",
+        regexp: "%s is not a valid %s",
+        email: "%s is not a valid %s",
+        url: "%s is not a valid %s",
+        hex: "%s is not a valid %s"
+      },
+      string: {
+        len: "%s must be exactly %s characters",
+        min: "%s must be at least %s characters",
+        max: "%s cannot be longer than %s characters",
+        range: "%s must be between %s and %s characters"
+      },
+      number: {
+        len: "%s must equal %s",
+        min: "%s cannot be less than %s",
+        max: "%s cannot be greater than %s",
+        range: "%s must be between %s and %s"
+      },
+      array: {
+        len: "%s must be exactly %s in length",
+        min: "%s cannot be less than %s in length",
+        max: "%s cannot be greater than %s in length",
+        range: "%s must be between %s and %s in length"
+      },
+      pattern: {
+        mismatch: "%s value %s does not match pattern %s"
+      },
+      clone: function clone2() {
+        const cloned = JSON.parse(JSON.stringify(this));
+        cloned.clone = this.clone;
+        return cloned;
+      }
+    };
+  }
+  const messages = newMessages();
+  function Schema(descriptor) {
+    this.rules = null;
+    this._messages = messages;
+    this.define(descriptor);
+  }
+  Schema.prototype = {
+    messages: function messages2(_messages) {
+      if (_messages) {
+        this._messages = deepMerge$2(newMessages(), _messages);
+      }
+      return this._messages;
+    },
+    define: function define(rules2) {
+      if (!rules2) {
+        throw new Error("Cannot configure a schema with no rules");
+      }
+      if (typeof rules2 !== "object" || Array.isArray(rules2)) {
+        throw new Error("Rules must be an object");
+      }
+      this.rules = {};
+      let z;
+      let item2;
+      for (z in rules2) {
+        if (rules2.hasOwnProperty(z)) {
+          item2 = rules2[z];
+          this.rules[z] = Array.isArray(item2) ? item2 : [item2];
+        }
+      }
+    },
+    validate: function validate(source_, o, oc) {
+      const _this = this;
+      if (o === void 0) {
+        o = {};
+      }
+      if (oc === void 0) {
+        oc = function oc2() {
+        };
+      }
+      let source = source_;
+      let options = o;
+      let callback = oc;
+      if (typeof options === "function") {
+        callback = options;
+        options = {};
+      }
+      if (!this.rules || Object.keys(this.rules).length === 0) {
+        if (callback) {
+          callback();
+        }
+        return Promise.resolve();
+      }
+      function complete(results) {
+        let i2;
+        let errors = [];
+        let fields = {};
+        function add(e) {
+          if (Array.isArray(e)) {
+            let _errors;
+            errors = (_errors = errors).concat.apply(_errors, e);
+          } else {
+            errors.push(e);
+          }
+        }
+        for (i2 = 0; i2 < results.length; i2++) {
+          add(results[i2]);
+        }
+        if (!errors.length) {
+          errors = null;
+          fields = null;
+        } else {
+          fields = convertFieldsError(errors);
+        }
+        callback(errors, fields);
+      }
+      if (options.messages) {
+        let messages$1 = this.messages();
+        if (messages$1 === messages) {
+          messages$1 = newMessages();
+        }
+        deepMerge$2(messages$1, options.messages);
+        options.messages = messages$1;
+      } else {
+        options.messages = this.messages();
+      }
+      let arr;
+      let value;
+      const series = {};
+      const keys = options.keys || Object.keys(this.rules);
+      keys.forEach((z) => {
+        arr = _this.rules[z];
+        value = source[z];
+        arr.forEach((r) => {
+          let rule = r;
+          if (typeof rule.transform === "function") {
+            if (source === source_) {
+              source = { ...source };
+            }
+            value = source[z] = rule.transform(value);
+          }
+          if (typeof rule === "function") {
+            rule = {
+              validator: rule
+            };
+          } else {
+            rule = { ...rule };
+          }
+          rule.validator = _this.getValidationMethod(rule);
+          rule.field = z;
+          rule.fullField = rule.fullField || z;
+          rule.type = _this.getType(rule);
+          if (!rule.validator) {
+            return;
+          }
+          series[z] = series[z] || [];
+          series[z].push({
+            rule,
+            value,
+            source,
+            field: z
+          });
+        });
+      });
+      const errorFields = {};
+      return asyncMap(series, options, (data, doIt) => {
+        const { rule } = data;
+        let deep = (rule.type === "object" || rule.type === "array") && (typeof rule.fields === "object" || typeof rule.defaultField === "object");
+        deep = deep && (rule.required || !rule.required && data.value);
+        rule.field = data.field;
+        function addFullfield(key, schema) {
+          return { ...schema, fullField: `${rule.fullField}.${key}` };
+        }
+        function cb(e) {
+          if (e === void 0) {
+            e = [];
+          }
+          let errors = e;
+          if (!Array.isArray(errors)) {
+            errors = [errors];
+          }
+          if (!options.suppressWarning && errors.length) {
+            Schema.warning("async-validator:", errors);
+          }
+          if (errors.length && rule.message) {
+            errors = [].concat(rule.message);
+          }
+          errors = errors.map(complementError(rule));
+          if (options.first && errors.length) {
+            errorFields[rule.field] = 1;
+            return doIt(errors);
+          }
+          if (!deep) {
+            doIt(errors);
+          } else {
+            if (rule.required && !data.value) {
+              if (rule.message) {
+                errors = [].concat(rule.message).map(complementError(rule));
+              } else if (options.error) {
+                errors = [options.error(rule, format(options.messages.required, rule.field))];
+              } else {
+                errors = [];
+              }
+              return doIt(errors);
+            }
+            let fieldsSchema = {};
+            if (rule.defaultField) {
+              for (const k in data.value) {
+                if (data.value.hasOwnProperty(k)) {
+                  fieldsSchema[k] = rule.defaultField;
+                }
+              }
+            }
+            fieldsSchema = { ...fieldsSchema, ...data.rule.fields };
+            for (const f in fieldsSchema) {
+              if (fieldsSchema.hasOwnProperty(f)) {
+                const fieldSchema = Array.isArray(fieldsSchema[f]) ? fieldsSchema[f] : [fieldsSchema[f]];
+                fieldsSchema[f] = fieldSchema.map(addFullfield.bind(null, f));
+              }
+            }
+            const schema = new Schema(fieldsSchema);
+            schema.messages(options.messages);
+            if (data.rule.options) {
+              data.rule.options.messages = options.messages;
+              data.rule.options.error = options.error;
+            }
+            schema.validate(data.value, data.rule.options || options, (errs) => {
+              const finalErrors = [];
+              if (errors && errors.length) {
+                finalErrors.push.apply(finalErrors, errors);
+              }
+              if (errs && errs.length) {
+                finalErrors.push.apply(finalErrors, errs);
+              }
+              doIt(finalErrors.length ? finalErrors : null);
+            });
+          }
+        }
+        let res;
+        if (rule.asyncValidator) {
+          res = rule.asyncValidator(rule, data.value, cb, data.source, options);
+        } else if (rule.validator) {
+          res = rule.validator(rule, data.value, cb, data.source, options);
+          if (res === true) {
+            cb();
+          } else if (res === false) {
+            cb(rule.message || `${rule.field} fails`);
+          } else if (res instanceof Array) {
+            cb(res);
+          } else if (res instanceof Error) {
+            cb(res.message);
+          }
+        }
+        if (res && res.then) {
+          res.then(() => cb(), (e) => cb(e));
+        }
+      }, (results) => {
+        complete(results);
+      });
+    },
+    getType: function getType(rule) {
+      if (rule.type === void 0 && rule.pattern instanceof RegExp) {
+        rule.type = "pattern";
+      }
+      if (typeof rule.validator !== "function" && rule.type && !validators.hasOwnProperty(rule.type)) {
+        throw new Error(format("Unknown rule type %s", rule.type));
+      }
+      return rule.type || "string";
+    },
+    getValidationMethod: function getValidationMethod(rule) {
+      if (typeof rule.validator === "function") {
+        return rule.validator;
+      }
+      const keys = Object.keys(rule);
+      const messageIndex = keys.indexOf("message");
+      if (messageIndex !== -1) {
+        keys.splice(messageIndex, 1);
+      }
+      if (keys.length === 1 && keys[0] === "required") {
+        return validators.required;
+      }
+      return validators[this.getType(rule)] || false;
+    }
+  };
+  Schema.register = function register(type2, validator) {
+    if (typeof validator !== "function") {
+      throw new Error("Cannot register a validator by type, validator is not a function");
+    }
+    validators[type2] = validator;
+  };
+  Schema.warning = warning;
+  Schema.messages = messages;
+  Schema.warning = function() {
+  };
+  const _sfc_main$Z = {
+    name: "u-form",
+    mixins: [mpMixin, mixin, props$l],
+    provide() {
+      return {
+        uForm: this
+      };
+    },
+    data() {
+      return {
+        formRules: {},
+        validator: {},
+        originalModel: null
+      };
+    },
+    watch: {
+      rules: {
+        immediate: true,
+        handler(n) {
+          this.setRules(n);
+        }
+      },
+      propsChange(n) {
+        var _a;
+        if ((_a = this.children) == null ? void 0 : _a.length) {
+          this.children.map((child) => {
+            typeof child.updateParentData == "function" && child.updateParentData();
+          });
+        }
+      },
+      model: {
+        immediate: true,
+        handler(n) {
+          if (!this.originalModel) {
+            this.originalModel = uni.$u.deepClone(n);
+          }
+        }
+      }
+    },
+    computed: {
+      propsChange() {
+        return [
+          this.errorType,
+          this.borderBottom,
+          this.labelPosition,
+          this.labelWidth,
+          this.labelAlign,
+          this.labelStyle
+        ];
+      }
+    },
+    created() {
+      this.children = [];
+    },
+    methods: {
+      setRules(rules2) {
+        if (Object.keys(rules2).length === 0)
+          return;
+        if (Object.keys(this.model).length === 0) {
+          uni.$u.error("\u8BBE\u7F6Erules\uFF0Cmodel\u5FC5\u987B\u8BBE\u7F6E\uFF01\u5982\u679C\u5DF2\u7ECF\u8BBE\u7F6E\uFF0C\u8BF7\u5237\u65B0\u9875\u9762\u3002");
+          return;
+        }
+        this.formRules = rules2;
+        this.validator = new Schema(rules2);
+      },
+      resetFields() {
+        this.resetModel();
+      },
+      resetModel(obj) {
+        this.children.map((child) => {
+          const prop = child == null ? void 0 : child.prop;
+          const value = uni.$u.getProperty(this.originalModel, prop);
+          uni.$u.setProperty(this.model, prop, value);
+        });
+      },
+      clearValidate(props2) {
+        props2 = [].concat(props2);
+        this.children.map((child) => {
+          if (props2[0] === void 0 || props2.includes(child.prop)) {
+            child.message = null;
+          }
+        });
+      },
+      async validateField(value, callback, event2 = null) {
+        this.$nextTick(() => {
+          const errorsRes = [];
+          value = [].concat(value);
+          this.children.map((child) => {
+            const childErrors = [];
+            if (value.includes(child.prop)) {
+              const propertyVal = uni.$u.getProperty(
+                this.model,
+                child.prop
+              );
+              const propertyChain = child.prop.split(".");
+              const propertyName = propertyChain[propertyChain.length - 1];
+              const rule = this.formRules[child.prop];
+              if (!rule)
+                return;
+              const rules2 = [].concat(rule);
+              for (let i2 = 0; i2 < rules2.length; i2++) {
+                const ruleItem = rules2[i2];
+                const trigger = [].concat(ruleItem == null ? void 0 : ruleItem.trigger);
+                if (event2 && !trigger.includes(event2))
+                  continue;
+                const validator = new Schema({
+                  [propertyName]: ruleItem
+                });
+                validator.validate(
+                  {
+                    [propertyName]: propertyVal
+                  },
+                  (errors, fields) => {
+                    var _a, _b;
+                    if (uni.$u.test.array(errors)) {
+                      errorsRes.push(...errors);
+                      childErrors.push(...errors);
+                    }
+                    child.message = (_b = (_a = childErrors[0]) == null ? void 0 : _a.message) != null ? _b : null;
+                  }
+                );
+              }
+            }
+          });
+          typeof callback === "function" && callback(errorsRes);
+        });
+      },
+      validate(callback) {
+        if (Object.keys(this.formRules).length === 0) {
+          uni.$u.error("\u672A\u8BBE\u7F6Erules\uFF0C\u8BF7\u770B\u6587\u6863\u8BF4\u660E\uFF01\u5982\u679C\u5DF2\u7ECF\u8BBE\u7F6E\uFF0C\u8BF7\u5237\u65B0\u9875\u9762\u3002");
+          return;
+        }
+        return new Promise((resolve, reject) => {
+          this.$nextTick(() => {
+            const formItemProps = this.children.map(
+              (item2) => item2.prop
+            );
+            this.validateField(formItemProps, (errors) => {
+              if (errors.length) {
+                this.errorType === "toast" && uni.$u.toast(errors[0].message);
+                reject(errors);
+              } else {
+                resolve(true);
+              }
+            });
+          });
+        });
+      }
+    }
+  };
+  function _sfc_render$Y(_ctx, _cache, $props, $setup, $data, $options) {
+    return vue.openBlock(), vue.createElementBlock("view", { class: "u-form" }, [
+      vue.renderSlot(_ctx.$slots, "default")
+    ]);
+  }
+  const uvForm = /* @__PURE__ */ _export_sfc(_sfc_main$Z, [["render", _sfc_render$Y], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-form/u-form.vue"]]);
+  const _sfc_main$Y = {
+    name: "u--form",
+    mixins: [mpMixin, props$l, mixin],
+    components: {
+      uvForm
+    },
+    created() {
+      this.children = [];
+    },
+    methods: {
+      setRules(rules2) {
+        this.$refs.uForm.setRules(rules2);
+      },
+      validate() {
+        return this.$refs.uForm.validate();
+      },
+      validateField(value, callback) {
+        return this.$refs.uForm.validateField(value, callback);
+      },
+      resetFields() {
+        return this.$refs.uForm.resetFields();
+      },
+      clearValidate(props2) {
+        return this.$refs.uForm.clearValidate(props2);
+      },
+      setMpData() {
+        this.$refs.uForm.children = this.children;
+      }
+    }
+  };
+  function _sfc_render$X(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_uvForm = vue.resolveComponent("uvForm");
+    return vue.openBlock(), vue.createBlock(_component_uvForm, {
+      ref: "uForm",
+      model: _ctx.model,
+      rules: _ctx.rules,
+      errorType: _ctx.errorType,
+      borderBottom: _ctx.borderBottom,
+      labelPosition: _ctx.labelPosition,
+      labelWidth: _ctx.labelWidth,
+      labelAlign: _ctx.labelAlign,
+      labelStyle: _ctx.labelStyle,
+      customStyle: _ctx.customStyle
+    }, {
+      default: vue.withCtx(() => [
+        vue.renderSlot(_ctx.$slots, "default")
+      ]),
+      _: 3
+    }, 8, ["model", "rules", "errorType", "borderBottom", "labelPosition", "labelWidth", "labelAlign", "labelStyle", "customStyle"]);
+  }
+  const __easycom_3$2 = /* @__PURE__ */ _export_sfc(_sfc_main$Y, [["render", _sfc_render$X], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u--form/u--form.vue"]]);
+  const props$k = {
+    props: {
+      show: {
+        type: Boolean,
+        default: props$s.loadingIcon.show
+      },
+      color: {
+        type: String,
+        default: props$s.loadingIcon.color
+      },
+      textColor: {
+        type: String,
+        default: props$s.loadingIcon.textColor
+      },
+      vertical: {
+        type: Boolean,
+        default: props$s.loadingIcon.vertical
+      },
+      mode: {
+        type: String,
+        default: props$s.loadingIcon.mode
+      },
+      size: {
+        type: [String, Number],
+        default: props$s.loadingIcon.size
+      },
+      textSize: {
+        type: [String, Number],
+        default: props$s.loadingIcon.textSize
+      },
+      text: {
+        type: [String, Number],
+        default: props$s.loadingIcon.text
+      },
+      timingFunction: {
+        type: String,
+        default: props$s.loadingIcon.timingFunction
+      },
+      duration: {
+        type: [String, Number],
+        default: props$s.loadingIcon.duration
+      },
+      inactiveColor: {
+        type: String,
+        default: props$s.loadingIcon.inactiveColor
+      }
+    }
+  };
+  const _sfc_main$X = {
+    name: "u-loading-icon",
+    mixins: [mpMixin, mixin, props$k],
+    data() {
+      return {
+        array12: Array.from({
+          length: 12
+        }),
+        aniAngel: 360,
+        webviewHide: false,
+        loading: false
+      };
+    },
+    computed: {
+      otherBorderColor() {
+        const lightColor = uni.$u.colorGradient(this.color, "#ffffff", 100)[80];
+        if (this.mode === "circle") {
+          return this.inactiveColor ? this.inactiveColor : lightColor;
+        } else {
+          return "transparent";
+        }
+      }
+    },
+    watch: {
+      show(n) {
+      }
+    },
+    mounted() {
+      this.init();
+    },
+    methods: {
+      init() {
+        setTimeout(() => {
+          this.show && this.addEventListenerToWebview();
+        }, 20);
+      },
+      addEventListenerToWebview() {
+        const pages2 = getCurrentPages();
+        const page2 = pages2[pages2.length - 1];
+        const currentWebview = page2.$getAppWebview();
+        currentWebview.addEventListener("hide", () => {
+          this.webviewHide = true;
+        });
+        currentWebview.addEventListener("show", () => {
+          this.webviewHide = false;
+        });
+      }
+    }
+  };
+  function _sfc_render$W(_ctx, _cache, $props, $setup, $data, $options) {
+    return _ctx.show ? (vue.openBlock(), vue.createElementBlock("view", {
+      key: 0,
+      class: vue.normalizeClass(["u-loading-icon", [_ctx.vertical && "u-loading-icon--vertical"]]),
+      style: vue.normalizeStyle([_ctx.$u.addStyle(_ctx.customStyle)])
+    }, [
+      !$data.webviewHide ? (vue.openBlock(), vue.createElementBlock("view", {
+        key: 0,
+        class: vue.normalizeClass(["u-loading-icon__spinner", [`u-loading-icon__spinner--${_ctx.mode}`]]),
+        ref: "ani",
+        style: vue.normalizeStyle({
+          color: _ctx.color,
+          width: _ctx.$u.addUnit(_ctx.size),
+          height: _ctx.$u.addUnit(_ctx.size),
+          borderTopColor: _ctx.color,
+          borderBottomColor: $options.otherBorderColor,
+          borderLeftColor: $options.otherBorderColor,
+          borderRightColor: $options.otherBorderColor,
+          "animation-duration": `${_ctx.duration}ms`,
+          "animation-timing-function": _ctx.mode === "semicircle" || _ctx.mode === "circle" ? _ctx.timingFunction : ""
+        })
+      }, [
+        _ctx.mode === "spinner" ? (vue.openBlock(true), vue.createElementBlock(vue.Fragment, { key: 0 }, vue.renderList($data.array12, (item2, index2) => {
+          return vue.openBlock(), vue.createElementBlock("view", {
+            key: index2,
+            class: "u-loading-icon__dot"
+          });
+        }), 128)) : vue.createCommentVNode("v-if", true)
+      ], 6)) : vue.createCommentVNode("v-if", true),
+      _ctx.text ? (vue.openBlock(), vue.createElementBlock("text", {
+        key: 1,
+        class: "u-loading-icon__text",
+        style: vue.normalizeStyle({
+          fontSize: _ctx.$u.addUnit(_ctx.textSize),
+          color: _ctx.textColor
+        })
+      }, vue.toDisplayString(_ctx.text), 5)) : vue.createCommentVNode("v-if", true)
+    ], 6)) : vue.createCommentVNode("v-if", true);
+  }
+  const __easycom_1$3 = /* @__PURE__ */ _export_sfc(_sfc_main$X, [["render", _sfc_render$W], ["__scopeId", "data-v-00752c6d"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-loading-icon/u-loading-icon.vue"]]);
+  const props$j = {
+    props: {
+      hairline: {
+        type: Boolean,
+        default: props$s.button.hairline
+      },
+      type: {
+        type: String,
+        default: props$s.button.type
+      },
+      size: {
+        type: String,
+        default: props$s.button.size
+      },
+      shape: {
+        type: String,
+        default: props$s.button.shape
+      },
+      plain: {
+        type: Boolean,
+        default: props$s.button.plain
+      },
+      disabled: {
+        type: Boolean,
+        default: props$s.button.disabled
+      },
+      loading: {
+        type: Boolean,
+        default: props$s.button.loading
+      },
+      loadingText: {
+        type: [String, Number],
+        default: props$s.button.loadingText
+      },
+      loadingMode: {
+        type: String,
+        default: props$s.button.loadingMode
+      },
+      loadingSize: {
+        type: [String, Number],
+        default: props$s.button.loadingSize
+      },
+      openType: {
+        type: String,
+        default: props$s.button.openType
+      },
+      formType: {
+        type: String,
+        default: props$s.button.formType
+      },
+      appParameter: {
+        type: String,
+        default: props$s.button.appParameter
+      },
+      hoverStopPropagation: {
+        type: Boolean,
+        default: props$s.button.hoverStopPropagation
+      },
+      lang: {
+        type: String,
+        default: props$s.button.lang
+      },
+      sessionFrom: {
+        type: String,
+        default: props$s.button.sessionFrom
+      },
+      sendMessageTitle: {
+        type: String,
+        default: props$s.button.sendMessageTitle
+      },
+      sendMessagePath: {
+        type: String,
+        default: props$s.button.sendMessagePath
+      },
+      sendMessageImg: {
+        type: String,
+        default: props$s.button.sendMessageImg
+      },
+      showMessageCard: {
+        type: Boolean,
+        default: props$s.button.showMessageCard
+      },
+      dataName: {
+        type: String,
+        default: props$s.button.dataName
+      },
+      throttleTime: {
+        type: [String, Number],
+        default: props$s.button.throttleTime
+      },
+      hoverStartTime: {
+        type: [String, Number],
+        default: props$s.button.hoverStartTime
+      },
+      hoverStayTime: {
+        type: [String, Number],
+        default: props$s.button.hoverStayTime
+      },
+      text: {
+        type: [String, Number],
+        default: props$s.button.text
+      },
+      icon: {
+        type: String,
+        default: props$s.button.icon
+      },
+      iconColor: {
+        type: String,
+        default: props$s.button.icon
+      },
+      color: {
+        type: String,
+        default: props$s.button.color
+      }
+    }
+  };
+  const _sfc_main$W = {
+    name: "u-button",
+    mixins: [mpMixin, mixin, props$j],
+    data() {
+      return {};
+    },
+    computed: {
+      bemClass() {
+        if (!this.color) {
+          return this.bem(
+            "button",
+            ["type", "shape", "size"],
+            ["disabled", "plain", "hairline"]
+          );
+        } else {
+          return this.bem(
+            "button",
+            ["shape", "size"],
+            ["disabled", "plain", "hairline"]
+          );
+        }
+      },
+      loadingColor() {
+        if (this.plain) {
+          return this.color ? this.color : uni.$u.config.color[`u-${this.type}`];
+        }
+        if (this.type === "info") {
+          return "#c9c9c9";
+        }
+        return "rgb(200, 200, 200)";
+      },
+      iconColorCom() {
+        if (this.iconColor)
+          return this.iconColor;
+        if (this.plain) {
+          return this.color ? this.color : this.type;
+        } else {
+          return this.type === "info" ? "#000000" : "#ffffff";
+        }
+      },
+      baseColor() {
+        let style = {};
+        if (this.color) {
+          style.color = this.plain ? this.color : "white";
+          if (!this.plain) {
+            style["background-color"] = this.color;
+          }
+          if (this.color.indexOf("gradient") !== -1) {
+            style.borderTopWidth = 0;
+            style.borderRightWidth = 0;
+            style.borderBottomWidth = 0;
+            style.borderLeftWidth = 0;
+            if (!this.plain) {
+              style.backgroundImage = this.color;
+            }
+          } else {
+            style.borderColor = this.color;
+            style.borderWidth = "1px";
+            style.borderStyle = "solid";
+          }
+        }
+        return style;
+      },
+      nvueTextStyle() {
+        let style = {};
+        if (this.type === "info") {
+          style.color = "#323233";
+        }
+        if (this.color) {
+          style.color = this.plain ? this.color : "white";
+        }
+        style.fontSize = this.textSize + "px";
+        return style;
+      },
+      textSize() {
+        let fontSize = 14, { size } = this;
+        if (size === "large")
+          fontSize = 16;
+        if (size === "normal")
+          fontSize = 14;
+        if (size === "small")
+          fontSize = 12;
+        if (size === "mini")
+          fontSize = 10;
+        return fontSize;
+      }
+    },
+    emits: [
+      "click",
+      "getphonenumber",
+      "getuserinfo",
+      "error",
+      "opensetting",
+      "launchapp"
+    ],
+    methods: {
+      clickHandler() {
+        if (!this.disabled && !this.loading) {
+          uni.$u.throttle(() => {
+            this.$emit("click");
+          }, this.throttleTime);
+        }
+      },
+      getphonenumber(res) {
+        this.$emit("getphonenumber", res);
+      },
+      getuserinfo(res) {
+        this.$emit("getuserinfo", res);
+      },
+      error(res) {
+        this.$emit("error", res);
+      },
+      opensetting(res) {
+        this.$emit("opensetting", res);
+      },
+      launchapp(res) {
+        this.$emit("launchapp", res);
+      }
+    }
+  };
+  function _sfc_render$V(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_u_loading_icon = resolveEasycom(vue.resolveDynamicComponent("u-loading-icon"), __easycom_1$3);
+    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$7);
+    return vue.openBlock(), vue.createElementBlock("button", {
+      "hover-start-time": Number(_ctx.hoverStartTime),
+      "hover-stay-time": Number(_ctx.hoverStayTime),
+      "form-type": _ctx.formType,
+      "open-type": _ctx.openType,
+      "app-parameter": _ctx.appParameter,
+      "hover-stop-propagation": _ctx.hoverStopPropagation,
+      "send-message-title": _ctx.sendMessageTitle,
+      "send-message-path": _ctx.sendMessagePath,
+      lang: _ctx.lang,
+      "data-name": _ctx.dataName,
+      "session-from": _ctx.sessionFrom,
+      "send-message-img": _ctx.sendMessageImg,
+      "show-message-card": _ctx.showMessageCard,
+      onGetphonenumber: _cache[0] || (_cache[0] = (...args) => $options.getphonenumber && $options.getphonenumber(...args)),
+      onGetuserinfo: _cache[1] || (_cache[1] = (...args) => $options.getuserinfo && $options.getuserinfo(...args)),
+      onError: _cache[2] || (_cache[2] = (...args) => $options.error && $options.error(...args)),
+      onOpensetting: _cache[3] || (_cache[3] = (...args) => $options.opensetting && $options.opensetting(...args)),
+      onLaunchapp: _cache[4] || (_cache[4] = (...args) => $options.launchapp && $options.launchapp(...args)),
+      "hover-class": !_ctx.disabled && !_ctx.loading ? "u-button--active" : "",
+      class: vue.normalizeClass(["u-button u-reset-button", $options.bemClass]),
+      style: vue.normalizeStyle([$options.baseColor, _ctx.$u.addStyle(_ctx.customStyle)]),
+      onClick: _cache[5] || (_cache[5] = (...args) => $options.clickHandler && $options.clickHandler(...args))
+    }, [
+      _ctx.loading ? (vue.openBlock(), vue.createElementBlock(vue.Fragment, { key: 0 }, [
+        vue.createVNode(_component_u_loading_icon, {
+          mode: _ctx.loadingMode,
+          size: _ctx.loadingSize * 1.15,
+          color: $options.loadingColor
+        }, null, 8, ["mode", "size", "color"]),
+        vue.createElementVNode("text", {
+          class: "u-button__loading-text",
+          style: vue.normalizeStyle([{ fontSize: $options.textSize + "px" }])
+        }, vue.toDisplayString(_ctx.loadingText || _ctx.text), 5)
+      ], 64)) : (vue.openBlock(), vue.createElementBlock(vue.Fragment, { key: 1 }, [
+        _ctx.icon ? (vue.openBlock(), vue.createBlock(_component_u_icon, {
+          key: 0,
+          name: _ctx.icon,
+          color: $options.iconColorCom,
+          size: $options.textSize * 1.35,
+          customStyle: { marginRight: "2px" }
+        }, null, 8, ["name", "color", "size"])) : vue.createCommentVNode("v-if", true),
+        vue.renderSlot(_ctx.$slots, "default", {}, () => [
+          vue.createElementVNode("text", {
+            class: "u-button__text",
+            style: vue.normalizeStyle([{ fontSize: $options.textSize + "px" }])
+          }, vue.toDisplayString(_ctx.text), 5)
+        ], true)
+      ], 64))
+    ], 46, ["hover-start-time", "hover-stay-time", "form-type", "open-type", "app-parameter", "hover-stop-propagation", "send-message-title", "send-message-path", "lang", "data-name", "session-from", "send-message-img", "show-message-card", "hover-class"]);
+  }
+  const __easycom_4$1 = /* @__PURE__ */ _export_sfc(_sfc_main$W, [["render", _sfc_render$V], ["__scopeId", "data-v-461e713c"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-button/u-button.vue"]]);
+  const props$i = {
+    props: {
+      name: {
+        type: [String, Number, Boolean],
+        default: props$s.checkbox.name
+      },
+      shape: {
+        type: String,
+        default: props$s.checkbox.shape
+      },
+      size: {
+        type: [String, Number],
+        default: props$s.checkbox.size
+      },
+      checked: {
+        type: Boolean,
+        default: props$s.checkbox.checked
+      },
+      disabled: {
+        type: [String, Boolean],
+        default: props$s.checkbox.disabled
+      },
+      activeColor: {
+        type: String,
+        default: props$s.checkbox.activeColor
+      },
+      inactiveColor: {
+        type: String,
+        default: props$s.checkbox.inactiveColor
+      },
+      iconSize: {
+        type: [String, Number],
+        default: props$s.checkbox.iconSize
+      },
+      iconColor: {
+        type: String,
+        default: props$s.checkbox.iconColor
+      },
+      label: {
+        type: [String, Number],
+        default: props$s.checkbox.label
+      },
+      labelSize: {
+        type: [String, Number],
+        default: props$s.checkbox.labelSize
+      },
+      labelColor: {
+        type: String,
+        default: props$s.checkbox.labelColor
+      },
+      labelDisabled: {
+        type: [String, Boolean],
+        default: props$s.checkbox.labelDisabled
+      }
+    }
+  };
+  const _sfc_main$V = {
+    name: "u-checkbox",
+    mixins: [mpMixin, mixin, props$i],
+    data() {
+      return {
+        isChecked: false,
+        parentData: {
+          iconSize: 12,
+          labelDisabled: null,
+          disabled: null,
+          shape: "square",
+          activeColor: null,
+          inactiveColor: null,
+          size: 18,
+          modelValue: null,
+          iconColor: null,
+          placement: "row",
+          borderBottom: false,
+          iconPlacement: "left"
+        }
+      };
+    },
+    computed: {
+      elDisabled() {
+        return this.disabled !== "" ? this.disabled : this.parentData.disabled !== null ? this.parentData.disabled : false;
+      },
+      elLabelDisabled() {
+        return this.labelDisabled !== "" ? this.labelDisabled : this.parentData.labelDisabled !== null ? this.parentData.labelDisabled : false;
+      },
+      elSize() {
+        return this.size ? this.size : this.parentData.size ? this.parentData.size : 21;
+      },
+      elIconSize() {
+        return this.iconSize ? this.iconSize : this.parentData.iconSize ? this.parentData.iconSize : 12;
+      },
+      elActiveColor() {
+        return this.activeColor ? this.activeColor : this.parentData.activeColor ? this.parentData.activeColor : "#2979ff";
+      },
+      elInactiveColor() {
+        return this.inactiveColor ? this.inactiveColor : this.parentData.inactiveColor ? this.parentData.inactiveColor : "#c8c9cc";
+      },
+      elLabelColor() {
+        return this.labelColor ? this.labelColor : this.parentData.labelColor ? this.parentData.labelColor : "#606266";
+      },
+      elShape() {
+        return this.shape ? this.shape : this.parentData.shape ? this.parentData.shape : "circle";
+      },
+      elLabelSize() {
+        return uni.$u.addUnit(this.labelSize ? this.labelSize : this.parentData.labelSize ? this.parentData.labelSize : "15");
+      },
+      elIconColor() {
+        const iconColor = this.iconColor ? this.iconColor : this.parentData.iconColor ? this.parentData.iconColor : "#ffffff";
+        if (this.elDisabled) {
+          return this.isChecked ? this.elInactiveColor : "transparent";
+        } else {
+          return this.isChecked ? iconColor : "transparent";
+        }
+      },
+      iconClasses() {
+        let classes = [];
+        classes.push("u-checkbox__icon-wrap--" + this.elShape);
+        if (this.elDisabled) {
+          classes.push("u-checkbox__icon-wrap--disabled");
+        }
+        if (this.isChecked && this.elDisabled) {
+          classes.push("u-checkbox__icon-wrap--disabled--checked");
+        }
+        return classes;
+      },
+      iconWrapStyle() {
+        const style = {};
+        style.backgroundColor = this.isChecked && !this.elDisabled ? this.elActiveColor : "#ffffff";
+        style.borderColor = this.isChecked && !this.elDisabled ? this.elActiveColor : this.elInactiveColor;
+        style.width = uni.$u.addUnit(this.elSize);
+        style.height = uni.$u.addUnit(this.elSize);
+        if (this.parentData.iconPlacement === "right") {
+          style.marginRight = 0;
+        }
+        return style;
+      },
+      checkboxStyle() {
+        const style = {};
+        if (this.parentData.borderBottom && this.parentData.placement === "row") {
+          uni.$u.error("\u68C0\u6D4B\u5230\u60A8\u5C06borderBottom\u8BBE\u7F6E\u4E3Atrue\uFF0C\u9700\u8981\u540C\u65F6\u5C06u-checkbox-group\u7684placement\u8BBE\u7F6E\u4E3Acolumn\u624D\u6709\u6548");
+        }
+        if (this.parentData.borderBottom && this.parentData.placement === "column") {
+          style.paddingBottom = "8px";
+        }
+        return uni.$u.deepMerge(style, uni.$u.addStyle(this.customStyle));
+      }
+    },
+    mounted() {
+      this.init();
+    },
+    methods: {
+      init() {
+        this.updateParentData();
+        if (!this.parent) {
+          uni.$u.error("u-checkbox\u5FC5\u987B\u642D\u914Du-checkbox-group\u7EC4\u4EF6\u4F7F\u7528");
+        }
+        const value = this.parentData.modelValue;
+        if (this.checked) {
+          this.isChecked = true;
+        } else if (uni.$u.test.array(value)) {
+          this.isChecked = value.some((item2) => {
+            return item2 === this.name;
+          });
+        }
+      },
+      updateParentData() {
+        this.getParentData("u-checkbox-group");
+      },
+      wrapperClickHandler(e) {
+        this.parentData.iconPlacement === "right" && this.iconClickHandler(e);
+      },
+      iconClickHandler(e) {
+        this.preventEvent(e);
+        if (!this.elDisabled) {
+          this.setRadioCheckedStatus();
+        }
+      },
+      labelClickHandler(e) {
+        this.preventEvent(e);
+        if (!this.elLabelDisabled && !this.elDisabled) {
+          this.setRadioCheckedStatus();
+        }
+      },
+      emitEvent() {
+        this.$emit("change", this.isChecked);
+        this.$nextTick(() => {
+          uni.$u.formValidate(this, "change");
+        });
+      },
+      setRadioCheckedStatus() {
+        this.isChecked = !this.isChecked;
+        this.emitEvent();
+        typeof this.parent.unCheckedOther === "function" && this.parent.unCheckedOther(this);
+      }
+    },
+    watch: {
+      checked() {
+        this.isChecked = this.checked;
+      }
+    }
+  };
+  function _sfc_render$U(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$7);
+    return vue.openBlock(), vue.createElementBlock("view", {
+      class: vue.normalizeClass(["u-checkbox", [`u-checkbox-label--${$data.parentData.iconPlacement}`, $data.parentData.borderBottom && $data.parentData.placement === "column" && "u-border-bottom"]]),
+      style: vue.normalizeStyle([$options.checkboxStyle]),
+      onClick: _cache[2] || (_cache[2] = vue.withModifiers((...args) => $options.wrapperClickHandler && $options.wrapperClickHandler(...args), ["stop"]))
+    }, [
+      vue.createElementVNode("view", {
+        class: vue.normalizeClass(["u-checkbox__icon-wrap", $options.iconClasses]),
+        onClick: _cache[0] || (_cache[0] = vue.withModifiers((...args) => $options.iconClickHandler && $options.iconClickHandler(...args), ["stop"])),
+        style: vue.normalizeStyle([$options.iconWrapStyle])
+      }, [
+        vue.renderSlot(_ctx.$slots, "icon", {}, () => [
+          vue.createVNode(_component_u_icon, {
+            class: "u-checkbox__icon-wrap__icon",
+            name: "checkbox-mark",
+            size: $options.elIconSize,
+            color: $options.elIconColor
+          }, null, 8, ["size", "color"])
+        ], true)
+      ], 6),
+      vue.createElementVNode("text", {
+        onClick: _cache[1] || (_cache[1] = vue.withModifiers((...args) => $options.labelClickHandler && $options.labelClickHandler(...args), ["stop"])),
+        style: vue.normalizeStyle({
+          color: $options.elDisabled ? $options.elInactiveColor : $options.elLabelColor,
+          fontSize: $options.elLabelSize,
+          lineHeight: $options.elLabelSize
+        })
+      }, vue.toDisplayString(_ctx.label), 5)
+    ], 6);
+  }
+  const __easycom_5$2 = /* @__PURE__ */ _export_sfc(_sfc_main$V, [["render", _sfc_render$U], ["__scopeId", "data-v-abd63d8e"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-checkbox/u-checkbox.vue"]]);
+  const props$h = {
+    props: {
+      name: {
+        type: String,
+        default: props$s.checkboxGroup.name
+      },
+      modelValue: {
+        type: Array,
+        default: props$s.checkboxGroup.value
+      },
+      shape: {
+        type: String,
+        default: props$s.checkboxGroup.shape
+      },
+      disabled: {
+        type: Boolean,
+        default: props$s.checkboxGroup.disabled
+      },
+      activeColor: {
+        type: String,
+        default: props$s.checkboxGroup.activeColor
+      },
+      inactiveColor: {
+        type: String,
+        default: props$s.checkboxGroup.inactiveColor
+      },
+      size: {
+        type: [String, Number],
+        default: props$s.checkboxGroup.size
+      },
+      placement: {
+        type: String,
+        default: props$s.checkboxGroup.placement
+      },
+      labelSize: {
+        type: [String, Number],
+        default: props$s.checkboxGroup.labelSize
+      },
+      labelColor: {
+        type: [String],
+        default: props$s.checkboxGroup.labelColor
+      },
+      labelDisabled: {
+        type: Boolean,
+        default: props$s.checkboxGroup.labelDisabled
+      },
+      iconColor: {
+        type: String,
+        default: props$s.checkboxGroup.iconColor
+      },
+      iconSize: {
+        type: [String, Number],
+        default: props$s.checkboxGroup.iconSize
+      },
+      iconPlacement: {
+        type: String,
+        default: props$s.checkboxGroup.iconPlacement
+      },
+      borderBottom: {
+        type: Boolean,
+        default: props$s.checkboxGroup.borderBottom
+      }
+    }
+  };
+  const _sfc_main$U = {
+    name: "u-checkbox-group",
+    mixins: [mpMixin, mixin, props$h],
+    computed: {
+      parentData() {
+        return [
+          this.modelValue,
+          this.disabled,
+          this.inactiveColor,
+          this.activeColor,
+          this.size,
+          this.labelDisabled,
+          this.shape,
+          this.iconSize,
+          this.borderBottom,
+          this.placement
+        ];
+      },
+      bemClass() {
+        return this.bem("checkbox-group", ["placement"]);
+      }
+    },
+    watch: {
+      parentData: {
+        handler() {
+          if (this.children.length) {
+            this.children.map((child) => {
+              typeof child.init === "function" && child.init();
+            });
+          }
+        },
+        deep: true
+      }
+    },
+    data() {
+      return {};
+    },
+    created() {
+      this.children = [];
+    },
+    emits: ["update:modelValue", "change"],
+    methods: {
+      unCheckedOther(childInstance) {
+        const values = [];
+        this.children.map((child) => {
+          if (child.isChecked) {
+            values.push(child.name);
+          }
+        });
+        this.$emit("change", values);
+        this.$emit("update:modelValue", values);
+      }
+    }
+  };
+  function _sfc_render$T(_ctx, _cache, $props, $setup, $data, $options) {
+    return vue.openBlock(), vue.createElementBlock("view", {
+      class: vue.normalizeClass(["u-checkbox-group", $options.bemClass])
+    }, [
+      vue.renderSlot(_ctx.$slots, "default", {}, void 0, true)
+    ], 2);
+  }
+  const __easycom_6 = /* @__PURE__ */ _export_sfc(_sfc_main$U, [["render", _sfc_render$T], ["__scopeId", "data-v-504cd728"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-checkbox-group/u-checkbox-group.vue"]]);
+  const _sfc_main$T = {
+    data() {
+      return {
+        form: {
+          email: "",
+          arrgee: []
+        },
+        rules: {
+          "email": {
+            type: "email",
+            required: true,
+            message: "\u8ACB\u8F38\u5165\u6B63\u786E\u7684\u90AE\u7BB1",
+            trigger: ["blur", "change"]
+          }
+        }
+      };
+    },
+    methods: {
+      nextStep() {
+        if (this.form.arrgee[0] !== "1") {
+          uni.$u.toast("\u8BF7\u52FE\u9009\u7EDF\u4E00\u7528\u6237\u534F\u8BAE\uFF01");
+          return;
+        }
+        this.$refs.form.validate().then((res) => {
+          uni.navigateTo({
+            url: `/pages/login/password/password`
+          });
+        }).catch((errors) => {
+          formatAppLog("log", "at pages/login/login.vue:65", "login", errors);
+        });
+      },
+      navigatorTo() {
+        uni.navigateTo({
+          url: `/pages/login/register/register`
+        });
+      }
+    }
+  };
+  function _sfc_render$S(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$6);
+    const _component_u__input = resolveEasycom(vue.resolveDynamicComponent("u--input"), __easycom_1$4);
+    const _component_u_form_item = resolveEasycom(vue.resolveDynamicComponent("u-form-item"), __easycom_2$5);
+    const _component_u__form = resolveEasycom(vue.resolveDynamicComponent("u--form"), __easycom_3$2);
+    const _component_u_button = resolveEasycom(vue.resolveDynamicComponent("u-button"), __easycom_4$1);
+    const _component_u_checkbox = resolveEasycom(vue.resolveDynamicComponent("u-checkbox"), __easycom_5$2);
+    const _component_u_checkbox_group = resolveEasycom(vue.resolveDynamicComponent("u-checkbox-group"), __easycom_6);
+    return vue.openBlock(), vue.createElementBlock("view", { class: "login" }, [
+      vue.createCommentVNode(" \u5BFC\u822A "),
+      vue.createVNode(_component_u_navbar, {
+        bgColor: "rgba(255, 195, 0, 1)",
+        leftIconSize: "62rpx",
+        titleStyle: "font-weight: 500;font-size: 38.46rpx;color: #000",
+        fixed: false,
+        leftIcon: "",
+        title: "\u767B\u9304",
+        height: "92rpx"
+      }),
+      vue.createElementVNode("view", { class: "login-content" }, [
+        vue.createElementVNode("view", { class: "lc-img" }, [
+          vue.createElementVNode("image", {
+            class: "lci-img",
+            src: "/static/login/login.png"
+          })
+        ]),
+        vue.createElementVNode("view", { class: "lc-inter" }, [
+          vue.createElementVNode("view", { class: "lci-form" }, [
+            vue.createVNode(_component_u__form, {
+              labelPosition: "top",
+              model: $data.form,
+              rules: $data.rules,
+              ref: "form"
+            }, {
+              default: vue.withCtx(() => [
+                vue.createVNode(_component_u_form_item, {
+                  labelWidth: "100%",
+                  label: "\u8ACB\u8F38\u5165\u90F5\u7BB1",
+                  prop: "email",
+                  ref: "email"
+                }, {
+                  default: vue.withCtx(() => [
+                    vue.createVNode(_component_u__input, {
+                      class: "lcif-input",
+                      type: "email",
+                      inputAlign: "left",
+                      modelValue: $data.form.email,
+                      "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => $data.form.email = $event),
+                      placeholder: "\u8ACB\u8F38\u5165\u4F60\u7684\u90F5\u7BB1"
+                    }, null, 8, ["modelValue"])
+                  ]),
+                  _: 1
+                }, 512)
+              ]),
+              _: 1
+            }, 8, ["model", "rules"])
+          ]),
+          vue.createElementVNode("view", { class: "lci-next" }, [
+            vue.createVNode(_component_u_button, {
+              onClick: $options.nextStep,
+              class: "color000 border-radius-default",
+              color: "linear-gradient(270deg, #FCA504 0%, #FDC50E 100%)"
+            }, {
+              default: vue.withCtx(() => [
+                vue.createTextVNode("\u4E0B\u4E00\u6B65")
+              ]),
+              _: 1
+            }, 8, ["onClick"]),
+            vue.createElementVNode("view", { class: "lcin-argee" }, [
+              vue.createVNode(_component_u_checkbox_group, {
+                modelValue: $data.form.arrgee,
+                "onUpdate:modelValue": _cache[1] || (_cache[1] = ($event) => $data.form.arrgee = $event)
+              }, {
+                default: vue.withCtx(() => [
+                  vue.createVNode(_component_u_checkbox, {
+                    shape: "circle",
+                    activeColor: "#FCA504",
+                    iconColor: "#666666",
+                    label: "\u6211\u5DF2\u95B1\u8B80\u4E26\u540C\u610F \u7528\u6236\u5354\u8B70",
+                    name: "1"
+                  })
+                ]),
+                _: 1
+              }, 8, ["modelValue"])
+            ])
+          ])
+        ]),
+        vue.createElementVNode("view", {
+          class: "lc-bottom",
+          onClick: _cache[2] || (_cache[2] = (...args) => $options.navigatorTo && $options.navigatorTo(...args))
+        }, "\u9084\u6C92\u6709\u8CEC\u865F\uFF1F\u7ACB\u5373\u8A3B\u518A")
+      ])
+    ]);
+  }
+  const PagesLoginLogin = /* @__PURE__ */ _export_sfc(_sfc_main$T, [["render", _sfc_render$S], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/login/login.vue"]]);
+  const props$g = {
+    props: {
+      length: {
+        type: [String, Number],
+        default: props$s.swiperIndicator.length
+      },
+      current: {
+        type: [String, Number],
+        default: props$s.swiperIndicator.current
+      },
+      indicatorActiveColor: {
+        type: String,
+        default: props$s.swiperIndicator.indicatorActiveColor
+      },
+      indicatorInactiveColor: {
+        type: String,
+        default: props$s.swiperIndicator.indicatorInactiveColor
+      },
+      indicatorMode: {
+        type: String,
+        default: props$s.swiperIndicator.indicatorMode
+      }
+    }
+  };
+  const _sfc_main$S = {
+    name: "u-swiper-indicator",
+    mixins: [mpMixin, mixin, props$g],
+    data() {
+      return {
+        lineWidth: 22
+      };
+    },
+    computed: {
+      lineStyle() {
+        let style = {};
+        style.width = uni.$u.addUnit(this.lineWidth);
+        style.transform = `translateX(${uni.$u.addUnit(this.current * this.lineWidth)})`;
+        style.backgroundColor = this.indicatorActiveColor;
+        return style;
+      },
+      dotStyle() {
+        return (index2) => {
+          let style = {};
+          style.backgroundColor = index2 === this.current ? this.indicatorActiveColor : this.indicatorInactiveColor;
+          return style;
+        };
+      }
+    }
+  };
+  function _sfc_render$R(_ctx, _cache, $props, $setup, $data, $options) {
+    return vue.openBlock(), vue.createElementBlock("view", { class: "u-swiper-indicator" }, [
+      _ctx.indicatorMode === "line" ? (vue.openBlock(), vue.createElementBlock("view", {
+        key: 0,
+        class: vue.normalizeClass(["u-swiper-indicator__wrapper", [`u-swiper-indicator__wrapper--${_ctx.indicatorMode}`]]),
+        style: vue.normalizeStyle({
+          width: _ctx.$u.addUnit($data.lineWidth * _ctx.length),
+          backgroundColor: _ctx.indicatorInactiveColor
+        })
+      }, [
+        vue.createElementVNode("view", {
+          class: "u-swiper-indicator__wrapper--line__bar",
+          style: vue.normalizeStyle([$options.lineStyle])
+        }, null, 4)
+      ], 6)) : vue.createCommentVNode("v-if", true),
+      _ctx.indicatorMode === "dot" ? (vue.openBlock(), vue.createElementBlock("view", {
+        key: 1,
+        class: "u-swiper-indicator__wrapper"
+      }, [
+        (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(_ctx.length, (item2, index2) => {
+          return vue.openBlock(), vue.createElementBlock("view", {
+            class: vue.normalizeClass(["u-swiper-indicator__wrapper__dot", [index2 === _ctx.current && "u-swiper-indicator__wrapper__dot--active"]]),
+            key: index2,
+            style: vue.normalizeStyle([$options.dotStyle(index2)])
+          }, null, 6);
+        }), 128))
+      ])) : vue.createCommentVNode("v-if", true)
+    ]);
+  }
+  const __easycom_1$2 = /* @__PURE__ */ _export_sfc(_sfc_main$S, [["render", _sfc_render$R], ["__scopeId", "data-v-23112adb"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-swiper-indicator/u-swiper-indicator.vue"]]);
+  const props$f = {
+    props: {
+      list: {
+        type: Array,
+        default: props$s.swiper.list
+      },
+      indicator: {
+        type: Boolean,
+        default: props$s.swiper.indicator
+      },
+      indicatorActiveColor: {
+        type: String,
+        default: props$s.swiper.indicatorActiveColor
+      },
+      indicatorInactiveColor: {
+        type: String,
+        default: props$s.swiper.indicatorInactiveColor
+      },
+      indicatorStyle: {
+        type: [String, Object],
+        default: props$s.swiper.indicatorStyle
+      },
+      indicatorMode: {
+        type: String,
+        default: props$s.swiper.indicatorMode
+      },
+      autoplay: {
+        type: Boolean,
+        default: props$s.swiper.autoplay
+      },
+      current: {
+        type: [String, Number],
+        default: props$s.swiper.current
+      },
+      currentItemId: {
+        type: String,
+        default: props$s.swiper.currentItemId
+      },
+      interval: {
+        type: [String, Number],
+        default: props$s.swiper.interval
+      },
+      duration: {
+        type: [String, Number],
+        default: props$s.swiper.duration
+      },
+      circular: {
+        type: Boolean,
+        default: props$s.swiper.circular
+      },
+      previousMargin: {
+        type: [String, Number],
+        default: props$s.swiper.previousMargin
+      },
+      nextMargin: {
+        type: [String, Number],
+        default: props$s.swiper.nextMargin
+      },
+      acceleration: {
+        type: Boolean,
+        default: props$s.swiper.acceleration
+      },
+      displayMultipleItems: {
+        type: Number,
+        default: props$s.swiper.displayMultipleItems
+      },
+      easingFunction: {
+        type: String,
+        default: props$s.swiper.easingFunction
+      },
+      keyName: {
+        type: String,
+        default: props$s.swiper.keyName
+      },
+      imgMode: {
+        type: String,
+        default: props$s.swiper.imgMode
+      },
+      height: {
+        type: [String, Number],
+        default: props$s.swiper.height
+      },
+      bgColor: {
+        type: String,
+        default: props$s.swiper.bgColor
+      },
+      radius: {
+        type: [String, Number],
+        default: props$s.swiper.radius
+      },
+      loading: {
+        type: Boolean,
+        default: props$s.swiper.loading
+      },
+      showTitle: {
+        type: Boolean,
+        default: props$s.swiper.showTitle
+      }
+    }
+  };
+  const _sfc_main$R = {
+    name: "u-swiper",
+    mixins: [mpMixin, mixin, props$f],
+    data() {
+      return {
+        currentIndex: 0
+      };
+    },
+    watch: {
+      current(val, preVal) {
+        if (val === preVal)
+          return;
+        this.currentIndex = val;
+      }
+    },
+    computed: {
+      itemStyle() {
+        return (index2) => {
+          const style = {};
+          if (this.nextMargin && this.previousMargin) {
+            style.borderRadius = uni.$u.addUnit(this.radius);
+            if (index2 !== this.currentIndex)
+              style.transform = "scale(0.92)";
+          }
+          return style;
+        };
+      }
+    },
+    methods: {
+      getItemType(item2) {
+        if (typeof item2 === "string")
+          return uni.$u.test.video(this.getSource(item2)) ? "video" : "image";
+        if (typeof item2 === "object" && this.keyName) {
+          if (!item2.type)
+            return uni.$u.test.video(this.getSource(item2)) ? "video" : "image";
+          if (item2.type === "image")
+            return "image";
+          if (item2.type === "video")
+            return "video";
+          return "image";
+        }
+      },
+      getSource(item2) {
+        if (typeof item2 === "string")
+          return item2;
+        if (typeof item2 === "object" && this.keyName)
+          return item2[this.keyName];
+        else
+          uni.$u.error("\u8BF7\u6309\u683C\u5F0F\u4F20\u9012\u5217\u8868\u53C2\u6570");
+        return "";
+      },
+      change(e) {
+        const {
+          current
+        } = e.detail;
+        this.pauseVideo(this.currentIndex);
+        this.currentIndex = current;
+        this.$emit("change", e.detail);
+      },
+      pauseVideo(index2) {
+        const lastItem = this.getSource(this.list[index2]);
+        if (uni.$u.test.video(lastItem)) {
+          const video2 = uni.createVideoContext(`video-${index2}`, this);
+          video2.pause();
+        }
+      },
+      getPoster(item2) {
+        return typeof item2 === "object" && item2.poster ? item2.poster : "";
+      },
+      clickHandler(index2) {
+        this.$emit("click", index2);
+      }
+    }
+  };
+  function _sfc_render$Q(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_u_loading_icon = resolveEasycom(vue.resolveDynamicComponent("u-loading-icon"), __easycom_1$3);
+    const _component_u_swiper_indicator = resolveEasycom(vue.resolveDynamicComponent("u-swiper-indicator"), __easycom_1$2);
+    return vue.openBlock(), vue.createElementBlock("view", {
+      class: "u-swiper",
+      style: vue.normalizeStyle({
+        backgroundColor: _ctx.bgColor,
+        height: _ctx.$u.addUnit(_ctx.height),
+        borderRadius: _ctx.$u.addUnit(_ctx.radius)
+      })
+    }, [
+      _ctx.loading ? (vue.openBlock(), vue.createElementBlock("view", {
+        key: 0,
+        class: "u-swiper__loading"
+      }, [
+        vue.createVNode(_component_u_loading_icon, { mode: "circle" })
+      ])) : (vue.openBlock(), vue.createElementBlock("swiper", {
+        key: 1,
+        class: "u-swiper__wrapper",
+        style: vue.normalizeStyle({
+          height: _ctx.$u.addUnit(_ctx.height)
+        }),
+        onChange: _cache[0] || (_cache[0] = (...args) => $options.change && $options.change(...args)),
+        circular: _ctx.circular,
+        interval: _ctx.interval,
+        duration: _ctx.duration,
+        autoplay: _ctx.autoplay,
+        current: _ctx.current,
+        currentItemId: _ctx.currentItemId,
+        previousMargin: _ctx.$u.addUnit(_ctx.previousMargin),
+        nextMargin: _ctx.$u.addUnit(_ctx.nextMargin),
+        acceleration: _ctx.acceleration,
+        displayMultipleItems: _ctx.displayMultipleItems,
+        easingFunction: _ctx.easingFunction
+      }, [
+        (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(_ctx.list, (item2, index2) => {
+          return vue.openBlock(), vue.createElementBlock("swiper-item", {
+            class: "u-swiper__wrapper__item",
+            key: index2
+          }, [
+            vue.createElementVNode("view", {
+              class: "u-swiper__wrapper__item__wrapper",
+              style: vue.normalizeStyle([$options.itemStyle(index2)])
+            }, [
+              vue.createCommentVNode(" \u5728nvue\u4E2D\uFF0Cimage\u56FE\u7247\u7684\u5BBD\u5EA6\u9ED8\u8BA4\u4E3A\u5C4F\u5E55\u5BBD\u5EA6\uFF0C\u9700\u8981\u901A\u8FC7flex:1\u6491\u5F00\uFF0C\u53E6\u5916\u5FC5\u987B\u8BBE\u7F6E\u9AD8\u5EA6\u624D\u80FD\u663E\u793A\u56FE\u7247 "),
+              $options.getItemType(item2) === "image" ? (vue.openBlock(), vue.createElementBlock("image", {
+                key: 0,
+                class: "u-swiper__wrapper__item__wrapper__image",
+                src: $options.getSource(item2),
+                mode: _ctx.imgMode,
+                onClick: ($event) => $options.clickHandler(index2),
+                style: vue.normalizeStyle({
+                  height: _ctx.$u.addUnit(_ctx.height),
+                  borderRadius: _ctx.$u.addUnit(_ctx.radius)
+                })
+              }, null, 12, ["src", "mode", "onClick"])) : vue.createCommentVNode("v-if", true),
+              $options.getItemType(item2) === "video" ? (vue.openBlock(), vue.createElementBlock("video", {
+                key: 1,
+                class: "u-swiper__wrapper__item__wrapper__video",
+                id: `video-${index2}`,
+                "enable-progress-gesture": false,
+                src: $options.getSource(item2),
+                poster: $options.getPoster(item2),
+                title: _ctx.showTitle && _ctx.$u.test.object(item2) && item2.title ? item2.title : "",
+                style: vue.normalizeStyle({
+                  height: _ctx.$u.addUnit(_ctx.height)
+                }),
+                controls: "",
+                onClick: ($event) => $options.clickHandler(index2)
+              }, null, 12, ["id", "src", "poster", "title", "onClick"])) : vue.createCommentVNode("v-if", true),
+              _ctx.showTitle && _ctx.$u.test.object(item2) && item2.title && _ctx.$u.test.image($options.getSource(item2)) ? (vue.openBlock(), vue.createElementBlock("text", {
+                key: 2,
+                class: "u-swiper__wrapper__item__wrapper__title u-line-1"
+              }, vue.toDisplayString(item2.title), 1)) : vue.createCommentVNode("v-if", true)
+            ], 4)
+          ]);
+        }), 128))
+      ], 44, ["circular", "interval", "duration", "autoplay", "current", "currentItemId", "previousMargin", "nextMargin", "acceleration", "displayMultipleItems", "easingFunction"])),
+      vue.createElementVNode("view", {
+        class: "u-swiper__indicator",
+        style: vue.normalizeStyle([_ctx.$u.addStyle(_ctx.indicatorStyle)])
+      }, [
+        vue.renderSlot(_ctx.$slots, "indicator", {}, () => [
+          !_ctx.loading && _ctx.indicator && !_ctx.showTitle ? (vue.openBlock(), vue.createBlock(_component_u_swiper_indicator, {
+            key: 0,
+            indicatorActiveColor: _ctx.indicatorActiveColor,
+            indicatorInactiveColor: _ctx.indicatorInactiveColor,
+            length: _ctx.list.length,
+            current: $data.currentIndex,
+            indicatorMode: _ctx.indicatorMode
+          }, null, 8, ["indicatorActiveColor", "indicatorInactiveColor", "length", "current", "indicatorMode"])) : vue.createCommentVNode("v-if", true)
+        ], true)
+      ], 4)
+    ], 4);
+  }
+  const __easycom_0$4 = /* @__PURE__ */ _export_sfc(_sfc_main$R, [["render", _sfc_render$Q], ["__scopeId", "data-v-eda42115"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-swiper/u-swiper.vue"]]);
+  const props$e = {
     props: {
       show: {
         type: Boolean,
@@ -2529,7 +5256,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  const _sfc_main$$ = {
+  const _sfc_main$Q = {
     name: "u-transition",
     data() {
       return {
@@ -2552,7 +5279,7 @@ if (uni.restoreGlobal) {
         };
       }
     },
-    mixins: [mpMixin, mixin, transition, props$n],
+    mixins: [mpMixin, mixin, transition, props$e],
     watch: {
       show: {
         handler(newVal) {
@@ -2562,7 +5289,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$_(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$P(_ctx, _cache, $props, $setup, $data, $options) {
     return $data.inited ? (vue.openBlock(), vue.createElementBlock("view", {
       key: 0,
       class: vue.normalizeClass(["u-transition", $data.classes]),
@@ -2574,8 +5301,8 @@ if (uni.restoreGlobal) {
       vue.renderSlot(_ctx.$slots, "default", {}, void 0, true)
     ], 38)) : vue.createCommentVNode("v-if", true);
   }
-  const __easycom_4$1 = /* @__PURE__ */ _export_sfc(_sfc_main$$, [["render", _sfc_render$_], ["__scopeId", "data-v-0573594d"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-transition/u-transition.vue"]]);
-  const props$m = {
+  const __easycom_4 = /* @__PURE__ */ _export_sfc(_sfc_main$Q, [["render", _sfc_render$P], ["__scopeId", "data-v-0573594d"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-transition/u-transition.vue"]]);
+  const props$d = {
     props: {
       src: {
         type: String,
@@ -2643,9 +5370,9 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  const _sfc_main$_ = {
+  const _sfc_main$P = {
     name: "u-image",
-    mixins: [mpMixin, mixin, props$m],
+    mixins: [mpMixin, mixin, props$d],
     data() {
       return {
         isError: false,
@@ -2705,9 +5432,9 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$Z(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$6);
-    const _component_u_transition = resolveEasycom(vue.resolveDynamicComponent("u-transition"), __easycom_4$1);
+  function _sfc_render$O(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$7);
+    const _component_u_transition = resolveEasycom(vue.resolveDynamicComponent("u-transition"), __easycom_4);
     return vue.openBlock(), vue.createBlock(_component_u_transition, {
       mode: "fade",
       show: $data.show,
@@ -2774,16 +5501,16 @@ if (uni.restoreGlobal) {
       _: 3
     }, 8, ["show", "duration"]);
   }
-  const __easycom_0$5 = /* @__PURE__ */ _export_sfc(_sfc_main$_, [["render", _sfc_render$Z], ["__scopeId", "data-v-9d58ba7c"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-image/u-image.vue"]]);
-  const _sfc_main$Z = {
+  const __easycom_0$3 = /* @__PURE__ */ _export_sfc(_sfc_main$P, [["render", _sfc_render$O], ["__scopeId", "data-v-9d58ba7c"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-image/u-image.vue"]]);
+  const _sfc_main$O = {
     name: "u--image",
-    mixins: [mpMixin, props$m, mixin],
+    mixins: [mpMixin, props$d, mixin],
     components: {
-      uvImage: __easycom_0$5
+      uvImage: __easycom_0$3
     },
     emits: ["click", "error", "load"]
   };
-  function _sfc_render$Y(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$N(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_uvImage = vue.resolveComponent("uvImage");
     return vue.openBlock(), vue.createBlock(_component_uvImage, {
       src: _ctx.src,
@@ -2816,68 +5543,8 @@ if (uni.restoreGlobal) {
       _: 3
     }, 8, ["src", "mode", "width", "height", "shape", "radius", "lazyLoad", "showMenuByLongpress", "loadingIcon", "errorIcon", "showLoading", "showError", "fade", "webp", "duration", "bgColor", "customStyle"]);
   }
-  const __easycom_0$4 = /* @__PURE__ */ _export_sfc(_sfc_main$Z, [["render", _sfc_render$Y], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u--image/u--image.vue"]]);
-  const props$l = {
-    props: {
-      color: {
-        type: String,
-        default: props$s.line.color
-      },
-      length: {
-        type: [String, Number],
-        default: props$s.line.length
-      },
-      direction: {
-        type: String,
-        default: props$s.line.direction
-      },
-      hairline: {
-        type: Boolean,
-        default: props$s.line.hairline
-      },
-      margin: {
-        type: [String, Number],
-        default: props$s.line.margin
-      },
-      dashed: {
-        type: Boolean,
-        default: props$s.line.dashed
-      }
-    }
-  };
-  const _sfc_main$Y = {
-    name: "u-line",
-    mixins: [mpMixin, mixin, props$l],
-    computed: {
-      lineStyle() {
-        const style = {};
-        style.margin = this.margin;
-        if (this.direction === "row") {
-          style.borderBottomWidth = "1px";
-          style.borderBottomStyle = this.dashed ? "dashed" : "solid";
-          style.width = uni.$u.addUnit(this.length);
-          if (this.hairline)
-            style.transform = "scaleY(0.5)";
-        } else {
-          style.borderLeftWidth = "1px";
-          style.borderLeftStyle = this.dashed ? "dashed" : "solid";
-          style.height = uni.$u.addUnit(this.length);
-          if (this.hairline)
-            style.transform = "scaleX(0.5)";
-        }
-        style.borderColor = this.color;
-        return uni.$u.deepMerge(style, uni.$u.addStyle(this.customStyle));
-      }
-    }
-  };
-  function _sfc_render$X(_ctx, _cache, $props, $setup, $data, $options) {
-    return vue.openBlock(), vue.createElementBlock("view", {
-      class: "u-line",
-      style: vue.normalizeStyle([$options.lineStyle])
-    }, null, 4);
-  }
-  const __easycom_1$3 = /* @__PURE__ */ _export_sfc(_sfc_main$Y, [["render", _sfc_render$X], ["__scopeId", "data-v-bbd9963c"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-line/u-line.vue"]]);
-  const props$k = {
+  const __easycom_0$2 = /* @__PURE__ */ _export_sfc(_sfc_main$O, [["render", _sfc_render$N], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u--image/u--image.vue"]]);
+  const props$c = {
     props: {
       show: {
         type: Boolean,
@@ -2897,9 +5564,9 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  const _sfc_main$X = {
+  const _sfc_main$N = {
     name: "u-overlay",
-    mixins: [mpMixin, mixin, props$k],
+    mixins: [mpMixin, mixin, props$c],
     computed: {
       overlayStyle() {
         const style = {
@@ -2920,8 +5587,8 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$W(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_transition = resolveEasycom(vue.resolveDynamicComponent("u-transition"), __easycom_4$1);
+  function _sfc_render$M(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_u_transition = resolveEasycom(vue.resolveDynamicComponent("u-transition"), __easycom_4);
     return vue.openBlock(), vue.createBlock(_component_u_transition, {
       show: _ctx.show,
       "custom-class": "u-overlay",
@@ -2935,45 +5602,13 @@ if (uni.restoreGlobal) {
       _: 3
     }, 8, ["show", "duration", "custom-style", "onClick"]);
   }
-  const __easycom_0$3 = /* @__PURE__ */ _export_sfc(_sfc_main$X, [["render", _sfc_render$W], ["__scopeId", "data-v-35f7c3e5"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-overlay/u-overlay.vue"]]);
-  const props$j = {
-    props: {
-      bgColor: {
-        type: String,
-        default: props$s.statusBar.bgColor
-      }
-    }
-  };
-  const _sfc_main$W = {
-    name: "u-status-bar",
-    mixins: [mpMixin, mixin, props$j],
-    data() {
-      return {};
-    },
-    computed: {
-      style() {
-        const style = {};
-        style.height = uni.$u.addUnit(uni.$u.sys().statusBarHeight, "px");
-        style.backgroundColor = this.bgColor;
-        return uni.$u.deepMerge(style, uni.$u.addStyle(this.customStyle));
-      }
-    }
-  };
-  function _sfc_render$V(_ctx, _cache, $props, $setup, $data, $options) {
-    return vue.openBlock(), vue.createElementBlock("view", {
-      style: vue.normalizeStyle([$options.style]),
-      class: "u-status-bar"
-    }, [
-      vue.renderSlot(_ctx.$slots, "default", {}, void 0, true)
-    ], 4);
-  }
-  const __easycom_0$2 = /* @__PURE__ */ _export_sfc(_sfc_main$W, [["render", _sfc_render$V], ["__scopeId", "data-v-c0b45a48"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-status-bar/u-status-bar.vue"]]);
-  const props$i = {
+  const __easycom_0$1 = /* @__PURE__ */ _export_sfc(_sfc_main$N, [["render", _sfc_render$M], ["__scopeId", "data-v-35f7c3e5"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-overlay/u-overlay.vue"]]);
+  const props$b = {
     props: {}
   };
-  const _sfc_main$V = {
+  const _sfc_main$M = {
     name: "u-safe-bottom",
-    mixins: [mpMixin, mixin, props$i],
+    mixins: [mpMixin, mixin, props$b],
     data() {
       return {
         safeAreaBottomHeight: 0,
@@ -2989,14 +5624,14 @@ if (uni.restoreGlobal) {
     mounted() {
     }
   };
-  function _sfc_render$U(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$L(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("view", {
       class: vue.normalizeClass(["u-safe-bottom", [!$data.isNvue && "u-safe-area-inset-bottom"]]),
       style: vue.normalizeStyle([$options.style])
     }, null, 6);
   }
-  const __easycom_3$2 = /* @__PURE__ */ _export_sfc(_sfc_main$V, [["render", _sfc_render$U], ["__scopeId", "data-v-3ec581de"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-safe-bottom/u-safe-bottom.vue"]]);
-  const props$h = {
+  const __easycom_3$1 = /* @__PURE__ */ _export_sfc(_sfc_main$M, [["render", _sfc_render$L], ["__scopeId", "data-v-3ec581de"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-safe-bottom/u-safe-bottom.vue"]]);
+  const props$a = {
     props: {
       show: {
         type: Boolean,
@@ -3060,9 +5695,9 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  const _sfc_main$U = {
+  const _sfc_main$L = {
     name: "u-popup",
-    mixins: [mpMixin, mixin, props$h],
+    mixins: [mpMixin, mixin, props$a],
     data() {
       return {
         overlayDuration: this.duration + 50
@@ -3172,12 +5807,12 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$T(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_overlay = resolveEasycom(vue.resolveDynamicComponent("u-overlay"), __easycom_0$3);
-    const _component_u_status_bar = resolveEasycom(vue.resolveDynamicComponent("u-status-bar"), __easycom_0$2);
-    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$6);
-    const _component_u_safe_bottom = resolveEasycom(vue.resolveDynamicComponent("u-safe-bottom"), __easycom_3$2);
-    const _component_u_transition = resolveEasycom(vue.resolveDynamicComponent("u-transition"), __easycom_4$1);
+  function _sfc_render$K(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_u_overlay = resolveEasycom(vue.resolveDynamicComponent("u-overlay"), __easycom_0$1);
+    const _component_u_status_bar = resolveEasycom(vue.resolveDynamicComponent("u-status-bar"), __easycom_1$5);
+    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$7);
+    const _component_u_safe_bottom = resolveEasycom(vue.resolveDynamicComponent("u-safe-bottom"), __easycom_3$1);
+    const _component_u_transition = resolveEasycom(vue.resolveDynamicComponent("u-transition"), __easycom_4);
     return vue.openBlock(), vue.createElementBlock("view", { class: "u-popup" }, [
       _ctx.overlay ? (vue.openBlock(), vue.createBlock(_component_u_overlay, {
         key: 0,
@@ -3224,8 +5859,8 @@ if (uni.restoreGlobal) {
       }, 8, ["show", "customStyle", "mode", "duration", "onAfterEnter", "onClick"])
     ]);
   }
-  const __easycom_2$5 = /* @__PURE__ */ _export_sfc(_sfc_main$U, [["render", _sfc_render$T], ["__scopeId", "data-v-74921bef"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-popup/u-popup.vue"]]);
-  const props$g = {
+  const __easycom_2$4 = /* @__PURE__ */ _export_sfc(_sfc_main$L, [["render", _sfc_render$K], ["__scopeId", "data-v-74921bef"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-popup/u-popup.vue"]]);
+  const props$9 = {
     props: {
       show: {
         type: Boolean,
@@ -3293,9 +5928,9 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  const _sfc_main$T = {
+  const _sfc_main$K = {
     name: "u-modal",
-    mixins: [mpMixin, mixin, props$g],
+    mixins: [mpMixin, mixin, props$9],
     data() {
       return {
         loading: false
@@ -3324,10 +5959,10 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$S(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_line = resolveEasycom(vue.resolveDynamicComponent("u-line"), __easycom_1$3);
-    const _component_u_loading_icon = resolveEasycom(vue.resolveDynamicComponent("u-loading-icon"), __easycom_1$5);
-    const _component_u_popup = resolveEasycom(vue.resolveDynamicComponent("u-popup"), __easycom_2$5);
+  function _sfc_render$J(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_u_line = resolveEasycom(vue.resolveDynamicComponent("u-line"), __easycom_0$5);
+    const _component_u_loading_icon = resolveEasycom(vue.resolveDynamicComponent("u-loading-icon"), __easycom_1$3);
+    const _component_u_popup = resolveEasycom(vue.resolveDynamicComponent("u-popup"), __easycom_2$4);
     return vue.openBlock(), vue.createBlock(_component_u_popup, {
       mode: "center",
       zoom: _ctx.zoom,
@@ -3416,7 +6051,7 @@ if (uni.restoreGlobal) {
       _: 3
     }, 8, ["zoom", "show", "customStyle", "closeOnClickOverlay", "onClick"]);
   }
-  const __easycom_5$2 = /* @__PURE__ */ _export_sfc(_sfc_main$T, [["render", _sfc_render$S], ["__scopeId", "data-v-12b77a26"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-modal/u-modal.vue"]]);
+  const __easycom_5$1 = /* @__PURE__ */ _export_sfc(_sfc_main$K, [["render", _sfc_render$J], ["__scopeId", "data-v-12b77a26"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-modal/u-modal.vue"]]);
   function getDevtoolsGlobalHook() {
     return getTarget().__VUE_DEVTOOLS_GLOBAL_HOOK__;
   }
@@ -4533,7 +7168,7 @@ if (uni.restoreGlobal) {
       }
     });
   };
-  const _sfc_main$S = {
+  const _sfc_main$J = {
     data() {
       return {
         bannerList: [{
@@ -4604,11 +7239,11 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$R(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_swiper = resolveEasycom(vue.resolveDynamicComponent("u-swiper"), __easycom_0$7);
-    const _component_u__image = resolveEasycom(vue.resolveDynamicComponent("u--image"), __easycom_0$4);
-    const _component_u_image = resolveEasycom(vue.resolveDynamicComponent("u-image"), __easycom_0$5);
-    const _component_u_modal = resolveEasycom(vue.resolveDynamicComponent("u-modal"), __easycom_5$2);
+  function _sfc_render$I(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_u_swiper = resolveEasycom(vue.resolveDynamicComponent("u-swiper"), __easycom_0$4);
+    const _component_u__image = resolveEasycom(vue.resolveDynamicComponent("u--image"), __easycom_0$2);
+    const _component_u_image = resolveEasycom(vue.resolveDynamicComponent("u-image"), __easycom_0$3);
+    const _component_u_modal = resolveEasycom(vue.resolveDynamicComponent("u-modal"), __easycom_5$1);
     return vue.openBlock(), vue.createElementBlock("view", null, [
       vue.createCommentVNode(' <u-navbar height="48" title="" :bgColor="bgColor"></u-navbar> '),
       vue.createElementVNode("view", null, [
@@ -4722,402 +7357,8 @@ if (uni.restoreGlobal) {
       }, 8, ["onConfirm", "onCancel", "show", "title"])
     ]);
   }
-  const PagesHomeHome = /* @__PURE__ */ _export_sfc(_sfc_main$S, [["render", _sfc_render$R], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/home/home.vue"]]);
-  const props$f = {
-    props: {
-      modelValue: {
-        type: [String, Number],
-        default: props$s.input.value
-      },
-      type: {
-        type: String,
-        default: props$s.input.type
-      },
-      fixed: {
-        type: Boolean,
-        default: props$s.input.fixed
-      },
-      disabled: {
-        type: Boolean,
-        default: props$s.input.disabled
-      },
-      disabledColor: {
-        type: String,
-        default: props$s.input.disabledColor
-      },
-      clearable: {
-        type: Boolean,
-        default: props$s.input.clearable
-      },
-      password: {
-        type: Boolean,
-        default: props$s.input.password
-      },
-      maxlength: {
-        type: [String, Number],
-        default: props$s.input.maxlength
-      },
-      placeholder: {
-        type: String,
-        default: props$s.input.placeholder
-      },
-      placeholderClass: {
-        type: String,
-        default: props$s.input.placeholderClass
-      },
-      placeholderStyle: {
-        type: [String, Object],
-        default: props$s.input.placeholderStyle
-      },
-      showWordLimit: {
-        type: Boolean,
-        default: props$s.input.showWordLimit
-      },
-      confirmType: {
-        type: String,
-        default: props$s.input.confirmType
-      },
-      confirmHold: {
-        type: Boolean,
-        default: props$s.input.confirmHold
-      },
-      holdKeyboard: {
-        type: Boolean,
-        default: props$s.input.holdKeyboard
-      },
-      focus: {
-        type: Boolean,
-        default: props$s.input.focus
-      },
-      autoBlur: {
-        type: Boolean,
-        default: props$s.input.autoBlur
-      },
-      disableDefaultPadding: {
-        type: Boolean,
-        default: props$s.input.disableDefaultPadding
-      },
-      cursor: {
-        type: [String, Number],
-        default: props$s.input.cursor
-      },
-      cursorSpacing: {
-        type: [String, Number],
-        default: props$s.input.cursorSpacing
-      },
-      selectionStart: {
-        type: [String, Number],
-        default: props$s.input.selectionStart
-      },
-      selectionEnd: {
-        type: [String, Number],
-        default: props$s.input.selectionEnd
-      },
-      adjustPosition: {
-        type: Boolean,
-        default: props$s.input.adjustPosition
-      },
-      inputAlign: {
-        type: String,
-        default: props$s.input.inputAlign
-      },
-      fontSize: {
-        type: [String, Number],
-        default: props$s.input.fontSize
-      },
-      color: {
-        type: String,
-        default: props$s.input.color
-      },
-      prefixIcon: {
-        type: String,
-        default: props$s.input.prefixIcon
-      },
-      prefixIconStyle: {
-        type: [String, Object],
-        default: props$s.input.prefixIconStyle
-      },
-      suffixIcon: {
-        type: String,
-        default: props$s.input.suffixIcon
-      },
-      suffixIconStyle: {
-        type: [String, Object],
-        default: props$s.input.suffixIconStyle
-      },
-      border: {
-        type: String,
-        default: props$s.input.border
-      },
-      readonly: {
-        type: Boolean,
-        default: props$s.input.readonly
-      },
-      shape: {
-        type: String,
-        default: props$s.input.shape
-      },
-      formatter: {
-        type: [Function, null],
-        default: props$s.input.formatter
-      },
-      ignoreCompositionEvent: {
-        type: Boolean,
-        default: true
-      }
-    }
-  };
-  const _sfc_main$R = {
-    name: "u-input",
-    mixins: [mpMixin, mixin, props$f],
-    data() {
-      return {
-        innerValue: "",
-        focused: false,
-        firstChange: true,
-        changeFromInner: false,
-        innerFormatter: (value) => value
-      };
-    },
-    watch: {
-      modelValue: {
-        immediate: true,
-        handler(newVal, oldVal) {
-          this.innerValue = newVal;
-          this.firstChange = false;
-          this.changeFromInner = false;
-        }
-      }
-    },
-    computed: {
-      isShowClear() {
-        const { clearable, readonly, focused, innerValue } = this;
-        return !!clearable && !readonly && !!focused && innerValue !== "";
-      },
-      inputClass() {
-        let classes = [], { border, disabled, shape } = this;
-        border === "surround" && (classes = classes.concat(["u-border", "u-input--radius"]));
-        classes.push(`u-input--${shape}`);
-        border === "bottom" && (classes = classes.concat([
-          "u-border-bottom",
-          "u-input--no-radius"
-        ]));
-        return classes.join(" ");
-      },
-      wrapperStyle() {
-        const style = {};
-        if (this.disabled) {
-          style.backgroundColor = this.disabledColor;
-        }
-        if (this.border === "none") {
-          style.padding = "0";
-        } else {
-          style.paddingTop = "6px";
-          style.paddingBottom = "6px";
-          style.paddingLeft = "9px";
-          style.paddingRight = "9px";
-        }
-        return uni.$u.deepMerge(style, uni.$u.addStyle(this.customStyle));
-      },
-      inputStyle() {
-        const style = {
-          color: this.color,
-          fontSize: uni.$u.addUnit(this.fontSize),
-          textAlign: this.inputAlign
-        };
-        return style;
-      }
-    },
-    emits: ["update:modelValue", "focus", "blur", "change", "confirm", "clear", "keyboardheightchange"],
-    methods: {
-      setFormatter(e) {
-        this.innerFormatter = e;
-      },
-      onInput(e) {
-        let { value = "" } = e.detail || {};
-        const formatter = this.formatter || this.innerFormatter;
-        const formatValue = formatter(value);
-        this.innerValue = value;
-        this.$nextTick(() => {
-          this.innerValue = formatValue;
-          this.valueChange();
-        });
-      },
-      onBlur(event2) {
-        this.$emit("blur", event2.detail.value);
-        uni.$u.sleep(50).then(() => {
-          this.focused = false;
-        });
-        uni.$u.formValidate(this, "blur");
-      },
-      onFocus(event2) {
-        this.focused = true;
-        this.$emit("focus");
-      },
-      onConfirm(event2) {
-        this.$emit("confirm", this.innerValue);
-      },
-      onkeyboardheightchange() {
-        this.$emit("keyboardheightchange");
-      },
-      valueChange() {
-        const value = this.innerValue;
-        this.$nextTick(() => {
-          this.$emit("update:modelValue", value);
-          this.changeFromInner = true;
-          this.$emit("change", value);
-          uni.$u.formValidate(this, "change");
-        });
-      },
-      onClear() {
-        this.innerValue = "";
-        this.$nextTick(() => {
-          this.valueChange();
-          this.$emit("clear");
-        });
-      },
-      clickHandler() {
-      }
-    }
-  };
-  function _sfc_render$Q(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$6);
-    return vue.openBlock(), vue.createElementBlock("view", {
-      class: vue.normalizeClass(["u-input", $options.inputClass]),
-      style: vue.normalizeStyle([$options.wrapperStyle])
-    }, [
-      vue.createElementVNode("view", { class: "u-input__content" }, [
-        _ctx.prefixIcon || _ctx.$slots.prefix ? (vue.openBlock(), vue.createElementBlock("view", {
-          key: 0,
-          class: "u-input__content__prefix-icon"
-        }, [
-          vue.renderSlot(_ctx.$slots, "prefix", {}, () => [
-            vue.createVNode(_component_u_icon, {
-              name: _ctx.prefixIcon,
-              size: "18",
-              customStyle: _ctx.prefixIconStyle
-            }, null, 8, ["name", "customStyle"])
-          ], true)
-        ])) : vue.createCommentVNode("v-if", true),
-        vue.createElementVNode("view", {
-          class: "u-input__content__field-wrapper",
-          onClick: _cache[5] || (_cache[5] = (...args) => $options.clickHandler && $options.clickHandler(...args))
-        }, [
-          vue.createCommentVNode(" \u6839\u636Euni-app\u7684input\u7EC4\u4EF6\u6587\u6863\uFF0CH5\u548CAPP\u4E2D\u53EA\u8981\u58F0\u660E\u4E86password\u53C2\u6570(\u65E0\u8BBAtrue\u8FD8\u662Ffalse)\uFF0Ctype\u5747\u5931\u6548\uFF0C\u6B64\u65F6\n					\u4E3A\u4E86\u9632\u6B62type=number\u65F6\uFF0C\u53C8\u5B58\u5728password\u5C5E\u6027\uFF0Ctype\u65E0\u6548\uFF0C\u6B64\u65F6\u9700\u8981\u8BBE\u7F6Epassword\u4E3Aundefined\n				 "),
-          vue.createElementVNode("input", {
-            class: "u-input__content__field-wrapper__field",
-            style: vue.normalizeStyle([$options.inputStyle]),
-            type: _ctx.type,
-            focus: _ctx.focus,
-            cursor: _ctx.cursor,
-            value: $data.innerValue,
-            "auto-blur": _ctx.autoBlur,
-            disabled: _ctx.disabled || _ctx.readonly,
-            maxlength: _ctx.maxlength,
-            placeholder: _ctx.placeholder,
-            "placeholder-style": _ctx.placeholderStyle,
-            "placeholder-class": _ctx.placeholderClass,
-            "confirm-type": _ctx.confirmType,
-            "confirm-hold": _ctx.confirmHold,
-            "hold-keyboard": _ctx.holdKeyboard,
-            "cursor-spacing": _ctx.cursorSpacing,
-            "adjust-position": _ctx.adjustPosition,
-            "selection-end": _ctx.selectionEnd,
-            "selection-start": _ctx.selectionStart,
-            password: _ctx.password || _ctx.type === "password" || void 0,
-            ignoreCompositionEvent: _ctx.ignoreCompositionEvent,
-            onInput: _cache[0] || (_cache[0] = (...args) => $options.onInput && $options.onInput(...args)),
-            onBlur: _cache[1] || (_cache[1] = (...args) => $options.onBlur && $options.onBlur(...args)),
-            onFocus: _cache[2] || (_cache[2] = (...args) => $options.onFocus && $options.onFocus(...args)),
-            onConfirm: _cache[3] || (_cache[3] = (...args) => $options.onConfirm && $options.onConfirm(...args)),
-            onKeyboardheightchange: _cache[4] || (_cache[4] = (...args) => $options.onkeyboardheightchange && $options.onkeyboardheightchange(...args))
-          }, null, 44, ["type", "focus", "cursor", "value", "auto-blur", "disabled", "maxlength", "placeholder", "placeholder-style", "placeholder-class", "confirm-type", "confirm-hold", "hold-keyboard", "cursor-spacing", "adjust-position", "selection-end", "selection-start", "password", "ignoreCompositionEvent"])
-        ]),
-        $options.isShowClear ? (vue.openBlock(), vue.createElementBlock("view", {
-          key: 1,
-          class: "u-input__content__clear",
-          onClick: _cache[6] || (_cache[6] = (...args) => $options.onClear && $options.onClear(...args))
-        }, [
-          vue.createVNode(_component_u_icon, {
-            name: "close",
-            size: "11",
-            color: "#ffffff",
-            customStyle: "line-height: 12px"
-          })
-        ])) : vue.createCommentVNode("v-if", true),
-        _ctx.suffixIcon || _ctx.$slots.suffix ? (vue.openBlock(), vue.createElementBlock("view", {
-          key: 2,
-          class: "u-input__content__subfix-icon"
-        }, [
-          vue.renderSlot(_ctx.$slots, "suffix", {}, () => [
-            vue.createVNode(_component_u_icon, {
-              name: _ctx.suffixIcon,
-              size: "18",
-              customStyle: _ctx.suffixIconStyle
-            }, null, 8, ["name", "customStyle"])
-          ], true)
-        ])) : vue.createCommentVNode("v-if", true)
-      ])
-    ], 6);
-  }
-  const uvInput = /* @__PURE__ */ _export_sfc(_sfc_main$R, [["render", _sfc_render$Q], ["__scopeId", "data-v-5904192e"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-input/u-input.vue"]]);
-  const _sfc_main$Q = {
-    name: "u--input",
-    mixins: [mpMixin, props$f, mixin],
-    components: {
-      uvInput
-    }
-  };
-  function _sfc_render$P(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_uvInput = vue.resolveComponent("uvInput");
-    return vue.openBlock(), vue.createBlock(_component_uvInput, {
-      modelValue: _ctx.modelValue,
-      "onUpdate:modelValue": _cache[0] || (_cache[0] = (e) => _ctx.$emit("update:modelValue", e)),
-      type: _ctx.type,
-      fixed: _ctx.fixed,
-      disabled: _ctx.disabled,
-      disabledColor: _ctx.disabledColor,
-      clearable: _ctx.clearable,
-      password: _ctx.password,
-      maxlength: _ctx.maxlength,
-      placeholder: _ctx.placeholder,
-      placeholderClass: _ctx.placeholderClass,
-      placeholderStyle: _ctx.placeholderStyle,
-      showWordLimit: _ctx.showWordLimit,
-      confirmType: _ctx.confirmType,
-      confirmHold: _ctx.confirmHold,
-      holdKeyboard: _ctx.holdKeyboard,
-      focus: _ctx.focus,
-      autoBlur: _ctx.autoBlur,
-      disableDefaultPadding: _ctx.disableDefaultPadding,
-      cursor: _ctx.cursor,
-      cursorSpacing: _ctx.cursorSpacing,
-      selectionStart: _ctx.selectionStart,
-      selectionEnd: _ctx.selectionEnd,
-      adjustPosition: _ctx.adjustPosition,
-      inputAlign: _ctx.inputAlign,
-      fontSize: _ctx.fontSize,
-      color: _ctx.color,
-      prefixIcon: _ctx.prefixIcon,
-      suffixIcon: _ctx.suffixIcon,
-      suffixIconStyle: _ctx.suffixIconStyle,
-      prefixIconStyle: _ctx.prefixIconStyle,
-      border: _ctx.border,
-      readonly: _ctx.readonly,
-      shape: _ctx.shape,
-      customStyle: _ctx.customStyle,
-      formatter: _ctx.formatter,
-      ignoreCompositionEvent: _ctx.ignoreCompositionEvent
-    }, {
-      default: vue.withCtx(() => [
-        vue.renderSlot(_ctx.$slots, "prefix", { slot: "prefix" }),
-        vue.renderSlot(_ctx.$slots, "suffix", { slot: "suffix" })
-      ]),
-      _: 3
-    }, 8, ["modelValue", "type", "fixed", "disabled", "disabledColor", "clearable", "password", "maxlength", "placeholder", "placeholderClass", "placeholderStyle", "showWordLimit", "confirmType", "confirmHold", "holdKeyboard", "focus", "autoBlur", "disableDefaultPadding", "cursor", "cursorSpacing", "selectionStart", "selectionEnd", "adjustPosition", "inputAlign", "fontSize", "color", "prefixIcon", "suffixIcon", "suffixIconStyle", "prefixIconStyle", "border", "readonly", "shape", "customStyle", "formatter", "ignoreCompositionEvent"]);
-  }
-  const __easycom_1$2 = /* @__PURE__ */ _export_sfc(_sfc_main$Q, [["render", _sfc_render$P], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u--input/u--input.vue"]]);
-  const props$e = {
+  const PagesHomeHome = /* @__PURE__ */ _export_sfc(_sfc_main$J, [["render", _sfc_render$I], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/home/home.vue"]]);
+  const props$8 = {
     props: {
       isDot: {
         type: Boolean,
@@ -5177,9 +7418,9 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  const _sfc_main$P = {
+  const _sfc_main$I = {
     name: "u-badge",
-    mixins: [mpMixin, props$e, mixin],
+    mixins: [mpMixin, props$8, mixin],
     computed: {
       boxStyle() {
         let style = {};
@@ -5218,15 +7459,15 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$O(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$H(_ctx, _cache, $props, $setup, $data, $options) {
     return _ctx.show && ((Number(_ctx.value) === 0 ? _ctx.showZero : true) || _ctx.isDot) ? (vue.openBlock(), vue.createElementBlock("text", {
       key: 0,
       class: vue.normalizeClass([[_ctx.isDot ? "u-badge--dot" : "u-badge--not-dot", _ctx.inverted && "u-badge--inverted", _ctx.shape === "horn" && "u-badge--horn", `u-badge--${_ctx.type}${_ctx.inverted ? "--inverted" : ""}`], "u-badge"]),
       style: vue.normalizeStyle([_ctx.$u.addStyle(_ctx.customStyle), $options.badgeStyle])
     }, vue.toDisplayString(_ctx.isDot ? "" : $options.showValue), 7)) : vue.createCommentVNode("v-if", true);
   }
-  const __easycom_0$1 = /* @__PURE__ */ _export_sfc(_sfc_main$P, [["render", _sfc_render$O], ["__scopeId", "data-v-aa9883b1"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-badge/u-badge.vue"]]);
-  const props$d = {
+  const __easycom_0 = /* @__PURE__ */ _export_sfc(_sfc_main$I, [["render", _sfc_render$H], ["__scopeId", "data-v-aa9883b1"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-badge/u-badge.vue"]]);
+  const props$7 = {
     props: {
       duration: {
         type: Number,
@@ -5278,9 +7519,9 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  const _sfc_main$O = {
+  const _sfc_main$H = {
     name: "u-tabs",
-    mixins: [mpMixin, mixin, props$d],
+    mixins: [mpMixin, mixin, props$7],
     data() {
       return {
         firstTime: true,
@@ -5417,8 +7658,8 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$N(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_badge = resolveEasycom(vue.resolveDynamicComponent("u-badge"), __easycom_0$1);
+  function _sfc_render$G(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_u_badge = resolveEasycom(vue.resolveDynamicComponent("u-badge"), __easycom_0);
     return vue.openBlock(), vue.createElementBlock("view", { class: "u-tabs" }, [
       vue.createElementVNode("view", { class: "u-tabs__wrapper" }, [
         vue.renderSlot(_ctx.$slots, "left", {}, void 0, true),
@@ -5483,171 +7724,8 @@ if (uni.restoreGlobal) {
       ])
     ]);
   }
-  const __easycom_2$4 = /* @__PURE__ */ _export_sfc(_sfc_main$O, [["render", _sfc_render$N], ["__scopeId", "data-v-0546c3e4"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-tabs/u-tabs.vue"]]);
-  const props$c = {
-    props: {
-      safeAreaInsetTop: {
-        type: Boolean,
-        default: props$s.navbar.safeAreaInsetTop
-      },
-      placeholder: {
-        type: Boolean,
-        default: props$s.navbar.placeholder
-      },
-      fixed: {
-        type: Boolean,
-        default: props$s.navbar.fixed
-      },
-      border: {
-        type: Boolean,
-        default: props$s.navbar.border
-      },
-      leftIcon: {
-        type: String,
-        default: props$s.navbar.leftIcon
-      },
-      leftText: {
-        type: String,
-        default: props$s.navbar.leftText
-      },
-      rightText: {
-        type: String,
-        default: props$s.navbar.rightText
-      },
-      rightIcon: {
-        type: String,
-        default: props$s.navbar.rightIcon
-      },
-      title: {
-        type: [String, Number],
-        default: props$s.navbar.title
-      },
-      bgColor: {
-        type: String,
-        default: props$s.navbar.bgColor
-      },
-      titleWidth: {
-        type: [String, Number],
-        default: props$s.navbar.titleWidth
-      },
-      height: {
-        type: [String, Number],
-        default: props$s.navbar.height
-      },
-      leftIconSize: {
-        type: [String, Number],
-        default: props$s.navbar.leftIconSize
-      },
-      leftIconColor: {
-        type: String,
-        default: props$s.navbar.leftIconColor
-      },
-      autoBack: {
-        type: Boolean,
-        default: props$s.navbar.autoBack
-      },
-      titleStyle: {
-        type: [String, Object],
-        default: props$s.navbar.titleStyle
-      }
-    }
-  };
-  const _sfc_main$N = {
-    name: "u-navbar",
-    mixins: [mpMixin, mixin, props$c],
-    data() {
-      return {};
-    },
-    methods: {
-      leftClick() {
-        this.$emit("leftClick");
-        if (this.autoBack) {
-          uni.navigateBack();
-        }
-      },
-      rightClick() {
-        this.$emit("rightClick");
-      }
-    }
-  };
-  function _sfc_render$M(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_status_bar = resolveEasycom(vue.resolveDynamicComponent("u-status-bar"), __easycom_0$2);
-    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$6);
-    return vue.openBlock(), vue.createElementBlock("view", { class: "u-navbar" }, [
-      _ctx.fixed && _ctx.placeholder ? (vue.openBlock(), vue.createElementBlock("view", {
-        key: 0,
-        class: "u-navbar__placeholder",
-        style: vue.normalizeStyle({
-          height: _ctx.$u.addUnit(_ctx.$u.getPx(_ctx.height) + _ctx.$u.sys().statusBarHeight, "px")
-        })
-      }, null, 4)) : vue.createCommentVNode("v-if", true),
-      vue.createElementVNode("view", {
-        class: vue.normalizeClass([_ctx.fixed && "u-navbar--fixed"])
-      }, [
-        _ctx.safeAreaInsetTop ? (vue.openBlock(), vue.createBlock(_component_u_status_bar, {
-          key: 0,
-          bgColor: _ctx.bgColor
-        }, null, 8, ["bgColor"])) : vue.createCommentVNode("v-if", true),
-        vue.createElementVNode("view", {
-          class: vue.normalizeClass(["u-navbar__content", [_ctx.border && "u-border-bottom"]]),
-          style: vue.normalizeStyle({
-            height: _ctx.$u.addUnit(_ctx.height),
-            backgroundColor: _ctx.bgColor
-          })
-        }, [
-          vue.createElementVNode("view", {
-            class: "u-navbar__content__left",
-            "hover-class": "u-navbar__content__left--hover",
-            "hover-start-time": "150",
-            onClick: _cache[0] || (_cache[0] = (...args) => $options.leftClick && $options.leftClick(...args))
-          }, [
-            vue.renderSlot(_ctx.$slots, "left", {}, () => [
-              _ctx.leftIcon ? (vue.openBlock(), vue.createBlock(_component_u_icon, {
-                key: 0,
-                name: _ctx.leftIcon,
-                size: _ctx.leftIconSize,
-                color: _ctx.leftIconColor
-              }, null, 8, ["name", "size", "color"])) : vue.createCommentVNode("v-if", true),
-              _ctx.leftText ? (vue.openBlock(), vue.createElementBlock("text", {
-                key: 1,
-                style: vue.normalizeStyle({
-                  color: _ctx.leftIconColor
-                }),
-                class: "u-navbar__content__left__text"
-              }, vue.toDisplayString(_ctx.leftText), 5)) : vue.createCommentVNode("v-if", true)
-            ], true)
-          ]),
-          vue.renderSlot(_ctx.$slots, "center", {}, () => [
-            vue.createElementVNode("text", {
-              class: "u-line-1 u-navbar__content__title",
-              style: vue.normalizeStyle([{
-                width: _ctx.$u.addUnit(_ctx.titleWidth)
-              }, _ctx.$u.addStyle(_ctx.titleStyle)])
-            }, vue.toDisplayString(_ctx.title), 5)
-          ], true),
-          _ctx.$slots.right || _ctx.rightIcon || _ctx.rightText ? (vue.openBlock(), vue.createElementBlock("view", {
-            key: 0,
-            class: "u-navbar__content__right",
-            onClick: _cache[1] || (_cache[1] = (...args) => $options.rightClick && $options.rightClick(...args))
-          }, [
-            vue.renderSlot(_ctx.$slots, "right", {}, () => [
-              _ctx.rightIcon ? (vue.openBlock(), vue.createBlock(_component_u_icon, {
-                key: 0,
-                name: _ctx.rightIcon,
-                size: "20"
-              }, null, 8, ["name"])) : vue.createCommentVNode("v-if", true),
-              _ctx.rightText ? (vue.openBlock(), vue.createElementBlock("text", {
-                key: 1,
-                class: "u-navbar__content__right__text"
-              }, vue.toDisplayString(_ctx.rightText), 1)) : vue.createCommentVNode("v-if", true)
-            ], true)
-          ])) : vue.createCommentVNode("v-if", true)
-        ], 6)
-      ], 2)
-    ]);
-  }
-  const __easycom_0 = /* @__PURE__ */ _export_sfc(_sfc_main$N, [["render", _sfc_render$M], ["__scopeId", "data-v-9d9e7ee2"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-navbar/u-navbar.vue"]]);
-  const props$b = {
+  const __easycom_2$3 = /* @__PURE__ */ _export_sfc(_sfc_main$H, [["render", _sfc_render$G], ["__scopeId", "data-v-0546c3e4"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-tabs/u-tabs.vue"]]);
+  const props$6 = {
     props: {
       status: {
         type: String,
@@ -5723,9 +7801,9 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  const _sfc_main$M = {
+  const _sfc_main$G = {
     name: "u-loadmore",
-    mixins: [mpMixin, mixin, props$b],
+    mixins: [mpMixin, mixin, props$6],
     data() {
       return {
         dotText: "\u25CF"
@@ -5760,9 +7838,9 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$L(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_line = resolveEasycom(vue.resolveDynamicComponent("u-line"), __easycom_1$3);
-    const _component_u_loading_icon = resolveEasycom(vue.resolveDynamicComponent("u-loading-icon"), __easycom_1$5);
+  function _sfc_render$F(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_u_line = resolveEasycom(vue.resolveDynamicComponent("u-line"), __easycom_0$5);
+    const _component_u_loading_icon = resolveEasycom(vue.resolveDynamicComponent("u-loading-icon"), __easycom_1$3);
     return vue.openBlock(), vue.createElementBlock("view", {
       class: "u-loadmore",
       style: vue.normalizeStyle([
@@ -5812,8 +7890,8 @@ if (uni.restoreGlobal) {
       }, null, 8, ["color", "dashed"])) : vue.createCommentVNode("v-if", true)
     ], 4);
   }
-  const __easycom_2$3 = /* @__PURE__ */ _export_sfc(_sfc_main$M, [["render", _sfc_render$L], ["__scopeId", "data-v-5817e4cf"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-loadmore/u-loadmore.vue"]]);
-  const props$a = {
+  const __easycom_2$2 = /* @__PURE__ */ _export_sfc(_sfc_main$G, [["render", _sfc_render$F], ["__scopeId", "data-v-5817e4cf"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-loadmore/u-loadmore.vue"]]);
+  const props$5 = {
     props: {
       icon: {
         type: String,
@@ -5861,9 +7939,9 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  const _sfc_main$L = {
+  const _sfc_main$F = {
     name: "u-empty",
-    mixins: [mpMixin, mixin, props$a],
+    mixins: [mpMixin, mixin, props$5],
     data() {
       return {
         icons: {
@@ -5902,8 +7980,8 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$K(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$6);
+  function _sfc_render$E(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$7);
     return _ctx.show ? (vue.openBlock(), vue.createElementBlock("view", {
       key: 0,
       class: "u-empty",
@@ -5936,1303 +8014,8 @@ if (uni.restoreGlobal) {
       ])) : vue.createCommentVNode("v-if", true)
     ], 4)) : vue.createCommentVNode("v-if", true);
   }
-  const __easycom_3$1 = /* @__PURE__ */ _export_sfc(_sfc_main$L, [["render", _sfc_render$K], ["__scopeId", "data-v-bd84101d"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-empty/u-empty.vue"]]);
-  const props$9 = {
-    props: {
-      label: {
-        type: String,
-        default: props$s.formItem.label
-      },
-      prop: {
-        type: String,
-        default: props$s.formItem.prop
-      },
-      borderBottom: {
-        type: [String, Boolean],
-        default: props$s.formItem.borderBottom
-      },
-      labelWidth: {
-        type: [String, Number],
-        default: props$s.formItem.labelWidth
-      },
-      rightIcon: {
-        type: String,
-        default: props$s.formItem.rightIcon
-      },
-      leftIcon: {
-        type: String,
-        default: props$s.formItem.leftIcon
-      },
-      required: {
-        type: Boolean,
-        default: props$s.formItem.required
-      },
-      leftIconStyle: {
-        type: [String, Object],
-        default: props$s.formItem.leftIconStyle
-      }
-    }
-  };
-  const _sfc_main$K = {
-    name: "u-form-item",
-    mixins: [mpMixin, mixin, props$9],
-    data() {
-      return {
-        message: "",
-        parentData: {
-          labelPosition: "left",
-          labelAlign: "left",
-          labelStyle: {},
-          labelWidth: 45,
-          errorType: "message"
-        }
-      };
-    },
-    computed: {
-      propsLine() {
-        return uni.$u.props.line;
-      }
-    },
-    mounted() {
-      this.init();
-    },
-    methods: {
-      init() {
-        this.updateParentData();
-        if (!this.parent) {
-          uni.$u.error("u-form-item\u9700\u8981\u7ED3\u5408u-form\u7EC4\u4EF6\u4F7F\u7528");
-        }
-      },
-      updateParentData() {
-        this.getParentData("u-form");
-      },
-      clearValidate() {
-        this.message = null;
-      },
-      resetField() {
-        const value = uni.$u.getProperty(this.parent.originalModel, this.prop);
-        uni.$u.setProperty(this.parent.model, this.prop, value);
-        this.message = null;
-      },
-      clickHandler() {
-        this.$emit("click");
-      }
-    }
-  };
-  function _sfc_render$J(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$6);
-    const _component_u_line = resolveEasycom(vue.resolveDynamicComponent("u-line"), __easycom_1$3);
-    return vue.openBlock(), vue.createElementBlock("view", { class: "u-form-item" }, [
-      vue.createElementVNode("view", {
-        class: "u-form-item__body",
-        onClick: _cache[0] || (_cache[0] = (...args) => $options.clickHandler && $options.clickHandler(...args)),
-        style: vue.normalizeStyle([_ctx.$u.addStyle(_ctx.customStyle), {
-          flexDirection: $data.parentData.labelPosition === "left" ? "row" : "column"
-        }])
-      }, [
-        vue.createCommentVNode(' \u5FAE\u4FE1\u5C0F\u7A0B\u5E8F\u4E2D\uFF0C\u5C06\u4E00\u4E2A\u53C2\u6570\u8BBE\u7F6E\u7A7A\u5B57\u7B26\u4E32\uFF0C\u7ED3\u679C\u4F1A\u53D8\u6210\u5B57\u7B26\u4E32"true" '),
-        vue.renderSlot(_ctx.$slots, "label", {}, () => [
-          vue.createCommentVNode(" {{required}} "),
-          _ctx.required || _ctx.leftIcon || _ctx.label ? (vue.openBlock(), vue.createElementBlock("view", {
-            key: 0,
-            class: "u-form-item__body__left",
-            style: vue.normalizeStyle({
-              width: _ctx.$u.addUnit(_ctx.labelWidth || $data.parentData.labelWidth),
-              marginBottom: $data.parentData.labelPosition === "left" ? 0 : "5px"
-            })
-          }, [
-            vue.createCommentVNode(" \u4E3A\u4E86\u5757\u5BF9\u9F50 "),
-            vue.createElementVNode("view", { class: "u-form-item__body__left__content" }, [
-              vue.createCommentVNode(" nvue\u4E0D\u652F\u6301\u4F2A\u5143\u7D20before "),
-              _ctx.required ? (vue.openBlock(), vue.createElementBlock("text", {
-                key: 0,
-                class: "u-form-item__body__left__content__required"
-              }, "*")) : vue.createCommentVNode("v-if", true),
-              _ctx.leftIcon ? (vue.openBlock(), vue.createElementBlock("view", {
-                key: 1,
-                class: "u-form-item__body__left__content__icon"
-              }, [
-                vue.createVNode(_component_u_icon, {
-                  name: _ctx.leftIcon,
-                  "custom-style": _ctx.leftIconStyle
-                }, null, 8, ["name", "custom-style"])
-              ])) : vue.createCommentVNode("v-if", true),
-              vue.createElementVNode("text", {
-                class: "u-form-item__body__left__content__label",
-                style: vue.normalizeStyle([$data.parentData.labelStyle, {
-                  justifyContent: $data.parentData.labelAlign === "left" ? "flex-start" : $data.parentData.labelAlign === "center" ? "center" : "flex-end"
-                }])
-              }, vue.toDisplayString(_ctx.label), 5)
-            ])
-          ], 4)) : vue.createCommentVNode("v-if", true)
-        ], true),
-        vue.createElementVNode("view", { class: "u-form-item__body__right" }, [
-          vue.createElementVNode("view", { class: "u-form-item__body__right__content" }, [
-            vue.createElementVNode("view", { class: "u-form-item__body__right__content__slot" }, [
-              vue.renderSlot(_ctx.$slots, "default", {}, void 0, true)
-            ]),
-            _ctx.$slots.right ? (vue.openBlock(), vue.createElementBlock("view", {
-              key: 0,
-              class: "item__body__right__content__icon"
-            }, [
-              vue.renderSlot(_ctx.$slots, "right", {}, void 0, true)
-            ])) : vue.createCommentVNode("v-if", true)
-          ])
-        ])
-      ], 4),
-      vue.renderSlot(_ctx.$slots, "error", {}, () => [
-        !!$data.message && $data.parentData.errorType === "message" ? (vue.openBlock(), vue.createElementBlock("text", {
-          key: 0,
-          class: "u-form-item__body__right__message",
-          style: vue.normalizeStyle({
-            marginLeft: _ctx.$u.addUnit($data.parentData.labelPosition === "top" ? 0 : _ctx.labelWidth || $data.parentData.labelWidth)
-          })
-        }, vue.toDisplayString($data.message), 5)) : vue.createCommentVNode("v-if", true)
-      ], true),
-      _ctx.borderBottom ? (vue.openBlock(), vue.createBlock(_component_u_line, {
-        key: 0,
-        color: $data.message && $data.parentData.errorType === "border-bottom" ? _ctx.$u.color.error : $options.propsLine.color,
-        customStyle: `margin-top: ${$data.message && $data.parentData.errorType === "message" ? "5px" : 0}`
-      }, null, 8, ["color", "customStyle"])) : vue.createCommentVNode("v-if", true)
-    ]);
-  }
-  const __easycom_2$2 = /* @__PURE__ */ _export_sfc(_sfc_main$K, [["render", _sfc_render$J], ["__scopeId", "data-v-b4fd400b"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-form-item/u-form-item.vue"]]);
-  const props$8 = {
-    props: {
-      model: {
-        type: Object,
-        default: props$s.form.model
-      },
-      rules: {
-        type: [Object, Function, Array],
-        default: props$s.form.rules
-      },
-      errorType: {
-        type: String,
-        default: props$s.form.errorType
-      },
-      borderBottom: {
-        type: Boolean,
-        default: props$s.form.borderBottom
-      },
-      labelPosition: {
-        type: String,
-        default: props$s.form.labelPosition
-      },
-      labelWidth: {
-        type: [String, Number],
-        default: props$s.form.labelWidth
-      },
-      labelAlign: {
-        type: String,
-        default: props$s.form.labelAlign
-      },
-      labelStyle: {
-        type: Object,
-        default: props$s.form.labelStyle
-      }
-    }
-  };
-  const formatRegExp = /%[sdj%]/g;
-  let warning = function warning2() {
-  };
-  if (typeof process !== "undefined" && process.env && true && typeof window !== "undefined" && typeof document !== "undefined") {
-    warning = function warning2(type2, errors) {
-      if (typeof console !== "undefined" && console.warn) {
-        if (errors.every((e) => typeof e === "string")) {
-          formatAppLog("warn", "at node_modules/uview-plus/libs/util/async-validator.js:28", type2, errors);
-        }
-      }
-    };
-  }
-  function convertFieldsError(errors) {
-    if (!errors || !errors.length)
-      return null;
-    const fields = {};
-    errors.forEach((error2) => {
-      const { field } = error2;
-      fields[field] = fields[field] || [];
-      fields[field].push(error2);
-    });
-    return fields;
-  }
-  function format() {
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-    let i2 = 1;
-    const f = args[0];
-    const len = args.length;
-    if (typeof f === "function") {
-      return f.apply(null, args.slice(1));
-    }
-    if (typeof f === "string") {
-      let str = String(f).replace(formatRegExp, (x) => {
-        if (x === "%%") {
-          return "%";
-        }
-        if (i2 >= len) {
-          return x;
-        }
-        switch (x) {
-          case "%s":
-            return String(args[i2++]);
-          case "%d":
-            return Number(args[i2++]);
-          case "%j":
-            try {
-              return JSON.stringify(args[i2++]);
-            } catch (_) {
-              return "[Circular]";
-            }
-            break;
-          default:
-            return x;
-        }
-      });
-      for (let arg = args[i2]; i2 < len; arg = args[++i2]) {
-        str += ` ${arg}`;
-      }
-      return str;
-    }
-    return f;
-  }
-  function isNativeStringType(type2) {
-    return type2 === "string" || type2 === "url" || type2 === "hex" || type2 === "email" || type2 === "pattern";
-  }
-  function isEmptyValue(value, type2) {
-    if (value === void 0 || value === null) {
-      return true;
-    }
-    if (type2 === "array" && Array.isArray(value) && !value.length) {
-      return true;
-    }
-    if (isNativeStringType(type2) && typeof value === "string" && !value) {
-      return true;
-    }
-    return false;
-  }
-  function asyncParallelArray(arr, func2, callback) {
-    const results = [];
-    let total = 0;
-    const arrLength = arr.length;
-    function count(errors) {
-      results.push.apply(results, errors);
-      total++;
-      if (total === arrLength) {
-        callback(results);
-      }
-    }
-    arr.forEach((a) => {
-      func2(a, count);
-    });
-  }
-  function asyncSerialArray(arr, func2, callback) {
-    let index2 = 0;
-    const arrLength = arr.length;
-    function next(errors) {
-      if (errors && errors.length) {
-        callback(errors);
-        return;
-      }
-      const original = index2;
-      index2 += 1;
-      if (original < arrLength) {
-        func2(arr[original], next);
-      } else {
-        callback([]);
-      }
-    }
-    next([]);
-  }
-  function flattenObjArr(objArr) {
-    const ret = [];
-    Object.keys(objArr).forEach((k) => {
-      ret.push.apply(ret, objArr[k]);
-    });
-    return ret;
-  }
-  function asyncMap(objArr, option, func2, callback) {
-    if (option.first) {
-      const _pending = new Promise((resolve, reject) => {
-        const next = function next2(errors) {
-          callback(errors);
-          return errors.length ? reject({
-            errors,
-            fields: convertFieldsError(errors)
-          }) : resolve();
-        };
-        const flattenArr = flattenObjArr(objArr);
-        asyncSerialArray(flattenArr, func2, next);
-      });
-      _pending.catch((e) => e);
-      return _pending;
-    }
-    let firstFields = option.firstFields || [];
-    if (firstFields === true) {
-      firstFields = Object.keys(objArr);
-    }
-    const objArrKeys = Object.keys(objArr);
-    const objArrLength = objArrKeys.length;
-    let total = 0;
-    const results = [];
-    const pending = new Promise((resolve, reject) => {
-      const next = function next2(errors) {
-        results.push.apply(results, errors);
-        total++;
-        if (total === objArrLength) {
-          callback(results);
-          return results.length ? reject({
-            errors: results,
-            fields: convertFieldsError(results)
-          }) : resolve();
-        }
-      };
-      if (!objArrKeys.length) {
-        callback(results);
-        resolve();
-      }
-      objArrKeys.forEach((key) => {
-        const arr = objArr[key];
-        if (firstFields.indexOf(key) !== -1) {
-          asyncSerialArray(arr, func2, next);
-        } else {
-          asyncParallelArray(arr, func2, next);
-        }
-      });
-    });
-    pending.catch((e) => e);
-    return pending;
-  }
-  function complementError(rule) {
-    return function(oe) {
-      if (oe && oe.message) {
-        oe.field = oe.field || rule.fullField;
-        return oe;
-      }
-      return {
-        message: typeof oe === "function" ? oe() : oe,
-        field: oe.field || rule.fullField
-      };
-    };
-  }
-  function deepMerge$2(target, source) {
-    if (source) {
-      for (const s in source) {
-        if (source.hasOwnProperty(s)) {
-          const value = source[s];
-          if (typeof value === "object" && typeof target[s] === "object") {
-            target[s] = { ...target[s], ...value };
-          } else {
-            target[s] = value;
-          }
-        }
-      }
-    }
-    return target;
-  }
-  function required(rule, value, source, errors, options, type2) {
-    if (rule.required && (!source.hasOwnProperty(rule.field) || isEmptyValue(value, type2 || rule.type))) {
-      errors.push(format(options.messages.required, rule.fullField));
-    }
-  }
-  function whitespace(rule, value, source, errors, options) {
-    if (/^\s+$/.test(value) || value === "") {
-      errors.push(format(options.messages.whitespace, rule.fullField));
-    }
-  }
-  const pattern = {
-    email: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-    url: new RegExp(
-      "^(?!mailto:)(?:(?:http|https|ftp)://|//)(?:\\S+(?::\\S*)?@)?(?:(?:(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[0-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z\\u00a1-\\uffff0-9]+-*)*[a-z\\u00a1-\\uffff0-9]+)(?:\\.(?:[a-z\\u00a1-\\uffff0-9]+-*)*[a-z\\u00a1-\\uffff0-9]+)*(?:\\.(?:[a-z\\u00a1-\\uffff]{2,})))|localhost)(?::\\d{2,5})?(?:(/|\\?|#)[^\\s]*)?$",
-      "i"
-    ),
-    hex: /^#?([a-f0-9]{6}|[a-f0-9]{3})$/i
-  };
-  var types = {
-    integer: function integer2(value) {
-      return /^(-)?\d+$/.test(value);
-    },
-    float: function float(value) {
-      return /^(-)?\d+(\.\d+)?$/.test(value);
-    },
-    array: function array2(value) {
-      return Array.isArray(value);
-    },
-    regexp: function regexp2(value) {
-      if (value instanceof RegExp) {
-        return true;
-      }
-      try {
-        return !!new RegExp(value);
-      } catch (e) {
-        return false;
-      }
-    },
-    date: function date2(value) {
-      return typeof value.getTime === "function" && typeof value.getMonth === "function" && typeof value.getYear === "function";
-    },
-    number: function number2(value) {
-      if (isNaN(value)) {
-        return false;
-      }
-      return typeof +value === "number";
-    },
-    object: function object2(value) {
-      return typeof value === "object" && !types.array(value);
-    },
-    method: function method2(value) {
-      return typeof value === "function";
-    },
-    email: function email2(value) {
-      return typeof value === "string" && !!value.match(pattern.email) && value.length < 255;
-    },
-    url: function url2(value) {
-      return typeof value === "string" && !!value.match(pattern.url);
-    },
-    hex: function hex(value) {
-      return typeof value === "string" && !!value.match(pattern.hex);
-    }
-  };
-  function type(rule, value, source, errors, options) {
-    if (rule.required && value === void 0) {
-      required(rule, value, source, errors, options);
-      return;
-    }
-    const custom = ["integer", "float", "array", "regexp", "object", "method", "email", "number", "date", "url", "hex"];
-    const ruleType = rule.type;
-    if (custom.indexOf(ruleType) > -1) {
-      if (!types[ruleType](value)) {
-        errors.push(format(options.messages.types[ruleType], rule.fullField, rule.type));
-      }
-    } else if (ruleType && typeof value !== rule.type) {
-      errors.push(format(options.messages.types[ruleType], rule.fullField, rule.type));
-    }
-  }
-  function range$2(rule, value, source, errors, options) {
-    const len = typeof rule.len === "number";
-    const min = typeof rule.min === "number";
-    const max = typeof rule.max === "number";
-    const spRegexp = /[\uD800-\uDBFF][\uDC00-\uDFFF]/g;
-    let val = value;
-    let key = null;
-    const num = typeof value === "number";
-    const str = typeof value === "string";
-    const arr = Array.isArray(value);
-    if (num) {
-      key = "number";
-    } else if (str) {
-      key = "string";
-    } else if (arr) {
-      key = "array";
-    }
-    if (!key) {
-      return false;
-    }
-    if (arr) {
-      val = value.length;
-    }
-    if (str) {
-      val = value.replace(spRegexp, "_").length;
-    }
-    if (len) {
-      if (val !== rule.len) {
-        errors.push(format(options.messages[key].len, rule.fullField, rule.len));
-      }
-    } else if (min && !max && val < rule.min) {
-      errors.push(format(options.messages[key].min, rule.fullField, rule.min));
-    } else if (max && !min && val > rule.max) {
-      errors.push(format(options.messages[key].max, rule.fullField, rule.max));
-    } else if (min && max && (val < rule.min || val > rule.max)) {
-      errors.push(format(options.messages[key].range, rule.fullField, rule.min, rule.max));
-    }
-  }
-  const ENUM = "enum";
-  function enumerable(rule, value, source, errors, options) {
-    rule[ENUM] = Array.isArray(rule[ENUM]) ? rule[ENUM] : [];
-    if (rule[ENUM].indexOf(value) === -1) {
-      errors.push(format(options.messages[ENUM], rule.fullField, rule[ENUM].join(", ")));
-    }
-  }
-  function pattern$1(rule, value, source, errors, options) {
-    if (rule.pattern) {
-      if (rule.pattern instanceof RegExp) {
-        rule.pattern.lastIndex = 0;
-        if (!rule.pattern.test(value)) {
-          errors.push(format(options.messages.pattern.mismatch, rule.fullField, value, rule.pattern));
-        }
-      } else if (typeof rule.pattern === "string") {
-        const _pattern = new RegExp(rule.pattern);
-        if (!_pattern.test(value)) {
-          errors.push(format(options.messages.pattern.mismatch, rule.fullField, value, rule.pattern));
-        }
-      }
-    }
-  }
-  const rules = {
-    required,
-    whitespace,
-    type,
-    range: range$2,
-    enum: enumerable,
-    pattern: pattern$1
-  };
-  function string$1(rule, value, callback, source, options) {
-    const errors = [];
-    const validate = rule.required || !rule.required && source.hasOwnProperty(rule.field);
-    if (validate) {
-      if (isEmptyValue(value, "string") && !rule.required) {
-        return callback();
-      }
-      rules.required(rule, value, source, errors, options, "string");
-      if (!isEmptyValue(value, "string")) {
-        rules.type(rule, value, source, errors, options);
-        rules.range(rule, value, source, errors, options);
-        rules.pattern(rule, value, source, errors, options);
-        if (rule.whitespace === true) {
-          rules.whitespace(rule, value, source, errors, options);
-        }
-      }
-    }
-    callback(errors);
-  }
-  function method(rule, value, callback, source, options) {
-    const errors = [];
-    const validate = rule.required || !rule.required && source.hasOwnProperty(rule.field);
-    if (validate) {
-      if (isEmptyValue(value) && !rule.required) {
-        return callback();
-      }
-      rules.required(rule, value, source, errors, options);
-      if (value !== void 0) {
-        rules.type(rule, value, source, errors, options);
-      }
-    }
-    callback(errors);
-  }
-  function number$1(rule, value, callback, source, options) {
-    const errors = [];
-    const validate = rule.required || !rule.required && source.hasOwnProperty(rule.field);
-    if (validate) {
-      if (value === "") {
-        value = void 0;
-      }
-      if (isEmptyValue(value) && !rule.required) {
-        return callback();
-      }
-      rules.required(rule, value, source, errors, options);
-      if (value !== void 0) {
-        rules.type(rule, value, source, errors, options);
-        rules.range(rule, value, source, errors, options);
-      }
-    }
-    callback(errors);
-  }
-  function _boolean(rule, value, callback, source, options) {
-    const errors = [];
-    const validate = rule.required || !rule.required && source.hasOwnProperty(rule.field);
-    if (validate) {
-      if (isEmptyValue(value) && !rule.required) {
-        return callback();
-      }
-      rules.required(rule, value, source, errors, options);
-      if (value !== void 0) {
-        rules.type(rule, value, source, errors, options);
-      }
-    }
-    callback(errors);
-  }
-  function regexp(rule, value, callback, source, options) {
-    const errors = [];
-    const validate = rule.required || !rule.required && source.hasOwnProperty(rule.field);
-    if (validate) {
-      if (isEmptyValue(value) && !rule.required) {
-        return callback();
-      }
-      rules.required(rule, value, source, errors, options);
-      if (!isEmptyValue(value)) {
-        rules.type(rule, value, source, errors, options);
-      }
-    }
-    callback(errors);
-  }
-  function integer(rule, value, callback, source, options) {
-    const errors = [];
-    const validate = rule.required || !rule.required && source.hasOwnProperty(rule.field);
-    if (validate) {
-      if (isEmptyValue(value) && !rule.required) {
-        return callback();
-      }
-      rules.required(rule, value, source, errors, options);
-      if (value !== void 0) {
-        rules.type(rule, value, source, errors, options);
-        rules.range(rule, value, source, errors, options);
-      }
-    }
-    callback(errors);
-  }
-  function floatFn(rule, value, callback, source, options) {
-    const errors = [];
-    const validate = rule.required || !rule.required && source.hasOwnProperty(rule.field);
-    if (validate) {
-      if (isEmptyValue(value) && !rule.required) {
-        return callback();
-      }
-      rules.required(rule, value, source, errors, options);
-      if (value !== void 0) {
-        rules.type(rule, value, source, errors, options);
-        rules.range(rule, value, source, errors, options);
-      }
-    }
-    callback(errors);
-  }
-  function array$1(rule, value, callback, source, options) {
-    const errors = [];
-    const validate = rule.required || !rule.required && source.hasOwnProperty(rule.field);
-    if (validate) {
-      if (isEmptyValue(value, "array") && !rule.required) {
-        return callback();
-      }
-      rules.required(rule, value, source, errors, options, "array");
-      if (!isEmptyValue(value, "array")) {
-        rules.type(rule, value, source, errors, options);
-        rules.range(rule, value, source, errors, options);
-      }
-    }
-    callback(errors);
-  }
-  function object$1(rule, value, callback, source, options) {
-    const errors = [];
-    const validate = rule.required || !rule.required && source.hasOwnProperty(rule.field);
-    if (validate) {
-      if (isEmptyValue(value) && !rule.required) {
-        return callback();
-      }
-      rules.required(rule, value, source, errors, options);
-      if (value !== void 0) {
-        rules.type(rule, value, source, errors, options);
-      }
-    }
-    callback(errors);
-  }
-  const ENUM$1 = "enum";
-  function enumerable$1(rule, value, callback, source, options) {
-    const errors = [];
-    const validate = rule.required || !rule.required && source.hasOwnProperty(rule.field);
-    if (validate) {
-      if (isEmptyValue(value) && !rule.required) {
-        return callback();
-      }
-      rules.required(rule, value, source, errors, options);
-      if (value !== void 0) {
-        rules[ENUM$1](rule, value, source, errors, options);
-      }
-    }
-    callback(errors);
-  }
-  function pattern$2(rule, value, callback, source, options) {
-    const errors = [];
-    const validate = rule.required || !rule.required && source.hasOwnProperty(rule.field);
-    if (validate) {
-      if (isEmptyValue(value, "string") && !rule.required) {
-        return callback();
-      }
-      rules.required(rule, value, source, errors, options);
-      if (!isEmptyValue(value, "string")) {
-        rules.pattern(rule, value, source, errors, options);
-      }
-    }
-    callback(errors);
-  }
-  function date$1(rule, value, callback, source, options) {
-    const errors = [];
-    const validate = rule.required || !rule.required && source.hasOwnProperty(rule.field);
-    if (validate) {
-      if (isEmptyValue(value) && !rule.required) {
-        return callback();
-      }
-      rules.required(rule, value, source, errors, options);
-      if (!isEmptyValue(value)) {
-        let dateObject;
-        if (typeof value === "number") {
-          dateObject = new Date(value);
-        } else {
-          dateObject = value;
-        }
-        rules.type(rule, dateObject, source, errors, options);
-        if (dateObject) {
-          rules.range(rule, dateObject.getTime(), source, errors, options);
-        }
-      }
-    }
-    callback(errors);
-  }
-  function required$1(rule, value, callback, source, options) {
-    const errors = [];
-    const type2 = Array.isArray(value) ? "array" : typeof value;
-    rules.required(rule, value, source, errors, options, type2);
-    callback(errors);
-  }
-  function type$1(rule, value, callback, source, options) {
-    const ruleType = rule.type;
-    const errors = [];
-    const validate = rule.required || !rule.required && source.hasOwnProperty(rule.field);
-    if (validate) {
-      if (isEmptyValue(value, ruleType) && !rule.required) {
-        return callback();
-      }
-      rules.required(rule, value, source, errors, options, ruleType);
-      if (!isEmptyValue(value, ruleType)) {
-        rules.type(rule, value, source, errors, options);
-      }
-    }
-    callback(errors);
-  }
-  function any(rule, value, callback, source, options) {
-    const errors = [];
-    const validate = rule.required || !rule.required && source.hasOwnProperty(rule.field);
-    if (validate) {
-      if (isEmptyValue(value) && !rule.required) {
-        return callback();
-      }
-      rules.required(rule, value, source, errors, options);
-    }
-    callback(errors);
-  }
-  const validators = {
-    string: string$1,
-    method,
-    number: number$1,
-    boolean: _boolean,
-    regexp,
-    integer,
-    float: floatFn,
-    array: array$1,
-    object: object$1,
-    enum: enumerable$1,
-    pattern: pattern$2,
-    date: date$1,
-    url: type$1,
-    hex: type$1,
-    email: type$1,
-    required: required$1,
-    any
-  };
-  function newMessages() {
-    return {
-      default: "Validation error on field %s",
-      required: "%s is required",
-      enum: "%s must be one of %s",
-      whitespace: "%s cannot be empty",
-      date: {
-        format: "%s date %s is invalid for format %s",
-        parse: "%s date could not be parsed, %s is invalid ",
-        invalid: "%s date %s is invalid"
-      },
-      types: {
-        string: "%s is not a %s",
-        method: "%s is not a %s (function)",
-        array: "%s is not an %s",
-        object: "%s is not an %s",
-        number: "%s is not a %s",
-        date: "%s is not a %s",
-        boolean: "%s is not a %s",
-        integer: "%s is not an %s",
-        float: "%s is not a %s",
-        regexp: "%s is not a valid %s",
-        email: "%s is not a valid %s",
-        url: "%s is not a valid %s",
-        hex: "%s is not a valid %s"
-      },
-      string: {
-        len: "%s must be exactly %s characters",
-        min: "%s must be at least %s characters",
-        max: "%s cannot be longer than %s characters",
-        range: "%s must be between %s and %s characters"
-      },
-      number: {
-        len: "%s must equal %s",
-        min: "%s cannot be less than %s",
-        max: "%s cannot be greater than %s",
-        range: "%s must be between %s and %s"
-      },
-      array: {
-        len: "%s must be exactly %s in length",
-        min: "%s cannot be less than %s in length",
-        max: "%s cannot be greater than %s in length",
-        range: "%s must be between %s and %s in length"
-      },
-      pattern: {
-        mismatch: "%s value %s does not match pattern %s"
-      },
-      clone: function clone2() {
-        const cloned = JSON.parse(JSON.stringify(this));
-        cloned.clone = this.clone;
-        return cloned;
-      }
-    };
-  }
-  const messages = newMessages();
-  function Schema(descriptor) {
-    this.rules = null;
-    this._messages = messages;
-    this.define(descriptor);
-  }
-  Schema.prototype = {
-    messages: function messages2(_messages) {
-      if (_messages) {
-        this._messages = deepMerge$2(newMessages(), _messages);
-      }
-      return this._messages;
-    },
-    define: function define(rules2) {
-      if (!rules2) {
-        throw new Error("Cannot configure a schema with no rules");
-      }
-      if (typeof rules2 !== "object" || Array.isArray(rules2)) {
-        throw new Error("Rules must be an object");
-      }
-      this.rules = {};
-      let z;
-      let item2;
-      for (z in rules2) {
-        if (rules2.hasOwnProperty(z)) {
-          item2 = rules2[z];
-          this.rules[z] = Array.isArray(item2) ? item2 : [item2];
-        }
-      }
-    },
-    validate: function validate(source_, o, oc) {
-      const _this = this;
-      if (o === void 0) {
-        o = {};
-      }
-      if (oc === void 0) {
-        oc = function oc2() {
-        };
-      }
-      let source = source_;
-      let options = o;
-      let callback = oc;
-      if (typeof options === "function") {
-        callback = options;
-        options = {};
-      }
-      if (!this.rules || Object.keys(this.rules).length === 0) {
-        if (callback) {
-          callback();
-        }
-        return Promise.resolve();
-      }
-      function complete(results) {
-        let i2;
-        let errors = [];
-        let fields = {};
-        function add(e) {
-          if (Array.isArray(e)) {
-            let _errors;
-            errors = (_errors = errors).concat.apply(_errors, e);
-          } else {
-            errors.push(e);
-          }
-        }
-        for (i2 = 0; i2 < results.length; i2++) {
-          add(results[i2]);
-        }
-        if (!errors.length) {
-          errors = null;
-          fields = null;
-        } else {
-          fields = convertFieldsError(errors);
-        }
-        callback(errors, fields);
-      }
-      if (options.messages) {
-        let messages$1 = this.messages();
-        if (messages$1 === messages) {
-          messages$1 = newMessages();
-        }
-        deepMerge$2(messages$1, options.messages);
-        options.messages = messages$1;
-      } else {
-        options.messages = this.messages();
-      }
-      let arr;
-      let value;
-      const series = {};
-      const keys = options.keys || Object.keys(this.rules);
-      keys.forEach((z) => {
-        arr = _this.rules[z];
-        value = source[z];
-        arr.forEach((r) => {
-          let rule = r;
-          if (typeof rule.transform === "function") {
-            if (source === source_) {
-              source = { ...source };
-            }
-            value = source[z] = rule.transform(value);
-          }
-          if (typeof rule === "function") {
-            rule = {
-              validator: rule
-            };
-          } else {
-            rule = { ...rule };
-          }
-          rule.validator = _this.getValidationMethod(rule);
-          rule.field = z;
-          rule.fullField = rule.fullField || z;
-          rule.type = _this.getType(rule);
-          if (!rule.validator) {
-            return;
-          }
-          series[z] = series[z] || [];
-          series[z].push({
-            rule,
-            value,
-            source,
-            field: z
-          });
-        });
-      });
-      const errorFields = {};
-      return asyncMap(series, options, (data, doIt) => {
-        const { rule } = data;
-        let deep = (rule.type === "object" || rule.type === "array") && (typeof rule.fields === "object" || typeof rule.defaultField === "object");
-        deep = deep && (rule.required || !rule.required && data.value);
-        rule.field = data.field;
-        function addFullfield(key, schema) {
-          return { ...schema, fullField: `${rule.fullField}.${key}` };
-        }
-        function cb(e) {
-          if (e === void 0) {
-            e = [];
-          }
-          let errors = e;
-          if (!Array.isArray(errors)) {
-            errors = [errors];
-          }
-          if (!options.suppressWarning && errors.length) {
-            Schema.warning("async-validator:", errors);
-          }
-          if (errors.length && rule.message) {
-            errors = [].concat(rule.message);
-          }
-          errors = errors.map(complementError(rule));
-          if (options.first && errors.length) {
-            errorFields[rule.field] = 1;
-            return doIt(errors);
-          }
-          if (!deep) {
-            doIt(errors);
-          } else {
-            if (rule.required && !data.value) {
-              if (rule.message) {
-                errors = [].concat(rule.message).map(complementError(rule));
-              } else if (options.error) {
-                errors = [options.error(rule, format(options.messages.required, rule.field))];
-              } else {
-                errors = [];
-              }
-              return doIt(errors);
-            }
-            let fieldsSchema = {};
-            if (rule.defaultField) {
-              for (const k in data.value) {
-                if (data.value.hasOwnProperty(k)) {
-                  fieldsSchema[k] = rule.defaultField;
-                }
-              }
-            }
-            fieldsSchema = { ...fieldsSchema, ...data.rule.fields };
-            for (const f in fieldsSchema) {
-              if (fieldsSchema.hasOwnProperty(f)) {
-                const fieldSchema = Array.isArray(fieldsSchema[f]) ? fieldsSchema[f] : [fieldsSchema[f]];
-                fieldsSchema[f] = fieldSchema.map(addFullfield.bind(null, f));
-              }
-            }
-            const schema = new Schema(fieldsSchema);
-            schema.messages(options.messages);
-            if (data.rule.options) {
-              data.rule.options.messages = options.messages;
-              data.rule.options.error = options.error;
-            }
-            schema.validate(data.value, data.rule.options || options, (errs) => {
-              const finalErrors = [];
-              if (errors && errors.length) {
-                finalErrors.push.apply(finalErrors, errors);
-              }
-              if (errs && errs.length) {
-                finalErrors.push.apply(finalErrors, errs);
-              }
-              doIt(finalErrors.length ? finalErrors : null);
-            });
-          }
-        }
-        let res;
-        if (rule.asyncValidator) {
-          res = rule.asyncValidator(rule, data.value, cb, data.source, options);
-        } else if (rule.validator) {
-          res = rule.validator(rule, data.value, cb, data.source, options);
-          if (res === true) {
-            cb();
-          } else if (res === false) {
-            cb(rule.message || `${rule.field} fails`);
-          } else if (res instanceof Array) {
-            cb(res);
-          } else if (res instanceof Error) {
-            cb(res.message);
-          }
-        }
-        if (res && res.then) {
-          res.then(() => cb(), (e) => cb(e));
-        }
-      }, (results) => {
-        complete(results);
-      });
-    },
-    getType: function getType(rule) {
-      if (rule.type === void 0 && rule.pattern instanceof RegExp) {
-        rule.type = "pattern";
-      }
-      if (typeof rule.validator !== "function" && rule.type && !validators.hasOwnProperty(rule.type)) {
-        throw new Error(format("Unknown rule type %s", rule.type));
-      }
-      return rule.type || "string";
-    },
-    getValidationMethod: function getValidationMethod(rule) {
-      if (typeof rule.validator === "function") {
-        return rule.validator;
-      }
-      const keys = Object.keys(rule);
-      const messageIndex = keys.indexOf("message");
-      if (messageIndex !== -1) {
-        keys.splice(messageIndex, 1);
-      }
-      if (keys.length === 1 && keys[0] === "required") {
-        return validators.required;
-      }
-      return validators[this.getType(rule)] || false;
-    }
-  };
-  Schema.register = function register(type2, validator) {
-    if (typeof validator !== "function") {
-      throw new Error("Cannot register a validator by type, validator is not a function");
-    }
-    validators[type2] = validator;
-  };
-  Schema.warning = warning;
-  Schema.messages = messages;
-  Schema.warning = function() {
-  };
-  const _sfc_main$J = {
-    name: "u-form",
-    mixins: [mpMixin, mixin, props$8],
-    provide() {
-      return {
-        uForm: this
-      };
-    },
-    data() {
-      return {
-        formRules: {},
-        validator: {},
-        originalModel: null
-      };
-    },
-    watch: {
-      rules: {
-        immediate: true,
-        handler(n) {
-          this.setRules(n);
-        }
-      },
-      propsChange(n) {
-        var _a;
-        if ((_a = this.children) == null ? void 0 : _a.length) {
-          this.children.map((child) => {
-            typeof child.updateParentData == "function" && child.updateParentData();
-          });
-        }
-      },
-      model: {
-        immediate: true,
-        handler(n) {
-          if (!this.originalModel) {
-            this.originalModel = uni.$u.deepClone(n);
-          }
-        }
-      }
-    },
-    computed: {
-      propsChange() {
-        return [
-          this.errorType,
-          this.borderBottom,
-          this.labelPosition,
-          this.labelWidth,
-          this.labelAlign,
-          this.labelStyle
-        ];
-      }
-    },
-    created() {
-      this.children = [];
-    },
-    methods: {
-      setRules(rules2) {
-        if (Object.keys(rules2).length === 0)
-          return;
-        if (Object.keys(this.model).length === 0) {
-          uni.$u.error("\u8BBE\u7F6Erules\uFF0Cmodel\u5FC5\u987B\u8BBE\u7F6E\uFF01\u5982\u679C\u5DF2\u7ECF\u8BBE\u7F6E\uFF0C\u8BF7\u5237\u65B0\u9875\u9762\u3002");
-          return;
-        }
-        this.formRules = rules2;
-        this.validator = new Schema(rules2);
-      },
-      resetFields() {
-        this.resetModel();
-      },
-      resetModel(obj) {
-        this.children.map((child) => {
-          const prop = child == null ? void 0 : child.prop;
-          const value = uni.$u.getProperty(this.originalModel, prop);
-          uni.$u.setProperty(this.model, prop, value);
-        });
-      },
-      clearValidate(props2) {
-        props2 = [].concat(props2);
-        this.children.map((child) => {
-          if (props2[0] === void 0 || props2.includes(child.prop)) {
-            child.message = null;
-          }
-        });
-      },
-      async validateField(value, callback, event2 = null) {
-        this.$nextTick(() => {
-          const errorsRes = [];
-          value = [].concat(value);
-          this.children.map((child) => {
-            const childErrors = [];
-            if (value.includes(child.prop)) {
-              const propertyVal = uni.$u.getProperty(
-                this.model,
-                child.prop
-              );
-              const propertyChain = child.prop.split(".");
-              const propertyName = propertyChain[propertyChain.length - 1];
-              const rule = this.formRules[child.prop];
-              if (!rule)
-                return;
-              const rules2 = [].concat(rule);
-              for (let i2 = 0; i2 < rules2.length; i2++) {
-                const ruleItem = rules2[i2];
-                const trigger = [].concat(ruleItem == null ? void 0 : ruleItem.trigger);
-                if (event2 && !trigger.includes(event2))
-                  continue;
-                const validator = new Schema({
-                  [propertyName]: ruleItem
-                });
-                validator.validate(
-                  {
-                    [propertyName]: propertyVal
-                  },
-                  (errors, fields) => {
-                    var _a, _b;
-                    if (uni.$u.test.array(errors)) {
-                      errorsRes.push(...errors);
-                      childErrors.push(...errors);
-                    }
-                    child.message = (_b = (_a = childErrors[0]) == null ? void 0 : _a.message) != null ? _b : null;
-                  }
-                );
-              }
-            }
-          });
-          typeof callback === "function" && callback(errorsRes);
-        });
-      },
-      validate(callback) {
-        if (Object.keys(this.formRules).length === 0) {
-          uni.$u.error("\u672A\u8BBE\u7F6Erules\uFF0C\u8BF7\u770B\u6587\u6863\u8BF4\u660E\uFF01\u5982\u679C\u5DF2\u7ECF\u8BBE\u7F6E\uFF0C\u8BF7\u5237\u65B0\u9875\u9762\u3002");
-          return;
-        }
-        return new Promise((resolve, reject) => {
-          this.$nextTick(() => {
-            const formItemProps = this.children.map(
-              (item2) => item2.prop
-            );
-            this.validateField(formItemProps, (errors) => {
-              if (errors.length) {
-                this.errorType === "toast" && uni.$u.toast(errors[0].message);
-                reject(errors);
-              } else {
-                resolve(true);
-              }
-            });
-          });
-        });
-      }
-    }
-  };
-  function _sfc_render$I(_ctx, _cache, $props, $setup, $data, $options) {
-    return vue.openBlock(), vue.createElementBlock("view", { class: "u-form" }, [
-      vue.renderSlot(_ctx.$slots, "default")
-    ]);
-  }
-  const uvForm = /* @__PURE__ */ _export_sfc(_sfc_main$J, [["render", _sfc_render$I], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-form/u-form.vue"]]);
-  const _sfc_main$I = {
-    name: "u--form",
-    mixins: [mpMixin, props$8, mixin],
-    components: {
-      uvForm
-    },
-    created() {
-      this.children = [];
-    },
-    methods: {
-      setRules(rules2) {
-        this.$refs.uForm.setRules(rules2);
-      },
-      validate() {
-        return this.$refs.uForm.validate();
-      },
-      validateField(value, callback) {
-        return this.$refs.uForm.validateField(value, callback);
-      },
-      resetFields() {
-        return this.$refs.uForm.resetFields();
-      },
-      clearValidate(props2) {
-        return this.$refs.uForm.clearValidate(props2);
-      },
-      setMpData() {
-        this.$refs.uForm.children = this.children;
-      }
-    }
-  };
-  function _sfc_render$H(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_uvForm = vue.resolveComponent("uvForm");
-    return vue.openBlock(), vue.createBlock(_component_uvForm, {
-      ref: "uForm",
-      model: _ctx.model,
-      rules: _ctx.rules,
-      errorType: _ctx.errorType,
-      borderBottom: _ctx.borderBottom,
-      labelPosition: _ctx.labelPosition,
-      labelWidth: _ctx.labelWidth,
-      labelAlign: _ctx.labelAlign,
-      labelStyle: _ctx.labelStyle,
-      customStyle: _ctx.customStyle
-    }, {
-      default: vue.withCtx(() => [
-        vue.renderSlot(_ctx.$slots, "default")
-      ]),
-      _: 3
-    }, 8, ["model", "rules", "errorType", "borderBottom", "labelPosition", "labelWidth", "labelAlign", "labelStyle", "customStyle"]);
-  }
-  const __easycom_3 = /* @__PURE__ */ _export_sfc(_sfc_main$I, [["render", _sfc_render$H], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u--form/u--form.vue"]]);
-  const _sfc_main$H = {
+  const __easycom_3 = /* @__PURE__ */ _export_sfc(_sfc_main$F, [["render", _sfc_render$E], ["__scopeId", "data-v-bd84101d"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-empty/u-empty.vue"]]);
+  const _sfc_main$E = {
     data() {
       return {
         showApiModal: false,
@@ -7542,18 +8325,18 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$G(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$6);
-    const _component_u__input = resolveEasycom(vue.resolveDynamicComponent("u--input"), __easycom_1$2);
-    const _component_u_tabs = resolveEasycom(vue.resolveDynamicComponent("u-tabs"), __easycom_2$4);
-    const _component_u_image = resolveEasycom(vue.resolveDynamicComponent("u-image"), __easycom_0$5);
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0);
-    const _component_u_loadmore = resolveEasycom(vue.resolveDynamicComponent("u-loadmore"), __easycom_2$3);
-    const _component_u_empty = resolveEasycom(vue.resolveDynamicComponent("u-empty"), __easycom_3$1);
-    const _component_u__image = resolveEasycom(vue.resolveDynamicComponent("u--image"), __easycom_0$4);
-    const _component_u_modal = resolveEasycom(vue.resolveDynamicComponent("u-modal"), __easycom_5$2);
-    const _component_u_form_item = resolveEasycom(vue.resolveDynamicComponent("u-form-item"), __easycom_2$2);
-    const _component_u__form = resolveEasycom(vue.resolveDynamicComponent("u--form"), __easycom_3);
+  function _sfc_render$D(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$7);
+    const _component_u__input = resolveEasycom(vue.resolveDynamicComponent("u--input"), __easycom_1$4);
+    const _component_u_tabs = resolveEasycom(vue.resolveDynamicComponent("u-tabs"), __easycom_2$3);
+    const _component_u_image = resolveEasycom(vue.resolveDynamicComponent("u-image"), __easycom_0$3);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$6);
+    const _component_u_loadmore = resolveEasycom(vue.resolveDynamicComponent("u-loadmore"), __easycom_2$2);
+    const _component_u_empty = resolveEasycom(vue.resolveDynamicComponent("u-empty"), __easycom_3);
+    const _component_u__image = resolveEasycom(vue.resolveDynamicComponent("u--image"), __easycom_0$2);
+    const _component_u_modal = resolveEasycom(vue.resolveDynamicComponent("u-modal"), __easycom_5$1);
+    const _component_u_form_item = resolveEasycom(vue.resolveDynamicComponent("u-form-item"), __easycom_2$5);
+    const _component_u__form = resolveEasycom(vue.resolveDynamicComponent("u--form"), __easycom_3$2);
     return vue.openBlock(), vue.createElementBlock(vue.Fragment, null, [
       vue.createCommentVNode(" \u4EA4\u6613 "),
       vue.createElementVNode("view", { class: "trade page" }, [
@@ -7951,8 +8734,8 @@ if (uni.restoreGlobal) {
       ])
     ], 2112);
   }
-  const PagesTradeTrade = /* @__PURE__ */ _export_sfc(_sfc_main$H, [["render", _sfc_render$G], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/trade/trade.vue"]]);
-  const _sfc_main$G = {
+  const PagesTradeTrade = /* @__PURE__ */ _export_sfc(_sfc_main$E, [["render", _sfc_render$D], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/trade/trade.vue"]]);
+  const _sfc_main$D = {
     data() {
       return {
         bgColor: "rgba(0, 0, 0, 0)",
@@ -8011,11 +8794,11 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$F(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_image = resolveEasycom(vue.resolveDynamicComponent("u-image"), __easycom_0$5);
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0);
-    const _component_u__image = resolveEasycom(vue.resolveDynamicComponent("u--image"), __easycom_0$4);
-    const _component_u_modal = resolveEasycom(vue.resolveDynamicComponent("u-modal"), __easycom_5$2);
+  function _sfc_render$C(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_u_image = resolveEasycom(vue.resolveDynamicComponent("u-image"), __easycom_0$3);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$6);
+    const _component_u__image = resolveEasycom(vue.resolveDynamicComponent("u--image"), __easycom_0$2);
+    const _component_u_modal = resolveEasycom(vue.resolveDynamicComponent("u-modal"), __easycom_5$1);
     return vue.openBlock(), vue.createElementBlock("view", { class: "assets" }, [
       vue.createVNode(_component_u_navbar, {
         bgColor: $data.bgColor,
@@ -8148,8 +8931,8 @@ if (uni.restoreGlobal) {
       }, 8, ["show"])
     ]);
   }
-  const PagesAssetsAssets = /* @__PURE__ */ _export_sfc(_sfc_main$G, [["render", _sfc_render$F], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/assets/assets.vue"]]);
-  const _sfc_main$F = {
+  const PagesAssetsAssets = /* @__PURE__ */ _export_sfc(_sfc_main$D, [["render", _sfc_render$C], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/assets/assets.vue"]]);
+  const _sfc_main$C = {
     data() {
       return {
         userInfo: {
@@ -8168,9 +8951,9 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$E(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0);
-    const _component_u_image = resolveEasycom(vue.resolveDynamicComponent("u-image"), __easycom_0$5);
+  function _sfc_render$B(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$6);
+    const _component_u_image = resolveEasycom(vue.resolveDynamicComponent("u-image"), __easycom_0$3);
     return vue.openBlock(), vue.createElementBlock("view", { class: "page" }, [
       vue.createElementVNode("view", { class: "my" }, [
         vue.createVNode(_component_u_navbar, {
@@ -8338,8 +9121,8 @@ if (uni.restoreGlobal) {
       ])
     ]);
   }
-  const PagesMyMy = /* @__PURE__ */ _export_sfc(_sfc_main$F, [["render", _sfc_render$E], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/my/my.vue"]]);
-  const _sfc_main$E = {
+  const PagesMyMy = /* @__PURE__ */ _export_sfc(_sfc_main$C, [["render", _sfc_render$B], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/my/my.vue"]]);
+  const _sfc_main$B = {
     data() {
       return {
         authList: [
@@ -8380,10 +9163,10 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$D(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_image = resolveEasycom(vue.resolveDynamicComponent("u-image"), __easycom_0$5);
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0);
-    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$6);
+  function _sfc_render$A(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_u_image = resolveEasycom(vue.resolveDynamicComponent("u-image"), __easycom_0$3);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$6);
+    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$7);
     return vue.openBlock(), vue.createElementBlock("view", { class: "api-auth page" }, [
       vue.createCommentVNode(" \u5BFC\u822A "),
       vue.createVNode(_component_u_navbar, {
@@ -8423,299 +9206,8 @@ if (uni.restoreGlobal) {
       ])
     ]);
   }
-  const PagesHomeApiAuthApiAuth = /* @__PURE__ */ _export_sfc(_sfc_main$E, [["render", _sfc_render$D], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/home/apiAuth/apiAuth.vue"]]);
-  const props$7 = {
-    props: {
-      hairline: {
-        type: Boolean,
-        default: props$s.button.hairline
-      },
-      type: {
-        type: String,
-        default: props$s.button.type
-      },
-      size: {
-        type: String,
-        default: props$s.button.size
-      },
-      shape: {
-        type: String,
-        default: props$s.button.shape
-      },
-      plain: {
-        type: Boolean,
-        default: props$s.button.plain
-      },
-      disabled: {
-        type: Boolean,
-        default: props$s.button.disabled
-      },
-      loading: {
-        type: Boolean,
-        default: props$s.button.loading
-      },
-      loadingText: {
-        type: [String, Number],
-        default: props$s.button.loadingText
-      },
-      loadingMode: {
-        type: String,
-        default: props$s.button.loadingMode
-      },
-      loadingSize: {
-        type: [String, Number],
-        default: props$s.button.loadingSize
-      },
-      openType: {
-        type: String,
-        default: props$s.button.openType
-      },
-      formType: {
-        type: String,
-        default: props$s.button.formType
-      },
-      appParameter: {
-        type: String,
-        default: props$s.button.appParameter
-      },
-      hoverStopPropagation: {
-        type: Boolean,
-        default: props$s.button.hoverStopPropagation
-      },
-      lang: {
-        type: String,
-        default: props$s.button.lang
-      },
-      sessionFrom: {
-        type: String,
-        default: props$s.button.sessionFrom
-      },
-      sendMessageTitle: {
-        type: String,
-        default: props$s.button.sendMessageTitle
-      },
-      sendMessagePath: {
-        type: String,
-        default: props$s.button.sendMessagePath
-      },
-      sendMessageImg: {
-        type: String,
-        default: props$s.button.sendMessageImg
-      },
-      showMessageCard: {
-        type: Boolean,
-        default: props$s.button.showMessageCard
-      },
-      dataName: {
-        type: String,
-        default: props$s.button.dataName
-      },
-      throttleTime: {
-        type: [String, Number],
-        default: props$s.button.throttleTime
-      },
-      hoverStartTime: {
-        type: [String, Number],
-        default: props$s.button.hoverStartTime
-      },
-      hoverStayTime: {
-        type: [String, Number],
-        default: props$s.button.hoverStayTime
-      },
-      text: {
-        type: [String, Number],
-        default: props$s.button.text
-      },
-      icon: {
-        type: String,
-        default: props$s.button.icon
-      },
-      iconColor: {
-        type: String,
-        default: props$s.button.icon
-      },
-      color: {
-        type: String,
-        default: props$s.button.color
-      }
-    }
-  };
-  const _sfc_main$D = {
-    name: "u-button",
-    mixins: [mpMixin, mixin, props$7],
-    data() {
-      return {};
-    },
-    computed: {
-      bemClass() {
-        if (!this.color) {
-          return this.bem(
-            "button",
-            ["type", "shape", "size"],
-            ["disabled", "plain", "hairline"]
-          );
-        } else {
-          return this.bem(
-            "button",
-            ["shape", "size"],
-            ["disabled", "plain", "hairline"]
-          );
-        }
-      },
-      loadingColor() {
-        if (this.plain) {
-          return this.color ? this.color : uni.$u.config.color[`u-${this.type}`];
-        }
-        if (this.type === "info") {
-          return "#c9c9c9";
-        }
-        return "rgb(200, 200, 200)";
-      },
-      iconColorCom() {
-        if (this.iconColor)
-          return this.iconColor;
-        if (this.plain) {
-          return this.color ? this.color : this.type;
-        } else {
-          return this.type === "info" ? "#000000" : "#ffffff";
-        }
-      },
-      baseColor() {
-        let style = {};
-        if (this.color) {
-          style.color = this.plain ? this.color : "white";
-          if (!this.plain) {
-            style["background-color"] = this.color;
-          }
-          if (this.color.indexOf("gradient") !== -1) {
-            style.borderTopWidth = 0;
-            style.borderRightWidth = 0;
-            style.borderBottomWidth = 0;
-            style.borderLeftWidth = 0;
-            if (!this.plain) {
-              style.backgroundImage = this.color;
-            }
-          } else {
-            style.borderColor = this.color;
-            style.borderWidth = "1px";
-            style.borderStyle = "solid";
-          }
-        }
-        return style;
-      },
-      nvueTextStyle() {
-        let style = {};
-        if (this.type === "info") {
-          style.color = "#323233";
-        }
-        if (this.color) {
-          style.color = this.plain ? this.color : "white";
-        }
-        style.fontSize = this.textSize + "px";
-        return style;
-      },
-      textSize() {
-        let fontSize = 14, { size } = this;
-        if (size === "large")
-          fontSize = 16;
-        if (size === "normal")
-          fontSize = 14;
-        if (size === "small")
-          fontSize = 12;
-        if (size === "mini")
-          fontSize = 10;
-        return fontSize;
-      }
-    },
-    emits: [
-      "click",
-      "getphonenumber",
-      "getuserinfo",
-      "error",
-      "opensetting",
-      "launchapp"
-    ],
-    methods: {
-      clickHandler() {
-        if (!this.disabled && !this.loading) {
-          uni.$u.throttle(() => {
-            this.$emit("click");
-          }, this.throttleTime);
-        }
-      },
-      getphonenumber(res) {
-        this.$emit("getphonenumber", res);
-      },
-      getuserinfo(res) {
-        this.$emit("getuserinfo", res);
-      },
-      error(res) {
-        this.$emit("error", res);
-      },
-      opensetting(res) {
-        this.$emit("opensetting", res);
-      },
-      launchapp(res) {
-        this.$emit("launchapp", res);
-      }
-    }
-  };
-  function _sfc_render$C(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_loading_icon = resolveEasycom(vue.resolveDynamicComponent("u-loading-icon"), __easycom_1$5);
-    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$6);
-    return vue.openBlock(), vue.createElementBlock("button", {
-      "hover-start-time": Number(_ctx.hoverStartTime),
-      "hover-stay-time": Number(_ctx.hoverStayTime),
-      "form-type": _ctx.formType,
-      "open-type": _ctx.openType,
-      "app-parameter": _ctx.appParameter,
-      "hover-stop-propagation": _ctx.hoverStopPropagation,
-      "send-message-title": _ctx.sendMessageTitle,
-      "send-message-path": _ctx.sendMessagePath,
-      lang: _ctx.lang,
-      "data-name": _ctx.dataName,
-      "session-from": _ctx.sessionFrom,
-      "send-message-img": _ctx.sendMessageImg,
-      "show-message-card": _ctx.showMessageCard,
-      onGetphonenumber: _cache[0] || (_cache[0] = (...args) => $options.getphonenumber && $options.getphonenumber(...args)),
-      onGetuserinfo: _cache[1] || (_cache[1] = (...args) => $options.getuserinfo && $options.getuserinfo(...args)),
-      onError: _cache[2] || (_cache[2] = (...args) => $options.error && $options.error(...args)),
-      onOpensetting: _cache[3] || (_cache[3] = (...args) => $options.opensetting && $options.opensetting(...args)),
-      onLaunchapp: _cache[4] || (_cache[4] = (...args) => $options.launchapp && $options.launchapp(...args)),
-      "hover-class": !_ctx.disabled && !_ctx.loading ? "u-button--active" : "",
-      class: vue.normalizeClass(["u-button u-reset-button", $options.bemClass]),
-      style: vue.normalizeStyle([$options.baseColor, _ctx.$u.addStyle(_ctx.customStyle)]),
-      onClick: _cache[5] || (_cache[5] = (...args) => $options.clickHandler && $options.clickHandler(...args))
-    }, [
-      _ctx.loading ? (vue.openBlock(), vue.createElementBlock(vue.Fragment, { key: 0 }, [
-        vue.createVNode(_component_u_loading_icon, {
-          mode: _ctx.loadingMode,
-          size: _ctx.loadingSize * 1.15,
-          color: $options.loadingColor
-        }, null, 8, ["mode", "size", "color"]),
-        vue.createElementVNode("text", {
-          class: "u-button__loading-text",
-          style: vue.normalizeStyle([{ fontSize: $options.textSize + "px" }])
-        }, vue.toDisplayString(_ctx.loadingText || _ctx.text), 5)
-      ], 64)) : (vue.openBlock(), vue.createElementBlock(vue.Fragment, { key: 1 }, [
-        _ctx.icon ? (vue.openBlock(), vue.createBlock(_component_u_icon, {
-          key: 0,
-          name: _ctx.icon,
-          color: $options.iconColorCom,
-          size: $options.textSize * 1.35,
-          customStyle: { marginRight: "2px" }
-        }, null, 8, ["name", "color", "size"])) : vue.createCommentVNode("v-if", true),
-        vue.renderSlot(_ctx.$slots, "default", {}, () => [
-          vue.createElementVNode("text", {
-            class: "u-button__text",
-            style: vue.normalizeStyle([{ fontSize: $options.textSize + "px" }])
-          }, vue.toDisplayString(_ctx.text), 5)
-        ], true)
-      ], 64))
-    ], 46, ["hover-start-time", "hover-stay-time", "form-type", "open-type", "app-parameter", "hover-stop-propagation", "send-message-title", "send-message-path", "lang", "data-name", "session-from", "send-message-img", "show-message-card", "hover-class"]);
-  }
-  const __easycom_4 = /* @__PURE__ */ _export_sfc(_sfc_main$D, [["render", _sfc_render$C], ["__scopeId", "data-v-461e713c"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-button/u-button.vue"]]);
-  const _sfc_main$C = {
+  const PagesHomeApiAuthApiAuth = /* @__PURE__ */ _export_sfc(_sfc_main$B, [["render", _sfc_render$A], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/home/apiAuth/apiAuth.vue"]]);
+  const _sfc_main$A = {
     onLoad: function(option) {
       formatAppLog("log", "at pages/home/apiAuthSure/apiAuthSure.vue:56", option.name);
       const {
@@ -8800,13 +9292,13 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$B(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0);
-    const _component_u__input = resolveEasycom(vue.resolveDynamicComponent("u--input"), __easycom_1$2);
-    const _component_u_form_item = resolveEasycom(vue.resolveDynamicComponent("u-form-item"), __easycom_2$2);
-    const _component_u__form = resolveEasycom(vue.resolveDynamicComponent("u--form"), __easycom_3);
-    const _component_u_button = resolveEasycom(vue.resolveDynamicComponent("u-button"), __easycom_4);
-    const _component_u_modal = resolveEasycom(vue.resolveDynamicComponent("u-modal"), __easycom_5$2);
+  function _sfc_render$z(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$6);
+    const _component_u__input = resolveEasycom(vue.resolveDynamicComponent("u--input"), __easycom_1$4);
+    const _component_u_form_item = resolveEasycom(vue.resolveDynamicComponent("u-form-item"), __easycom_2$5);
+    const _component_u__form = resolveEasycom(vue.resolveDynamicComponent("u--form"), __easycom_3$2);
+    const _component_u_button = resolveEasycom(vue.resolveDynamicComponent("u-button"), __easycom_4$1);
+    const _component_u_modal = resolveEasycom(vue.resolveDynamicComponent("u-modal"), __easycom_5$1);
     return vue.openBlock(), vue.createElementBlock("view", { class: "api-auth-sure page" }, [
       vue.createCommentVNode(" \u5BFC\u822A "),
       vue.createVNode(_component_u_navbar, {
@@ -8946,8 +9438,8 @@ if (uni.restoreGlobal) {
       }, 8, ["onConfirm", "onCancel", "show", "title"])
     ]);
   }
-  const PagesHomeApiAuthSureApiAuthSure = /* @__PURE__ */ _export_sfc(_sfc_main$C, [["render", _sfc_render$B], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/home/apiAuthSure/apiAuthSure.vue"]]);
-  const _sfc_main$B = {
+  const PagesHomeApiAuthSureApiAuthSure = /* @__PURE__ */ _export_sfc(_sfc_main$A, [["render", _sfc_render$z], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/home/apiAuthSure/apiAuthSure.vue"]]);
+  const _sfc_main$z = {
     data() {
       return {
         noPayList: [
@@ -9006,9 +9498,9 @@ if (uni.restoreGlobal) {
     },
     methods: {}
   };
-  function _sfc_render$A(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0);
-    const _component_u_empty = resolveEasycom(vue.resolveDynamicComponent("u-empty"), __easycom_3$1);
+  function _sfc_render$y(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$6);
+    const _component_u_empty = resolveEasycom(vue.resolveDynamicComponent("u-empty"), __easycom_3);
     return vue.openBlock(), vue.createElementBlock("view", { class: "bill-center page" }, [
       vue.createCommentVNode(" \u5BFC\u822A "),
       vue.createVNode(_component_u_navbar, {
@@ -9088,8 +9580,8 @@ if (uni.restoreGlobal) {
       ], 32)
     ]);
   }
-  const PagesHomeBillingCenterBillingCenter = /* @__PURE__ */ _export_sfc(_sfc_main$B, [["render", _sfc_render$A], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/home/billingCenter/billingCenter.vue"]]);
-  const _sfc_main$A = {
+  const PagesHomeBillingCenterBillingCenter = /* @__PURE__ */ _export_sfc(_sfc_main$z, [["render", _sfc_render$y], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/home/billingCenter/billingCenter.vue"]]);
+  const _sfc_main$y = {
     onLoad() {
       this.isAdequateFn("ERC20");
     },
@@ -9168,10 +9660,10 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$z(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u__image = resolveEasycom(vue.resolveDynamicComponent("u--image"), __easycom_0$4);
-    const _component_u_button = resolveEasycom(vue.resolveDynamicComponent("u-button"), __easycom_4);
-    const _component_u_modal = resolveEasycom(vue.resolveDynamicComponent("u-modal"), __easycom_5$2);
+  function _sfc_render$x(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_u__image = resolveEasycom(vue.resolveDynamicComponent("u--image"), __easycom_0$2);
+    const _component_u_button = resolveEasycom(vue.resolveDynamicComponent("u-button"), __easycom_4$1);
+    const _component_u_modal = resolveEasycom(vue.resolveDynamicComponent("u-modal"), __easycom_5$1);
     return vue.openBlock(), vue.createElementBlock("view", { class: "to-be-paid" }, [
       vue.createCommentVNode(" \u5BFC\u822A\u6761 "),
       vue.createElementVNode("view", { class: "tbp-nav" }, [
@@ -9304,7 +9796,7 @@ if (uni.restoreGlobal) {
       }, 8, ["onConfirm", "show", "title"])
     ]);
   }
-  const PagesHomeToBePaidToBePaid = /* @__PURE__ */ _export_sfc(_sfc_main$A, [["render", _sfc_render$z], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/home/toBePaid/toBePaid.vue"]]);
+  const PagesHomeToBePaidToBePaid = /* @__PURE__ */ _export_sfc(_sfc_main$y, [["render", _sfc_render$x], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/home/toBePaid/toBePaid.vue"]]);
   var commonjsGlobal = typeof globalThis !== "undefined" ? globalThis : typeof window !== "undefined" ? window : typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : {};
   function getDefaultExportFromCjs(x) {
     return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, "default") ? x["default"] : x;
@@ -9963,7 +10455,7 @@ if (uni.restoreGlobal) {
     });
   })(uqrcode);
   const UQRCode = uqrcode.exports;
-  const _sfc_main$z = {
+  const _sfc_main$x = {
     data() {
       return {
         qrcodeWidth: 275,
@@ -10016,10 +10508,10 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$y(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u__image = resolveEasycom(vue.resolveDynamicComponent("u--image"), __easycom_0$4);
-    const _component_u_button = resolveEasycom(vue.resolveDynamicComponent("u-button"), __easycom_4);
-    const _component_u_modal = resolveEasycom(vue.resolveDynamicComponent("u-modal"), __easycom_5$2);
+  function _sfc_render$w(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_u__image = resolveEasycom(vue.resolveDynamicComponent("u--image"), __easycom_0$2);
+    const _component_u_button = resolveEasycom(vue.resolveDynamicComponent("u-button"), __easycom_4$1);
+    const _component_u_modal = resolveEasycom(vue.resolveDynamicComponent("u-modal"), __easycom_5$1);
     return vue.openBlock(), vue.createElementBlock("view", {
       class: "add-usdt",
       id: "addUSDT"
@@ -10127,8 +10619,8 @@ if (uni.restoreGlobal) {
       }, 8, ["onConfirm", "show"])
     ]);
   }
-  const PagesHomeAddUSDTAddUSDT = /* @__PURE__ */ _export_sfc(_sfc_main$z, [["render", _sfc_render$y], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/home/addUSDT/addUSDT.vue"]]);
-  const _sfc_main$y = {
+  const PagesHomeAddUSDTAddUSDT = /* @__PURE__ */ _export_sfc(_sfc_main$x, [["render", _sfc_render$w], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/home/addUSDT/addUSDT.vue"]]);
+  const _sfc_main$w = {
     data() {
       return {};
     },
@@ -10140,9 +10632,9 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$x(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_image = resolveEasycom(vue.resolveDynamicComponent("u-image"), __easycom_0$5);
-    const _component_u_button = resolveEasycom(vue.resolveDynamicComponent("u-button"), __easycom_4);
+  function _sfc_render$v(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_u_image = resolveEasycom(vue.resolveDynamicComponent("u-image"), __easycom_0$3);
+    const _component_u_button = resolveEasycom(vue.resolveDynamicComponent("u-button"), __easycom_4$1);
     return vue.openBlock(), vue.createElementBlock("view", { class: "pay-success" }, [
       vue.createElementVNode("view", { class: "ps-null" }, [
         vue.createVNode(_component_u_image, {
@@ -10160,8 +10652,8 @@ if (uni.restoreGlobal) {
       ])
     ]);
   }
-  const PagesHomePaySuccessPaySuccess = /* @__PURE__ */ _export_sfc(_sfc_main$y, [["render", _sfc_render$x], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/home/paySuccess/paySuccess.vue"]]);
-  const _sfc_main$x = {
+  const PagesHomePaySuccessPaySuccess = /* @__PURE__ */ _export_sfc(_sfc_main$w, [["render", _sfc_render$v], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/home/paySuccess/paySuccess.vue"]]);
+  const _sfc_main$v = {
     data() {
       return {
         value: "",
@@ -10192,8 +10684,8 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$w(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u__input = resolveEasycom(vue.resolveDynamicComponent("u--input"), __easycom_1$2);
+  function _sfc_render$u(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_u__input = resolveEasycom(vue.resolveDynamicComponent("u--input"), __easycom_1$4);
     return vue.openBlock(), vue.createElementBlock("view", { class: "search" }, [
       vue.createElementVNode("view", { class: "s-top" }, [
         vue.createVNode(_component_u__input, {
@@ -10241,8 +10733,8 @@ if (uni.restoreGlobal) {
       ])
     ]);
   }
-  const PagesTradeSearchSearch = /* @__PURE__ */ _export_sfc(_sfc_main$x, [["render", _sfc_render$w], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/trade/search/search.vue"]]);
-  const props$6 = {
+  const PagesTradeSearchSearch = /* @__PURE__ */ _export_sfc(_sfc_main$v, [["render", _sfc_render$u], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/trade/search/search.vue"]]);
+  const props$4 = {
     props: {
       name: {
         type: [String, Number, Boolean],
@@ -10298,9 +10790,9 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  const _sfc_main$w = {
+  const _sfc_main$u = {
     name: "u-radio",
-    mixins: [mpMixin, mixin, props$6],
+    mixins: [mpMixin, mixin, props$4],
     data() {
       return {
         checked: false,
@@ -10434,8 +10926,8 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$v(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$6);
+  function _sfc_render$t(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$7);
     return vue.openBlock(), vue.createElementBlock("view", {
       class: vue.normalizeClass(["u-radio", [`u-radio-label--${$data.parentData.iconPlacement}`, $data.parentData.borderBottom && $data.parentData.placement === "column" && "u-border-bottom"]]),
       onClick: _cache[2] || (_cache[2] = vue.withModifiers((...args) => $options.wrapperClickHandler && $options.wrapperClickHandler(...args), ["stop"])),
@@ -10466,8 +10958,8 @@ if (uni.restoreGlobal) {
       }, vue.toDisplayString(_ctx.label), 5)
     ], 6);
   }
-  const __easycom_1$1 = /* @__PURE__ */ _export_sfc(_sfc_main$w, [["render", _sfc_render$v], ["__scopeId", "data-v-edf95844"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-radio/u-radio.vue"]]);
-  const props$5 = {
+  const __easycom_1$1 = /* @__PURE__ */ _export_sfc(_sfc_main$u, [["render", _sfc_render$t], ["__scopeId", "data-v-edf95844"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-radio/u-radio.vue"]]);
+  const props$3 = {
     props: {
       modelValue: {
         type: [String, Number, Boolean],
@@ -10535,9 +11027,9 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  const _sfc_main$v = {
+  const _sfc_main$t = {
     name: "u-radio-group",
-    mixins: [mpMixin, mixin, props$5],
+    mixins: [mpMixin, mixin, props$3],
     computed: {
       parentData() {
         return [
@@ -10588,15 +11080,15 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$u(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$s(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("view", {
       class: vue.normalizeClass(["u-radio-group", $options.bemClass])
     }, [
       vue.renderSlot(_ctx.$slots, "default", {}, void 0, true)
     ], 2);
   }
-  const __easycom_2$1 = /* @__PURE__ */ _export_sfc(_sfc_main$v, [["render", _sfc_render$u], ["__scopeId", "data-v-272bb654"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-radio-group/u-radio-group.vue"]]);
-  const _sfc_main$u = {
+  const __easycom_2$1 = /* @__PURE__ */ _export_sfc(_sfc_main$t, [["render", _sfc_render$s], ["__scopeId", "data-v-272bb654"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-radio-group/u-radio-group.vue"]]);
+  const _sfc_main$s = {
     data() {
       return {
         bgColor: "#FFCA5D",
@@ -10651,16 +11143,21 @@ if (uni.restoreGlobal) {
       },
       changeStr() {
         this.proportion.type = "";
+      },
+      submit() {
+        uni.reLaunch({
+          url: "/pages/trade/trade"
+        });
       }
     }
   };
-  function _sfc_render$t(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_image = resolveEasycom(vue.resolveDynamicComponent("u-image"), __easycom_0$5);
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0);
+  function _sfc_render$r(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_u_image = resolveEasycom(vue.resolveDynamicComponent("u-image"), __easycom_0$3);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$6);
     const _component_u_radio = resolveEasycom(vue.resolveDynamicComponent("u-radio"), __easycom_1$1);
     const _component_u_radio_group = resolveEasycom(vue.resolveDynamicComponent("u-radio-group"), __easycom_2$1);
-    const _component_u__input = resolveEasycom(vue.resolveDynamicComponent("u--input"), __easycom_1$2);
-    const _component_u_button = resolveEasycom(vue.resolveDynamicComponent("u-button"), __easycom_4);
+    const _component_u__input = resolveEasycom(vue.resolveDynamicComponent("u--input"), __easycom_1$4);
+    const _component_u_button = resolveEasycom(vue.resolveDynamicComponent("u-button"), __easycom_4$1);
     return vue.openBlock(), vue.createElementBlock("view", { class: "set-strategy page" }, [
       vue.createCommentVNode(" \u5BFC\u822A "),
       vue.createVNode(_component_u_navbar, {
@@ -10825,7 +11322,7 @@ if (uni.restoreGlobal) {
         vue.createCommentVNode(" \u78BA\u8A8D\u57F7\u884C\u7B56\u7565 "),
         vue.createElementVNode("view", { class: "stc-btn" }, [
           vue.createVNode(_component_u_button, {
-            onClick: _ctx.submit,
+            onClick: $options.submit,
             class: "color000",
             color: "linear-gradient(270deg, #FCA504 0%, #FDC50E 100%)"
           }, {
@@ -10838,366 +11335,7 @@ if (uni.restoreGlobal) {
       ])
     ]);
   }
-  const PagesTradeSetStrategySetStrategy = /* @__PURE__ */ _export_sfc(_sfc_main$u, [["render", _sfc_render$t], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/trade/setStrategy/setStrategy.vue"]]);
-  const props$4 = {
-    props: {
-      name: {
-        type: [String, Number, Boolean],
-        default: props$s.checkbox.name
-      },
-      shape: {
-        type: String,
-        default: props$s.checkbox.shape
-      },
-      size: {
-        type: [String, Number],
-        default: props$s.checkbox.size
-      },
-      checked: {
-        type: Boolean,
-        default: props$s.checkbox.checked
-      },
-      disabled: {
-        type: [String, Boolean],
-        default: props$s.checkbox.disabled
-      },
-      activeColor: {
-        type: String,
-        default: props$s.checkbox.activeColor
-      },
-      inactiveColor: {
-        type: String,
-        default: props$s.checkbox.inactiveColor
-      },
-      iconSize: {
-        type: [String, Number],
-        default: props$s.checkbox.iconSize
-      },
-      iconColor: {
-        type: String,
-        default: props$s.checkbox.iconColor
-      },
-      label: {
-        type: [String, Number],
-        default: props$s.checkbox.label
-      },
-      labelSize: {
-        type: [String, Number],
-        default: props$s.checkbox.labelSize
-      },
-      labelColor: {
-        type: String,
-        default: props$s.checkbox.labelColor
-      },
-      labelDisabled: {
-        type: [String, Boolean],
-        default: props$s.checkbox.labelDisabled
-      }
-    }
-  };
-  const _sfc_main$t = {
-    name: "u-checkbox",
-    mixins: [mpMixin, mixin, props$4],
-    data() {
-      return {
-        isChecked: false,
-        parentData: {
-          iconSize: 12,
-          labelDisabled: null,
-          disabled: null,
-          shape: "square",
-          activeColor: null,
-          inactiveColor: null,
-          size: 18,
-          modelValue: null,
-          iconColor: null,
-          placement: "row",
-          borderBottom: false,
-          iconPlacement: "left"
-        }
-      };
-    },
-    computed: {
-      elDisabled() {
-        return this.disabled !== "" ? this.disabled : this.parentData.disabled !== null ? this.parentData.disabled : false;
-      },
-      elLabelDisabled() {
-        return this.labelDisabled !== "" ? this.labelDisabled : this.parentData.labelDisabled !== null ? this.parentData.labelDisabled : false;
-      },
-      elSize() {
-        return this.size ? this.size : this.parentData.size ? this.parentData.size : 21;
-      },
-      elIconSize() {
-        return this.iconSize ? this.iconSize : this.parentData.iconSize ? this.parentData.iconSize : 12;
-      },
-      elActiveColor() {
-        return this.activeColor ? this.activeColor : this.parentData.activeColor ? this.parentData.activeColor : "#2979ff";
-      },
-      elInactiveColor() {
-        return this.inactiveColor ? this.inactiveColor : this.parentData.inactiveColor ? this.parentData.inactiveColor : "#c8c9cc";
-      },
-      elLabelColor() {
-        return this.labelColor ? this.labelColor : this.parentData.labelColor ? this.parentData.labelColor : "#606266";
-      },
-      elShape() {
-        return this.shape ? this.shape : this.parentData.shape ? this.parentData.shape : "circle";
-      },
-      elLabelSize() {
-        return uni.$u.addUnit(this.labelSize ? this.labelSize : this.parentData.labelSize ? this.parentData.labelSize : "15");
-      },
-      elIconColor() {
-        const iconColor = this.iconColor ? this.iconColor : this.parentData.iconColor ? this.parentData.iconColor : "#ffffff";
-        if (this.elDisabled) {
-          return this.isChecked ? this.elInactiveColor : "transparent";
-        } else {
-          return this.isChecked ? iconColor : "transparent";
-        }
-      },
-      iconClasses() {
-        let classes = [];
-        classes.push("u-checkbox__icon-wrap--" + this.elShape);
-        if (this.elDisabled) {
-          classes.push("u-checkbox__icon-wrap--disabled");
-        }
-        if (this.isChecked && this.elDisabled) {
-          classes.push("u-checkbox__icon-wrap--disabled--checked");
-        }
-        return classes;
-      },
-      iconWrapStyle() {
-        const style = {};
-        style.backgroundColor = this.isChecked && !this.elDisabled ? this.elActiveColor : "#ffffff";
-        style.borderColor = this.isChecked && !this.elDisabled ? this.elActiveColor : this.elInactiveColor;
-        style.width = uni.$u.addUnit(this.elSize);
-        style.height = uni.$u.addUnit(this.elSize);
-        if (this.parentData.iconPlacement === "right") {
-          style.marginRight = 0;
-        }
-        return style;
-      },
-      checkboxStyle() {
-        const style = {};
-        if (this.parentData.borderBottom && this.parentData.placement === "row") {
-          uni.$u.error("\u68C0\u6D4B\u5230\u60A8\u5C06borderBottom\u8BBE\u7F6E\u4E3Atrue\uFF0C\u9700\u8981\u540C\u65F6\u5C06u-checkbox-group\u7684placement\u8BBE\u7F6E\u4E3Acolumn\u624D\u6709\u6548");
-        }
-        if (this.parentData.borderBottom && this.parentData.placement === "column") {
-          style.paddingBottom = "8px";
-        }
-        return uni.$u.deepMerge(style, uni.$u.addStyle(this.customStyle));
-      }
-    },
-    mounted() {
-      this.init();
-    },
-    methods: {
-      init() {
-        this.updateParentData();
-        if (!this.parent) {
-          uni.$u.error("u-checkbox\u5FC5\u987B\u642D\u914Du-checkbox-group\u7EC4\u4EF6\u4F7F\u7528");
-        }
-        const value = this.parentData.modelValue;
-        if (this.checked) {
-          this.isChecked = true;
-        } else if (uni.$u.test.array(value)) {
-          this.isChecked = value.some((item2) => {
-            return item2 === this.name;
-          });
-        }
-      },
-      updateParentData() {
-        this.getParentData("u-checkbox-group");
-      },
-      wrapperClickHandler(e) {
-        this.parentData.iconPlacement === "right" && this.iconClickHandler(e);
-      },
-      iconClickHandler(e) {
-        this.preventEvent(e);
-        if (!this.elDisabled) {
-          this.setRadioCheckedStatus();
-        }
-      },
-      labelClickHandler(e) {
-        this.preventEvent(e);
-        if (!this.elLabelDisabled && !this.elDisabled) {
-          this.setRadioCheckedStatus();
-        }
-      },
-      emitEvent() {
-        this.$emit("change", this.isChecked);
-        this.$nextTick(() => {
-          uni.$u.formValidate(this, "change");
-        });
-      },
-      setRadioCheckedStatus() {
-        this.isChecked = !this.isChecked;
-        this.emitEvent();
-        typeof this.parent.unCheckedOther === "function" && this.parent.unCheckedOther(this);
-      }
-    },
-    watch: {
-      checked() {
-        this.isChecked = this.checked;
-      }
-    }
-  };
-  function _sfc_render$s(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$6);
-    return vue.openBlock(), vue.createElementBlock("view", {
-      class: vue.normalizeClass(["u-checkbox", [`u-checkbox-label--${$data.parentData.iconPlacement}`, $data.parentData.borderBottom && $data.parentData.placement === "column" && "u-border-bottom"]]),
-      style: vue.normalizeStyle([$options.checkboxStyle]),
-      onClick: _cache[2] || (_cache[2] = vue.withModifiers((...args) => $options.wrapperClickHandler && $options.wrapperClickHandler(...args), ["stop"]))
-    }, [
-      vue.createElementVNode("view", {
-        class: vue.normalizeClass(["u-checkbox__icon-wrap", $options.iconClasses]),
-        onClick: _cache[0] || (_cache[0] = vue.withModifiers((...args) => $options.iconClickHandler && $options.iconClickHandler(...args), ["stop"])),
-        style: vue.normalizeStyle([$options.iconWrapStyle])
-      }, [
-        vue.renderSlot(_ctx.$slots, "icon", {}, () => [
-          vue.createVNode(_component_u_icon, {
-            class: "u-checkbox__icon-wrap__icon",
-            name: "checkbox-mark",
-            size: $options.elIconSize,
-            color: $options.elIconColor
-          }, null, 8, ["size", "color"])
-        ], true)
-      ], 6),
-      vue.createElementVNode("text", {
-        onClick: _cache[1] || (_cache[1] = vue.withModifiers((...args) => $options.labelClickHandler && $options.labelClickHandler(...args), ["stop"])),
-        style: vue.normalizeStyle({
-          color: $options.elDisabled ? $options.elInactiveColor : $options.elLabelColor,
-          fontSize: $options.elLabelSize,
-          lineHeight: $options.elLabelSize
-        })
-      }, vue.toDisplayString(_ctx.label), 5)
-    ], 6);
-  }
-  const __easycom_5$1 = /* @__PURE__ */ _export_sfc(_sfc_main$t, [["render", _sfc_render$s], ["__scopeId", "data-v-abd63d8e"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-checkbox/u-checkbox.vue"]]);
-  const props$3 = {
-    props: {
-      name: {
-        type: String,
-        default: props$s.checkboxGroup.name
-      },
-      modelValue: {
-        type: Array,
-        default: props$s.checkboxGroup.value
-      },
-      shape: {
-        type: String,
-        default: props$s.checkboxGroup.shape
-      },
-      disabled: {
-        type: Boolean,
-        default: props$s.checkboxGroup.disabled
-      },
-      activeColor: {
-        type: String,
-        default: props$s.checkboxGroup.activeColor
-      },
-      inactiveColor: {
-        type: String,
-        default: props$s.checkboxGroup.inactiveColor
-      },
-      size: {
-        type: [String, Number],
-        default: props$s.checkboxGroup.size
-      },
-      placement: {
-        type: String,
-        default: props$s.checkboxGroup.placement
-      },
-      labelSize: {
-        type: [String, Number],
-        default: props$s.checkboxGroup.labelSize
-      },
-      labelColor: {
-        type: [String],
-        default: props$s.checkboxGroup.labelColor
-      },
-      labelDisabled: {
-        type: Boolean,
-        default: props$s.checkboxGroup.labelDisabled
-      },
-      iconColor: {
-        type: String,
-        default: props$s.checkboxGroup.iconColor
-      },
-      iconSize: {
-        type: [String, Number],
-        default: props$s.checkboxGroup.iconSize
-      },
-      iconPlacement: {
-        type: String,
-        default: props$s.checkboxGroup.iconPlacement
-      },
-      borderBottom: {
-        type: Boolean,
-        default: props$s.checkboxGroup.borderBottom
-      }
-    }
-  };
-  const _sfc_main$s = {
-    name: "u-checkbox-group",
-    mixins: [mpMixin, mixin, props$3],
-    computed: {
-      parentData() {
-        return [
-          this.modelValue,
-          this.disabled,
-          this.inactiveColor,
-          this.activeColor,
-          this.size,
-          this.labelDisabled,
-          this.shape,
-          this.iconSize,
-          this.borderBottom,
-          this.placement
-        ];
-      },
-      bemClass() {
-        return this.bem("checkbox-group", ["placement"]);
-      }
-    },
-    watch: {
-      parentData: {
-        handler() {
-          if (this.children.length) {
-            this.children.map((child) => {
-              typeof child.init === "function" && child.init();
-            });
-          }
-        },
-        deep: true
-      }
-    },
-    data() {
-      return {};
-    },
-    created() {
-      this.children = [];
-    },
-    emits: ["update:modelValue", "change"],
-    methods: {
-      unCheckedOther(childInstance) {
-        const values = [];
-        this.children.map((child) => {
-          if (child.isChecked) {
-            values.push(child.name);
-          }
-        });
-        this.$emit("change", values);
-        this.$emit("update:modelValue", values);
-      }
-    }
-  };
-  function _sfc_render$r(_ctx, _cache, $props, $setup, $data, $options) {
-    return vue.openBlock(), vue.createElementBlock("view", {
-      class: vue.normalizeClass(["u-checkbox-group", $options.bemClass])
-    }, [
-      vue.renderSlot(_ctx.$slots, "default", {}, void 0, true)
-    ], 2);
-  }
-  const __easycom_6 = /* @__PURE__ */ _export_sfc(_sfc_main$s, [["render", _sfc_render$r], ["__scopeId", "data-v-504cd728"], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/node_modules/uview-plus/components/u-checkbox-group/u-checkbox-group.vue"]]);
+  const PagesTradeSetStrategySetStrategy = /* @__PURE__ */ _export_sfc(_sfc_main$s, [["render", _sfc_render$r], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/trade/setStrategy/setStrategy.vue"]]);
   const _sfc_main$r = {
     data() {
       return {
@@ -11322,13 +11460,13 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$q(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_image = resolveEasycom(vue.resolveDynamicComponent("u-image"), __easycom_0$5);
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0);
-    const _component_u_loadmore = resolveEasycom(vue.resolveDynamicComponent("u-loadmore"), __easycom_2$3);
-    const _component_u_empty = resolveEasycom(vue.resolveDynamicComponent("u-empty"), __easycom_3$1);
-    const _component_u__image = resolveEasycom(vue.resolveDynamicComponent("u--image"), __easycom_0$4);
-    const _component_u_modal = resolveEasycom(vue.resolveDynamicComponent("u-modal"), __easycom_5$2);
-    const _component_u_checkbox = resolveEasycom(vue.resolveDynamicComponent("u-checkbox"), __easycom_5$1);
+    const _component_u_image = resolveEasycom(vue.resolveDynamicComponent("u-image"), __easycom_0$3);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$6);
+    const _component_u_loadmore = resolveEasycom(vue.resolveDynamicComponent("u-loadmore"), __easycom_2$2);
+    const _component_u_empty = resolveEasycom(vue.resolveDynamicComponent("u-empty"), __easycom_3);
+    const _component_u__image = resolveEasycom(vue.resolveDynamicComponent("u--image"), __easycom_0$2);
+    const _component_u_modal = resolveEasycom(vue.resolveDynamicComponent("u-modal"), __easycom_5$1);
+    const _component_u_checkbox = resolveEasycom(vue.resolveDynamicComponent("u-checkbox"), __easycom_5$2);
     const _component_u_checkbox_group = resolveEasycom(vue.resolveDynamicComponent("u-checkbox-group"), __easycom_6);
     return vue.openBlock(), vue.createElementBlock("view", { class: "position page" }, [
       vue.createCommentVNode(" \u5BFC\u822A "),
@@ -11566,7 +11704,7 @@ if (uni.restoreGlobal) {
     methods: {}
   };
   function _sfc_render$p(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$6);
     return vue.openBlock(), vue.createElementBlock("view", { class: "strateg-explain page" }, [
       vue.createCommentVNode(" \u5BFC\u822A "),
       vue.createVNode(_component_u_navbar, {
@@ -11709,7 +11847,7 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$o(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_loading_icon = resolveEasycom(vue.resolveDynamicComponent("u-loading-icon"), __easycom_1$5);
+    const _component_u_loading_icon = resolveEasycom(vue.resolveDynamicComponent("u-loading-icon"), __easycom_1$3);
     return vue.openBlock(), vue.createElementBlock("view", {
       class: vue.normalizeClass(["u-switch", [_ctx.disabled && "u-switch--disabled"]]),
       style: vue.normalizeStyle([$options.switchStyle, _ctx.$u.addStyle(_ctx.customStyle)]),
@@ -11772,14 +11910,14 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$n(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$6);
     const _component_u_radio = resolveEasycom(vue.resolveDynamicComponent("u-radio"), __easycom_1$1);
     const _component_u_radio_group = resolveEasycom(vue.resolveDynamicComponent("u-radio-group"), __easycom_2$1);
-    const _component_u_form_item = resolveEasycom(vue.resolveDynamicComponent("u-form-item"), __easycom_2$2);
-    const _component_u__input = resolveEasycom(vue.resolveDynamicComponent("u--input"), __easycom_1$2);
+    const _component_u_form_item = resolveEasycom(vue.resolveDynamicComponent("u-form-item"), __easycom_2$5);
+    const _component_u__input = resolveEasycom(vue.resolveDynamicComponent("u--input"), __easycom_1$4);
     const _component_u_switch = resolveEasycom(vue.resolveDynamicComponent("u-switch"), __easycom_5);
-    const _component_u__form = resolveEasycom(vue.resolveDynamicComponent("u--form"), __easycom_3);
-    const _component_u_button = resolveEasycom(vue.resolveDynamicComponent("u-button"), __easycom_4);
+    const _component_u__form = resolveEasycom(vue.resolveDynamicComponent("u--form"), __easycom_3$2);
+    const _component_u_button = resolveEasycom(vue.resolveDynamicComponent("u-button"), __easycom_4$1);
     return vue.openBlock(), vue.createElementBlock("view", { class: "cus-strategy page" }, [
       vue.createCommentVNode(" \u5BFC\u822A "),
       vue.createVNode(_component_u_navbar, {
@@ -12134,9 +12272,9 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$m(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0);
-    const _component_u_loadmore = resolveEasycom(vue.resolveDynamicComponent("u-loadmore"), __easycom_2$3);
-    const _component_u_empty = resolveEasycom(vue.resolveDynamicComponent("u-empty"), __easycom_3$1);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$6);
+    const _component_u_loadmore = resolveEasycom(vue.resolveDynamicComponent("u-loadmore"), __easycom_2$2);
+    const _component_u_empty = resolveEasycom(vue.resolveDynamicComponent("u-empty"), __easycom_3);
     return vue.openBlock(), vue.createElementBlock("view", { class: "position-record page" }, [
       vue.createCommentVNode(" \u5BFC\u822A "),
       vue.createVNode(_component_u_navbar, {
@@ -12341,13 +12479,13 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$l(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_image = resolveEasycom(vue.resolveDynamicComponent("u-image"), __easycom_0$5);
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0);
-    const _component_u_loadmore = resolveEasycom(vue.resolveDynamicComponent("u-loadmore"), __easycom_2$3);
-    const _component_u_empty = resolveEasycom(vue.resolveDynamicComponent("u-empty"), __easycom_3$1);
-    const _component_u__image = resolveEasycom(vue.resolveDynamicComponent("u--image"), __easycom_0$4);
-    const _component_u_modal = resolveEasycom(vue.resolveDynamicComponent("u-modal"), __easycom_5$2);
-    const _component_u_checkbox = resolveEasycom(vue.resolveDynamicComponent("u-checkbox"), __easycom_5$1);
+    const _component_u_image = resolveEasycom(vue.resolveDynamicComponent("u-image"), __easycom_0$3);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$6);
+    const _component_u_loadmore = resolveEasycom(vue.resolveDynamicComponent("u-loadmore"), __easycom_2$2);
+    const _component_u_empty = resolveEasycom(vue.resolveDynamicComponent("u-empty"), __easycom_3);
+    const _component_u__image = resolveEasycom(vue.resolveDynamicComponent("u--image"), __easycom_0$2);
+    const _component_u_modal = resolveEasycom(vue.resolveDynamicComponent("u-modal"), __easycom_5$1);
+    const _component_u_checkbox = resolveEasycom(vue.resolveDynamicComponent("u-checkbox"), __easycom_5$2);
     const _component_u_checkbox_group = resolveEasycom(vue.resolveDynamicComponent("u-checkbox-group"), __easycom_6);
     return vue.openBlock(), vue.createElementBlock("view", { class: "position page" }, [
       vue.createCommentVNode(" \u5BFC\u822A "),
@@ -12672,9 +12810,9 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$k(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0);
-    const _component_u_loadmore = resolveEasycom(vue.resolveDynamicComponent("u-loadmore"), __easycom_2$3);
-    const _component_u_empty = resolveEasycom(vue.resolveDynamicComponent("u-empty"), __easycom_3$1);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$6);
+    const _component_u_loadmore = resolveEasycom(vue.resolveDynamicComponent("u-loadmore"), __easycom_2$2);
+    const _component_u_empty = resolveEasycom(vue.resolveDynamicComponent("u-empty"), __easycom_3);
     return vue.openBlock(), vue.createElementBlock("view", { class: "position-record page" }, [
       vue.createCommentVNode(" \u5BFC\u822A "),
       vue.createVNode(_component_u_navbar, {
@@ -12792,9 +12930,9 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$j(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0);
-    const _component_u_loadmore = resolveEasycom(vue.resolveDynamicComponent("u-loadmore"), __easycom_2$3);
-    const _component_u_empty = resolveEasycom(vue.resolveDynamicComponent("u-empty"), __easycom_3$1);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$6);
+    const _component_u_loadmore = resolveEasycom(vue.resolveDynamicComponent("u-loadmore"), __easycom_2$2);
+    const _component_u_empty = resolveEasycom(vue.resolveDynamicComponent("u-empty"), __easycom_3);
     return vue.openBlock(), vue.createElementBlock("view", { class: "trans-details page" }, [
       vue.createCommentVNode(" \u5BFC\u822A "),
       vue.createVNode(_component_u_navbar, {
@@ -12889,12 +13027,12 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$i(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u__image = resolveEasycom(vue.resolveDynamicComponent("u--image"), __easycom_0$4);
-    const _component_u__input = resolveEasycom(vue.resolveDynamicComponent("u--input"), __easycom_1$2);
-    const _component_u_form_item = resolveEasycom(vue.resolveDynamicComponent("u-form-item"), __easycom_2$2);
-    const _component_u__form = resolveEasycom(vue.resolveDynamicComponent("u--form"), __easycom_3);
-    const _component_u_button = resolveEasycom(vue.resolveDynamicComponent("u-button"), __easycom_4);
-    const _component_u_modal = resolveEasycom(vue.resolveDynamicComponent("u-modal"), __easycom_5$2);
+    const _component_u__image = resolveEasycom(vue.resolveDynamicComponent("u--image"), __easycom_0$2);
+    const _component_u__input = resolveEasycom(vue.resolveDynamicComponent("u--input"), __easycom_1$4);
+    const _component_u_form_item = resolveEasycom(vue.resolveDynamicComponent("u-form-item"), __easycom_2$5);
+    const _component_u__form = resolveEasycom(vue.resolveDynamicComponent("u--form"), __easycom_3$2);
+    const _component_u_button = resolveEasycom(vue.resolveDynamicComponent("u-button"), __easycom_4$1);
+    const _component_u_modal = resolveEasycom(vue.resolveDynamicComponent("u-modal"), __easycom_5$1);
     return vue.openBlock(), vue.createElementBlock("view", { class: "awidth-usdt page" }, [
       vue.createCommentVNode(" \u5BFC\u822A\u6761 "),
       vue.createElementVNode("view", { class: "au-nav" }, [
@@ -13053,8 +13191,8 @@ if (uni.restoreGlobal) {
     methods: {}
   };
   function _sfc_render$h(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0);
-    const _component_u_empty = resolveEasycom(vue.resolveDynamicComponent("u-empty"), __easycom_3$1);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$6);
+    const _component_u_empty = resolveEasycom(vue.resolveDynamicComponent("u-empty"), __easycom_3);
     return vue.openBlock(), vue.createElementBlock("view", { class: "bill-center page" }, [
       vue.createCommentVNode(" \u5BFC\u822A "),
       vue.createVNode(_component_u_navbar, {
@@ -13145,11 +13283,11 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$g(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0);
-    const _component_u__input = resolveEasycom(vue.resolveDynamicComponent("u--input"), __easycom_1$2);
-    const _component_u_form_item = resolveEasycom(vue.resolveDynamicComponent("u-form-item"), __easycom_2$2);
-    const _component_u__form = resolveEasycom(vue.resolveDynamicComponent("u--form"), __easycom_3);
-    const _component_u_button = resolveEasycom(vue.resolveDynamicComponent("u-button"), __easycom_4);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$6);
+    const _component_u__input = resolveEasycom(vue.resolveDynamicComponent("u--input"), __easycom_1$4);
+    const _component_u_form_item = resolveEasycom(vue.resolveDynamicComponent("u-form-item"), __easycom_2$5);
+    const _component_u__form = resolveEasycom(vue.resolveDynamicComponent("u--form"), __easycom_3$2);
+    const _component_u_button = resolveEasycom(vue.resolveDynamicComponent("u-button"), __easycom_4$1);
     return vue.openBlock(), vue.createElementBlock("view", { class: "my-sub" }, [
       vue.createCommentVNode(" \u5BFC\u822A "),
       vue.createVNode(_component_u_navbar, {
@@ -13317,9 +13455,9 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$f(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0);
-    const _component_u_loadmore = resolveEasycom(vue.resolveDynamicComponent("u-loadmore"), __easycom_2$3);
-    const _component_u_empty = resolveEasycom(vue.resolveDynamicComponent("u-empty"), __easycom_3$1);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$6);
+    const _component_u_loadmore = resolveEasycom(vue.resolveDynamicComponent("u-loadmore"), __easycom_2$2);
+    const _component_u_empty = resolveEasycom(vue.resolveDynamicComponent("u-empty"), __easycom_3);
     return vue.openBlock(), vue.createElementBlock("view", { class: "position-record page" }, [
       vue.createCommentVNode(" \u5BFC\u822A "),
       vue.createVNode(_component_u_navbar, {
@@ -13675,9 +13813,9 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$c(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$6);
     const _component_u__textarea = resolveEasycom(vue.resolveDynamicComponent("u--textarea"), __easycom_1);
-    const _component_u_button = resolveEasycom(vue.resolveDynamicComponent("u-button"), __easycom_4);
+    const _component_u_button = resolveEasycom(vue.resolveDynamicComponent("u-button"), __easycom_4$1);
     return vue.openBlock(), vue.createElementBlock("view", { class: "user-fadeback page" }, [
       vue.createCommentVNode(" \u5BFC\u822A "),
       vue.createVNode(_component_u_navbar, {
@@ -13768,10 +13906,10 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$b(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0);
-    const _component_u__image = resolveEasycom(vue.resolveDynamicComponent("u--image"), __easycom_0$4);
-    const _component_u_loadmore = resolveEasycom(vue.resolveDynamicComponent("u-loadmore"), __easycom_2$3);
-    const _component_u_empty = resolveEasycom(vue.resolveDynamicComponent("u-empty"), __easycom_3$1);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$6);
+    const _component_u__image = resolveEasycom(vue.resolveDynamicComponent("u--image"), __easycom_0$2);
+    const _component_u_loadmore = resolveEasycom(vue.resolveDynamicComponent("u-loadmore"), __easycom_2$2);
+    const _component_u_empty = resolveEasycom(vue.resolveDynamicComponent("u-empty"), __easycom_3);
     return vue.openBlock(), vue.createElementBlock("view", { class: "message-center page" }, [
       vue.createCommentVNode(" \u5BFC\u822A "),
       vue.createVNode(_component_u_navbar, {
@@ -13843,8 +13981,8 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$a(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0);
-    const _component_u_button = resolveEasycom(vue.resolveDynamicComponent("u-button"), __easycom_4);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$6);
+    const _component_u_button = resolveEasycom(vue.resolveDynamicComponent("u-button"), __easycom_4$1);
     return vue.openBlock(), vue.createElementBlock("view", { class: "about-us page" }, [
       vue.createCommentVNode(" \u5BFC\u822A "),
       vue.createVNode(_component_u_navbar, {
@@ -13855,7 +13993,12 @@ if (uni.restoreGlobal) {
         autoBack: true
       }),
       vue.createElementVNode("view", { class: "au-content" }, [
-        vue.createElementVNode("view", { class: "au-box" }),
+        vue.createElementVNode("view", { class: "au-box" }, [
+          vue.createElementVNode("image", {
+            class: "ab-img",
+            src: "/static/logo.png"
+          })
+        ]),
         vue.createElementVNode("view", { class: "au-title" }, "\u667A\u80FD\u4EA4\u6613\u673A\u5668\u4EBA"),
         vue.createElementVNode("view", { class: "au-current" }, "\u5F53\u524D\u7248\u672C" + vue.toDisplayString($data.currentVersion), 1),
         vue.createElementVNode("view", { class: "au-last" }, "\u6700\u65B0\u7248\u672C" + vue.toDisplayString($data.lastVersion), 1),
@@ -13903,8 +14046,8 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$9(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0);
-    const _component_u__image = resolveEasycom(vue.resolveDynamicComponent("u--image"), __easycom_0$4);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$6);
+    const _component_u__image = resolveEasycom(vue.resolveDynamicComponent("u--image"), __easycom_0$2);
     return vue.openBlock(), vue.createElementBlock("view", { class: "setting page" }, [
       vue.createCommentVNode(" \u5BFC\u822A "),
       vue.createVNode(_component_u_navbar, {
@@ -14295,8 +14438,8 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$8(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$6);
-    const _component_u_loading_icon = resolveEasycom(vue.resolveDynamicComponent("u-loading-icon"), __easycom_1$5);
+    const _component_u_icon = resolveEasycom(vue.resolveDynamicComponent("u-icon"), __easycom_0$7);
+    const _component_u_loading_icon = resolveEasycom(vue.resolveDynamicComponent("u-loading-icon"), __easycom_1$3);
     return vue.openBlock(), vue.createElementBlock("view", {
       class: "u-upload",
       style: vue.normalizeStyle([_ctx.$u.addStyle(_ctx.customStyle)])
@@ -14451,10 +14594,10 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$7(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0);
-    const _component_u_button = resolveEasycom(vue.resolveDynamicComponent("u-button"), __easycom_4);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$6);
+    const _component_u_button = resolveEasycom(vue.resolveDynamicComponent("u-button"), __easycom_4$1);
     const _component_u_upload = resolveEasycom(vue.resolveDynamicComponent("u-upload"), __easycom_2);
-    const _component_u__input = resolveEasycom(vue.resolveDynamicComponent("u--input"), __easycom_1$2);
+    const _component_u__input = resolveEasycom(vue.resolveDynamicComponent("u--input"), __easycom_1$4);
     return vue.openBlock(), vue.createElementBlock("view", { class: "edit-user page" }, [
       vue.createCommentVNode(" \u5BFC\u822A "),
       vue.createVNode(_component_u_navbar, {
@@ -14561,7 +14704,7 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$6(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u__image = resolveEasycom(vue.resolveDynamicComponent("u--image"), __easycom_0$4);
+    const _component_u__image = resolveEasycom(vue.resolveDynamicComponent("u--image"), __easycom_0$2);
     return vue.openBlock(), vue.createElementBlock("view", {
       class: "invite-friends",
       onLongpress: _cache[2] || (_cache[2] = (...args) => $options.savePic && $options.savePic(...args)),
@@ -14658,7 +14801,7 @@ if (uni.restoreGlobal) {
     methods: {}
   };
   function _sfc_render$5(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$6);
     return vue.openBlock(), vue.createElementBlock("view", { class: "sys-bullet page" }, [
       vue.createCommentVNode(" \u5BFC\u822A "),
       vue.createVNode(_component_u_navbar, {
@@ -14719,12 +14862,12 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$4(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0);
-    const _component_u__input = resolveEasycom(vue.resolveDynamicComponent("u--input"), __easycom_1$2);
-    const _component_u_form_item = resolveEasycom(vue.resolveDynamicComponent("u-form-item"), __easycom_2$2);
-    const _component_u__form = resolveEasycom(vue.resolveDynamicComponent("u--form"), __easycom_3);
-    const _component_u_button = resolveEasycom(vue.resolveDynamicComponent("u-button"), __easycom_4);
-    const _component_u_checkbox = resolveEasycom(vue.resolveDynamicComponent("u-checkbox"), __easycom_5$1);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$6);
+    const _component_u__input = resolveEasycom(vue.resolveDynamicComponent("u--input"), __easycom_1$4);
+    const _component_u_form_item = resolveEasycom(vue.resolveDynamicComponent("u-form-item"), __easycom_2$5);
+    const _component_u__form = resolveEasycom(vue.resolveDynamicComponent("u--form"), __easycom_3$2);
+    const _component_u_button = resolveEasycom(vue.resolveDynamicComponent("u-button"), __easycom_4$1);
+    const _component_u_checkbox = resolveEasycom(vue.resolveDynamicComponent("u-checkbox"), __easycom_5$2);
     const _component_u_checkbox_group = resolveEasycom(vue.resolveDynamicComponent("u-checkbox-group"), __easycom_6);
     return vue.openBlock(), vue.createElementBlock("view", { class: "login" }, [
       vue.createCommentVNode(" \u5BFC\u822A "),
@@ -14857,12 +15000,12 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0);
-    const _component_u__input = resolveEasycom(vue.resolveDynamicComponent("u--input"), __easycom_1$2);
-    const _component_u_form_item = resolveEasycom(vue.resolveDynamicComponent("u-form-item"), __easycom_2$2);
-    const _component_u__form = resolveEasycom(vue.resolveDynamicComponent("u--form"), __easycom_3);
-    const _component_u_button = resolveEasycom(vue.resolveDynamicComponent("u-button"), __easycom_4);
-    const _component_u_checkbox = resolveEasycom(vue.resolveDynamicComponent("u-checkbox"), __easycom_5$1);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$6);
+    const _component_u__input = resolveEasycom(vue.resolveDynamicComponent("u--input"), __easycom_1$4);
+    const _component_u_form_item = resolveEasycom(vue.resolveDynamicComponent("u-form-item"), __easycom_2$5);
+    const _component_u__form = resolveEasycom(vue.resolveDynamicComponent("u--form"), __easycom_3$2);
+    const _component_u_button = resolveEasycom(vue.resolveDynamicComponent("u-button"), __easycom_4$1);
+    const _component_u_checkbox = resolveEasycom(vue.resolveDynamicComponent("u-checkbox"), __easycom_5$2);
     const _component_u_checkbox_group = resolveEasycom(vue.resolveDynamicComponent("u-checkbox-group"), __easycom_6);
     return vue.openBlock(), vue.createElementBlock("view", { class: "login" }, [
       vue.createCommentVNode(" \u5BFC\u822A "),
@@ -14987,12 +15130,12 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$2(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0);
-    const _component_u__input = resolveEasycom(vue.resolveDynamicComponent("u--input"), __easycom_1$2);
-    const _component_u_form_item = resolveEasycom(vue.resolveDynamicComponent("u-form-item"), __easycom_2$2);
-    const _component_u__form = resolveEasycom(vue.resolveDynamicComponent("u--form"), __easycom_3);
-    const _component_u_button = resolveEasycom(vue.resolveDynamicComponent("u-button"), __easycom_4);
-    const _component_u_checkbox = resolveEasycom(vue.resolveDynamicComponent("u-checkbox"), __easycom_5$1);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$6);
+    const _component_u__input = resolveEasycom(vue.resolveDynamicComponent("u--input"), __easycom_1$4);
+    const _component_u_form_item = resolveEasycom(vue.resolveDynamicComponent("u-form-item"), __easycom_2$5);
+    const _component_u__form = resolveEasycom(vue.resolveDynamicComponent("u--form"), __easycom_3$2);
+    const _component_u_button = resolveEasycom(vue.resolveDynamicComponent("u-button"), __easycom_4$1);
+    const _component_u_checkbox = resolveEasycom(vue.resolveDynamicComponent("u-checkbox"), __easycom_5$2);
     const _component_u_checkbox_group = resolveEasycom(vue.resolveDynamicComponent("u-checkbox-group"), __easycom_6);
     return vue.openBlock(), vue.createElementBlock("view", { class: "login" }, [
       vue.createCommentVNode(" \u5BFC\u822A "),
@@ -15121,12 +15264,12 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0);
-    const _component_u__input = resolveEasycom(vue.resolveDynamicComponent("u--input"), __easycom_1$2);
-    const _component_u_form_item = resolveEasycom(vue.resolveDynamicComponent("u-form-item"), __easycom_2$2);
-    const _component_u__form = resolveEasycom(vue.resolveDynamicComponent("u--form"), __easycom_3);
-    const _component_u_button = resolveEasycom(vue.resolveDynamicComponent("u-button"), __easycom_4);
-    const _component_u_checkbox = resolveEasycom(vue.resolveDynamicComponent("u-checkbox"), __easycom_5$1);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$6);
+    const _component_u__input = resolveEasycom(vue.resolveDynamicComponent("u--input"), __easycom_1$4);
+    const _component_u_form_item = resolveEasycom(vue.resolveDynamicComponent("u-form-item"), __easycom_2$5);
+    const _component_u__form = resolveEasycom(vue.resolveDynamicComponent("u--form"), __easycom_3$2);
+    const _component_u_button = resolveEasycom(vue.resolveDynamicComponent("u-button"), __easycom_4$1);
+    const _component_u_checkbox = resolveEasycom(vue.resolveDynamicComponent("u-checkbox"), __easycom_5$2);
     const _component_u_checkbox_group = resolveEasycom(vue.resolveDynamicComponent("u-checkbox-group"), __easycom_6);
     return vue.openBlock(), vue.createElementBlock("view", { class: "login" }, [
       vue.createCommentVNode(" \u5BFC\u822A "),
@@ -15245,11 +15388,11 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0);
-    const _component_u__input = resolveEasycom(vue.resolveDynamicComponent("u--input"), __easycom_1$2);
-    const _component_u_form_item = resolveEasycom(vue.resolveDynamicComponent("u-form-item"), __easycom_2$2);
-    const _component_u__form = resolveEasycom(vue.resolveDynamicComponent("u--form"), __easycom_3);
-    const _component_u_button = resolveEasycom(vue.resolveDynamicComponent("u-button"), __easycom_4);
+    const _component_u_navbar = resolveEasycom(vue.resolveDynamicComponent("u-navbar"), __easycom_0$6);
+    const _component_u__input = resolveEasycom(vue.resolveDynamicComponent("u--input"), __easycom_1$4);
+    const _component_u_form_item = resolveEasycom(vue.resolveDynamicComponent("u-form-item"), __easycom_2$5);
+    const _component_u__form = resolveEasycom(vue.resolveDynamicComponent("u--form"), __easycom_3$2);
+    const _component_u_button = resolveEasycom(vue.resolveDynamicComponent("u-button"), __easycom_4$1);
     return vue.openBlock(), vue.createElementBlock("view", { class: "forget-pwd" }, [
       vue.createCommentVNode(" \u5BFC\u822A\u6761 "),
       vue.createVNode(_component_u_navbar, {
@@ -15301,6 +15444,7 @@ if (uni.restoreGlobal) {
     ]);
   }
   const PagesLoginForgetPwdForgetPwd = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", _sfc_render], ["__file", "/Users/lvjun/Desktop/lvjun-work/uniapp-demo/pages/login/forgetPwd/forgetPwd.vue"]]);
+  __definePage("pages/login/login", PagesLoginLogin);
   __definePage("pages/home/home", PagesHomeHome);
   __definePage("pages/trade/trade", PagesTradeTrade);
   __definePage("pages/assets/assets", PagesAssetsAssets);

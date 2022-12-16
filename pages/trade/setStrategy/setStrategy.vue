@@ -160,6 +160,12 @@
 			// 改变自定义策略
 			changeStr() {
 				this.proportion.type = ''
+			},
+			// 提交策略
+			submit() {
+				uni.reLaunch({
+					url: '/pages/trade/trade'
+				})
 			}
 		}
 	}
