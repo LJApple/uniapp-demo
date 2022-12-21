@@ -1037,6 +1037,7 @@ uni-view[data-v-12b77a26], uni-scroll-view[data-v-12b77a26], uni-swiper-item[dat
   padding-bottom: 1.5rem;
   display: flex;
   justify-content: space-between;
+  font-family: "Montserrat-Regular";
 }
 .content .c-net-list .cnl-content .cnlc-data :nth-child(1) {
   width: 20%;

@@ -276,7 +276,7 @@
 					padding-bottom: 48rpx;
 					display: flex;
 					justify-content: space-between;
-
+					font-family: 'Montserrat-Regular';
 					:nth-child(1) {
 						width: 20%;
 						text-align: left;

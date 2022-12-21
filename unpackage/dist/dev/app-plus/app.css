@@ -1670,6 +1670,7 @@ to {
 }
 body {
   overflow: hidden;
+  font-family: "Montserrat-Regular";
 }
 .border-radius-default {
   border-radius: 0.48063rem !important;
@@ -1716,4 +1717,16 @@ body {
 }
 .load {
   padding: 1.25rem 0;
+}
+@font-face {
+  font-family: "Montserrat-Medium";
+  src: url("assets/Montserrat-Medium.a4d412d8.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Montserrat-Regular";
+  src: url("assets/Montserrat-Regular.d104de3c.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Montserrat-SemiBold";
+  src: url("assets/Montserrat-SemiBold.e8dc4981.ttf") format("truetype");
 }

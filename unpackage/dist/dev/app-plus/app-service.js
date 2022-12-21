@@ -7172,14 +7172,11 @@ if (uni.restoreGlobal) {
     data() {
       return {
         bannerList: [{
-          image: "https://cdn.uviewui.com/uview/swiper/swiper2.png",
-          title: "\u6628\u591C\u661F\u8FB0\u6628\u591C\u98CE\uFF0C\u753B\u697C\u897F\u7554\u6842\u5802\u4E1C"
+          image: "/static/banner01.jpg"
         }, {
-          image: "https://cdn.uviewui.com/uview/swiper/swiper1.png",
-          title: "\u8EAB\u65E0\u5F69\u51E4\u53CC\u98DE\u7FFC\uFF0C\u5FC3\u6709\u7075\u7280\u4E00\u70B9\u901A"
+          image: "/static/banner02.jpg"
         }, {
-          image: "https://cdn.uviewui.com/uview/swiper/swiper3.png",
-          title: "\u8C01\u5FF5\u897F\u98CE\u72EC\u81EA\u51C9\uFF0C\u8427\u8427\u9EC4\u53F6\u95ED\u758F\u7A97\uFF0C\u6C89\u601D\u5F80\u4E8B\u7ACB\u6B8B\u9633"
+          image: "/static/banner03.jpg"
         }],
         messageTip: {
           USDTCount: 10,
@@ -7220,7 +7217,7 @@ if (uni.restoreGlobal) {
       ...mapState(["init"])
     },
     onLoad() {
-      formatAppLog("log", "at pages/home/home.vue:123", this.$http.post);
+      formatAppLog("log", "at pages/home/home.vue:120", this.$http.post);
     },
     methods: {
       navigateAuth() {
